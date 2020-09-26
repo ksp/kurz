@@ -2,15 +2,18 @@
   import { onMount } from "svelte";
   import * as d3 from "d3";
 
+  // Svelte automatically fills this with a reference
+  let container: HTMLElement;
+
   onMount(async () => {
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 30, bottom: 30, left: 40 },
-      width = 400 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+      width = container.clientWidth - margin.left - margin.right,
+      height = container.clientHeight - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     var svg = d3
-      .select("#c")
+      .select(container)
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -52,6 +55,7 @@
       )
       .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
+      .on("tick", ticked)
       .on("end", ticked);
 
     // This function is run at each iteration of the force algorithm, updating the nodes position.
@@ -83,9 +87,9 @@
 
 <style>
   div {
-    height: 500px;
-    width: 80%;
+    height: 80vh;
+    width: 80vh;
   }
 </style>
 
-<div id="c" />
+<div bind:this={container} />
