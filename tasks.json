@@ -1,0 +1,241 @@
+{
+    "tasks": [
+        {
+            "id": "start",
+            "requires": [],
+            "comment": "úvodní kecy o tom, jak to celé funguje"
+        },
+        {
+            "id": "jak-resit-ulohy",
+            "requires": [
+                "start"
+            ],
+            "comment": "kecy o tom, jak se může řešit taková úloha"
+        },
+        {
+            "id": "31-Z1-1",
+            "requires": [
+                "jak-resit-ulohy"
+            ],
+            "comment": "úloha s odčítáním času"
+        },
+        {
+            "id": "26-Z1-1",
+            "comment": "Kevin a magnety - triviální, lineární průchod pole",
+            "requires": [
+                "jak-resit-ulohy"
+            ]
+        },
+        {
+            "id": "26-Z2-1",
+            "comment": "Had z domina - triviální, linerání průchod pole a počítání, na kolika místech platí podmínka, vyžaduje práci se dvojicemi",
+            "requires": [
+                "26-Z1-1"
+            ]
+        },
+        {
+            "id": "27-Z2-1",
+            "comment": "Závorky z cereálií - 2 průchody pole, závorky",
+            "requires": [
+                "26-Z1-1"
+            ]
+        },
+        {
+            "id": "26-Z1-2",
+            "comment": "Piškvorky - detekce vítězství v piškvorkách, procházení 2D pole v různych směrech",
+            "requires": [
+                "26-Z4-3"
+            ]
+        },
+        {
+            "id": "26-Z4-3",
+            "comment": "Hra Othello - link na 26-Z1-2, procházení 2D pole po různých směrech",
+            "requires": [
+                "26-Z1-1"
+            ]
+        },
+        {
+            "id": "29-Z3-1",
+            "comment": "Želva na dvorku — spíš triviální, netriviální udělat efektivně (ale asi to není třeba pro úspěch), volně navazuje na 29-Z2-1 a 29-Z1-1, průchod po 2D souřadnicích, invalidní příkazy (směrem do překážky) ignorujeme",
+            "requires": [
+                "26-Z4-3"
+            ]
+        },
+        {
+            "id": "31-Z1-4",
+            "comment": "2D pole (až na poslední vstup), hešování (piškvorky) - navazuje na 26-Z1-2",
+            "requires": [
+                "26-Z4-3"
+            ]
+        },
+        {
+            "id": "29-Z1-1",
+            "comment": "Kevinova želva — triviální, průchod po 2D souřadnicích",
+            "requires": [
+                "jak-resit-ulohy"
+            ]
+        },
+        {
+            "id": "29-Z2-1",
+            "comment": "Krocení zlé želvy — triviální, průchod po 2D souřadnicích, přímo navazuje na 29-Z1-1",
+            "requires": [
+                "29-Z1-1"
+            ]
+        },
+        {
+            "id": "29-Z4-3",
+            "comment": "Želva v akváriu — malej voser, triviální, přímo navazuje na 29-Z2-1 a 29-Z1-1, průchod po 3D souřadnicích",
+            "requires": [
+                "29-Z1-1",
+                "29-Z2-1"
+            ]
+        },
+        {
+            "id": "26-Z2-4",
+            "comment": "Životně důležitá úloha -  dostanu pole čísel, potřebuju v něm najít pravidelně se opakující výskyty hodnot, relativně složitá práce s poli, dvojcemi apod.",
+            "requires": []
+        },
+        {
+            "id": "29-Z1-3",
+            "comment": "Petrova statistika — ne úplně triviální, tvorba histogramu z pole",
+            "requires": []
+        },
+        {
+            "id": "26-Z2-2",
+            "comment": "SADO - triviální, procházení celých čísel v intervalu a kontrola podmínky",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-3",
+            "comment": "Hádanka - triky s dělitelností devíti a rozkladem čísel, docela hard teorie",
+            "requires": []
+        },
+        {
+            "id": "26-Z4-1",
+            "comment": "Vražedná čísla- WTF, teorie čísel, hard as fuck, divný",
+            "requires": []
+        },
+        {
+            "id": "29-Z3-3",
+            "comment": "Šestková čísla — mega voser implementovat, spíš matematická úloha, převod dešitkových čísel do hacknutých římských",
+            "requires": []
+        },
+        {
+            "id": "26-Z1-3",
+            "comment": "Zamilovaný dopis - triviální, procházení stringů po znacích a kontrola podmínek",
+            "requires": []
+        },
+        {
+            "id": "26-Z2-3",
+            "comment": "Šifrovaná zpráva - práce s řetězci, hledání mapování mezi písmenky (substitučka) a validace, že jinde substitučka funguje",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-2",
+            "comment": "Čarodějova šifra - šifrování mřížkou, práce se stringy, rotace matice, vhodné na code review?, docela hard",
+            "requires": []
+        },
+        {
+            "id": "29-Z3-2",
+            "comment": "Písemka z angličtiny — voser implementovat, easy dřevorubecký řešení, optimálně trie, což na Z IMHO hard",
+            "requires": []
+        },
+        {
+            "id": "26-Z1-4",
+            "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
+            "requires": []
+        },
+        {
+            "id": "26-Z4-4",
+            "comment": "Hlídači v labyrintu - policajti hlídající na grafu, konkrétně na stromě, rekurze, technicky asi až DP",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-4",
+            "comment": "Tvar labyrintu - nejdelší cesta ve stromě, graf",
+            "requires": []
+        },
+        {
+            "id": "29-Z1-4",
+            "comment": "Zuzčin výlet — DFS (topologické pořadí)",
+            "requires": []
+        },
+        {
+            "id": "31-Z1-2",
+            "comment": "BFS (šachovnice, custom figurka, nejkratší cesta)  ",
+            "requires": []
+        },
+        {
+            "id": "31-Z3-2",
+            "comment": "DFS (hledání cesty v grafu po písmenech)",
+            "requires": []
+        },
+        {
+            "id": "31-Z3-3",
+            "comment": "barvení bipartitního grafu (hledání partit), na vstupu hrany",
+            "requires": []
+        },
+        {
+            "id": "26-Z4-2",
+            "comment": "Sbírání vajíček - hledení mediánu, musí se to ale vymyslet, nejkratší cesta při chození tam a zpět",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-1",
+            "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
+            "requires": []
+        }
+    ],
+    "clusters": {
+        "Triviální výpočet": [
+            "31-Z1-1"
+        ],
+        "Triviální průchod 1D pole": [
+            "26-Z1-1",
+            "26-Z1-1",
+            "26-Z1-1"
+        ],
+        "Triviální průchody 2D pole": [
+            "26-Z1-2",
+            "26-Z4-3",
+            "29-Z3-1",
+            "31-Z1-4"
+        ],
+        "Želvy": [
+            "29-Z1-1",
+            "29-Z2-1",
+            "29-Z4-3"
+        ],
+        "Komplexnější práce s poli": [
+            "26-Z2-4",
+            "29-Z1-3"
+        ],
+        "Práce s čísly": [
+            "26-Z2-2",
+            "26-Z3-3",
+            "26-Z4-1"
+        ],
+        "Práce s řetězci": [
+            "26-Z1-3",
+            "26-Z2-3",
+            "26-Z3-2",
+            "29-Z3-2"
+        ],
+        "Grafy": [
+            "26-Z1-4",
+            "26-Z4-4",
+            "26-Z3-4",
+            "29-Z1-4",
+            "31-Z1-2",
+            "31-Z3-2",
+            "31-Z3-3"
+        ],
+        "Voser": [
+            "26-Z3-1",
+            "29-Z3-3"
+        ],
+        "Nápad": [
+            "26-Z4-2"
+        ]
+    }
+}
