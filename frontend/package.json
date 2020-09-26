@@ -23,6 +23,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "d3": "^6.2.0",
     "sigma": "1.2.1",
     "sirv-cli": "^1.0.0"
   }

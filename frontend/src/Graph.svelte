@@ -1,56 +1,85 @@
 <script>
-  import { sigma } from "sigma";
-  import "sigma/build/plugins/sigma.layout.forceAtlas2.min.js";
   import { onMount } from "svelte";
+  import * as d3 from "d3";
+  
+  onMount(async () => {
+    // set the dimensions and margins of the graph
+    var margin = { top: 10, right: 30, bottom: 30, left: 40 },
+      width = 400 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
 
-  /**
-   * This is a basic example on how to instantiate sigma. A random graph is
-   * generated and stored in the "graph" variable, and then sigma is instantiated
-   * directly with the graph.
-   *
-   * The simple instance of sigma is enough to make it render the graph on the on
-   * the screen, since the graph is given directly to the constructor.
-   */
-  var i,
-    s,
-    N = 100,
-    E = 500,
-    g = {
-      nodes: [],
-      edges: [],
-    };
+    // append the svg object to the body of the page
+    var svg = d3
+      .select("#c")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // Generate a random graph:
-  for (i = 0; i < N; i++)
-    g.nodes.push({
-      id: "n" + i,
-      label: "Node " + i,
-      x: Math.random(),
-      y: Math.random(),
-      size: Math.random(),
-      color: "#666",
-    });
+    const data = await d3.json(
+      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_network.json"
+    );
 
-  for (i = 0; i < E; i++)
-    g.edges.push({
-      id: "e" + i,
-      source: "n" + ((Math.random() * N) | 0),
-      target: "n" + ((Math.random() * N) | 0),
-      size: Math.random(),
-      color: "#ccc",
-    });
+    // Initialize the links
+    var link = svg
+      .selectAll("line")
+      .data(data.links)
+      .enter()
+      .append("line")
+      .style("stroke", "#aaa");
 
-  // Instantiate sigma:
-  onMount(() => {
-    s = new sigma({
-      graph: g,
-      container: "c",
-    });
-    s.startForceAtlas2();
+    // Initialize the nodes
+    var node = svg
+      .selectAll("circle")
+      .data(data.nodes)
+      .enter()
+      .append("circle")
+      .attr("r", 20)
+      .style("fill", "#69b3a2");
+
+    // Let's list the force we wanna apply on the network
+    var simulation = d3
+      .forceSimulation(data.nodes) // Force algorithm is applied to data.nodes
+      .force(
+        "link",
+        d3
+          .forceLink() // This force provides links between nodes
+          .id(function (d) {
+            return d.id;
+          }) // This provide  the id of a node
+          .links(data.links) // and this the list of links
+      )
+      .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
+      .on("end", ticked);
+
+    // This function is run at each iteration of the force algorithm, updating the nodes position.
+    function ticked() {
+      link
+        .attr("x1", function (d) {
+          return d.source.x;
+        })
+        .attr("y1", function (d) {
+          return d.source.y;
+        })
+        .attr("x2", function (d) {
+          return d.target.x;
+        })
+        .attr("y2", function (d) {
+          return d.target.y;
+        });
+
+      node
+        .attr("cx", function (d) {
+          return d.x + 6;
+        })
+        .attr("cy", function (d) {
+          return d.y - 6;
+        });
+    }
   });
 </script>
-
-<div id="c" />
 
 <style>
   div {
@@ -58,3 +87,5 @@
     width: 80%;
   }
 </style>
+
+<div id="c" />
