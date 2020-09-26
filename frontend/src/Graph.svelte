@@ -1,5 +1,6 @@
 <script>
   import { sigma } from "sigma";
+  import "sigma/build/plugins/sigma.layout.forceAtlas2.min.js";
   import { onMount } from "svelte";
 
   /**
@@ -45,6 +46,7 @@
       graph: g,
       container: "c",
     });
+    s.startForceAtlas2();
   });
 </script>
 
