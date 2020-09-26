@@ -93,22 +93,22 @@ ODZHORA POCAD PREBUSENO DO tasks.json
 
 
 30. ročník
-30-Z1-1 Open-data   Kevinova nepatnáctka            - Trivka, chození po souřadnicích
-30-Z1-2 Open-data   Sářiny loutky                              - Hladový algoritmus
-30-Z1-3 Open-data   Petrovo luštění zprávy            - Hledání nejčastějšího výskytu 
-30-Z1-4 Open-data   Zuzčin projekt                            - Sousednost v grafu
-30-Z2-1 Open-data   K-k-koktavý K-K-Kevin              - Trivka, projít string a skippovat duplikáty
-30-Z2-2 Open-data   Hřiště pro tarantule                 - Chození po souřadnicích, detekce kolizí
-30-Z2-3 Open-data   Klonování pavouků                   - Sestavení stromu a vypsání cesty do kořene
-30-Z2-4 Open-data   Příliš bílý displej                        -  Práce s 2d polem
-30-Z3-1 Open-data   Rozkolísaná produktivita       -  Hledání dvou čísel s co největším rozdílem
-30-Z3-2 Open-data   Podlézání Číňanům                  - Výroba palindromu
-30-Z3-3 Open-data   Teambuilding                             -  
-30-Z3-4 Open-data   Korporátní seznamka
-30-Z4-1 Open-data   Statistika sprintů
-30-Z4-2 Open-data   Klíče od tělocvičny
-30-Z4-3 Open-data   Uhlazovací válec
-30-Z4-4 Open-data   Ohrazení zahrádky
+30-Z1-1:  Kevinova nepatnáctka            - Trivka, chození po souřadnicích
+30-Z1-2:  Sářiny loutky                              - Hladový algoritmus
+30-Z1-3:  Petrovo luštění zprávy            - Hledání nejčastějšího výskytu 
+30-Z1-4: Zuzčin projekt                             - Sousednost v grafu
+30-Z2-1: K-k-koktavý K-K-Kevin               - Trivka, projít string a skippovat duplikáty
+30-Z2-2: Hřiště pro tarantule                  - Chození po souřadnicích, detekce kolizí
+30-Z2-3: Klonování pavouků                    - Sestavení stromu a vypsání cesty do kořene
+30-Z2-4:  Příliš bílý displej                         -  Práce s 2d polem
+30-Z3-1: Rozkolísaná produktivita         -  Hledání dvou čísel s co největším rozdílem
+30-Z3-2: Podlézání Číňanům                    - Výroba palindromu
+30-Z3-3: Teambuilding                               - Voser implementovat, hledání klíčů na odemčení dveří
+30-Z3-4:  Korporátní seznamka               - Voser implementovat, doplňování do stringu
+30-Z4-1:  Statistika sprintů                       -  Prefixové součty
+30-Z4-2:  Klíče od tělocvičny                    - Provházení bludiště
+30-Z4-3: Uhlazovací válec                         - ProhledávánI grafu
+30-Z4-4: Ohrazení zahrádky                    - Trivka, práce souřadnicemi
 
 
 31. ročník
