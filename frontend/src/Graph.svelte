@@ -1,6 +1,7 @@
 <script type="ts">
   import { onMount } from "svelte";
   import * as d3 from "d3";
+  import *  as tasksLoader from "./task-loader";
 
   // Svelte automatically fills this with a reference
   let container: HTMLElement;
@@ -17,17 +18,18 @@
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    const data = await d3.json(
-      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_network.json"
-    );
+    const tasks =  await tasksLoader.loadTasks();
+    let nodes = tasks.tasks;
+    let edges = tasksLoader.createLinksFromTaskMap(tasks);
 
     // Initialize the links
     var link = svg
       .selectAll("line")
-      .data(data.links)
+      .data(edges)
       .enter()
       .append("line")
       .style("stroke", "#aaa");
@@ -35,7 +37,7 @@
     // Initialize the nodes
     var node = svg
       .selectAll("circle")
-      .data(data.nodes)
+      .data(nodes)
       .enter()
       .append("circle")
       .attr("r", 20)
@@ -43,7 +45,7 @@
 
     // Let's list the force we wanna apply on the network
     var simulation = d3
-      .forceSimulation(data.nodes) // Force algorithm is applied to data.nodes
+      .forceSimulation(nodes) // Force algorithm is applied to data.nodes
       .force(
         "link",
         d3
@@ -51,10 +53,11 @@
           .id(function (d) {
             return d.id;
           }) // This provide  the id of a node
-          .links(data.links) // and this the list of links
+          .links(edges) // and this the list of links
       )
       .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
-      .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
+      .force('x', d3.forceX()) // attracts elements to the zero X coord
+      .force('y', d3.forceY()) // attracts elements to the zero Y coord
       .on("tick", ticked)
       .on("end", ticked);
 
@@ -87,8 +90,8 @@
 
 <style>
   div {
-    height: 80vh;
-    width: 80vh;
+    height: 75vh;
+    width: 100%;
   }
 </style>
 
