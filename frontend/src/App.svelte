@@ -2,10 +2,19 @@
   import Graph from "./Graph.svelte";
   import GraphNode from "./GraphNode.svelte";
   import { loadTasks } from "./task-loader";
-  import type { TasksFile } from "./task-loader";
+  import type { TasksFile, TaskDescriptor } from "./task-loader";
   import TasksLoader from "./TasksLoader.svelte";
+  import TaskPanel from "./TaskPanel.svelte";
 
   const tasksPromise: Promise<TasksFile> = loadTasks();
+
+  let selectedTask: string | null = null
+  let finalSelect: boolean = false
+
+  function clickTask(e: CustomEvent<TaskDescriptor>) {
+    finalSelect = true
+  }
+
 </script>
 
 <style>
@@ -37,6 +46,7 @@
 </svg>
 -->
   <TasksLoader promise={tasksPromise} let:data={t}>
-    <Graph tasks={t} />
+    <TaskPanel bind:finalSelect={finalSelect} selectedTask={selectedTask} />
+    <Graph tasks={t} bind:selectedTask={selectedTask} on:selectTask={clickTask} />
   </TasksLoader>
 </main>

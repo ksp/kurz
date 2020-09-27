@@ -12,28 +12,28 @@ type TaskLocation = {
     startElement: string
 }
 
-function getLocation(id: string, solution: boolean): TaskLocation {
+function getLocation(id: string, solution: boolean): TaskLocation | null {
     const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
-    if (!m) throw new Error(`Invalid task id: ${m}`)
-    const [_, rocnik, z, serie, uloha] = m[1]
+    if (!m) return null
+    const [_, rocnik, z, serie, uloha] = m
     if (z == 'Z') {
         const urlX = solution ? "reseni" : "zadani"
         return {
             url: `z/ulohy/${rocnik}/${urlX}${serie}.html`,
-            startElement: `task${uloha}`
+            startElement: `task-${id}`
         }
     } else {
         const urlX = solution ? "solution" : "tasks"
         return {
             url: `tasks/${rocnik}/${urlX}${serie}.html`,
-            startElement: `task${uloha}`
+            startElement: `task-${id}`
         }
     }
 }
 
-function parseTask(startElementId: string, html: string, contentType: string): string {
+function parseTask(startElementId: string, html: string): string {
     const parser = new DOMParser()
-    const doc = parser.parseFromString(html, contentType as any)
+    const doc = parser.parseFromString(html, "text/html")
 
     const titleElement = doc.getElementById(startElementId)
     if (!titleElement)
@@ -69,14 +69,17 @@ async function loadTask({ url, startElement }: TaskLocation) {
         throw Error("Bad request")
     }
     const rText = await r.text()
-    const contentType = r.headers.get("Content-Type") || "text/html"
-    return parseTask(startElement, rText, contentType)
+    return parseTask(startElement, rText)
 }
 
-export function loadAssignment(id: string) {
-    return loadTask(getLocation(id, false))
+export async function grabAssignment(id: string) {
+    const l = getLocation(id, false)
+    if (!l) return "úloha je virtuální a neexistuje"
+    return await loadTask(l)
 }
 
-export function loadSolution(id: string) {
-    return loadTask(getLocation(id, true))
+export async function grabSolution(id: string) {
+    const l = getLocation(id, true)
+    if (!l) return "úloha je virtuální a neexistuje"
+    return await loadTask(l)
 }

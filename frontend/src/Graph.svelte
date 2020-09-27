@@ -1,14 +1,31 @@
 <script type="ts">
   import GraphNode from "./GraphNode.svelte";
   import GraphEdge from "./GraphEdge.svelte";
-  import { onMount } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
   import * as d3 from "d3";
   import { createLinksFromTaskMap } from "./task-loader";
-  import type { TasksFile } from "./task-loader";
+  import type { TasksFile, TaskDescriptor } from "./task-loader";
+
+  const eventDispatcher = createEventDispatcher()
 
   export let tasks: TasksFile;
   let nodes = tasks.tasks;
   let edges = createLinksFromTaskMap(tasks);
+
+  export let selectedTask: null | string = null
+  const nodeClick = (task: TaskDescriptor) => (e: CustomEvent<MouseEvent>) => {
+    selectedTask = task.id
+    eventDispatcher("selectTask", task)
+  }
+
+  const nodeHover = (task: TaskDescriptor) => (hovering: CustomEvent<boolean>) => {
+    if (hovering.detail) {
+      selectedTask = task.id
+    } else {
+      if (selectedTask == task.id)
+        selectedTask = null
+    }
+  }
 
   // Svelte automatically fills this with a reference
   let container: HTMLElement;
@@ -69,7 +86,7 @@
          <GraphEdge {edge} />
       {/each}
       {#each nodes as task}
-        <GraphNode {task} />
+        <GraphNode {task} on:click={nodeClick(task)} on:hoveringChange={nodeHover(task)} />
       {/each}
     </g>
   </svg>

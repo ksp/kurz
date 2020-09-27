@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
 
   import type { TaskDescriptor } from "./task-loader";
 
@@ -7,15 +7,23 @@
   let hovering: boolean = false;
   let text_element: SVGTextElement;
 
+  const eventDispatcher = createEventDispatcher()
+
   $: cx = task === undefined || task.x === undefined ? 0 : task.x;
   $: cy = task === undefined || task.y === undefined ? 0 : task.y;
 
   function enter() {
     hovering = true;
+    eventDispatcher("hoveringChange", hovering)
   }
 
   function leave() {
     hovering = false;
+    eventDispatcher("hoveringChange", hovering)
+  }
+
+  function click(e: MouseEvent) {
+    eventDispatcher("click", e)
   }
 
   let ellipse_rx = 20;
@@ -36,7 +44,7 @@
   }
 </style>
 
-<g on:mouseenter={enter} on:mouseleave={leave}>
+<g on:mouseenter={enter} on:mouseleave={leave} on:click={click}>
   <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
   <text
     bind:this={text_element}
