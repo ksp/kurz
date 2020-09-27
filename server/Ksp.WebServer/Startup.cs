@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -64,6 +65,10 @@ namespace Ksp.WebServer
                 endpoints.MapControllers();
             });
 
+            app.UseRewriter(new RewriteOptions()
+                .AddRewrite("^grafik$", "grafik.html", true)
+            );
+
             app.UseStaticFiles(new StaticFileOptions {
                 FileProvider = new PhysicalFileProvider(
                     Path.Combine(env.ContentRootPath, "../../frontend/public")),
@@ -76,7 +81,7 @@ namespace Ksp.WebServer
                 }, opt => {
                     opt.WithHttpClientName("RedirectClient");
 
-                    opt.WithBeforeSend(async (cx, request) => {
+                    opt.WithBeforeSend((cx, request) => {
                         request.Headers.Authorization =
                             new AuthenticationHeaderValue("Basic", "SECRET");
                         if (request.Headers.Referrer is object)
@@ -92,10 +97,11 @@ namespace Ksp.WebServer
                         // request.Headers.Remove("Forwarded");
                         // request.Headers.Remove("Origin");
                         // request.Headers.Add("Origin", "https://ksp-test.ks.matfyz.cz");
-                        Console.WriteLine(request);
+                        // Console.WriteLine(request);
+                        return Task.CompletedTask;
                     });
-                    opt.WithAfterReceive(async (cx, response) => {
-                        Console.WriteLine(response);
+                    opt.WithAfterReceive((cx, response) => {
+                        // Console.WriteLine(response);
                         if (response.Headers.Location is object && response.Headers.Location.Host == "ksp-test.ks.matfyz.cz")
                         {
                             response.Headers.Location = new UriBuilder(response.Headers.Location) {
@@ -112,6 +118,7 @@ namespace Ksp.WebServer
                                  .Replace("; domain=ksp-test.ks.matfyz.cz", $"; domain={cx.Request.Host.Host}")
                             ));
                         }
+                        return Task.CompletedTask;
                     });
                 }));
         }

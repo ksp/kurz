@@ -4,7 +4,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public",
+    "start": "dotnet run --project ../server/Ksp.WebServer",
+    "start-sirv": "sirv public",
     "validate": "svelte-check"
   },
   "devDependencies": {
