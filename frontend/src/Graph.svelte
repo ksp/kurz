@@ -1,5 +1,6 @@
 <script type="ts">
   import GraphNode from "./GraphNode.svelte";
+  import GraphEdge from "./GraphEdge.svelte";
   import { onMount } from "svelte";
   import * as d3 from "d3";
   import { createLinksFromTaskMap } from "./task-loader";
@@ -28,22 +29,6 @@
       .select("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // Initialize the links
-    var link = svg
-      .selectAll("line")
-      .data(edges)
-      .enter()
-      .append("line")
-      .style("stroke", "#aaa");
-
-    /*var node = svg
-      .selectAll("g")
-      .data(nodes)
-      .enter()
-      .append("circle")
-      .attr("r", 20)
-      .style("fill", "#69b3a2");*/
-
     // Let's list the force we wanna apply on the network
     var simulation = d3
       .forceSimulation(nodes) // Force algorithm is applied to data.nodes
@@ -56,7 +41,7 @@
           }) // This provide  the id of a node
           .links(edges) // and this the list of links
       )
-      .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-500)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("x", d3.forceX()) // attracts elements to the zero X coord
       .force("y", d3.forceY()) // attracts elements to the zero Y coord
       .on("tick", ticked)
@@ -64,20 +49,7 @@
 
     // This function is run at each iteration of the force algorithm, updating the nodes position.
     function ticked() {
-      link
-        .attr("x1", function (d) {
-          return d.source.x;
-        })
-        .attr("y1", function (d) {
-          return d.source.y;
-        })
-        .attr("x2", function (d) {
-          return d.target.x;
-        })
-        .attr("y2", function (d) {
-          return d.target.y;
-        });
-
+      edges = edges;
       nodes = nodes;
     }
   });
@@ -93,6 +65,9 @@
 <div bind:this={container}>
   <svg>
     <g>
+      {#each edges as edge}
+         <GraphEdge {edge} />
+      {/each}
       {#each nodes as task}
         <GraphNode {task} />
       {/each}
