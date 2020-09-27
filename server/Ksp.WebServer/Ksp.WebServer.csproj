@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
     <PackageReference Include="AspNetCore.Proxy" Version="4.1.0" />
+    <PackageReference Include="XUnit.Assert" Version="2.4.1" />
   </ItemGroup>
 
 

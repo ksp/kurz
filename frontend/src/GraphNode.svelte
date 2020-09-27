@@ -27,11 +27,20 @@
   });
 </script>
 
+<style>
+  :global(g):hover > ellipse {
+    fill: #ffb3a2
+  }
+  ellipse {
+    fill: #69b3a2
+  }
+</style>
+
 <g on:mouseenter={enter} on:mouseleave={leave}>
   {#if !hovering}
-    <ellipse rx={ellipse_rx} ry={ellipse_ry} style="fill: #69b3a2" {cx} {cy} />
+    <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
   {:else}
-    <ellipse rx={ellipse_rx} ry={ellipse_ry} style="fill: #ffb3a2" {cx} {cy} />
+    <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
   {/if}
   <text
     bind:this={text_element}
