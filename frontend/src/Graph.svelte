@@ -6,48 +6,35 @@
   import { createLinksFromTaskMap } from "./task-loader";
   import type { TasksFile, TaskDescriptor } from "./task-loader";
 
-  const eventDispatcher = createEventDispatcher()
+  const eventDispatcher = createEventDispatcher();
 
   export let tasks: TasksFile;
-  let nodes = tasks.tasks;
-  let edges = createLinksFromTaskMap(tasks);
+  export let selectedTask: null | string = null;
 
-  export let selectedTask: null | string = null
+  $: nodes = tasks.tasks;
+  $: edges = createLinksFromTaskMap(tasks);
+
   const nodeClick = (task: TaskDescriptor) => (e: CustomEvent<MouseEvent>) => {
-    selectedTask = task.id
-    eventDispatcher("selectTask", task)
-  }
+    selectedTask = task.id;
+    eventDispatcher("selectTask", task);
+  };
 
-  const nodeHover = (task: TaskDescriptor) => (hovering: CustomEvent<boolean>) => {
+  const nodeHover = (task: TaskDescriptor) => (
+    hovering: CustomEvent<boolean>
+  ) => {
     if (hovering.detail) {
-      selectedTask = task.id
+      selectedTask = task.id;
     } else {
-      if (selectedTask == task.id)
-        selectedTask = null
+      if (selectedTask == task.id) selectedTask = null;
     }
-  }
+  };
 
   // Svelte automatically fills this with a reference
   let container: HTMLElement;
 
-  onMount(async () => {
-    // set the dimensions and margins of the graph
-    var margin = { top: 10, right: 30, bottom: 30, left: 40 },
-      width = container.clientWidth - margin.left - margin.right,
-      height = container.clientHeight - margin.top - margin.bottom;
-
-    // resize the svg object
-    var svg = d3
-      .select(container)
-      .select("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .attr("viewBox", [-width / 2, -height / 2, width, height])
-      .select("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+  function runSimulation() {
     // Let's list the force we wanna apply on the network
-    var simulation = d3
+    let simulation = d3
       .forceSimulation(nodes) // Force algorithm is applied to data.nodes
       .force(
         "link",
@@ -69,12 +56,41 @@
       edges = edges;
       nodes = nodes;
     }
+  }
+
+  // run on create
+  onMount(() => {
+    // set the dimensions and margins of the graph
+    var margin = { top: 10, right: 30, bottom: 30, left: 40 },
+      width = container.clientWidth - margin.left - margin.right,
+      height = container.clientHeight - margin.top - margin.bottom;
+
+    // resize the svg object
+    var svg = d3
+      .select(container)
+      .select("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
+      .select("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    runSimulation();
   });
+
+  // don't forget to vomit 🤮🤢
+  export let runSimulationWeirdHack: boolean = true;
+  $: {
+    runSimulationWeirdHack;
+    runSimulation();
+  }
+  // now it's safe to stop vomitting 🤮
+
 </script>
 
 <style>
   div {
-    height: 100vh;
+    height: 100%;
     width: 100%;
   }
 </style>
@@ -83,10 +99,13 @@
   <svg>
     <g>
       {#each edges as edge}
-         <GraphEdge {edge} />
+        <GraphEdge {edge} />
       {/each}
       {#each nodes as task}
-        <GraphNode {task} on:click={nodeClick(task)} on:hoveringChange={nodeHover(task)} />
+        <GraphNode
+          {task}
+          on:click={nodeClick(task)}
+          on:hoveringChange={nodeHover(task)} />
       {/each}
     </g>
   </svg>

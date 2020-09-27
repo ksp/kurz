@@ -2,7 +2,7 @@ import type { SimulationNodeDatum, SimulationLinkDatum } from "d3";
 
 export type TaskDescriptor = {
     id: string
-    requires: []
+    requires: string[]
     comment?: string
 } & SimulationNodeDatum
 
@@ -48,4 +48,13 @@ export function createLinksFromTaskMap(tasks: TasksFile): SimulationLinkDatum<Ta
     }
 
     return links;
+}
+
+export function getCategories(tasks: TasksFile, taskId: string): string[] {
+    let res: string[] = [];
+    for (let [cat, ids] of Object.entries(tasks.clusters)) {
+        if (ids.indexOf(taskId) >= 0) res.push(cat);
+    }
+
+    return res;
 }

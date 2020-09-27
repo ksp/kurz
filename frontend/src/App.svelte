@@ -1,10 +1,10 @@
 <script lang="ts">
   import Graph from "./Graph.svelte";
-  import GraphNode from "./GraphNode.svelte";
   import { loadTasks } from "./task-loader";
   import type { TasksFile, TaskDescriptor } from "./task-loader";
   import TasksLoader from "./TasksLoader.svelte";
   import TaskPanel from "./TaskPanel.svelte";
+  import Editor from "./Editor.svelte";
 
   const tasksPromise: Promise<TasksFile> = loadTasks();
 
@@ -15,12 +15,13 @@
     finalSelect = true
   }
 
+  const hash = window.location.hash.substr(1);
+
 </script>
 
 <style>
   main {
     text-align: center;
-    padding: 1em;
     max-width: 240px;
     margin: 0 auto;
   }
@@ -40,13 +41,14 @@
 </style>
 
 <main>
-  <!--
-	<svg height=200 width=200>
-	<GraphNode task="null" />
-</svg>
--->
-  <TasksLoader promise={tasksPromise} let:data={t}>
-    <TaskPanel bind:finalSelect={finalSelect} selectedTask={selectedTask} />
-    <Graph tasks={t} bind:selectedTask={selectedTask} on:selectTask={clickTask} />
-  </TasksLoader>
+	{#if hash == "editor"}
+		<TasksLoader promise={tasksPromise} let:data={t}>
+			<Editor tasks={t} />
+		</TasksLoader>
+	{:else}
+	<TasksLoader promise={tasksPromise} let:data={t}>
+		<TaskPanel bind:finalSelect={finalSelect} selectedTask={selectedTask} />
+		<Graph tasks={t} bind:selectedTask={selectedTask} on:selectTask={clickTask} />
+	  </TasksLoader>
+	{/if}
 </main>

@@ -72,7 +72,7 @@ async function loadTask({ url, startElement }: TaskLocation) {
     return parseTask(startElement, rText)
 }
 
-export async function grabAssignment(id: string) {
+export async function grabAssignment(id: string): Promise<string> {
     const l = getLocation(id, false)
     if (!l) return "úloha je virtuální a neexistuje"
     return await loadTask(l)
