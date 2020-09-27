@@ -22,10 +22,21 @@ namespace Ksp.WebServer.Controllers
             this.logger = logger;
         }
 
+        string TasksJsonFile => Path.Combine(env.ContentRootPath, "../../tasks.json");
+
         [HttpGet]
         public IActionResult Get()
         {
-            return this.PhysicalFile(Path.Combine(env.ContentRootPath, "../../tasks.json"), "text/json");
+            return this.PhysicalFile(TasksJsonFile, "text/json");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post()
+        {
+            // TODO: auth org
+            using var rdr = new StreamReader(HttpContext.Request.Body);
+            await System.IO.File.WriteAllTextAsync(TasksJsonFile, await rdr.ReadToEndAsync());
+            return Ok();
         }
     }
 }
