@@ -55,7 +55,8 @@ namespace Ksp.WebServer.Controllers
             var innerBody = grafik.Body;
             innerBody.Replace(kspTemplate.Body);
             var page = grafik.Body.QuerySelector("#page");
-            page.Replace(innerBody.ChildNodes.ToArray());
+            page.InnerHtml = "";
+            page.AppendNodes(innerBody.ChildNodes.ToArray());
 
             foreach(var headElement in kspTemplate.Head.QuerySelectorAll("link, script"))
             {

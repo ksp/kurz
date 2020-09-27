@@ -41,7 +41,7 @@
           }) // This provide  the id of a node
           .links(edges) // and this the list of links
       )
-      .force("charge", d3.forceManyBody().strength(-500)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("x", d3.forceX()) // attracts elements to the zero X coord
       .force("y", d3.forceY()) // attracts elements to the zero Y coord
       .on("tick", ticked)
@@ -57,7 +57,7 @@
 
 <style>
   div {
-    height: 75vh;
+    height: 100vh;
     width: 100%;
   }
 </style>

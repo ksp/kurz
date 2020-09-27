@@ -28,7 +28,7 @@
 </script>
 
 <style>
-  :global(g):hover > ellipse {
+  g:hover > ellipse {
     fill: #ffb3a2
   }
   ellipse {
@@ -37,11 +37,7 @@
 </style>
 
 <g on:mouseenter={enter} on:mouseleave={leave}>
-  {#if !hovering}
-    <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
-  {:else}
-    <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
-  {/if}
+  <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
   <text
     bind:this={text_element}
     x={cx}

@@ -31,7 +31,6 @@
 </style>
 
 <main>
-  <h1>Cool graf</h1>
   <!--
 	<svg height=200 width=200>
 	<GraphNode task="null" />
