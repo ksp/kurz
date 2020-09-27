@@ -31,9 +31,9 @@ function getLocation(id: string, solution: boolean): TaskLocation {
     }
 }
 
-function parseTask(startElementId: string, html: string, contentType: DOMParserSupportedType): string {
+function parseTask(startElementId: string, html: string, contentType: string): string {
     const parser = new DOMParser()
-    const doc = parser.parseFromString(html, contentType)
+    const doc = parser.parseFromString(html, contentType as any)
 
     const titleElement = doc.getElementById(startElementId)
     if (!titleElement)
@@ -69,7 +69,7 @@ async function loadTask({ url, startElement }: TaskLocation) {
         throw Error("Bad request")
     }
     const rText = await r.text()
-    const contentType = r.headers.get("Content-Type") as DOMParserSupportedType || "text/html"
+    const contentType = r.headers.get("Content-Type") || "text/html"
     return parseTask(startElement, rText, contentType)
 }
 
