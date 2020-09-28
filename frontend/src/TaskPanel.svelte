@@ -32,7 +32,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
 
 <style>
     .panel {
-        position: absolute;
+        position: relative;
         width: 100%;
         background-color: #222;
         overflow: hidden;

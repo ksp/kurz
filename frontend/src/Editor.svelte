@@ -68,6 +68,8 @@
   .right {
     width: 40vw;
     height: 100%;
+    z-index: 20;
+    position: relative;
   }
 
   .left {
@@ -111,7 +113,7 @@
     <div class="toolbox">
       <div>Toolbox</div>
       <div>
-        <button on:click={addEdge}>Pridat hranu - posledni vyzaduje predposledni</button>
+        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2]} -&gt; {clicked[clicked.length - 1]}</button>
       </div>
       <div><button on:click={graph.runSimulation}>Spustit simulaci</button></div>
       <div>

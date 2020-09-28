@@ -98,8 +98,22 @@
 
 <style>
   div {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
+  :global(#header) {
+    z-index: 20
+  }
+  :global(#wrapper) {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
+  }
+  :global(#page) {
+    flex-grow: 1;
   }
 </style>
 
