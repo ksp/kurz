@@ -15,7 +15,11 @@
     finalSelect = true;
   }
 
-  const hash = window.location.hash.substr(1);
+  // react to hash changes
+  let hash = window.location.hash.substr(1);
+  window.onhashchange = () => {
+	hash = window.location.hash.substr(1);
+  }
 </script>
 
 <style>
