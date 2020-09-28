@@ -1,9 +1,8 @@
 <script lang="ts">
     import type { SimulationLinkDatum } from "d3";
+    import type { TaskId } from "./graph-types";
   
-    import type { TaskDescriptor } from "./task-loader";
-  
-    export let edge: SimulationLinkDatum<TaskDescriptor>;
+    export let edge: SimulationLinkDatum<TaskId>;
   
     $: x1 = edge === undefined || edge.source === undefined || edge.source.x === undefined ? 0 : edge.source.x;
     $: y1 = edge === undefined || edge.source === undefined || edge.source.y === undefined ? 0 : edge.source.y;

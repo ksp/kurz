@@ -3,8 +3,8 @@
   import GraphEdge from "./GraphEdge.svelte";
   import { createEventDispatcher, onMount } from "svelte";
   import * as d3 from "d3";
-  import { createLinksFromTaskMap } from "./task-loader";
   import type { TasksFile, TaskDescriptor } from "./task-loader";
+  import { createNodesAndEdges } from "./graph-types";
 
   export let tasks: TasksFile;
   let hoveredTask: null | string = null;
@@ -16,8 +16,17 @@
   let clientWidth: number;
   let svgElement: SVGElement;
 
-  $: nodes = tasks.tasks;
-  $: edges = createLinksFromTaskMap(tasks);
+  // this prevents svelte from updating nodes and edges
+  // when we update nodes and edges
+  let [nodes, edges] = createNodesAndEdges(tasks);
+  function hack() {
+    [nodes, edges] = createNodesAndEdges(tasks);
+    runSimulation();
+  }
+  $: {
+    tasks;
+    hack();
+  }
 
   const eventDispatcher = createEventDispatcher();
 
@@ -32,9 +41,8 @@
       hoveredTask = task.id;
       eventDispatcher("preSelectTask", task);
     } else {
-      if (hoveredTask == task.id)
-        hoveredTask = null;
-        eventDispatcher("unPreSelectTask", task);
+      if (hoveredTask == task.id) hoveredTask = null;
+      eventDispatcher("unPreSelectTask", task);
     }
   };
 
@@ -83,6 +91,8 @@
     }
     let zoomer = d3.zoom().scaleExtent([0.1, 2]).on("zoom", zoomed);
     d3.select(container).call(zoomer);
+
+    runSimulation();
   });
 </script>
 
@@ -92,6 +102,8 @@
     width: 100%;
   }
 </style>
+
+{@debug tasks}
 
 <div bind:this={container} bind:clientHeight bind:clientWidth>
   <svg bind:this={svgElement}>
@@ -103,8 +115,8 @@
         <GraphNode
           {task}
           on:taskClick
-          on:click={nodeClick(task)}
-          on:hoveringChange={nodeHover(task)} />
+          on:click={nodeClick(task.task)}
+          on:hoveringChange={nodeHover(task.task)} />
       {/each}
     </g>
   </svg>

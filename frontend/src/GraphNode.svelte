@@ -1,8 +1,9 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from "svelte";
-  import type { TaskDescriptor } from "./task-loader";
+  import type { TaskId } from "./graph-types";
 
-  export let task: TaskDescriptor;
+
+  export let task: TaskId;
   let hovering: boolean = false;
   let text_element: SVGTextElement;
 

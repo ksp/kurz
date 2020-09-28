@@ -4,8 +4,7 @@ export type TaskDescriptor = {
     id: string
     requires: string[]
     comment?: string
-} & SimulationNodeDatum
-
+}
 
 export type TasksFile = {
     tasks: TaskDescriptor[]
@@ -42,25 +41,6 @@ export function createTaskMap(tasks: TasksFile): TaskMap {
     }
 
     return m;
-}
-
-export function createLinksFromTaskMap(tasks: TasksFile): SimulationLinkDatum<TaskDescriptor>[] {
-    let links: SimulationLinkDatum<TaskDescriptor>[] = [];
-
-    const taskMap = createTaskMap(tasks);
-
-    for (const task of tasks.tasks) {
-        for (const id of task.requires) {
-            const t = taskMap.get(id);
-
-            if (t === undefined) throw `missing task with id ${id}`;
-
-            const l: SimulationLinkDatum<TaskDescriptor> = { source: t, target: task };
-            links.push(l);
-        }
-    }
-
-    return links;
 }
 
 export function getCategories(tasks: TasksFile, taskId: string): string[] {
