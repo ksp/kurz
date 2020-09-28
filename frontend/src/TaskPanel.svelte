@@ -38,6 +38,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
         overflow: hidden;
         padding: 0 100px 0 100px;
         box-sizing: border-box;
+        z-index: 120;
     }
     .panel.collapsed:not(:hover) {
         display: none;
@@ -54,7 +55,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
 
 <div class="panel {heightClass}"
      on:click={() => selectedTask && select(selectedTask)}>
-    <TaskDisplay task={selectedTask?.id} />
+    <TaskDisplay taskId={selectedTask?.id} />
     <button type=button class="closeButton" on:click|stopPropagation={() => heightClass = "collapsed"}>
         Zavřít
     </button>

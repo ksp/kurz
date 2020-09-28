@@ -1,7 +1,14 @@
 <script type="ts">
-    import { grabAssignment } from "./ksp-task-grabber";
+    import { grabAssignment, grabSolution } from "./ksp-task-grabber";
     import { nonNull } from './helpers'
-    export let task: string | null | undefined
+import App from "./App.svelte";
+    export let taskId: string | null | undefined
+
+    export let showSolution: boolean = false
+    $: {
+        taskId
+        showSolution = false
+    }
 </script>
 <style>
     div {
@@ -10,14 +17,29 @@
 </style>
 
 <div>
-    {#if task != null}
-    {#await grabAssignment(nonNull(task))}
+    {#if taskId != null}
+    {#await grabAssignment(nonNull(taskId))}
         Načítám úlohu
     {:then task}
         {@html task.titleHtml}
-        <hr>
         {@html task.description}
         <div class="clearfloat" />
+
+        <div class="solution">
+            {#if !showSolution}
+            <a href="javasctipt:;"
+               on:click|preventDefault|stopPropagation={() => showSolution = true}>
+                Zobrazit řešení úlohy
+            </a>
+            {:else}
+            <h4>Řešení</h4>
+            {#await grabSolution(nonNull(taskId))}
+                Načítám...
+            {:then solution}
+                {@html solution.description}
+            {/await}
+            {/if}
+        </div>
     {/await}
     {/if}
 </div>

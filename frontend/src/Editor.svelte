@@ -153,7 +153,7 @@
             <li>{cat}</li>
           {/each}
         </ul>
-        <TaskDisplay task={currentTask} />
+        <TaskDisplay taskId={currentTask} />
       {:else}
         <h3>Nothing selected...</h3>
       {/if}
