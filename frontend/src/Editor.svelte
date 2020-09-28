@@ -51,16 +51,13 @@
       tasks = tasks;
 
       // run simulation
-      toggleDivnaPromena();
+      graph.runSimulation()
     } else {
       alert("Nope, prvni musis nekam klikat...");
     }
   }
 
-  let hovnoDivnaPromenaKteraJeFaktFuj = true;
-  function toggleDivnaPromena() {
-    hovnoDivnaPromenaKteraJeFaktFuj = !hovnoDivnaPromenaKteraJeFaktFuj;
-  }
+  let graph: Graph
 
   async function saveCurrentState() {
     await saveTasks(tasks);
@@ -127,7 +124,7 @@
         {repulsionForce}
         bind:selectedTask
         on:selectTask={clickTask}
-        runSimulationWeirdHack={hovnoDivnaPromenaKteraJeFaktFuj} />
+        bind:this={graph} />
     </div>
   </div>
   <div class="right">

@@ -38,7 +38,7 @@
     }
   };
 
-  function runSimulation() {
+  export function runSimulation() {
     // Let's list the force we wanna apply on the network
     let simulation = d3
       .forceSimulation(nodes) // Force algorithm is applied to data.nodes
@@ -84,14 +84,6 @@
     let zoomer = d3.zoom().scaleExtent([0.1, 2]).on("zoom", zoomed);
     d3.select(container).call(zoomer);
   });
-
-  // don't forget to vomit 🤮🤢
-  export let runSimulationWeirdHack: boolean = false;
-  $: {
-    runSimulationWeirdHack;
-    runSimulation();
-  }
-  // now it's safe to stop vomitting 🤮
 </script>
 
 <style>
