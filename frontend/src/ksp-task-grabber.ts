@@ -1,8 +1,9 @@
 export type TaskAssignmentData = {
     id: string,
     name: string,
-    points: number,
-    description: HTMLElement
+    points: number | null,
+    description: string,
+    titleHtml: string
 }
 
 type TaskLocation = {
@@ -31,7 +32,7 @@ function getLocation(id: string, solution: boolean): TaskLocation | null {
     }
 }
 
-function parseTask(startElementId: string, html: string): string {
+function parseTask(startElementId: string, html: string): TaskAssignmentData {
     const parser = new DOMParser()
     const doc = parser.parseFromString(html, "text/html")
 
@@ -41,6 +42,13 @@ function parseTask(startElementId: string, html: string): string {
     const elements = []
 
     let e = titleElement
+
+    const titleMatch = /(\d-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?/.exec(e.innerText.trim())
+    if (!titleMatch) {
+        var [_, id, name, _, points] = ["", startElementId, "Neznámé jméno úlohy", "", ""]
+    } else {
+        var [_, id, name, _, points] = titleMatch
+    }
 
     while (e.nextElementSibling &&
            e.nextElementSibling?.tagName.toLowerCase() == "hr")
@@ -60,7 +68,13 @@ function parseTask(startElementId: string, html: string): string {
     let r = ""
     for (const e of elements)
         r += e.outerHTML + "\n"
-    return r
+    return {
+        description: r,
+        id: id.trim(),
+        name: name.trim(),
+        points: points ? +points : null,
+        titleHtml: titleElement.outerHTML
+    }
 }
 
 async function loadTask({ url, startElement }: TaskLocation) {
@@ -72,14 +86,24 @@ async function loadTask({ url, startElement }: TaskLocation) {
     return parseTask(startElement, rText)
 }
 
-export async function grabAssignment(id: string): Promise<string> {
+function virtualTask(id: string): TaskAssignmentData {
+    return {
+        id,
+        description: "úloha je virtuální a neexistuje",
+        name: id,
+        points: 0,
+        titleHtml: "<h3>Virtuální úloha</h3>"
+    }
+}
+
+export async function grabAssignment(id: string): Promise<TaskAssignmentData> {
     const l = getLocation(id, false)
-    if (!l) return "úloha je virtuální a neexistuje"
+    if (!l) return virtualTask(id)
     return await loadTask(l)
 }
 
-export async function grabSolution(id: string) {
+export async function grabSolution(id: string): Promise<TaskAssignmentData> {
     const l = getLocation(id, true)
-    if (!l) return "úloha je virtuální a neexistuje"
+    if (!l) return virtualTask(id)
     return await loadTask(l)
 }

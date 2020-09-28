@@ -7,7 +7,7 @@
   import type { TasksFile, TaskDescriptor } from "./task-loader";
 
   export let tasks: TasksFile;
-  export let selectedTask: null | string = null;
+  let hoveredTask: null | string = null;
   export let repulsionForce: number = -600;
 
   // Svelte automatically fills these with a reference
@@ -22,7 +22,6 @@
   const eventDispatcher = createEventDispatcher();
 
   const nodeClick = (task: TaskDescriptor) => (e: CustomEvent<MouseEvent>) => {
-    selectedTask = task.id;
     eventDispatcher("selectTask", task);
   };
 
@@ -30,9 +29,12 @@
     hovering: CustomEvent<boolean>
   ) => {
     if (hovering.detail) {
-      selectedTask = task.id;
+      hoveredTask = task.id;
+      eventDispatcher("preSelectTask", task);
     } else {
-      if (selectedTask == task.id) selectedTask = null;
+      if (hoveredTask == task.id)
+        hoveredTask = null;
+        eventDispatcher("unPreSelectTask", task);
     }
   };
 

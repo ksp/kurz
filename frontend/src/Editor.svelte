@@ -1,8 +1,10 @@
 <script type="ts">
   import Graph from "./Graph.svelte";
+  import { nonNull } from "./helpers";
   import { grabAssignment } from "./ksp-task-grabber";
   import type { TaskDescriptor, TasksFile } from "./task-loader";
   import { saveTasks, createTaskMap, getCategories } from "./task-loader";
+  import TaskDisplay from "./TaskDisplay.svelte";
 
   export let tasks: TasksFile;
 
@@ -145,19 +147,13 @@
     <div class="taskDetails">
       {#if currentTask != null}
         <h3>{currentTask}</h3>
-        <span>{taskMap.get(currentTask).comment}</span>
+        <span>{nonNull(taskMap.get(currentTask)).comment}</span>
         <ul>
           {#each getCategories(tasks, currentTask) as cat}
             <li>{cat}</li>
           {/each}
         </ul>
-        <div>
-          {#await grabAssignment(currentTask)}
-            Loading...
-          {:then text}
-            {@html text}
-          {/await}
-        </div>
+        <TaskDisplay task={currentTask} />
       {:else}
         <h3>Nothing selected...</h3>
       {/if}

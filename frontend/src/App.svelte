@@ -5,15 +5,12 @@
   import TasksLoader from "./TasksLoader.svelte";
   import TaskPanel from "./TaskPanel.svelte";
   import Editor from "./Editor.svelte";
+import GraphEdge from "./GraphEdge.svelte";
+import type { detach } from "svelte/internal";
 
   const tasksPromise: Promise<TasksFile> = loadTasks();
 
-  let selectedTask: string | null = null;
-  let finalSelect: boolean = false;
-
-  function clickTask(e: CustomEvent<TaskDescriptor>) {
-    finalSelect = true;
-  }
+  let taskPanel: TaskPanel
 
   // react to hash changes
   let hash = window.location.hash.substr(1);
@@ -51,9 +48,12 @@
     </TasksLoader>
   {:else}
     <TasksLoader promise={tasksPromise} let:data={t}>
-      <TaskPanel bind:finalSelect {selectedTask} />
+      <TaskPanel bind:this={taskPanel} />
       <div style="height: 100%">
-        <Graph tasks={t} bind:selectedTask on:selectTask={clickTask} />
+        <Graph tasks={t}
+               on:selectTask={e => taskPanel.select(e.detail)}
+               on:preSelectTask={e => taskPanel.preSelect(e.detail)}
+               on:unPreSelectTask={e => taskPanel.unPreselect(e.detail)} />
       </div>
     </TasksLoader>
   {/if}
