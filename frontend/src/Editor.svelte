@@ -7,7 +7,7 @@
 
   export let tasks: TasksFile;
 
-  let repulsionForce: number = -600;
+  let repulsionForce: number = -1000;
   let clicked: string[] = [];
   let graph: Graph;
   let currentTask: TaskDescriptor | null = null;

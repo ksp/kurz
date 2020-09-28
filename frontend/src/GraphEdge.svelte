@@ -10,5 +10,8 @@
     $: y2 = edge === undefined || edge.target === undefined || edge.target.y === undefined ? 0 : edge.target.y;
 </script>
   
- <line {x1} {x2} {y1} {y2} style="stroke: #aaa" />
+ <line x1={x1+10} y1={y1} {x2} {y2} style="stroke: #aaa" />
+ <line x1={x1} y1={y1+10} {x2} {y2} style="stroke: #aaa" />
+ <line x1={x1-10} y1={y1} {x2} {y2} style="stroke: #aaa" />
+ <line x1={x1} y1={y1-10} {x2} {y2} style="stroke: #aaa" />
   

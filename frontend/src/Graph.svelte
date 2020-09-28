@@ -5,10 +5,11 @@
   import * as d3 from "d3";
   import type { TasksFile, TaskDescriptor } from "./task-loader";
   import { createNodesAndEdges } from "./graph-types";
+  import { taskForce } from "./task-force";
 
   export let tasks: TasksFile;
   let hoveredTask: null | string = null;
-  export let repulsionForce: number = -600;
+  export let repulsionForce: number = -1000;
 
   // Svelte automatically fills these with a reference
   let container: HTMLElement;
@@ -61,7 +62,8 @@
       )
       .force("charge", d3.forceManyBody().strength(repulsionForce)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("x", d3.forceX()) // attracts elements to the zero X coord
-      .force("y", d3.forceY()) // attracts elements to the zero Y coord
+      .force("y", d3.forceY().strength(0.5)) // attracts elements to the zero Y coord
+      .force("dependencies", taskForce())
       .on("tick", ticked)
       .on("end", ticked);
 
