@@ -2,7 +2,7 @@
   import Graph from "./Graph.svelte";
   import { grabAssignment } from "./ksp-task-grabber";
   import type { TaskDescriptor, TasksFile } from "./task-loader";
-  import { createTaskMap, getCategories } from "./task-loader";
+  import { saveTasks, createTaskMap, getCategories } from "./task-loader";
 
   export let tasks: TasksFile;
 
@@ -58,6 +58,10 @@
   let hovnoDivnaPromenaKteraJeFaktFuj = true;
   function toggleDivnaPromena() {
     hovnoDivnaPromenaKteraJeFaktFuj = !hovnoDivnaPromenaKteraJeFaktFuj;
+  }
+
+  async function saveCurrentState() {
+    await saveTasks(tasks);
   }
 </script>
 
@@ -132,6 +136,9 @@
       <div><button on:click={toggleDivnaPromena}>Spustit simulaci</button></div>
       <div>
         Repulsion force: <input type="number" bind:value={repulsionForce} name="repulsionForceInput" max="1000" min="-10000" />
+      </div>
+      <div>
+        <button on:click={saveCurrentState}>Uložit aktuální stav</button>
       </div>
     </div>
     <div class="taskDetails">

@@ -1,4 +1,4 @@
-import type { SimulationNodeDatum, SimulationLinkDatum } from "d3"; 
+import type { SimulationNodeDatum, SimulationLinkDatum } from "d3";
 
 export type TaskDescriptor = {
     id: string
@@ -17,6 +17,19 @@ export type TaskMap = Map<string, TaskDescriptor>;
 export async function loadTasks(): Promise<TasksFile> {
     const r = await fetch("/tasks.json")
     return await r.json()
+}
+
+export async function saveTasks(tasks: TasksFile) {
+    // request options
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(tasks, null, 4),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    fetch("/tasks.json", options)
 }
 
 export function createTaskMap(tasks: TasksFile): TaskMap {
@@ -42,7 +55,7 @@ export function createLinksFromTaskMap(tasks: TasksFile): SimulationLinkDatum<Ta
 
             if (t === undefined) throw `missing task with id ${id}`;
 
-            const l: SimulationLinkDatum<TaskDescriptor> = {source: t, target: task};
+            const l: SimulationLinkDatum<TaskDescriptor> = { source: t, target: task };
             links.push(l);
         }
     }
