@@ -6,6 +6,7 @@
   import type { TasksFile, TaskDescriptor } from "./task-loader";
   import { createNodesAndEdges } from "./graph-types";
   import { taskForce } from "./task-force";
+  import { zoom } from "d3";
 
   export let tasks: TasksFile;
   let hoveredTask: null | string = null;
@@ -73,17 +74,22 @@
       nodes = nodes;
     }
   }
+  const zoomer = d3.zoom().scaleExtent([0.1, 2])
+
+  $: {
+    // zoomer.extent([[-clientWidth / 2,-clientHeight / 2],[clientWidth,clientHeight]])
+  }
 
   // start simulation and center view on create
   onMount(() => {
     // set center of the SVG at (0,0)
-    let svg = d3.select(svgElement)
+    let svg = d3.select(svgElement).select("g")
 
     // setup zoom
     function zoomed(e) {
       svg.attr("transform", e.transform);
     }
-    let zoomer = d3.zoom().scaleExtent([0.1, 2]).on("zoom", zoomed);
+    zoomer.on("zoom", zoomed);
     d3.select(container).call(zoomer);
 
     runSimulation();
@@ -112,18 +118,20 @@
 </style>
 
 <div bind:this={container} bind:clientHeight bind:clientWidth>
-  <svg bind:this={svgElement} viewBox="{-clientWidth / 2},{-clientHeight / 2},{clientWidth},{clientHeight}">
+  <svg bind:this={svgElement} viewBox="{0},{0},{clientWidth},{clientHeight}" on:click={e => console.log(d3.pointer(e))}>
     <g>
-      {#each edges as edge}
-        <GraphEdge {edge} />
-      {/each}
-      {#each nodes as task}
-        <GraphNode
-          {task}
-          on:taskClick
-          on:click={nodeClick(task.task)}
-          on:hoveringChange={nodeHover(task.task)} />
-      {/each}
+      <g transform="translate({clientWidth/2}, {clientHeight/2})">
+        {#each edges as edge}
+          <GraphEdge {edge} />
+        {/each}
+        {#each nodes as task}
+          <GraphNode
+            {task}
+            on:taskClick
+            on:click={nodeClick(task.task)}
+            on:hoveringChange={nodeHover(task.task)} />
+        {/each}
+      </g>
     </g>
   </svg>
 </div>
