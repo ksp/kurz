@@ -8,10 +8,16 @@
 
   let selectedTask: string | null = null;
   let clickedTask: string | null = null;
-
+  let repulsionForce: number = -600;
   let clicked: string[] = [];
 
   function clickTask(e: CustomEvent<TaskDescriptor>) {
+    // sanity check
+    if (selectedTask == null) {
+      alert("tohle je divny event");
+      return;
+    }
+
     // ukladani seznamu poslednich kliknuti
     clicked.push(selectedTask);
     if (clicked.length > 3)
@@ -41,6 +47,9 @@
         }
       });
       tasks = tasks;
+
+      // run simulation
+      toggleDivnaPromena();
     } else {
       alert("Nope, prvni musis nekam klikat...");
     }
@@ -48,7 +57,7 @@
 
   let hovnoDivnaPromenaKteraJeFaktFuj = true;
   function toggleDivnaPromena() {
-      hovnoDivnaPromenaKteraJeFaktFuj = ! hovnoDivnaPromenaKteraJeFaktFuj;
+    hovnoDivnaPromenaKteraJeFaktFuj = !hovnoDivnaPromenaKteraJeFaktFuj;
   }
 </script>
 
@@ -62,7 +71,7 @@
     display: flex;
     flex-direction: row;
     margin: 0;
-    height: 100vh;
+    height: 99vh;
     width: 100%;
   }
 
@@ -106,7 +115,12 @@
   <div class="left">
     <div class="lastClicked">Last clicked: <b>{clicked.join(' | ')}</b></div>
     <div class="graph">
-      <Graph {tasks} bind:selectedTask on:selectTask={clickTask} runSimulationWeirdHack={hovnoDivnaPromenaKteraJeFaktFuj} />
+      <Graph
+        {tasks}
+        {repulsionForce}
+        bind:selectedTask
+        on:selectTask={clickTask}
+        runSimulationWeirdHack={hovnoDivnaPromenaKteraJeFaktFuj} />
     </div>
   </div>
   <div class="right">
@@ -115,12 +129,14 @@
       <div>
         <button on:click={addEdge}>Pridat hranu - posledni vyzaduje predposledni</button>
       </div>
+      <div><button on:click={toggleDivnaPromena}>Spustit simulaci</button></div>
       <div>
-        <button on:click={toggleDivnaPromena}>Spustit simulaci</button>
+        Repulsion force: <input type="number" bind:value={repulsionForce} name="repulsionForceInput" max="1000" min="-10000" />
       </div>
     </div>
     <div class="taskDetails">
       {#if currentTask != null}
+        start
         <h3>{currentTask}</h3>
         <span>{taskMap.get(currentTask).comment}</span>
         <ul>

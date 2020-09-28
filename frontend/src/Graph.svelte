@@ -10,6 +10,7 @@
 
   export let tasks: TasksFile;
   export let selectedTask: null | string = null;
+  export let repulsionForce: number = -600;
 
   $: nodes = tasks.tasks;
   $: edges = createLinksFromTaskMap(tasks);
@@ -45,7 +46,7 @@
           }) // This provide  the id of a node
           .links(edges) // and this the list of links
       )
-      .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(repulsionForce)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("x", d3.forceX()) // attracts elements to the zero X coord
       .force("y", d3.forceY()) // attracts elements to the zero Y coord
       .on("tick", ticked)
@@ -61,19 +62,29 @@
   // run on create
   onMount(() => {
     // set the dimensions and margins of the graph
-    var margin = { top: 10, right: 30, bottom: 30, left: 40 },
-      width = container.clientWidth - margin.left - margin.right,
-      height = container.clientHeight - margin.top - margin.bottom;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
 
     // resize the svg object
     var svg = d3
       .select(container)
       .select("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("width", width)
+      .attr("height", height)
       .attr("viewBox", [-width / 2, -height / 2, width, height])
-      .select("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .select("g");
+
+    function zoomed(e) {
+      let { transform } = e;
+      svg.attr("transform", transform);
+    }
+
+    d3.select(container).call(
+      d3
+        .zoom()
+        .scaleExtent([0.1, 2])
+        .on("zoom", zoomed)
+    );
 
     runSimulation();
   });
@@ -85,7 +96,6 @@
     runSimulation();
   }
   // now it's safe to stop vomitting 🤮
-
 </script>
 
 <style>
@@ -104,6 +114,7 @@
       {#each nodes as task}
         <GraphNode
           {task}
+          on:taskClick
           on:click={nodeClick(task)}
           on:hoveringChange={nodeHover(task)} />
       {/each}

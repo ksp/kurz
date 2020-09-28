@@ -1,7 +1,5 @@
 <script lang="ts">
     import type { SimulationLinkDatum } from "d3";
-
-    import { onMount } from "svelte";
   
     import type { TaskDescriptor } from "./task-loader";
   

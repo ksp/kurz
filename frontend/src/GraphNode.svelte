@@ -1,17 +1,15 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from "svelte";
-
   import type { TaskDescriptor } from "./task-loader";
 
   export let task: TaskDescriptor;
   let hovering: boolean = false;
   let text_element: SVGTextElement;
 
-  const eventDispatcher = createEventDispatcher()
-
   $: cx = task === undefined || task.x === undefined ? 0 : task.x;
   $: cy = task === undefined || task.y === undefined ? 0 : task.y;
-
+  
+  const eventDispatcher = createEventDispatcher()
   function enter() {
     hovering = true;
     eventDispatcher("hoveringChange", hovering)
@@ -26,6 +24,7 @@
     eventDispatcher("click", e)
   }
 
+  // automatically size the bubbles to fit the text
   let ellipse_rx = 20;
   let ellipse_ry = 20;
   onMount(() => {
