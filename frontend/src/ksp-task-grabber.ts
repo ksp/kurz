@@ -13,6 +13,32 @@ type TaskLocation = {
     startElement: string
 }
 
+function fixLink(link: string, currentPath: string): string {
+    const url = new URL(link, currentPath)
+    if (url.host == "ksp.mff.cuni.cz" || url.host == "ksp-test.ks.matfyz.cz") {
+        url.host = location.host
+    }
+    if (url.host == location.host) {
+        return url.pathname
+    } else {
+        return url.href
+    }
+}
+
+function fixAllLinks(e: any, currentPath: string) {
+    if (typeof e.src == "string") {
+        e.src = e.src
+    }
+    if (typeof e.href == "string") {
+        e.href = e.href
+    }
+    let c = (e as HTMLElement).firstElementChild
+    while (c) {
+        fixAllLinks(c, currentPath)
+        c = c.nextElementSibling
+    }
+}
+
 function getLocation(id: string, solution: boolean): TaskLocation | null {
     const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
     if (!m) return null
@@ -32,13 +58,19 @@ function getLocation(id: string, solution: boolean): TaskLocation | null {
     }
 }
 
-function parseTask(startElementId: string, html: string): TaskAssignmentData {
+function parseTask(startElementId: string, html: string, currentPath: string): TaskAssignmentData {
     const parser = new DOMParser()
     const doc = parser.parseFromString(html, "text/html")
+    if (!doc.head.querySelector("base")) {
+        let baseEl = doc.createElement('base');
+        baseEl.setAttribute('href', new URL(currentPath, location.href).href);
+        doc.head.append(baseEl);
+    }
 
     const titleElement = doc.getElementById(startElementId)
     if (!titleElement)
         throw new Error(`Document does not contain ${startElementId}`)
+    fixAllLinks(titleElement, currentPath)
     const elements = []
 
     let e = titleElement
@@ -66,8 +98,10 @@ function parseTask(startElementId: string, html: string): TaskAssignmentData {
     }
 
     let r = ""
-    for (const e of elements)
+    for (const e of elements) {
+        fixAllLinks(e, currentPath)
         r += e.outerHTML + "\n"
+    }
     return {
         description: r,
         id: id.trim(),
@@ -83,7 +117,7 @@ async function loadTask({ url, startElement }: TaskLocation) {
         throw Error("Bad request")
     }
     const rText = await r.text()
-    return parseTask(startElement, rText)
+    return parseTask(startElement, rText, url)
 }
 
 function virtualTask(id: string): TaskAssignmentData {
