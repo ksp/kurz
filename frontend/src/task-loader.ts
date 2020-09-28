@@ -29,7 +29,7 @@ export async function saveTasks(tasks: TasksFile) {
         }
     }
 
-    fetch("/tasks.json", options)
+    await fetch("/tasks.json", options)
 }
 
 export function createTaskMap(tasks: TasksFile): TaskMap {
