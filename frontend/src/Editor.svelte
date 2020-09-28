@@ -108,6 +108,7 @@
     margin: 0;
     height: 50%;
     background-color: aqua;
+    overflow-y: auto;
   }
 
   .lastClicked {
@@ -143,7 +144,6 @@
     </div>
     <div class="taskDetails">
       {#if currentTask != null}
-        start
         <h3>{currentTask}</h3>
         <span>{taskMap.get(currentTask).comment}</span>
         <ul>

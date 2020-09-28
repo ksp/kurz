@@ -6,14 +6,20 @@
   import { createLinksFromTaskMap } from "./task-loader";
   import type { TasksFile, TaskDescriptor } from "./task-loader";
 
-  const eventDispatcher = createEventDispatcher();
-
   export let tasks: TasksFile;
   export let selectedTask: null | string = null;
   export let repulsionForce: number = -600;
 
+  // Svelte automatically fills these with a reference
+  let container: HTMLElement;
+  let clientHeight: number;
+  let clientWidth: number;
+  let svgElement: SVGElement;
+
   $: nodes = tasks.tasks;
   $: edges = createLinksFromTaskMap(tasks);
+
+  const eventDispatcher = createEventDispatcher();
 
   const nodeClick = (task: TaskDescriptor) => (e: CustomEvent<MouseEvent>) => {
     selectedTask = task.id;
@@ -29,9 +35,6 @@
       if (selectedTask == task.id) selectedTask = null;
     }
   };
-
-  // Svelte automatically fills this with a reference
-  let container: HTMLElement;
 
   function runSimulation() {
     // Let's list the force we wanna apply on the network
@@ -59,38 +62,29 @@
     }
   }
 
-  // run on create
+  // start simulation and center view on create
   onMount(() => {
-    // set the dimensions and margins of the graph
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-
-    // resize the svg object
-    var svg = d3
-      .select(container)
-      .select("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [-width / 2, -height / 2, width, height])
+    // set center of the SVG at (0,0)
+    let svg = d3
+      .select(svgElement)
+      .attr("viewBox", [
+        -clientWidth / 2,
+        -clientHeight / 2,
+        clientWidth,
+        clientHeight,
+      ])
       .select("g");
 
+    // setup zoom
     function zoomed(e) {
-      let { transform } = e;
-      svg.attr("transform", transform);
+      svg.attr("transform", e.transform);
     }
-
-    d3.select(container).call(
-      d3
-        .zoom()
-        .scaleExtent([0.1, 2])
-        .on("zoom", zoomed)
-    );
-
-    runSimulation();
+    let zoomer = d3.zoom().scaleExtent([0.1, 2]).on("zoom", zoomed);
+    d3.select(container).call(zoomer);
   });
 
   // don't forget to vomit 🤮🤢
-  export let runSimulationWeirdHack: boolean = true;
+  export let runSimulationWeirdHack: boolean = false;
   $: {
     runSimulationWeirdHack;
     runSimulation();
@@ -105,8 +99,8 @@
   }
 </style>
 
-<div bind:this={container}>
-  <svg>
+<div bind:this={container} bind:clientHeight bind:clientWidth>
+  <svg bind:this={svgElement}>
     <g>
       {#each edges as edge}
         <GraphEdge {edge} />
