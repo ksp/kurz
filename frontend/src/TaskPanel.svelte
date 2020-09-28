@@ -1,5 +1,6 @@
 <script lang="ts">
     import { grabAssignment } from "./ksp-task-grabber";
+    import type { TaskAssignmentData } from "./ksp-task-grabber";
     import type { TasksFile, TaskDescriptor } from "./task-loader";
 import TaskDisplay from "./TaskDisplay.svelte";
 
@@ -7,9 +8,6 @@ import TaskDisplay from "./TaskDisplay.svelte";
     let selectedTask: TaskDescriptor | null = null
 
     let heightClass: "collapsed" | "full" | "preview" = "collapsed"
-
-    let taskPromise: Promise<string | null>
-
 
     export function preSelect(task: TaskDescriptor) {
         if (heightClass != "full") {
@@ -30,20 +28,16 @@ import TaskDisplay from "./TaskDisplay.svelte";
         selectedTask = task
         heightClass = "full"
     }
-
-    $: {
-        if (selectedTask != null)
-            taskPromise = grabAssignment(selectedTask.id)
-    }
 </script>
 
 <style>
     .panel {
         position: absolute;
-        width: calc(100%-200px);
+        width: 100%;
         background-color: #222;
         overflow: hidden;
         padding: 0 100px 0 100px;
+        box-sizing: border-box;
     }
     .panel.collapsed:not(:hover) {
         display: none;
