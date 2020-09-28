@@ -75,15 +75,7 @@
   // start simulation and center view on create
   onMount(() => {
     // set center of the SVG at (0,0)
-    let svg = d3
-      .select(svgElement)
-      .attr("viewBox", [
-        -clientWidth / 2,
-        -clientHeight / 2,
-        clientWidth,
-        clientHeight,
-      ])
-      .select("g");
+    let svg = d3.select(svgElement)
 
     // setup zoom
     function zoomed(e) {
@@ -118,7 +110,7 @@
 </style>
 
 <div bind:this={container} bind:clientHeight bind:clientWidth>
-  <svg bind:this={svgElement}>
+  <svg bind:this={svgElement} viewBox="{-clientWidth / 2},{-clientHeight / 2},{clientWidth},{clientHeight}">
     <g>
       {#each edges as edge}
         <GraphEdge {edge} />
