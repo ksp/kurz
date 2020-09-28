@@ -20,7 +20,7 @@
   // when we update nodes and edges
   let [nodes, edges] = createNodesAndEdges(tasks);
   function hack() {
-    [nodes, edges] = createNodesAndEdges(tasks);
+    [nodes, edges] = createNodesAndEdges(tasks, nodes, edges);
     runSimulation();
   }
   $: {
@@ -102,8 +102,6 @@
     width: 100%;
   }
 </style>
-
-{@debug tasks}
 
 <div bind:this={container} bind:clientHeight bind:clientWidth>
   <svg bind:this={svgElement}>
