@@ -77,9 +77,9 @@ function parseTask(startElementId: string, html: string, currentPath: string): T
 
     const titleMatch = /(\d-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?/.exec(e.innerText.trim())
     if (!titleMatch) {
-        var [_, id, name, _, points] = ["", startElementId, "Neznámé jméno úlohy", "", ""]
+        var [_, id, name, __, points] = ["", startElementId, "Neznámé jméno úlohy", "", ""]
     } else {
-        var [_, id, name, _, points] = titleMatch
+        var [_, id, name, __, points] = titleMatch
     }
 
     while (e.nextElementSibling &&
