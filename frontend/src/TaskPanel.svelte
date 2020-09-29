@@ -4,8 +4,9 @@
     import type { TasksFile, TaskDescriptor } from "./task-loader";
 import TaskDisplay from "./TaskDisplay.svelte";
 
-    // export let tasks: TasksFile;
+    export let tasks: TasksFile;
     let selectedTask: TaskDescriptor | null = null
+    export let selectedTaskId: string | null = null
 
     let heightClass: "collapsed" | "full" | "preview" = "collapsed"
 
@@ -24,12 +25,17 @@ import TaskDisplay from "./TaskDisplay.svelte";
         }, 10);
     }
 
-    export function select(task: TaskDescriptor) {
-        selectedTask = task
-        heightClass = "full"
+    $: {
+        if (selectedTaskId) {
+            heightClass = "full"
+            selectedTask = tasks.tasks.find(t => t.id == selectedTaskId) ?? null
+        } else {
+            heightClass = "collapsed"
+        }
     }
 
     function close() {
+        location.hash = ""
         heightClass = "collapsed"
         window.setTimeout(() => window.scrollTo({
             top: 0,
@@ -81,7 +87,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
 </style>
 
 <div class="panel {heightClass}"
-     on:click={() => selectedTask && select(selectedTask)}>
+     on:click={() => location.hash = `#task/${selectedTask?.id}`}>
     <TaskDisplay taskId={selectedTask?.id} />
     <button type=button class="closeButton" on:click|stopPropagation={close}></button>
 </div>
