@@ -28,18 +28,33 @@ import TaskDisplay from "./TaskDisplay.svelte";
         selectedTask = task
         heightClass = "full"
     }
+
+    function close() {
+        heightClass = "collapsed"
+        window.setTimeout(() => window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        }), 100)
+    }
 </script>
 
 <style>
     .panel {
         position: relative;
-        width: 100%;
+        width: calc(min(100%, 100vw - 16px));
         background-color: #222;
         overflow: hidden;
         padding: 0 100px 0 100px;
         box-sizing: border-box;
         z-index: 120;
     }
+    @media only screen and (max-width: 600px) {
+        .panel {
+            padding: 0 10px 10px 10px;
+        }
+    }
+
     .panel.collapsed:not(:hover) {
         display: none;
     }
@@ -56,7 +71,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
 <div class="panel {heightClass}"
      on:click={() => selectedTask && select(selectedTask)}>
     <TaskDisplay taskId={selectedTask?.id} />
-    <button type=button class="closeButton" on:click|stopPropagation={() => heightClass = "collapsed"}>
+    <button type=button class="closeButton" on:click|stopPropagation={close}>
         Zavřít
     </button>
 </div>
