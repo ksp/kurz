@@ -158,52 +158,62 @@
             "requires": []
         },
         {
-            "id": "29-Z3-2","type": "open-data",
+            "id": "29-Z3-2",
+            "type": "open-data",
             "comment": "Písemka z angličtiny — voser implementovat, easy dřevorubecký řešení, optimálně trie, což na Z IMHO hard",
             "requires": []
         },
         {
-            "id": "26-Z1-4","type": "open-data",
+            "id": "26-Z1-4",
+            "type": "open-data",
             "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
             "requires": []
         },
         {
-            "id": "26-Z4-4","type": "open-data",
+            "id": "26-Z4-4",
+            "type": "open-data",
             "comment": "Hlídači v labyrintu - policajti hlídající na grafu, konkrétně na stromě, rekurze, technicky asi až DP",
             "requires": []
         },
         {
-            "id": "26-Z3-4","type": "open-data",
+            "id": "26-Z3-4",
+            "type": "open-data",
             "comment": "Tvar labyrintu - nejdelší cesta ve stromě, graf",
             "requires": []
         },
         {
-            "id": "29-Z1-4","type": "open-data",
+            "id": "29-Z1-4",
+            "type": "open-data",
             "comment": "Zuzčin výlet — DFS (topologické pořadí)",
             "requires": []
         },
         {
-            "id": "31-Z1-2","type": "open-data",
+            "id": "31-Z1-2",
+            "type": "open-data",
             "comment": "BFS (šachovnice, custom figurka, nejkratší cesta)  ",
             "requires": []
         },
         {
-            "id": "31-Z3-2","type": "open-data",
+            "id": "31-Z3-2",
+            "type": "open-data",
             "comment": "DFS (hledání cesty v grafu po písmenech)",
             "requires": []
         },
         {
-            "id": "31-Z3-3","type": "open-data",
+            "id": "31-Z3-3",
+            "type": "open-data",
             "comment": "barvení bipartitního grafu (hledání partit), na vstupu hrany",
             "requires": []
         },
         {
-            "id": "26-Z4-2","type": "open-data",
+            "id": "26-Z4-2",
+            "type": "open-data",
             "comment": "Sbírání vajíček - hledení mediánu, musí se to ale vymyslet, nejkratší cesta při chození tam a zpět",
             "requires": []
         },
         {
-            "id": "26-Z3-1","type": "open-data",
+            "id": "26-Z3-1",
+            "type": "open-data",
             "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
             "requires": []
         }
@@ -258,6 +268,136 @@
         ],
         "Nápad": [
             "26-Z4-2"
+        ]
+    },
+    "positions": {
+        "start": [
+            60.9366784537015,
+            15.282753057729023
+        ],
+        "jak-resit-ulohy": [
+            57.60463651559811,
+            85.05400883098152
+        ],
+        "31-Z1-1": [
+            176,
+            112
+        ],
+        "26-Z1-1": [
+            -86.4374292583939,
+            114.1704716787137
+        ],
+        "26-Z2-1": [
+            -115,
+            184
+        ],
+        "27-Z2-1": [
+            -30,
+            181
+        ],
+        "26-Z1-2": [
+            -324,
+            235
+        ],
+        "26-Z4-3": [
+            -220.83782675574338,
+            190.72741511636147
+        ],
+        "29-Z3-1": [
+            -158,
+            276
+        ],
+        "31-Z1-4": [
+            -245,
+            284
+        ],
+        "29-Z1-1": [
+            154,
+            199
+        ],
+        "29-Z2-1": [
+            259,
+            272
+        ],
+        "29-Z4-3": [
+            164,
+            364
+        ],
+        "26-Z2-4": [
+            403.46860248688955,
+            23.996420431821353
+        ],
+        "29-Z1-3": [
+            -442.93377199520177,
+            -73.3461550905827
+        ],
+        "26-Z2-2": [
+            -64.3269017874483,
+            -91.7677899309802
+        ],
+        "26-Z3-3": [
+            450.612997715014,
+            -65.45002256579735
+        ],
+        "26-Z4-1": [
+            -551.4441557449455,
+            -38.58561957493338
+        ],
+        "29-Z3-3": [
+            302.6193712343388,
+            13.535655571354772
+        ],
+        "26-Z1-3": [
+            39.68234662392814,
+            -102.30393169322402
+        ],
+        "26-Z2-3": [
+            -320.2744362098852,
+            -72.1967458848867
+        ],
+        "26-Z3-2": [
+            644.167217052611,
+            -0.4551191547699971
+        ],
+        "29-Z3-2": [
+            -368.51198400620785,
+            1.6854832115582556
+        ],
+        "26-Z1-4": [
+            147.37372961796666,
+            -89.40554252368531
+        ],
+        "26-Z4-4": [
+            335.75328660449225,
+            -81.50932588628959
+        ],
+        "26-Z3-4": [
+            -480.95284944300494,
+            29.587091058893556
+        ],
+        "29-Z1-4": [
+            554.2061258687584,
+            -44.42093615098819
+        ],
+        "31-Z1-2": [
+            -236.06692326455527,
+            -77.65095973572805
+        ],
+        "31-Z3-2": [
+            -154.07095173801807,
+            -65.44506844403092
+        ],
+        "31-Z3-3": [
+            514.5773720938831,
+            41.05028681292239
+        ],
+        "26-Z4-2": [
+            -633.6757896792913,
+            1.4284188628810082
+        ],
+        "26-Z3-1": [
+            234.170971842641,
+            -59.230241172550606
         ]
     }
 }

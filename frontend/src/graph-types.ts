@@ -21,11 +21,14 @@ function toMapById(nodes: TaskId[]): Map<string, TaskId> {
 function createNodes(tasks: TasksFile, old?: TaskId[]): TaskId[] {
     let m = (old == undefined) ? new Map<string, TaskId>() : toMapById(old);
 
-    let res = tasks.tasks.map((t) => {
+    let res: TaskId[] = tasks.tasks.map((t) => {
         return { id: t.id, task: t };
     });
 
     for (let t of res) {
+        if (tasks.positions.has(t.id)) {
+            [t.x, t.y] = tasks.positions.get(t.id)!
+        }
         if (m.has(t.id)) {
             Object.assign(t, m.get(t.id))
         }

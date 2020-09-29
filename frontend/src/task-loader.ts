@@ -9,20 +9,31 @@ export type TaskDescriptor = {
 export type TasksFile = {
     tasks: TaskDescriptor[]
     clusters: { [name: string]: string[] }
+    positions: Map<string, [number, number]>
 }
 
 export type TaskMap = Map<string, TaskDescriptor>;
 
 export async function loadTasks(): Promise<TasksFile> {
     const r = await fetch("/tasks.json")
-    return await r.json()
+    const j = await r.json()
+    if (j.positions == null)
+        j.positions = new Map();
+    else
+        j.positions = new Map(Object.entries(j.positions))
+    return j
 }
 
 export async function saveTasks(tasks: TasksFile) {
+    let p: any = {}
+    for (let [key, val] of tasks.positions.entries())
+        p[key] = val;
+    const data = {...tasks, positions: p}
+
     // request options
     const options = {
         method: 'POST',
-        body: JSON.stringify(tasks, null, 4),
+        body: JSON.stringify(data, null, 4),
         headers: {
             'Content-Type': 'application/json'
         }

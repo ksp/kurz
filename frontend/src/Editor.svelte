@@ -11,6 +11,7 @@
   let clicked: string[] = [];
   let graph: Graph;
   let currentTask: TaskDescriptor | null = null;
+  let nodeDraggingEnabled: boolean = false;
 
   function clickTask(e: CustomEvent<TaskDescriptor>) {
     // ukladani seznamu poslednich kliknuti
@@ -37,6 +38,11 @@
     } else {
       alert("Nope, prvni musis nekam klikat...");
     }
+  }
+
+  async function saveCurrentStateWithPositions() {
+    tasks.positions = graph.getNodePositions();
+    await saveTasks(tasks);
   }
 
   async function saveCurrentState() {
@@ -106,21 +112,35 @@
         {repulsionForce}
         on:selectTask={clickTask}
         on:preSelectTask={startHovering}
-        bind:this={graph} />
+        bind:this={graph} 
+        {nodeDraggingEnabled} />
     </div>
   </div>
   <div class="right">
     <div class="toolbox">
       <div>Toolbox</div>
       <div>
-        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2]} -&gt; {clicked[clicked.length - 1]}</button>
+        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2]}
+          -&gt; {clicked[clicked.length - 1]}</button>
       </div>
-      <div><button on:click={graph.runSimulation}>Spustit simulaci</button></div>
+      <div>
+        <button on:click={graph.runSimulation}>Spustit simulaci</button>
+      </div>
       <div>
         Repulsion force: <input type="number" bind:value={repulsionForce} name="repulsionForceInput" max="1000" min="-10000" />
       </div>
       <div>
         <button on:click={saveCurrentState}>Uložit aktuální stav</button>
+      </div>
+      <div>
+        <button on:click={saveCurrentStateWithPositions}>Uložit aktuální stav
+          včetně pozic nodů</button>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" bind:checked={nodeDraggingEnabled} /> Povolit přesouvání
+          vrcholů
+        </label>
       </div>
     </div>
     <div class="taskDetails">

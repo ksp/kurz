@@ -6,11 +6,12 @@
   import type { TasksFile, TaskDescriptor } from "./task-loader";
   import { createNodesAndEdges } from "./graph-types";
   import { taskForce } from "./task-force";
-  import { zoom } from "d3";
 
   export let tasks: TasksFile;
-  let hoveredTask: null | string = null;
   export let repulsionForce: number = -1000;
+  export let nodeDraggingEnabled: boolean = false;
+
+  let hoveredTask: null | string = null;
 
   // Svelte automatically fills these with a reference
   let container: HTMLElement;
@@ -23,7 +24,7 @@
   let [nodes, edges] = createNodesAndEdges(tasks);
   function hack() {
     [nodes, edges] = createNodesAndEdges(tasks, nodes, edges);
-    runSimulation();
+    //runSimulation();
   }
   $: {
     tasks;
@@ -74,11 +75,17 @@
       nodes = nodes;
     }
   }
-  const zoomer = d3.zoom().scaleExtent([0.1, 2])
 
-  $: {
-    // zoomer.extent([[-clientWidth / 2,-clientHeight / 2],[clientWidth,clientHeight]])
+  export function getNodePositions(): Map<string, [number, number]> {
+    let res = new Map();
+    for (let n of nodes) {
+      if (n.x != undefined && n.y != undefined) {
+        res.set(n.id, [n.x, n.y]);
+      }
+    } 
+    return res
   }
+
 
   // start simulation and center view on create
   onMount(() => {
@@ -89,10 +96,9 @@
     function zoomed(e) {
       svg.attr("transform", e.transform);
     }
+    const zoomer = d3.zoom().scaleExtent([0.1, 2])
     zoomer.on("zoom", zoomed);
     d3.select(container).call(zoomer);
-
-    runSimulation();
   });
 </script>
 
@@ -129,7 +135,9 @@
             {task}
             on:taskClick
             on:click={nodeClick(task.task)}
-            on:hoveringChange={nodeHover(task.task)} />
+            on:hoveringChange={nodeHover(task.task)}
+            on:positionChange={() => { tasks = tasks; }}
+            draggingEnabled={nodeDraggingEnabled} />
         {/each}
       </g>
     </g>

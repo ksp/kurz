@@ -1,9 +1,12 @@
 <script lang="ts">
+  import * as d3 from "d3";
+
   import { createEventDispatcher, onMount } from "svelte";
   import type { TaskId } from "./graph-types";
 
-
   export let task: TaskId;
+  export let draggingEnabled: boolean = false;
+
   let hovering: boolean = false;
   let text_element: SVGTextElement;
 
@@ -31,6 +34,34 @@
     const bbox = text_element.getBBox();
     ellipse_rx = bbox.width / 2 + 8;
   });
+
+  // dragging
+  let dragging: boolean = false;
+  function dragStart(e: MouseEvent) {
+    if (!draggingEnabled) return;
+
+    dragging = true;
+    e.preventDefault()
+    e.stopPropagation();
+  }
+  function drag(e: MouseEvent) {
+    if (!draggingEnabled) return;
+    if (!dragging) return;
+
+    let [x, y] = d3.pointer(e);
+    task.x = x;
+    task.y = y;
+    eventDispatcher("positionChange");
+    e.preventDefault()
+    e.stopPropagation()
+  }
+  function dragStop(e: MouseEvent) {
+    if (!draggingEnabled) return;
+
+    dragging = false;
+    e.preventDefault();
+    e.stopPropagation();
+  }
 </script>
 
 <style>
@@ -45,7 +76,7 @@
   }
 </style>
 
-<g on:mouseenter={enter} on:mouseleave={leave} on:click={click}>
+<g on:mouseenter={enter} on:mouseleave={leave} on:click={click} on:mousedown={dragStart} on:mouseup={dragStop} on:mousemove={drag}>
   <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
   <text
     bind:this={text_element}
