@@ -8,7 +8,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
     let selectedTask: TaskDescriptor | null = null
     export let selectedTaskId: string | null = null
 
-    let heightClass: "collapsed" | "full" | "preview" = "collapsed"
+    let heightClass: "closed" | "collapsed" | "full" | "preview" = "collapsed"
 
     export function preSelect(task: TaskDescriptor) {
         if (heightClass != "full") {
@@ -36,12 +36,18 @@ import TaskDisplay from "./TaskDisplay.svelte";
 
     function close() {
         location.hash = ""
-        heightClass = "collapsed"
+        heightClass = "closed"
         window.setTimeout(() => window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth'
         }), 100)
+    }
+
+    function handleKeydown(e: KeyboardEvent) {
+        if (e.key === "Escape") {
+            close()
+        }
     }
 </script>
 
@@ -60,10 +66,15 @@ import TaskDisplay from "./TaskDisplay.svelte";
             padding: 0 10px 10px 10px;
         }
     }
-
+    /* Used when the panel is explicitly closed - collapsed would still show the hover preview */
+    .panel.closed {
+        display: none;
+    }
+    /* Used when the panel is implicitly closed - it does not disappear when there is mouse over it */
     .panel.collapsed:not(:hover) {
         display: none;
     }
+    /* Used when the user hovers over a node and we want to show that there is something - a small expandable preview */
     .panel.preview, .panel:not(.full):hover {
         height: 100px;
     }
@@ -72,19 +83,21 @@ import TaskDisplay from "./TaskDisplay.svelte";
     }
     .closeButton {
         display: none;
-	position: absolute;
-	right: 0;
-	top: 0;
-	color: white;
-	background-color: red;
-	border: 0;
-	cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        background-color: red;
+        border: 0;
+        cursor: pointer;
     }
     .closeButton::before {
         content: "X";
     }
     .panel.full .closeButton { display: inherit }
 </style>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <div class="panel {heightClass}"
      on:click={() => location.hash = `#task/${selectedTask?.id}`}>
