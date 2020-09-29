@@ -34,6 +34,9 @@
 </script>
 
 <style>
+  g {
+    cursor: pointer;
+  }
   g:hover > ellipse {
     fill: #ffb3a2
   }
