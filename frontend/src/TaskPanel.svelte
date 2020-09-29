@@ -64,14 +64,24 @@ import TaskDisplay from "./TaskDisplay.svelte";
     .panel.full {
         min-height: 100%;
     }
-    .closeButton { display: none }
+    .closeButton {
+        display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: white;
+	background-color: red;
+	border: 0;
+	cursor: pointer;
+    }
+    .closeButton::before {
+        content: "X";
+    }
     .panel.full .closeButton { display: inherit }
 </style>
 
 <div class="panel {heightClass}"
      on:click={() => selectedTask && select(selectedTask)}>
     <TaskDisplay taskId={selectedTask?.id} />
-    <button type=button class="closeButton" on:click|stopPropagation={close}>
-        Zavřít
-    </button>
+    <button type=button class="closeButton" on:click|stopPropagation={close}></button>
 </div>
