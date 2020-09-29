@@ -7,6 +7,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 
 const production = !process.env.ROLLUP_WATCH;
+const halfProduction = production || !!process.env.HALF_PRODUCTION;
 
 function serve() {
 	let server;
@@ -42,7 +43,7 @@ export default {
 		
 		svelte({
 			// enable run-time checks when not in production
-			dev: !production,
+			dev: !halfProduction,
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
 			css: css => {
@@ -62,8 +63,8 @@ export default {
 		}),
 		commonjs(),
 		typescript({
-			sourceMap: !production,
-			inlineSources: !production
+			sourceMap: !halfProduction,
+			inlineSources: !halfProduction
 		}),
 
 		// In dev mode, call `npm run start` once
@@ -72,11 +73,11 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('public'),
+		!halfProduction && livereload('public'),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
-		production && terser()
+		halfProduction && terser()
 	],
 	watch: {
 		clearScreen: false
