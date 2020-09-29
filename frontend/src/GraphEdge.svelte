@@ -4,14 +4,12 @@
   
     export let edge: SimulationLinkDatum<TaskId>;
   
-    $: x1 = edge === undefined || edge.source === undefined || edge.source.x === undefined ? 0 : edge.source.x;
-    $: y1 = edge === undefined || edge.source === undefined || edge.source.y === undefined ? 0 : edge.source.y;
-    $: x2 = edge === undefined || edge.target === undefined || edge.target.x === undefined ? 0 : edge.target.x;
-    $: y2 = edge === undefined || edge.target === undefined || edge.target.y === undefined ? 0 : edge.target.y;
+    $: x1 = edge?.source?.x ?? 0;
+    $: y1 = edge?.source?.y ?? 0;
+    $: x2 = edge?.target?.x ?? 0;
+    $: y2 = edge?.target?.y ?? 0;
+    $: dx = x1 - x2
+    $: dy = y1 - y2
 </script>
-  
- <line x1={x1+10} y1={y1} {x2} {y2} style="stroke: #aaa" />
- <line x1={x1} y1={y1+10} {x2} {y2} style="stroke: #aaa" />
- <line x1={x1-10} y1={y1} {x2} {y2} style="stroke: #aaa" />
- <line x1={x1} y1={y1-10} {x2} {y2} style="stroke: #aaa" />
-  
+
+<path d="m {x2} {y2+0} c 0 0 {dx} {dy-40} {dx} {dy-20}" style="fill:none; stroke: #aaa; stroke-width: 3px" />

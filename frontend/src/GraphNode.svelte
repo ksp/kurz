@@ -27,11 +27,9 @@
 
   // automatically size the bubbles to fit the text
   let ellipse_rx = 20;
-  let ellipse_ry = 20;
   onMount(() => {
     const bbox = text_element.getBBox();
     ellipse_rx = bbox.width / 2 + 8;
-    ellipse_ry = bbox.height / 2 + 8;
   });
 </script>
 
@@ -45,7 +43,7 @@
 </style>
 
 <g on:mouseenter={enter} on:mouseleave={leave} on:click={click}>
-  <ellipse rx={ellipse_rx} ry={ellipse_ry} {cx} {cy} />
+  <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
   <text
     bind:this={text_element}
     x={cx}
