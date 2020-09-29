@@ -37,6 +37,12 @@ import TaskDisplay from "./TaskDisplay.svelte";
             behavior: 'smooth'
         }), 100)
     }
+
+    function handleKeydown(e: KeyboardEvent) {
+        if (e.key === "Escape") {
+            close()
+        }
+    }
 </script>
 
 <style>
@@ -67,6 +73,8 @@ import TaskDisplay from "./TaskDisplay.svelte";
     .closeButton { display: none }
     .panel.full .closeButton { display: inherit }
 </style>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <div class="panel {heightClass}"
      on:click={() => selectedTask && select(selectedTask)}>
