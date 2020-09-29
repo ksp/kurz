@@ -118,7 +118,7 @@
 </style>
 
 <div bind:this={container} bind:clientHeight bind:clientWidth>
-  <svg bind:this={svgElement} viewBox="{0},{0},{clientWidth},{clientHeight}" on:click={e => console.log(d3.pointer(e))}>
+  <svg bind:this={svgElement} viewBox="{0},{0},{clientWidth},{clientHeight}">
     <g>
       <g transform="translate({clientWidth/2}, {clientHeight/2})">
         {#each edges as edge}
