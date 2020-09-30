@@ -14,10 +14,6 @@ export const taskStatuses = readable(lastVal, write => {
     writeFn = v => { lastVal = v; write(v); }
 })
 
-console.log(isLoggedIn())
-
-
-
 export function refresh(ids: string[]) {
     if (!isLoggedIn()) return;
 
