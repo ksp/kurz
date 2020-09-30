@@ -66,6 +66,7 @@
         background-color: #111111;
         box-sizing: border-box;
         z-index: 120;
+        border-radius: 30px;
     }
     @media only screen and (max-width: 600px) {
         .panel {
@@ -83,6 +84,8 @@
     /* Used when the user hovers over a node and we want to show that there is something - a small expandable preview */
     .panel.preview, .panel:not(.full):hover {
         height: 100px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     .panel.full {
         min-height: 100%;
