@@ -33,6 +33,7 @@ Zároveň by se pro provoz webové aplikace hodilo přidat tato API. Aktuálně 
 * seznam úloh ze cvičiště a získané body
 * HTML/text zadání a řešení jedné konkrétní úlohy
 * API odevzdávátka
+* Na stránce je potřeba zjistit jestli je uživatel přihlášený
 
 Dále bychom potřebovali web rozšířit o novou funkcionalitu:
 
