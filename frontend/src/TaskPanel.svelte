@@ -25,7 +25,7 @@
         }, 10);
     }
 
-    let lastSelectedTaskId = selectedTaskId
+    let lastSelectedTaskId: string | null = null
 
     $: {
         if (selectedTaskId && lastSelectedTaskId != selectedTaskId) {
