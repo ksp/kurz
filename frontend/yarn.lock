@@ -23,6 +23,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@ckeditor/ckeditor5-build-classic@^23.0.0":
+  version "23.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-23.0.0.tgz#9b4ae5dc470e9ae4be14672b49d05d21887e2d81"
+  integrity sha512-9Pgb9OAPnx1577WDYizEuOFHmLyXkwU8UxneyP4Zkr9mrJUEL0w0uVgQhiB8DYlAAArHXeFasSogwFvLX6xBtw==
+
 "@emmetio/extract-abbreviation@0.1.6":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@emmetio/extract-abbreviation/-/extract-abbreviation-0.1.6.tgz#e4a9856c1057f0aff7d443b8536477c243abe28c"
@@ -1207,11 +1212,6 @@ serialize-javascript@^4.0.0:
   integrity sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==
   dependencies:
     randombytes "^2.1.0"
-
-sigma@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/sigma/-/sigma-1.2.1.tgz#2ebf3df2971715afe49ad0c08945c574bb6c5771"
-  integrity sha512-9Z0m1pssXv6sndPMvOzXnM1mVO73YCWDE6X5bKxJyG+9J0B9zJkgtgoBM7cnxEaJMzmrbxPceKTVpwF7cS/xqA==
 
 sirv-cli@^1.0.0:
   version "1.0.6"

@@ -58,7 +58,7 @@
       TaskDetailEditor,
       { task: e.detail, tasks: tasks },
       { closeButton: false },
-      { onClose: () => { console.log("callback invoked", tasks); tasks = tasks; }}
+      { onClose: () => { tasks = tasks; }}
     );
   }
 </script>
