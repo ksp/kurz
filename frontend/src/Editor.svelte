@@ -15,6 +15,7 @@
   let graph: Graph;
   let currentTask: TaskDescriptor | null = null;
   let nodeDraggingEnabled: boolean = false;
+  let angle: number;
   const { open } = getContext("simple-modal");
 
   function clickTask(e: CustomEvent<TaskDescriptor>) {
@@ -73,6 +74,12 @@
       return;
     }
 
+    let existing = tasks.tasks.find((t) => t.id == id);
+    if (existing != undefined) {
+      alert("úloha s tímto ID již existuje!");
+      return;
+    }
+
     let novaUloha: TaskDescriptor = {
       id: id,
       type: "label",
@@ -117,6 +124,18 @@
 
     // je to bezpečné, mažeme
     tasks.tasks = tasks.tasks.filter((t) => t.id != id);
+  }
+
+  function getTask(id: string): TaskDescriptor | undefined {
+    return tasks.tasks.find((t) => t.id == id);
+  }
+
+  function setAngleToTheCurrentLabel() {
+    let t = getTask(clicked[clicked.length - 1]);
+    if (clicked.length > 0 && t != undefined && t.type == "label") {
+      t.rotationAngle = angle;
+      tasks = tasks;
+    }
   }
 </script>
 
@@ -219,6 +238,12 @@
           vrcholů
         </label>
       </div>
+      {#if clicked.length > 0 && getTask(clicked[clicked.length - 1]).type == "label"}  
+        <div>
+          Úhel rotace:
+          <input bind:value={angle} type="range" max="360" min="0" on:change={setAngleToTheCurrentLabel}/>
+        </div>
+      {/if}
     </div>
     <div class="taskDetails">
       {#if currentTask != null}

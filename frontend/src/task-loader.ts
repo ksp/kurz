@@ -17,7 +17,8 @@ export type TaskDescriptor = {
         }
         |
         {
-            type: "label"
+            type: "label",
+            rotationAngle?: number
         }
     );
 
@@ -39,7 +40,13 @@ export async function loadTasks(): Promise<TasksFile> {
     return j
 }
 
+function normalizeTasks(tasks: TasksFile) {
+    tasks.tasks.sort((t1, t2) => t1.id.localeCompare(t2.id))
+}
+
 export async function saveTasks(tasks: TasksFile) {
+    normalizeTasks(tasks);
+
     let p: any = {}
     for (let [key, val] of tasks.positions.entries())
         p[key] = val;

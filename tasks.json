@@ -1,51 +1,11 @@
 {
     "tasks": [
         {
-            "id": "start",
-            "type": "text",
-            "requires": [],
-            "comment": "úvodní kecy o tom, jak to celé funguje"
-        },
-        {
-            "id": "jak-resit-ulohy",
-            "type": "text",
-            "requires": [
-                "start"
-            ],
-            "comment": "kecy o tom, jak se může řešit taková úloha",
-            "title": "Jak řešit úlohy?",
-            "htmlContent": ""
-        },
-        {
-            "id": "31-Z1-1",
-            "type": "open-data",
-            "requires": [
-                "jak-resit-ulohy"
-            ],
-            "comment": "úloha s odčítáním času"
-        },
-        {
             "id": "26-Z1-1",
             "type": "open-data",
             "comment": "Kevin a magnety - triviální, lineární průchod pole",
             "requires": [
                 "jak-resit-ulohy"
-            ]
-        },
-        {
-            "id": "26-Z2-1",
-            "type": "open-data",
-            "comment": "Had z domina - triviální, linerání průchod pole a počítání, na kolika místech platí podmínka, vyžaduje práci se dvojicemi",
-            "requires": [
-                "26-Z1-1"
-            ]
-        },
-        {
-            "id": "27-Z2-1",
-            "type": "open-data",
-            "comment": "Závorky z cereálií - 2 průchody pole, závorky",
-            "requires": [
-                "26-Z1-1"
             ]
         },
         {
@@ -57,6 +17,80 @@
             ]
         },
         {
+            "id": "26-Z1-3",
+            "type": "open-data",
+            "comment": "Zamilovaný dopis - triviální, procházení stringů po znacích a kontrola podmínek",
+            "requires": []
+        },
+        {
+            "id": "26-Z1-4",
+            "type": "open-data",
+            "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
+            "requires": []
+        },
+        {
+            "id": "26-Z2-1",
+            "type": "open-data",
+            "comment": "Had z domina - triviální, linerání průchod pole a počítání, na kolika místech platí podmínka, vyžaduje práci se dvojicemi",
+            "requires": [
+                "26-Z1-1"
+            ]
+        },
+        {
+            "id": "26-Z2-2",
+            "type": "open-data",
+            "comment": "SADO - triviální, procházení celých čísel v intervalu a kontrola podmínky",
+            "requires": []
+        },
+        {
+            "id": "26-Z2-3",
+            "type": "open-data",
+            "comment": "Šifrovaná zpráva - práce s řetězci, hledání mapování mezi písmenky (substitučka) a validace, že jinde substitučka funguje",
+            "requires": []
+        },
+        {
+            "id": "26-Z2-4",
+            "type": "open-data",
+            "comment": "Životně důležitá úloha -  dostanu pole čísel, potřebuju v něm najít pravidelně se opakující výskyty hodnot, relativně složitá práce s poli, dvojcemi apod.",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-1",
+            "type": "open-data",
+            "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-2",
+            "type": "open-data",
+            "comment": "Čarodějova šifra - šifrování mřížkou, práce se stringy, rotace matice, vhodné na code review?, docela hard",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-3",
+            "type": "open-data",
+            "comment": "Hádanka - triky s dělitelností devíti a rozkladem čísel, docela hard teorie",
+            "requires": []
+        },
+        {
+            "id": "26-Z3-4",
+            "type": "open-data",
+            "comment": "Tvar labyrintu - nejdelší cesta ve stromě, graf",
+            "requires": []
+        },
+        {
+            "id": "26-Z4-1",
+            "type": "open-data",
+            "comment": "Vražedná čísla- WTF, teorie čísel, hard as fuck, divný",
+            "requires": []
+        },
+        {
+            "id": "26-Z4-2",
+            "type": "open-data",
+            "comment": "Sbírání vajíček - hledení mediánu, musí se to ale vymyslet, nejkratší cesta při chození tam a zpět",
+            "requires": []
+        },
+        {
             "id": "26-Z4-3",
             "type": "open-data",
             "comment": "Hra Othello - link na 26-Z1-2, procházení 2D pole po různých směrech",
@@ -65,19 +99,17 @@
             ]
         },
         {
-            "id": "29-Z3-1",
+            "id": "26-Z4-4",
             "type": "open-data",
-            "comment": "Želva na dvorku — spíš triviální, netriviální udělat efektivně (ale asi to není třeba pro úspěch), volně navazuje na 29-Z2-1 a 29-Z1-1, průchod po 2D souřadnicích, invalidní příkazy (směrem do překážky) ignorujeme",
-            "requires": [
-                "26-Z4-3"
-            ]
+            "comment": "Hlídači v labyrintu - policajti hlídající na grafu, konkrétně na stromě, rekurze, technicky asi až DP",
+            "requires": []
         },
         {
-            "id": "31-Z1-4",
+            "id": "27-Z2-1",
             "type": "open-data",
-            "comment": "2D pole (až na poslední vstup), hešování (piškvorky) - navazuje na 26-Z1-2",
+            "comment": "Závorky z cereálií - 2 průchody pole, závorky",
             "requires": [
-                "26-Z4-3"
+                "26-Z1-1"
             ]
         },
         {
@@ -89,12 +121,44 @@
             ]
         },
         {
+            "id": "29-Z1-3",
+            "type": "open-data",
+            "comment": "Petrova statistika — ne úplně triviální, tvorba histogramu z pole",
+            "requires": []
+        },
+        {
+            "id": "29-Z1-4",
+            "type": "open-data",
+            "comment": "Zuzčin výlet — DFS (topologické pořadí)",
+            "requires": []
+        },
+        {
             "id": "29-Z2-1",
             "type": "open-data",
             "comment": "Krocení zlé želvy — triviální, průchod po 2D souřadnicích, přímo navazuje na 29-Z1-1",
             "requires": [
                 "29-Z1-1"
             ]
+        },
+        {
+            "id": "29-Z3-1",
+            "type": "open-data",
+            "comment": "Želva na dvorku — spíš triviální, netriviální udělat efektivně (ale asi to není třeba pro úspěch), volně navazuje na 29-Z2-1 a 29-Z1-1, průchod po 2D souřadnicích, invalidní příkazy (směrem do překážky) ignorujeme",
+            "requires": [
+                "26-Z4-3"
+            ]
+        },
+        {
+            "id": "29-Z3-2",
+            "type": "open-data",
+            "comment": "Písemka z angličtiny — voser implementovat, easy dřevorubecký řešení, optimálně trie, což na Z IMHO hard",
+            "requires": []
+        },
+        {
+            "id": "29-Z3-3",
+            "type": "open-data",
+            "comment": "Šestková čísla — mega voser implementovat, spíš matematická úloha, převod dešitkových čísel do hacknutých římských",
+            "requires": []
         },
         {
             "id": "29-Z4-3",
@@ -106,94 +170,26 @@
             ]
         },
         {
-            "id": "26-Z2-4",
+            "id": "31-Z1-1",
             "type": "open-data",
-            "comment": "Životně důležitá úloha -  dostanu pole čísel, potřebuju v něm najít pravidelně se opakující výskyty hodnot, relativně složitá práce s poli, dvojcemi apod.",
-            "requires": []
-        },
-        {
-            "id": "29-Z1-3",
-            "type": "open-data",
-            "comment": "Petrova statistika — ne úplně triviální, tvorba histogramu z pole",
-            "requires": []
-        },
-        {
-            "id": "26-Z2-2",
-            "type": "open-data",
-            "comment": "SADO - triviální, procházení celých čísel v intervalu a kontrola podmínky",
-            "requires": []
-        },
-        {
-            "id": "26-Z3-3",
-            "type": "open-data",
-            "comment": "Hádanka - triky s dělitelností devíti a rozkladem čísel, docela hard teorie",
-            "requires": []
-        },
-        {
-            "id": "26-Z4-1",
-            "type": "open-data",
-            "comment": "Vražedná čísla- WTF, teorie čísel, hard as fuck, divný",
-            "requires": []
-        },
-        {
-            "id": "29-Z3-3",
-            "type": "open-data",
-            "comment": "Šestková čísla — mega voser implementovat, spíš matematická úloha, převod dešitkových čísel do hacknutých římských",
-            "requires": []
-        },
-        {
-            "id": "26-Z1-3",
-            "type": "open-data",
-            "comment": "Zamilovaný dopis - triviální, procházení stringů po znacích a kontrola podmínek",
-            "requires": []
-        },
-        {
-            "id": "26-Z2-3",
-            "type": "open-data",
-            "comment": "Šifrovaná zpráva - práce s řetězci, hledání mapování mezi písmenky (substitučka) a validace, že jinde substitučka funguje",
-            "requires": []
-        },
-        {
-            "id": "26-Z3-2",
-            "type": "open-data",
-            "comment": "Čarodějova šifra - šifrování mřížkou, práce se stringy, rotace matice, vhodné na code review?, docela hard",
-            "requires": []
-        },
-        {
-            "id": "29-Z3-2",
-            "type": "open-data",
-            "comment": "Písemka z angličtiny — voser implementovat, easy dřevorubecký řešení, optimálně trie, což na Z IMHO hard",
-            "requires": []
-        },
-        {
-            "id": "26-Z1-4",
-            "type": "open-data",
-            "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
-            "requires": []
-        },
-        {
-            "id": "26-Z4-4",
-            "type": "open-data",
-            "comment": "Hlídači v labyrintu - policajti hlídající na grafu, konkrétně na stromě, rekurze, technicky asi až DP",
-            "requires": []
-        },
-        {
-            "id": "26-Z3-4",
-            "type": "open-data",
-            "comment": "Tvar labyrintu - nejdelší cesta ve stromě, graf",
-            "requires": []
-        },
-        {
-            "id": "29-Z1-4",
-            "type": "open-data",
-            "comment": "Zuzčin výlet — DFS (topologické pořadí)",
-            "requires": []
+            "requires": [
+                "jak-resit-ulohy"
+            ],
+            "comment": "úloha s odčítáním času"
         },
         {
             "id": "31-Z1-2",
             "type": "open-data",
             "comment": "BFS (šachovnice, custom figurka, nejkratší cesta)  ",
             "requires": []
+        },
+        {
+            "id": "31-Z1-4",
+            "type": "open-data",
+            "comment": "2D pole (až na poslední vstup), hešování (piškvorky) - navazuje na 26-Z1-2",
+            "requires": [
+                "26-Z4-3"
+            ]
         },
         {
             "id": "31-Z3-2",
@@ -208,16 +204,51 @@
             "requires": []
         },
         {
-            "id": "26-Z4-2",
-            "type": "open-data",
-            "comment": "Sbírání vajíček - hledení mediánu, musí se to ale vymyslet, nejkratší cesta při chození tam a zpět",
-            "requires": []
+            "id": "jak-resit-ulohy",
+            "type": "text",
+            "requires": [
+                "start"
+            ],
+            "comment": "kecy o tom, jak se může řešit taková úloha",
+            "title": "Jak řešit úlohy?",
+            "htmlContent": ""
         },
         {
-            "id": "26-Z3-1",
-            "type": "open-data",
-            "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
-            "requires": []
+            "id": "label-1d-pole",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "1D pole",
+            "rotationAngle": 337
+        },
+        {
+            "id": "label-2d-pole",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "2D pole",
+            "rotationAngle": 340
+        },
+        {
+            "id": "label-uvod",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Úvod"
+        },
+        {
+            "id": "label-zelvy",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Želvy",
+            "rotationAngle": 43
+        },
+        {
+            "id": "start",
+            "type": "text",
+            "requires": [],
+            "comment": "úvodní kecy o tom, jak to celé funguje"
         }
     ],
     "clusters": {
@@ -273,133 +304,149 @@
         ]
     },
     "positions": {
-        "start": [
-            60.9366784537015,
-            15.282753057729023
-        ],
-        "jak-resit-ulohy": [
-            57.60463651559811,
-            85.05400883098152
-        ],
-        "31-Z1-1": [
-            176,
-            112
-        ],
         "26-Z1-1": [
             -86.4374292583939,
             114.1704716787137
-        ],
-        "26-Z2-1": [
-            -115,
-            184
-        ],
-        "27-Z2-1": [
-            -30,
-            181
         ],
         "26-Z1-2": [
             -324,
             235
         ],
-        "26-Z4-3": [
-            -220.83782675574338,
-            190.72741511636147
+        "26-Z1-3": [
+            -464,
+            -196
         ],
-        "29-Z3-1": [
-            -158,
-            276
+        "26-Z1-4": [
+            400,
+            -203
         ],
-        "31-Z1-4": [
-            -245,
-            284
-        ],
-        "29-Z1-1": [
-            154,
-            199
-        ],
-        "29-Z2-1": [
-            259,
-            272
-        ],
-        "29-Z4-3": [
-            164,
-            364
-        ],
-        "26-Z2-4": [
-            403.46860248688955,
-            23.996420431821353
-        ],
-        "29-Z1-3": [
-            -442.93377199520177,
-            -73.3461550905827
+        "26-Z2-1": [
+            -115,
+            184
         ],
         "26-Z2-2": [
-            -64.3269017874483,
-            -91.7677899309802
-        ],
-        "26-Z3-3": [
-            450.612997715014,
-            -65.45002256579735
-        ],
-        "26-Z4-1": [
-            -551.4441557449455,
-            -38.58561957493338
-        ],
-        "29-Z3-3": [
-            302.6193712343388,
-            13.535655571354772
-        ],
-        "26-Z1-3": [
-            39.68234662392814,
-            -102.30393169322402
+            -278,
+            -162
         ],
         "26-Z2-3": [
             -320.2744362098852,
             -72.1967458848867
         ],
+        "26-Z2-4": [
+            575,
+            -111
+        ],
+        "26-Z3-1": [
+            446,
+            -160
+        ],
         "26-Z3-2": [
             644.167217052611,
             -0.4551191547699971
         ],
-        "29-Z3-2": [
-            -368.51198400620785,
-            1.6854832115582556
-        ],
-        "26-Z1-4": [
-            147.37372961796666,
-            -89.40554252368531
-        ],
-        "26-Z4-4": [
-            335.75328660449225,
-            -81.50932588628959
+        "26-Z3-3": [
+            485,
+            -81
         ],
         "26-Z3-4": [
             -480.95284944300494,
             29.587091058893556
         ],
-        "29-Z1-4": [
-            554.2061258687584,
-            -44.42093615098819
-        ],
-        "31-Z1-2": [
-            -236.06692326455527,
-            -77.65095973572805
-        ],
-        "31-Z3-2": [
-            -154.07095173801807,
-            -65.44506844403092
-        ],
-        "31-Z3-3": [
-            514.5773720938831,
-            41.05028681292239
+        "26-Z4-1": [
+            -551.4441557449455,
+            -38.58561957493338
         ],
         "26-Z4-2": [
             -633.6757896792913,
             1.4284188628810082
         ],
-        "26-Z3-1": [
-            234.170971842641,
-            -59.230241172550606
+        "26-Z4-3": [
+            -220.83782675574338,
+            190.72741511636147
+        ],
+        "26-Z4-4": [
+            471,
+            -114
+        ],
+        "27-Z2-1": [
+            -30,
+            181
+        ],
+        "29-Z1-1": [
+            154,
+            199
+        ],
+        "29-Z1-3": [
+            -442.93377199520177,
+            -73.3461550905827
+        ],
+        "29-Z1-4": [
+            554.2061258687584,
+            -44.42093615098819
+        ],
+        "29-Z2-1": [
+            259,
+            272
+        ],
+        "29-Z3-1": [
+            -158,
+            276
+        ],
+        "29-Z3-2": [
+            -368.51198400620785,
+            1.6854832115582556
+        ],
+        "29-Z3-3": [
+            470,
+            -213
+        ],
+        "29-Z4-3": [
+            164,
+            364
+        ],
+        "31-Z1-1": [
+            295,
+            119
+        ],
+        "31-Z1-2": [
+            -360,
+            -205
+        ],
+        "31-Z1-4": [
+            -245,
+            284
+        ],
+        "31-Z3-2": [
+            -398,
+            -139
+        ],
+        "31-Z3-3": [
+            514.5773720938831,
+            41.05028681292239
+        ],
+        "jak-resit-ulohy": [
+            88,
+            -5
+        ],
+        "label-1d-pole": [
+            -115,
+            80
+        ],
+        "label-2d-pole": [
+            -294,
+            173
+        ],
+        "label-uvod": [
+            82,
+            -128
+        ],
+        "label-zelvy": [
+            188,
+            166
+        ],
+        "start": [
+            83,
+            -87
         ]
     }
 }
