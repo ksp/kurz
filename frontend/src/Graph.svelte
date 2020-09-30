@@ -6,6 +6,9 @@
   import type { TasksFile, TaskDescriptor } from "./task-loader";
   import { createNodesAndEdges } from "./graph-types";
   import { taskForce } from "./task-force";
+  import { grabTaskStates, isLoggedIn } from "./ksp-task-grabber";
+  import type { TaskStatus } from "./ksp-task-grabber"
+import { json } from "d3";
 
   export let tasks: TasksFile;
   export let repulsionForce: number = -1000;
@@ -18,6 +21,7 @@
   let clientHeight: number;
   let clientWidth: number;
   let svgElement: SVGElement;
+  let taskStatuses = new Map<string, TaskStatus>();
 
   // this prevents svelte from updating nodes and edges
   // when we update nodes and edges
@@ -87,6 +91,17 @@
   }
 
 
+  if (isLoggedIn()) {
+    const cachedTaskStatuses = localStorage.getItem("taskStatuses-cache")
+    if (cachedTaskStatuses) {
+      try { taskStatuses = new Map(JSON.parse(cachedTaskStatuses)) } catch(e) { console.warn(e) }
+    }
+    grabTaskStates(tasks.tasks.map(t => t.id)).then(t => {
+      taskStatuses = t
+      localStorage.setItem("taskStatuses-cache", JSON.stringify(Array.from(t.entries())))
+    })
+  }
+
   // start simulation and center view on create
   onMount(() => {
     // set center of the SVG at (0,0)
@@ -137,6 +152,7 @@
             on:click={nodeClick(task.task)}
             on:hoveringChange={nodeHover(task.task)}
             on:positionChange={() => { tasks = tasks; }}
+            status={taskStatuses.get(task.id)}
             draggingEnabled={nodeDraggingEnabled} />
         {/each}
       </g>

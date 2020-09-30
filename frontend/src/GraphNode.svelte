@@ -3,9 +3,11 @@
 
   import { createEventDispatcher, onMount } from "svelte";
   import type { TaskId } from "./graph-types";
+  import type { TaskStatus } from "./ksp-task-grabber";
 
   export let task: TaskId;
   export let draggingEnabled: boolean = false;
+  export let status: TaskStatus | undefined = undefined
 
   let hovering: boolean = false;
   let text_element: SVGTextElement;
@@ -74,9 +76,12 @@
   ellipse {
     fill: #69b3a2
   }
+  .submitted ellipse {
+    fill: red
+  }
 </style>
 
-<g on:mouseenter={enter} on:mouseleave={leave} on:click={click} on:mousedown={dragStart} on:mouseup={dragStop} on:mousemove={drag}>
+<g on:mouseenter={enter} on:mouseleave={leave} on:click={click} on:mousedown={dragStart} on:mouseup={dragStop} on:mousemove={drag} class={status && status.submitted ? "submitted" : ""}>
   <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
   <text
     bind:this={text_element}

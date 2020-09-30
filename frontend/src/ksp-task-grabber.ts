@@ -1,3 +1,5 @@
+import type { TaskId } from "./graph-types"
+
 export type TaskAssignmentData = {
     id: string,
     name: string,
@@ -13,19 +15,16 @@ type TaskLocation = {
     startElement: string
 }
 
-function fixLink(link: string, currentPath: string): string {
-    const url = new URL(link, currentPath)
-    if (url.host == "ksp.mff.cuni.cz" || url.host == "ksp-test.ks.matfyz.cz") {
-        url.host = location.host
-    }
-    if (url.host == location.host) {
-        return url.pathname
-    } else {
-        return url.href
-    }
+export type TaskStatus = {
+    id: string
+    name: string
+    submitted: boolean
+    points: number
+    maxPoints: number
+    type: string
 }
 
-function fixAllLinks(e: any, currentPath: string) {
+function fixAllLinks(e: any) {
     if (typeof e.src == "string") {
         e.src = e.src
     }
@@ -34,9 +33,23 @@ function fixAllLinks(e: any, currentPath: string) {
     }
     let c = (e as HTMLElement).firstElementChild
     while (c) {
-        fixAllLinks(c, currentPath)
+        fixAllLinks(c)
         c = c.nextElementSibling
     }
+}
+
+type ParsedTaskId = {
+    rocnik: string
+    z: boolean
+    serie: string
+    uloha: string
+}
+
+function parseTaskId(id: string): ParsedTaskId | null {
+    const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
+    if (!m) return null
+    const [_, rocnik, z, serie, uloha] = m
+    return { rocnik, z: !!z, serie, uloha }
 }
 
 function getLocation(id: string, solution: boolean): TaskLocation | null {
@@ -58,19 +71,11 @@ function getLocation(id: string, solution: boolean): TaskLocation | null {
     }
 }
 
-function parseTask(startElementId: string, html: string, currentPath: string): TaskAssignmentData {
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(html, "text/html")
-    if (!doc.head.querySelector("base")) {
-        let baseEl = doc.createElement('base');
-        baseEl.setAttribute('href', new URL(currentPath, location.href).href);
-        doc.head.append(baseEl);
-    }
-
+function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentData {
     const titleElement = doc.getElementById(startElementId)
     if (!titleElement)
         throw new Error(`Document does not contain ${startElementId}`)
-    fixAllLinks(titleElement, currentPath)
+    fixAllLinks(titleElement)
     const elements = []
 
     let e = titleElement
@@ -99,7 +104,7 @@ function parseTask(startElementId: string, html: string, currentPath: string): T
 
     let r = ""
     for (const e of elements) {
-        fixAllLinks(e, currentPath)
+        fixAllLinks(e)
         r += e.outerHTML + "\n"
     }
     return {
@@ -111,13 +116,41 @@ function parseTask(startElementId: string, html: string, currentPath: string): T
     }
 }
 
-async function loadTask({ url, startElement }: TaskLocation) {
+function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
+    const rows = Array.from(doc.querySelectorAll("table.zs-tasklist tr")).slice(1) as HTMLTableRowElement[]
+    return rows.map(r => {
+        const submitted = !r.classList.contains("zs-unsubmitted")
+        const id = r.cells[0].innerText.trim()
+        const type = r.cells[1].innerText.trim()
+        const name = r.cells[2].innerText.trim()
+        const pointsStr = r.cells[4].innerText.trim()
+        const pointsMatch = /(–|\d+) *\/ *(\d+)/.exec(pointsStr)
+        if (!pointsMatch) throw new Error()
+        const points = +pointsMatch[1]
+        const maxPoints = +pointsMatch[2]
+        return { id, name, submitted, type, points, maxPoints }
+    })
+}
+
+async function fetchHtml(url: string) {
     const r = await fetch(url, { headers: { "Accept": "text/html,application/xhtml+xml" } })
     if (r.status >= 400) {
-        throw Error("Bad request")
+        throw Error(r.statusText)
     }
-    const rText = await r.text()
-    return parseTask(startElement, rText, url)
+    const html = await r.text()
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(html, "text/html")
+    if (!doc.head.querySelector("base")) {
+        let baseEl = doc.createElement('base');
+        baseEl.setAttribute('href', new URL(url, location.href).href);
+        doc.head.append(baseEl);
+    }
+    return doc
+}
+
+async function loadTask({ url, startElement }: TaskLocation): Promise<TaskAssignmentData> {
+    const html = await fetchHtml(url)
+    return parseTask(startElement, html)
 }
 
 function virtualTask(id: string): TaskAssignmentData {
@@ -128,6 +161,25 @@ function virtualTask(id: string): TaskAssignmentData {
         points: 0,
         titleHtml: "<h3>Virtuální úloha</h3>"
     }
+}
+
+export function isLoggedIn(): boolean {
+    return !!document.querySelector(".auth a[href='/profil/profil.cgi']")
+}
+
+export async function grabTaskStates(kspIds: string[]): Promise<Map<string, TaskStatus>> {
+    if (!isLoggedIn()) throw new Error()
+
+    const ids = new Set<string>(kspIds.map(parseTaskId).filter(t => t != null).map(t => t!.rocnik))
+    const results = await Promise.all(Array.from(ids.keys()).map(async (rocnik) => {
+        const html = await fetchHtml(`/cviciste/?year=${rocnik}`)
+        return parseTaskStatuses(html)
+    }))
+
+    return new Map<string, TaskStatus>(
+        ([] as TaskStatus[]).concat(...results)
+        .map(r => [r.id, r])
+    )
 }
 
 export async function grabAssignment(id: string): Promise<TaskAssignmentData> {
