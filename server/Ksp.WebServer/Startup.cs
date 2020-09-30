@@ -106,7 +106,7 @@ namespace Ksp.WebServer
                         {
                             response.Headers.Location = new UriBuilder(response.Headers.Location) {
                                 Host = cx.Request.Host.Host,
-                                Port = cx.Request.Host.Port.Value,
+                                Port = cx.Request.Host.Port ?? (cx.Request.Scheme == "https" ? 443 : 80),
                                 Scheme = cx.Request.Scheme
                             }.Uri;
                         }
