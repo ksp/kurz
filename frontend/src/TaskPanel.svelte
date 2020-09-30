@@ -2,7 +2,7 @@
     import { grabAssignment } from "./ksp-task-grabber";
     import type { TaskAssignmentData } from "./ksp-task-grabber";
     import type { TasksFile, TaskDescriptor } from "./task-loader";
-import TaskDisplay from "./TaskDisplay.svelte";
+    import TaskDisplay from "./TaskDisplay.svelte";
 
     export let tasks: TasksFile;
     let selectedTask: TaskDescriptor | null = null
@@ -55,9 +55,11 @@ import TaskDisplay from "./TaskDisplay.svelte";
     .panel {
         position: relative;
         width: calc(min(100%, 100vw - 16px));
-        background-color: #222;
         overflow: hidden;
-        padding: 0 100px 0 100px;
+        padding: 16px 100px 16px 100px;
+        border: 1px solid #444444;
+        border-bottom: 2px dashed #444444;
+        background-color: #111111;
         box-sizing: border-box;
         z-index: 120;
     }
@@ -80,6 +82,7 @@ import TaskDisplay from "./TaskDisplay.svelte";
     }
     .panel.full {
         min-height: 100%;
+        border-bottom: 2px solid #444444;
     }
     .closeButton {
         display: none;
