@@ -64,7 +64,11 @@
       TaskDetailEditor,
       { task: t, tasks: tasks },
       { closeButton: false },
-      { onClose: () => { tasks = tasks; }}
+      {
+        onClose: () => {
+          tasks = tasks;
+        },
+      }
     );
   }
 
@@ -85,7 +89,7 @@
       id: id,
       type: "label",
       comment: "...",
-      requires: []
+      requires: [],
     };
 
     tasks.tasks = [...tasks.tasks, novaUloha];
@@ -103,7 +107,7 @@
       }
     }
 
-    if (! found) {
+    if (!found) {
       alert("Pokoušíš se smazat úlohu, která neexistuje. To je docela divné!");
       return;
     }
@@ -119,7 +123,9 @@
       }
     }
     if (dependencyExists) {
-      alert("Pokoušíš se smazat úlohu, na které je někdo jiný závislý! To nejde! Smaž první závislost.");
+      alert(
+        "Pokoušíš se smazat úlohu, na které je někdo jiný závislý! To nejde! Smaž první závislost."
+      );
       return;
     }
 
@@ -141,117 +147,156 @@
 </script>
 
 <style>
-  h3 {
-    margin: 0;
-    padding: 0;
-  }
-
   .container {
-    display: flex;
-    flex-direction: row;
+    /*display: flex;*/
+    /* flex-direction: row;*/
     margin: 0;
     height: 99vh;
     width: 100%;
-  }
 
-  .graph {
-    width: 100%;
-    margin: 0;
-    background-color: black;
-    height: 95%;
+    background-color: transparent;
   }
 
   .right {
+    margin-right: 2em;
+    float: right;
     width: 40vw;
     height: 100%;
     z-index: 20;
     position: relative;
   }
 
-  .left {
-    width: 60vw;
-    height: 100%;
-  }
-
   .toolbox {
     width: 100%;
-    margin: 0;
-    height: 50%;
-    background-color: pink;
+    height: 40%;
+    background-color: #1d1f21f0;
+
+    margin: 5px;
+    border: 1px solid gray;
+    padding: 5px;
   }
 
   .taskDetails {
     width: 100%;
     margin: 0;
     height: 50%;
-    background-color: aqua;
     overflow-y: auto;
+    background-color: #1d1f21f0;
+
+    margin: 5px;
+    border: 1px solid gray;
+    padding: 5px;
   }
 
-  .lastClicked {
+  button {
+    width: 45%;
+    border-radius: 0.5em;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    transition: auto;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #888;
+  }
+
+  button:active:not(:disabled) {
+    background-color: #eee;
+    color: black;
+  }
+
+  button:disabled {
+    border-color: #aaa;
+    color: #aaa;
+  }
+
+  .topLeftHint {
+    text-align: left;
+    padding-top: 1em;
+    padding-left: 2em;
+    width: 50%;
     height: 5%;
+    float: left;
+  }
+
+  :global(body) {
+    background-color: #1d1f21;
+    color: white;
+  }
+  .checkbox {
+    width: 45%;
+    display: inline-block;
+  }
+  .gap {
+    height: 1em;
   }
 </style>
 
+<Graph
+  {tasks}
+  {repulsionForce}
+  on:selectTask={clickTask}
+  on:preSelectTask={startHovering}
+  bind:this={graph}
+  {nodeDraggingEnabled}
+  on:openTask={openTaskDetailEditorButton}
+  {showHiddenEdges} />
+
 <div class="container">
-  <div class="left">
-    <div class="lastClicked">Last clicked: <b>{clicked.join(' | ')}</b></div>
-    <div class="graph">
-      <Graph
-        {tasks}
-        {repulsionForce}
-        on:selectTask={clickTask}
-        on:preSelectTask={startHovering}
-        bind:this={graph}
-        {nodeDraggingEnabled}
-        on:openTask={openTaskDetailEditorButton}
-        {showHiddenEdges} />
-    </div>
+  <div class="topLeftHint">
+    Last clicked: <b>{clicked.join(' | ')}</b><br /><i>Double click na node
+      otevře detail. Po kliknutí na label se zobrazí možnost rotace.</i>
   </div>
+
   <div class="right">
     <div class="toolbox">
-      <div>Toolbox</div>
+      <h3>Toolbox</h3>
       <div>
-        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2]}
-          -&gt; {clicked[clicked.length - 1]}</button>
+        <button on:click={saveCurrentState}>Uložit aktuální stav</button>
+        <button on:click={saveCurrentStateWithPositions}>Uložit aktuální stav
+          včetně pozic nodů</button>
       </div>
+      <div class="gap" />
+      <div>
+        <button on:click={addTask}>Nový node</button>
+        <button
+          disabled={clicked.length == 0}
+          on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit {clicked[clicked.length - 1] ?? "???"}</button>
+      </div>
+      <div class="gap" />
+      <div>
+        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2] ?? "???"}
+          -&gt; {clicked[clicked.length - 1] ?? "???"}</button>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" bind:checked={showHiddenEdges} /> Zobrazit skryté
+            hrany
+          </label>
+        </div>
+      </div>
+      
+      <div class="gap" />
       <div>
         <button on:click={graph.runSimulation}>Spustit simulaci</button>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" bind:checked={nodeDraggingEnabled} /> Povolit
+            přesouvání vrcholů
+          </label>
+        </div>
       </div>
       <div>
         Repulsion force: <input type="number" bind:value={repulsionForce} name="repulsionForceInput" max="1000" min="-10000" />
       </div>
-      <div>
-        <button on:click={saveCurrentState}>Uložit aktuální stav</button>
-      </div>
-      <div>
-        <button on:click={saveCurrentStateWithPositions}>Uložit aktuální stav
-          včetně pozic nodů</button>
-      </div>
-      <div>
-        <button on:click={addTask}>Nový node</button>
-      </div>
-      <div>
-        <button on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit {clicked[clicked.length - 1]}</button>
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" bind:checked={nodeDraggingEnabled} /> Povolit přesouvání
-          vrcholů
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="checkbox" bind:checked={showHiddenEdges} /> Zobrazit skryté hrany
-        </label>
-      </div>
-      {#if clicked.length > 0 && getTask(clicked[clicked.length - 1]).type == "label"}  
+      <div class="gap" />
+      {#if clicked.length > 0 && getTask(clicked[clicked.length - 1]).type == 'label'}
         <div>
-          Úhel rotace:
-          <input bind:value={angle} type="range" max="360" min="0" on:change={setAngleToTheCurrentLabel}/>
+          Úhel rotace: <input bind:value={angle} type="range" max="360" min="0" on:change={setAngleToTheCurrentLabel} />
         </div>
       {/if}
     </div>
+
     <div class="taskDetails">
       {#if currentTask != null}
         <h3>{currentTask.id}</h3>
