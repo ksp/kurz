@@ -19,6 +19,7 @@ export type TaskStatus = {
     id: string
     name: string
     submitted: boolean
+    solved: boolean
     points: number
     maxPoints: number
     type: string
@@ -80,15 +81,17 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
 
     let e = titleElement
 
-    const titleMatch = /(\d-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?/.exec(e.innerText.trim())
+    const titleMatch = /^(\d+-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?$/.exec(e.innerText.trim())
     if (!titleMatch) {
         var [_, id, name, __, points] = ["", startElementId, "Neznámé jméno úlohy", "", ""]
     } else {
         var [_, id, name, __, points] = titleMatch
     }
 
+    e = e.nextElementSibling as HTMLElement
+
     while (e.nextElementSibling &&
-           e.nextElementSibling?.tagName.toLowerCase() == "hr")
+           e.tagName.toLowerCase() == "hr")
         e = e.nextElementSibling as HTMLElement
 
     while (!e.classList.contains("story") &&
@@ -124,11 +127,12 @@ function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
         const type = r.cells[1].innerText.trim()
         const name = r.cells[2].innerText.trim()
         const pointsStr = r.cells[4].innerText.trim()
-        const pointsMatch = /(–|\d+) *\/ *(\d+)/.exec(pointsStr)
+        const pointsMatch = /((–|\.|\d)+) *\/ *(\d+)/.exec(pointsStr)
         if (!pointsMatch) throw new Error()
         const points = +pointsMatch[1]
         const maxPoints = +pointsMatch[2]
-        return { id, name, submitted, type, points, maxPoints }
+        const solved = r.classList.contains("zs-submitted")
+        return { id, name, submitted, type, points, maxPoints, solved }
     })
 }
 

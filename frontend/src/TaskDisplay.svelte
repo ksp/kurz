@@ -1,7 +1,9 @@
 <script type="ts">
     import { grabAssignment, grabSolution } from "./ksp-task-grabber";
+    import type { TaskStatus } from "./ksp-task-grabber";
     import { nonNull } from './helpers'
 import App from "./App.svelte";
+import { taskStatuses } from "./task-status-cache";
     export let taskId: string | null | undefined
 
     export let showSolution: boolean = false
@@ -9,10 +11,25 @@ import App from "./App.svelte";
         taskId
         showSolution = false
     }
+
+    let status: TaskStatus | undefined
+    $: if (taskId) status = $taskStatuses.get(taskId)
 </script>
 <style>
     div {
         text-align: justify;
+    }
+    .header {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+    .header div {
+        flex-grow: 1;
+    }
+    .header .status {
+        text-align: right;
+        font-style: italic;
     }
 </style>
 
@@ -21,7 +38,22 @@ import App from "./App.svelte";
     {#await grabAssignment(nonNull(taskId))}
         Načítám úlohu
     {:then task}
-        {@html task.titleHtml}
+        <div class="header">
+            <div class="title"><h3>{task.name}</h3></div>
+
+            <div class="status">
+                <p>
+                    {task.id} | {task.points} bodů
+                    {#if status && status.submitted}
+                        {#if nonNull(status).solved}
+                        | Vyřešeno 🥳
+                        {:else}
+                        | odevzdáno za {nonNull(status).points} bod{ "ů yyy"[nonNull(status).points] ?? "ů" }
+                        {/if}
+                    {/if}
+                </p>
+            </div>
+        </div>
         {@html task.description}
         <div class="clearfloat" />
 

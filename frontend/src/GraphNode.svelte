@@ -83,11 +83,23 @@
     fill: #69b3a2
   }
   .submitted ellipse {
-    fill: red
+    fill: red; /* TODO */
+  }
+  .solved ellipse {
+    fill: green; /* TODO */
   }
 </style>
 
-<g on:mouseenter={enter} on:mouseleave={leave} on:click={click} on:mousedown={dragStart} on:mouseup={dragStop} on:mousemove={drag} class={status && status.submitted ? "submitted" : ""} on:dblclick={dblclick}>
+<g on:mouseenter={enter}
+   on:mouseleave={leave}
+   on:click={click}
+   on:mousedown={dragStart}
+   on:mouseup={dragStop}
+   on:mousemove={drag}
+   on:dblclick={dblclick}
+   class={status == null ? "" :
+          status.solved ? "solved" :
+          status.submitted ? "submitted" : ""}>
   <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
   <text
     bind:this={text_element}

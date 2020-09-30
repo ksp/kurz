@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { TasksFile } from "./task-loader";
+  import { refresh } from './task-status-cache'
 
   export let promise: Promise<TasksFile>;
 
@@ -8,6 +9,7 @@
   let err: any | null = null;
     promise.then(
         (d) => {
+            refresh(d.tasks.map(t => t.id))
             data = d;
         },
         (e) => {
