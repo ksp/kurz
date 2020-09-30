@@ -104,7 +104,7 @@
     function zoomed(e) {
       svg.attr("transform", e.transform);
     }
-    const zoomer = d3.zoom().scaleExtent([0.1, 2])
+    const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10)
     zoomer.on("zoom", zoomed);
     d3.select(container).call(zoomer);
   });
