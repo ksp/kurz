@@ -2,9 +2,24 @@ import type { SimulationNodeDatum, SimulationLinkDatum } from "d3";
 
 export type TaskDescriptor = {
     id: string
+    title?: string
     requires: string[]
     comment?: string
-}
+} & (
+        {
+            type: "open-data",
+            taskReference: string
+        }
+        |
+        {
+            type: "text",
+            htmlContent: string
+        }
+        |
+        {
+            type: "label"
+        }
+    );
 
 export type TasksFile = {
     tasks: TaskDescriptor[]
@@ -28,7 +43,7 @@ export async function saveTasks(tasks: TasksFile) {
     let p: any = {}
     for (let [key, val] of tasks.positions.entries())
         p[key] = val;
-    const data = {...tasks, positions: p}
+    const data = { ...tasks, positions: p }
 
     // request options
     const options = {

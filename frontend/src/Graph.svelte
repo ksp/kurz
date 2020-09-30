@@ -8,7 +8,6 @@
   import { taskForce } from "./task-force";
   import { grabTaskStates, isLoggedIn } from "./ksp-task-grabber";
   import type { TaskStatus } from "./ksp-task-grabber"
-import { json } from "d3";
 
   export let tasks: TasksFile;
   export let repulsionForce: number = -1000;
@@ -39,6 +38,10 @@ import { json } from "d3";
 
   const nodeClick = (task: TaskDescriptor) => (e: CustomEvent<MouseEvent>) => {
     eventDispatcher("selectTask", task);
+  };
+
+  const nodeDoubleClick = (task: TaskDescriptor) => (e: CustomEvent<MouseEvent>) => {
+    eventDispatcher("openTask", task);
   };
 
   const nodeHover = (task: TaskDescriptor) => (
@@ -153,7 +156,8 @@ import { json } from "d3";
             on:hoveringChange={nodeHover(task.task)}
             on:positionChange={() => { tasks = tasks; }}
             status={taskStatuses.get(task.id)}
-            draggingEnabled={nodeDraggingEnabled} />
+            draggingEnabled={nodeDraggingEnabled}
+            on:dblclick={nodeDoubleClick(task.task)} />
         {/each}
       </g>
     </g>

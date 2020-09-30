@@ -1,9 +1,12 @@
 <script type="ts">
+  import { getContext } from "svelte";
+
   import Graph from "./Graph.svelte";
   import { nonNull } from "./helpers";
   import type { TaskDescriptor, TasksFile } from "./task-loader";
   import { saveTasks, getCategories } from "./task-loader";
   import TaskDisplay from "./TaskDisplay.svelte";
+  import TaskDetailEditor from "./TaskDetailEditor.svelte";
 
   export let tasks: TasksFile;
 
@@ -12,6 +15,7 @@
   let graph: Graph;
   let currentTask: TaskDescriptor | null = null;
   let nodeDraggingEnabled: boolean = false;
+  const { open } = getContext("simple-modal");
 
   function clickTask(e: CustomEvent<TaskDescriptor>) {
     // ukladani seznamu poslednich kliknuti
@@ -47,6 +51,15 @@
 
   async function saveCurrentState() {
     await saveTasks(tasks);
+  }
+
+  function openTaskDetailEditor(e: CustomEvent<TaskDescriptor>) {
+    open(
+      TaskDetailEditor,
+      { task: e.detail, tasks: tasks },
+      { closeButton: false },
+      { onClose: () => { console.log("callback invoked", tasks); tasks = tasks; }}
+    );
   }
 </script>
 
@@ -112,8 +125,9 @@
         {repulsionForce}
         on:selectTask={clickTask}
         on:preSelectTask={startHovering}
-        bind:this={graph} 
-        {nodeDraggingEnabled} />
+        bind:this={graph}
+        {nodeDraggingEnabled}
+        on:openTask={openTaskDetailEditor} />
     </div>
   </div>
   <div class="right">

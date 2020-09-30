@@ -64,6 +64,12 @@
     e.preventDefault();
     e.stopPropagation();
   }
+
+  function dblclick(e: MouseEvent) {
+    eventDispatcher("dblclick", e);
+    e.stopPropagation()
+    e.preventDefault()
+  }
 </script>
 
 <style>
@@ -81,7 +87,7 @@
   }
 </style>
 
-<g on:mouseenter={enter} on:mouseleave={leave} on:click={click} on:mousedown={dragStart} on:mouseup={dragStop} on:mousemove={drag} class={status && status.submitted ? "submitted" : ""}>
+<g on:mouseenter={enter} on:mouseleave={leave} on:click={click} on:mousedown={dragStart} on:mouseup={dragStop} on:mousemove={drag} class={status && status.submitted ? "submitted" : ""} on:dblclick={dblclick}>
   <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
   <text
     bind:this={text_element}
@@ -89,6 +95,6 @@
     y={cy + 5}
     text-anchor="middle"
     alignment-baseline="middle">
-    {task.id}
+    {task.task.title == null ? task.id : task.task.title}
   </text>
 </g>
