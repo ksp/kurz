@@ -16,6 +16,7 @@
   let currentTask: TaskDescriptor | null = null;
   let nodeDraggingEnabled: boolean = false;
   let angle: number;
+  let showHiddenEdges: boolean = false;
   const { open } = getContext("simple-modal");
 
   function clickTask(e: CustomEvent<TaskDescriptor>) {
@@ -203,7 +204,8 @@
         on:preSelectTask={startHovering}
         bind:this={graph}
         {nodeDraggingEnabled}
-        on:openTask={openTaskDetailEditorButton} />
+        on:openTask={openTaskDetailEditorButton}
+        {showHiddenEdges} />
     </div>
   </div>
   <div class="right">
@@ -236,6 +238,11 @@
         <label>
           <input type="checkbox" bind:checked={nodeDraggingEnabled} /> Povolit přesouvání
           vrcholů
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" bind:checked={showHiddenEdges} /> Zobrazit skryté hrany
         </label>
       </div>
       {#if clicked.length > 0 && getTask(clicked[clicked.length - 1]).type == "label"}  

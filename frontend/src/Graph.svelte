@@ -13,6 +13,7 @@
   export let tasks: TasksFile;
   export let repulsionForce: number = -1000;
   export let nodeDraggingEnabled: boolean = false;
+  export let showHiddenEdges: boolean = false;
 
   let hoveredTask: null | string = null;
 
@@ -135,7 +136,7 @@
     <g>
       <g transform="translate({clientWidth/2}, {clientHeight/2})">
         {#each edges as edge}
-          <GraphEdge {edge} />
+          <GraphEdge {edge} showLabelEdge={showHiddenEdges}/>
         {/each}
         {#each nodes as task}
           <GraphNode

@@ -3,6 +3,7 @@
     import type { TaskId } from "./graph-types";
   
     export let edge: SimulationLinkDatum<TaskId>;
+    export let showLabelEdge: boolean = false;
   
     $: x1 = edge?.source?.x ?? 0;
     $: y1 = edge?.source?.y ?? 0;
@@ -12,4 +13,6 @@
     $: dy = y1 - y2
 </script>
 
-<path d="m {x2} {y2+0} c 0 0 {dx} {dy-40} {dx} {dy-20}" style="fill:none; stroke: #aaa; stroke-width: 3px" />
+{#if showLabelEdge || (edge?.target?.task?.type ?? null) != "label"}
+    <path d="m {x2} {y2+0} c 0 0 {dx} {dy-40} {dx} {dy-20}" style="fill:none; stroke: #aaa; stroke-width: 3px" />
+{/if}

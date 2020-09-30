@@ -5,7 +5,8 @@
             "type": "open-data",
             "comment": "Kevin a magnety - triviální, lineární průchod pole",
             "requires": [
-                "jak-resit-ulohy"
+                "jak-resit-ulohy",
+                "label-1d-pole"
             ]
         },
         {
@@ -95,7 +96,8 @@
             "type": "open-data",
             "comment": "Hra Othello - link na 26-Z1-2, procházení 2D pole po různých směrech",
             "requires": [
-                "26-Z1-1"
+                "26-Z1-1",
+                "label-2d-pole"
             ]
         },
         {
@@ -117,7 +119,8 @@
             "type": "open-data",
             "comment": "Kevinova želva — triviální, průchod po 2D souřadnicích",
             "requires": [
-                "jak-resit-ulohy"
+                "jak-resit-ulohy",
+                "label-zelvy"
             ]
         },
         {
@@ -247,7 +250,9 @@
         {
             "id": "start",
             "type": "text",
-            "requires": [],
+            "requires": [
+                "label-uvod"
+            ],
             "comment": "úvodní kecy o tom, jak to celé funguje"
         }
     ],
