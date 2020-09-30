@@ -53,13 +53,70 @@
     await saveTasks(tasks);
   }
 
-  function openTaskDetailEditor(e: CustomEvent<TaskDescriptor>) {
+  function openTaskDetailEditorButton(e: CustomEvent<TaskDescriptor>) {
+    openTaskDetailEditor(e.detail);
+  }
+
+  function openTaskDetailEditor(t: TaskDescriptor) {
     open(
       TaskDetailEditor,
-      { task: e.detail, tasks: tasks },
+      { task: t, tasks: tasks },
       { closeButton: false },
       { onClose: () => { tasks = tasks; }}
     );
+  }
+
+  function addTask() {
+    let id = prompt("Zadej ID nové úlohy (nepůjde nikdy změnit):");
+    if (id == null || id == "") {
+      alert("Něco tam zadat musíš!");
+      return;
+    }
+
+    let novaUloha: TaskDescriptor = {
+      id: id,
+      type: "label",
+      comment: "...",
+      requires: []
+    };
+
+    tasks.tasks = [...tasks.tasks, novaUloha];
+
+    openTaskDetailEditor(novaUloha);
+  }
+
+  function removeTask(id: string) {
+    // zkontrolovat existenci
+    let found = false;
+    for (const t of tasks.tasks) {
+      if (t.id == id) {
+        found = true;
+        break;
+      }
+    }
+
+    if (! found) {
+      alert("Pokoušíš se smazat úlohu, která neexistuje. To je docela divné!");
+      return;
+    }
+
+    // existují závislosti na tuhle úlohu?
+    let dependencyExists = false;
+    for (const t of tasks.tasks) {
+      for (const r of t.requires) {
+        if (r == id) {
+          dependencyExists = true;
+          break;
+        }
+      }
+    }
+    if (dependencyExists) {
+      alert("Pokoušíš se smazat úlohu, na které je někdo jiný závislý! To nejde! Smaž první závislost.");
+      return;
+    }
+
+    // je to bezpečné, mažeme
+    tasks.tasks = tasks.tasks.filter((t) => t.id != id);
   }
 </script>
 
@@ -127,7 +184,7 @@
         on:preSelectTask={startHovering}
         bind:this={graph}
         {nodeDraggingEnabled}
-        on:openTask={openTaskDetailEditor} />
+        on:openTask={openTaskDetailEditorButton} />
     </div>
   </div>
   <div class="right">
@@ -149,6 +206,12 @@
       <div>
         <button on:click={saveCurrentStateWithPositions}>Uložit aktuální stav
           včetně pozic nodů</button>
+      </div>
+      <div>
+        <button on:click={addTask}>Nový node</button>
+      </div>
+      <div>
+        <button on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit {clicked[clicked.length - 1]}</button>
       </div>
       <div>
         <label>
