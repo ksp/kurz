@@ -19,29 +19,33 @@
 
     export function unPreselect(task: TaskDescriptor) {
         setTimeout(() => {
-            if (selectedTask && task.id == selectedTask.id && heightClass != "full") {
+            if (selectedTask && task.id == selectedTask.id && heightClass == "preview") {
                 heightClass = "collapsed"
             }
         }, 10);
     }
 
+    let lastSelectedTaskId = selectedTaskId
+
     $: {
-        if (selectedTaskId) {
+        if (selectedTaskId && lastSelectedTaskId != selectedTaskId) {
             heightClass = "full"
             selectedTask = tasks.tasks.find(t => t.id == selectedTaskId) ?? null
         } else {
-            heightClass = "collapsed"
+            if ("full" == heightClass)
+                heightClass = "collapsed"
         }
+        lastSelectedTaskId = selectedTaskId
     }
 
     function close() {
-        location.hash = ""
         heightClass = "closed"
         window.setTimeout(() => window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth'
         }), 100)
+        location.hash = ""
     }
 
     function handleKeydown(e: KeyboardEvent) {
