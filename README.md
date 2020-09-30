@@ -17,12 +17,23 @@ yarn dev
 ## Vývoj
 
 Frontend je napsaný ve Svelte, tady je (slušný) tutoriál: https://svelte.dev/tutorial/basics.
-Pokud se nakamarádíte s Javascriptem, existuje série knížek **You Don't Know JS (Yet)**.
+Pokud se nekamarádíte s JavaScriptem, existuje série knížek **You Don't Know JS (Yet)**.
 Taky používáme TypeScript (typy do Javascriptu) a D3 (magická knihovna na něco s daty a SVG)
 
-Server je magická proxy napsaná v ASP.NET Core - na produkci by neměla být potřeba, když KSP web přesvědčíme k tomu:
+## Integrace do KSPího webu
+
+Vývojový server je magická proxy napsaná v ASP.NET Core. Na produkci není potřeba, když KSP web přesvědčíme k tomu:
 
 * vrátit /tasks.json
-* POSTem uložit /tasks.json, když jsem org (vlastně ani není potřeba)
 * vrátit /grafik v té KSP template (je to html obsahující jeden `div`, `link` a `script`)
-* soubory z frontend/public/ (stačí ten javascript a css)
+* soubory z frontend/public/ (stačí ten JavaScript a CSS)
+
+Zároveň by se pro provoz webové aplikace hodilo přidat tato API. Aktuálně data získáváme všelijakými hacky:
+
+* seznam úloh ze cvičiště a získané body
+* HTML/text zadání a řešení jedné konkrétní úlohy
+* API odevzdávátka
+
+Dále bychom potřebovali web rozšířit o novou funkcionalitu:
+
+* definice opendatovek, co jsou technicky akorát ve cvičišti a nejsou ideálně na webu vůbec vidět
