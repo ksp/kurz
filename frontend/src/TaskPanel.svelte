@@ -61,7 +61,7 @@
 <style>
     .panel {
         position: relative;
-        width: calc(min(100%, 100vw - 16px));
+        width: calc(min(100%, 100vw - 20px));
         overflow: hidden;
         padding: 16px 100px 16px 100px;
         border: 1px solid #444444;
