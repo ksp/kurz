@@ -33,10 +33,16 @@
 
   // automatically size the bubbles to fit the text
   let ellipse_rx = 20;
-  onMount(() => {
+  function ensureTextFits() {
     const bbox = text_element.getBBox();
     ellipse_rx = bbox.width / 2 + 8;
+  }
+  // on first run
+  onMount(() => {
+    ensureTextFits();
   });
+  // every time after that
+  $: { task.task.title; ensureTextFits(); }
 
   // dragging
   let dragging: boolean = false;
