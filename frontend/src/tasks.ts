@@ -5,6 +5,7 @@ export type TaskDescriptor = {
     title?: string
     requires: string[]
     comment?: string
+    position?: [number, number]
 } & (
         {
             type: "open-data",
@@ -25,18 +26,38 @@ export type TaskDescriptor = {
 export type TasksFile = {
     tasks: TaskDescriptor[]
     clusters: { [name: string]: string[] }
-    positions: Map<string, [number, number]>
 }
 
 export type TaskMap = Map<string, TaskDescriptor>;
 
+export type TaskEdge = {
+    dependee: TaskDescriptor
+    dependency: TaskDescriptor
+}
+
+export function createEdges(nodes: TaskDescriptor[]): TaskEdge[] {
+    let edges: TaskEdge[] = [];
+    for (const n of nodes) {
+        for (const r of n.requires) {
+            const a = nodes.find((t) => t.id == r);
+            if (a == undefined) throw `broken dependency, missing task with ${r}`
+            edges.push({dependee: a, dependency: n})
+        }
+    }
+    return edges
+}
+
 export async function loadTasks(): Promise<TasksFile> {
     const r = await fetch("/tasks.json")
     const j = await r.json()
-    if (j.positions == null)
-        j.positions = new Map();
-    else
-        j.positions = new Map(Object.entries(j.positions))
+
+    // backward compatibility
+    if (j.positions != null) {
+        for (const [id,  pos] of Object.entries(j.positions)) {
+            j.tasks.find((t) => t.id == id).position = pos;
+        }
+    }
+     
     return j
 }
 
@@ -47,15 +68,10 @@ function normalizeTasks(tasks: TasksFile) {
 export async function saveTasks(tasks: TasksFile) {
     normalizeTasks(tasks);
 
-    let p: any = {}
-    for (let [key, val] of tasks.positions.entries())
-        p[key] = val;
-    const data = { ...tasks, positions: p }
-
     // request options
     const options = {
         method: 'POST',
-        body: JSON.stringify(data, null, 4),
+        body: JSON.stringify(tasks, null, 4),
         headers: {
             'Content-Type': 'application/json'
         }

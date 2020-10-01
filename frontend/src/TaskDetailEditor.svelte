@@ -1,10 +1,9 @@
 <script lang="ts">
-    import { getCategories } from "./task-loader";
-    import type { TaskDescriptor, TasksFile } from "./task-loader";
+    import { getCategories } from "./tasks";
+    import type { TaskDescriptor, TasksFile } from "./tasks";
     import { getContext } from "svelte";
     import { onMount } from "svelte";
     import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import App from "./App.svelte";
 
     const { close } = getContext("simple-modal");
 

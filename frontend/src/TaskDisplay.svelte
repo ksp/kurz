@@ -4,7 +4,7 @@
     import { nonNull } from './helpers'
     import App from "./App.svelte";
     import { taskStatuses } from "./task-status-cache";
-    import type { TaskDescriptor } from "./task-loader";
+    import type { TaskDescriptor } from "./tasks";
 
     export let task: TaskDescriptor | null | undefined
 

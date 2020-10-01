@@ -3,10 +3,11 @@
 
   import Graph from "./Graph.svelte";
   import { nonNull } from "./helpers";
-  import type { TaskDescriptor, TasksFile } from "./task-loader";
-  import { saveTasks, getCategories } from "./task-loader";
+  import type { TaskDescriptor, TasksFile } from "./tasks";
+  import { saveTasks, getCategories } from "./tasks";
   import TaskDisplay from "./TaskDisplay.svelte";
   import TaskDetailEditor from "./TaskDetailEditor.svelte";
+  import { forceSimulation } from "./force-simulation";
 
   export let tasks: TasksFile;
 
@@ -46,9 +47,15 @@
     }
   }
 
-  async function saveCurrentStateWithPositions() {
-    tasks.positions = graph.getNodePositions();
-    await saveTasks(tasks);
+  function runSimulation() {
+    forceSimulation(
+      tasks,
+      (positions) => {
+        tasks.tasks.forEach((t) => (t.position = positions.get(t.id)));
+        tasks = tasks;
+      },
+      repulsionForce
+    );
   }
 
   async function saveCurrentState() {
@@ -254,20 +261,18 @@
       <h3>Toolbox</h3>
       <div>
         <button on:click={saveCurrentState}>Uložit aktuální stav</button>
-        <button on:click={saveCurrentStateWithPositions}>Uložit aktuální stav
-          včetně pozic nodů</button>
       </div>
       <div class="gap" />
       <div>
         <button on:click={addTask}>Nový node</button>
         <button
           disabled={clicked.length == 0}
-          on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit {clicked[clicked.length - 1] ?? "???"}</button>
+          on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit {clicked[clicked.length - 1] ?? '???'}</button>
       </div>
       <div class="gap" />
       <div>
-        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2] ?? "???"}
-          -&gt; {clicked[clicked.length - 1] ?? "???"}</button>
+        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2] ?? '???'}
+          -&gt; {clicked[clicked.length - 1] ?? '???'}</button>
         <div class="checkbox">
           <label>
             <input type="checkbox" bind:checked={showHiddenEdges} /> Zobrazit skryté
@@ -275,10 +280,10 @@
           </label>
         </div>
       </div>
-      
+
       <div class="gap" />
       <div>
-        <button on:click={graph.runSimulation}>Spustit simulaci</button>
+        <button on:click={runSimulation}>Spustit simulaci</button>
         <div class="checkbox">
           <label>
             <input type="checkbox" bind:checked={nodeDraggingEnabled} /> Povolit
@@ -290,7 +295,7 @@
         Repulsion force: <input type="number" bind:value={repulsionForce} name="repulsionForceInput" max="1000" min="-10000" />
       </div>
       <div class="gap" />
-      {#if clicked.length > 0 && getTask(clicked[clicked.length - 1]).type == 'label'}
+      {#if clicked.length > 0 && getTask(clicked[clicked.length - 1])?.type == 'label'}
         <div>
           Úhel rotace: <input bind:value={angle} type="range" max="360" min="0" on:change={setAngleToTheCurrentLabel} />
         </div>

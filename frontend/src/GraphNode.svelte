@@ -2,10 +2,10 @@
   import * as d3 from "d3";
 
   import { createEventDispatcher, onMount } from "svelte";
-  import type { TaskId } from "./graph-types";
   import type { TaskStatus } from "./ksp-task-grabber";
+  import type { TaskDescriptor } from "./tasks";
 
-  export let task: TaskId;
+  export let task: TaskDescriptor;
   export let draggingEnabled: boolean = false;
   export let status: TaskStatus | undefined = undefined;
 
@@ -13,8 +13,7 @@
   let text_element: SVGTextElement;
   let mainGroup: SVGGElement;
 
-  $: cx = task === undefined || task.x === undefined ? 0 : task.x;
-  $: cy = task === undefined || task.y === undefined ? 0 : task.y;
+  $: [cx, cy] = task.position ?? [0, 0];
 
   const eventDispatcher = createEventDispatcher();
   function enter() {
@@ -43,7 +42,7 @@
   });
   // every time after that
   $: {
-    task.task.title;
+    task.title;
     if (text_element)
       ensureTextFits();
   }
@@ -64,9 +63,7 @@
     if (!draggingEnabled) return;
     if (!dragging) return;
 
-    let [x, y] = d3.pointer(e, mainGroup);
-    task.x = x;
-    task.y = y;
+    task.position = d3.pointer(e, mainGroup);
     eventDispatcher("positionChange");
     e.preventDefault();
     e.stopPropagation();
@@ -124,8 +121,8 @@
   on:click={click}
   on:mousedown={dragStart}
   on:dblclick={dblclick}
-  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.task.type}">
-  {#if task.task.type == 'label'}
+  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.type}">
+  {#if task.type == 'label'}
     {#if draggingEnabled }
       <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
     {/if}
@@ -135,8 +132,8 @@
       y={cy + 5}
       text-anchor="middle"
       alignment-baseline="middle"
-      transform="translate({cx}, {cy}) rotate({task.task.rotationAngle ?? 0}) translate({-cx}, {-cy})">
-      {task.task.title == null ? task.id : task.task.title}
+      transform="translate({cx}, {cy}) rotate({task.rotationAngle ?? 0}) translate({-cx}, {-cy})">
+      {task.title == null ? task.id : task.title}
     </text>
   {:else}
     <ellipse class="taskNode" rx={ellipse_rx} ry={20} {cx} {cy} />
@@ -146,7 +143,7 @@
       y={cy + 5}
       text-anchor="middle"
       alignment-baseline="middle">
-      {task.task.title == null ? task.id : task.task.title}
+      {task.title == null ? task.id : task.title}
     </text>
   {/if}
 </g>

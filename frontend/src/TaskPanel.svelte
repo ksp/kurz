@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { grabAssignment } from "./ksp-task-grabber";
-    import type { TaskAssignmentData } from "./ksp-task-grabber";
-    import type { TasksFile, TaskDescriptor } from "./task-loader";
+    import type { TasksFile, TaskDescriptor } from "./tasks";
     import TaskDisplay from "./TaskDisplay.svelte";
 
     export let tasks: TasksFile;

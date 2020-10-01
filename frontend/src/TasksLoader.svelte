@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { TasksFile } from "./task-loader";
+  import type { TasksFile } from "./tasks";
   import { refresh } from './task-status-cache'
 
   export let promise: Promise<TasksFile>;
