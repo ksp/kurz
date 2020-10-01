@@ -5,9 +5,10 @@
             "type": "open-data",
             "comment": "Kevin a magnety - triviální, lineární průchod pole",
             "requires": [
-                "jak-resit-ulohy",
-                "label-1d-pole"
-            ]
+                "label-1d-pole",
+                "data"
+            ],
+            "title": "26-Z1-1"
         },
         {
             "id": "26-Z1-2",
@@ -21,20 +22,27 @@
             "id": "26-Z1-3",
             "type": "open-data",
             "comment": "Zamilovaný dopis - triviální, procházení stringů po znacích a kontrola podmínek",
-            "requires": []
+            "requires": [
+                "26-Z1-1",
+                "label-retezce"
+            ]
         },
         {
             "id": "26-Z1-4",
             "type": "open-data",
             "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
-            "requires": []
+            "requires": [
+                "26-Z4-3",
+                "label-grafy"
+            ]
         },
         {
             "id": "26-Z2-1",
             "type": "open-data",
             "comment": "Had z domina - triviální, linerání průchod pole a počítání, na kolika místech platí podmínka, vyžaduje práci se dvojicemi",
             "requires": [
-                "26-Z1-1"
+                "26-Z1-1",
+                "label-1d-pole"
             ]
         },
         {
@@ -47,13 +55,19 @@
             "id": "26-Z2-3",
             "type": "open-data",
             "comment": "Šifrovaná zpráva - práce s řetězci, hledání mapování mezi písmenky (substitučka) a validace, že jinde substitučka funguje",
-            "requires": []
+            "requires": [
+                "26-Z1-3",
+                "label-retezce"
+            ]
         },
         {
             "id": "26-Z2-4",
             "type": "open-data",
             "comment": "Životně důležitá úloha -  dostanu pole čísel, potřebuju v něm najít pravidelně se opakující výskyty hodnot, relativně složitá práce s poli, dvojcemi apod.",
-            "requires": []
+            "requires": [
+                "26-Z2-1"
+            ],
+            "title": "26-Z2-4"
         },
         {
             "id": "26-Z3-1",
@@ -65,7 +79,10 @@
             "id": "26-Z3-2",
             "type": "open-data",
             "comment": "Čarodějova šifra - šifrování mřížkou, práce se stringy, rotace matice, vhodné na code review?, docela hard",
-            "requires": []
+            "requires": [
+                "26-Z4-3",
+                "29-Z3-2"
+            ]
         },
         {
             "id": "26-Z3-3",
@@ -77,7 +94,9 @@
             "id": "26-Z3-4",
             "type": "open-data",
             "comment": "Tvar labyrintu - nejdelší cesta ve stromě, graf",
-            "requires": []
+            "requires": [
+                "label-grafy-pracovni-poznamka"
+            ]
         },
         {
             "id": "26-Z4-1",
@@ -98,20 +117,24 @@
             "requires": [
                 "26-Z1-1",
                 "label-2d-pole"
-            ]
+            ],
+            "title": "26-Z4-3"
         },
         {
             "id": "26-Z4-4",
             "type": "open-data",
             "comment": "Hlídači v labyrintu - policajti hlídající na grafu, konkrétně na stromě, rekurze, technicky asi až DP",
-            "requires": []
+            "requires": [
+                "label-grafy-pracovni-poznamka"
+            ]
         },
         {
             "id": "27-Z2-1",
             "type": "open-data",
             "comment": "Závorky z cereálií - 2 průchody pole, závorky",
             "requires": [
-                "26-Z1-1"
+                "26-Z1-1",
+                "label-1d-pole"
             ]
         },
         {
@@ -119,21 +142,26 @@
             "type": "open-data",
             "comment": "Kevinova želva — triviální, průchod po 2D souřadnicích",
             "requires": [
-                "jak-resit-ulohy",
                 "label-zelvy"
-            ]
+            ],
+            "title": "29-Z1-1"
         },
         {
             "id": "29-Z1-3",
             "type": "open-data",
             "comment": "Petrova statistika — ne úplně triviální, tvorba histogramu z pole",
-            "requires": []
+            "requires": [
+                "27-Z2-1"
+            ],
+            "title": "29-Z1-3"
         },
         {
             "id": "29-Z1-4",
             "type": "open-data",
             "comment": "Zuzčin výlet — DFS (topologické pořadí)",
-            "requires": []
+            "requires": [
+                "label-grafy-pracovni-poznamka"
+            ]
         },
         {
             "id": "29-Z2-1",
@@ -155,7 +183,10 @@
             "id": "29-Z3-2",
             "type": "open-data",
             "comment": "Písemka z angličtiny — voser implementovat, easy dřevorubecký řešení, optimálně trie, což na Z IMHO hard",
-            "requires": []
+            "requires": [
+                "26-Z2-3",
+                "label-retezce"
+            ]
         },
         {
             "id": "29-Z3-3",
@@ -175,36 +206,53 @@
         {
             "id": "31-Z1-1",
             "type": "open-data",
-            "requires": [
-                "jak-resit-ulohy"
-            ],
-            "comment": "úloha s odčítáním času"
+            "requires": [],
+            "comment": "úloha s odčítáním času",
+            "title": "31-Z1-1"
         },
         {
             "id": "31-Z1-2",
             "type": "open-data",
             "comment": "BFS (šachovnice, custom figurka, nejkratší cesta)  ",
-            "requires": []
+            "requires": [
+                "label-grafy-pracovni-poznamka"
+            ]
         },
         {
             "id": "31-Z1-4",
             "type": "open-data",
             "comment": "2D pole (až na poslední vstup), hešování (piškvorky) - navazuje na 26-Z1-2",
             "requires": [
-                "26-Z4-3"
-            ]
+                "26-Z1-2"
+            ],
+            "title": "31-Z1-4"
         },
         {
             "id": "31-Z3-2",
             "type": "open-data",
             "comment": "DFS (hledání cesty v grafu po písmenech)",
-            "requires": []
+            "requires": [
+                "label-grafy-pracovni-poznamka"
+            ]
         },
         {
             "id": "31-Z3-3",
             "type": "open-data",
             "comment": "barvení bipartitního grafu (hledání partit), na vstupu hrany",
-            "requires": []
+            "requires": [
+                "26-Z1-4",
+                "label-grafy"
+            ]
+        },
+        {
+            "id": "data",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "jak-resit-ulohy"
+            ],
+            "title": "Data a algoritmy",
+            "htmlContent": "<h2>Datové struktury</h2><p>V programech potřebujeme nějak reprezentovat data o reálném světě. Paměť počítače je ale jen dlouhá sekvence bytů (malých čísel). Abychom mohli reprezentovat něco komplikovanějšího, skládáme si v paměti <strong>datové struktury.</strong> Technicky je to akorát hromada čísel, kterým přikládáme speciální význam. Pro potřeby programátora je ale často podstatnější ten samotný speciální význam, než hodnota čísel, kterými je zapsán.</p><p>Úlohy, které najdeš dále, se všechny zabývají nějakou datovou strukturou. Jsou uspořádány s rostoucí obtížností a pro pochopení složitějších datových struktur je často potřeba mít vštípené detaily struktury předchozí.</p><h2>Algoritmy</h2><p>Datové struktury jsou nám samotné k ničemu. K jejich smysluplnému využití potřebujeme nějaký důvod. Datovou strukturou jenom reprezentujeme nějaký stav světa. Proto v úlohách najdeš krom datových struktur také využití různých algoritmů - ověřených postupů, jak řešit nějaké druhy problémů.</p>"
         },
         {
             "id": "jak-resit-ulohy",
@@ -221,7 +269,7 @@
             "type": "label",
             "comment": "...",
             "requires": [],
-            "title": "1D pole",
+            "title": "Pole",
             "rotationAngle": 337
         },
         {
@@ -231,6 +279,32 @@
             "requires": [],
             "title": "2D pole",
             "rotationAngle": 340
+        },
+        {
+            "id": "label-grafy",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Grafy",
+            "rotationAngle": 342
+        },
+        {
+            "id": "label-grafy-pracovni-poznamka",
+            "type": "text",
+            "comment": "Chtělo by to grafy celé nějak přeuspořádat. Je to přeci jen dost široké téma.",
+            "requires": [
+                "31-Z3-3"
+            ],
+            "title": "Grafy, ale neuspořádané",
+            "htmlContent": "<p>undefined</p>"
+        },
+        {
+            "id": "label-retezce",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Textové řetězce",
+            "rotationAngle": 326
         },
         {
             "id": "label-uvod",
@@ -248,6 +322,26 @@
             "rotationAngle": 43
         },
         {
+            "id": "placeholder-kurz-programovani",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "programovani"
+            ],
+            "title": "placeholder-kurz-programovani",
+            "htmlContent": "<p>Tady by měl začítat kurz programování</p>"
+        },
+        {
+            "id": "programovani",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "jak-resit-ulohy"
+            ],
+            "title": "Programování",
+            "htmlContent": "<p>Počítače nemluví lidskou řečí. Aspoň zatím. Pokud jim chceme vysvětlit nějaký komplikovanější problém, potřebujeme mluvit správnou řečí - nějakým <strong>programovacím jazykem.</strong></p><h2>Jaký programovací jazyk použít?</h2><p>Programovacích jazyků je více a každý se hodí na něco jiného. S roustoucími zkušenostmi se pravděpodobně naučíš přecházet mezi několika programovacími jazyky podle toho, jaký problém zrovna řešíš.</p><p>Pro řešení úloh Ti doporučujeme <strong>Python 3</strong>. Pokud se ho chceš naučit, můžeš zkusit projít kurzem, který jsme pro Tebe připravili.</p>"
+        },
+        {
             "id": "start",
             "type": "text",
             "requires": [
@@ -263,8 +357,6 @@
             "31-Z1-1"
         ],
         "Triviální průchod 1D pole": [
-            "26-Z1-1",
-            "26-Z1-1",
             "26-Z1-1"
         ],
         "Triviální průchody 2D pole": [
@@ -312,52 +404,52 @@
     },
     "positions": {
         "26-Z1-1": [
-            -86.4374292583939,
-            114.1704716787137
+            -101.57299041748047,
+            97.42442321777344
         ],
         "26-Z1-2": [
-            -324,
-            235
+            -390.52777099609375,
+            223.46969604492188
         ],
         "26-Z1-3": [
-            -464,
-            -196
+            -108.57014465332031,
+            413.4291076660156
         ],
         "26-Z1-4": [
-            400,
-            -203
+            -721.7426147460938,
+            242.6431427001953
         ],
         "26-Z2-1": [
-            -115,
-            184
+            -40.54367446899414,
+            136.4449920654297
         ],
         "26-Z2-2": [
-            -278,
-            -162
+            -373,
+            -92
         ],
         "26-Z2-3": [
-            -320.2744362098852,
-            -72.1967458848867
+            -170.55516052246094,
+            448.4372253417969
         ],
         "26-Z2-4": [
-            575,
-            -111
+            -51.54255294799805,
+            201.43836975097656
         ],
         "26-Z3-1": [
             446,
             -160
         ],
         "26-Z3-2": [
-            644.167217052611,
-            -0.4551191547699971
+            -384.5406188964844,
+            551.4302368164062
         ],
         "26-Z3-3": [
             485,
             -81
         ],
         "26-Z3-4": [
-            -480.95284944300494,
-            29.587091058893556
+            -798.0394897460938,
+            422.3702087402344
         ],
         "26-Z4-1": [
             -551.4441557449455,
@@ -368,92 +460,116 @@
             1.4284188628810082
         ],
         "26-Z4-3": [
-            -220.83782675574338,
-            190.72741511636147
+            -332.5494689941406,
+            180.4159698486328
         ],
         "26-Z4-4": [
-            471,
-            -114
+            -618.3238525390625,
+            418.6714782714844
         ],
         "27-Z2-1": [
-            -30,
-            181
+            -152.5541534423828,
+            146.43653869628906
         ],
         "29-Z1-1": [
-            154,
-            199
+            152,
+            434
         ],
         "29-Z1-3": [
-            -442.93377199520177,
-            -73.3461550905827
+            -166.53085327148438,
+            205.43795776367188
         ],
         "29-Z1-4": [
-            554.2061258687584,
-            -44.42093615098819
+            -995.0092163085938,
+            426.0633850097656
         ],
         "29-Z2-1": [
-            259,
-            272
+            231,
+            499
         ],
         "29-Z3-1": [
-            -158,
-            276
+            -267.55303955078125,
+            230.44407653808594
         ],
         "29-Z3-2": [
-            -368.51198400620785,
-            1.6854832115582556
+            -241.55032348632812,
+            488.43450927734375
         ],
         "29-Z3-3": [
             470,
             -213
         ],
         "29-Z4-3": [
-            164,
-            364
+            119,
+            511
         ],
         "31-Z1-1": [
-            295,
-            119
+            -127,
+            -262
         ],
         "31-Z1-2": [
-            -360,
-            -205
+            -698.3235473632812,
+            428.5255126953125
         ],
         "31-Z1-4": [
-            -245,
-            284
+            -430.5250549316406,
+            278.4659423828125
         ],
         "31-Z3-2": [
-            -398,
-            -139
+            -894.0621948242188,
+            424.8323059082031
         ],
         "31-Z3-3": [
-            514.5773720938831,
-            41.05028681292239
+            -809.14794921875,
+            274.6507263183594
+        ],
+        "data": [
+            -29,
+            2
         ],
         "jak-resit-ulohy": [
-            88,
-            -5
+            43,
+            -98
         ],
         "label-1d-pole": [
-            -115,
-            80
+            -120.56800842285156,
+            53.46208953857422
         ],
         "label-2d-pole": [
-            -294,
-            173
+            -350.5476379394531,
+            141.41993713378906
+        ],
+        "label-grafy": [
+            -789.450927734375,
+            214.32875061035156
+        ],
+        "label-grafy-pracovni-poznamka": [
+            -826.3731079101562,
+            359.58056640625
+        ],
+        "label-retezce": [
+            -209.55250549316406,
+            410.4397888183594
         ],
         "label-uvod": [
-            82,
-            -128
+            42,
+            -243
         ],
         "label-zelvy": [
-            188,
-            166
+            205,
+            407
+        ],
+        "placeholder-kurz-programovani": [
+            452,
+            62
+        ],
+        "programovani": [
+            144,
+            2
         ],
         "start": [
-            83,
-            -87
+            38,
+            -176
         ]
     }
 }
