@@ -86,12 +86,12 @@
     }
     /* Used when the user hovers over a node and we want to show that there is something - a small expandable preview */
     .panel.preview, .panel:not(.full):hover {
-        height: 100px;
+        height: 150px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
     .panel.full {
-        min-height: 100%;
+        min-height: 420px;
         border-bottom: 2px solid #444444;
     }
     .closeButton {
@@ -114,6 +114,6 @@
 
 <div class="panel {heightClass}"
      on:click={() => location.hash = `#task/${selectedTask?.id}`}>
-    <TaskDisplay taskId={selectedTask?.id} />
+    <TaskDisplay task={selectedTask} />
     <button type=button class="closeButton" on:click|stopPropagation={close}></button>
 </div>

@@ -2,18 +2,28 @@
     import { grabAssignment, grabSolution } from "./ksp-task-grabber";
     import type { TaskStatus } from "./ksp-task-grabber";
     import { nonNull } from './helpers'
-import App from "./App.svelte";
-import { taskStatuses } from "./task-status-cache";
-    export let taskId: string | null | undefined
+    import App from "./App.svelte";
+    import { taskStatuses } from "./task-status-cache";
+    import type { TaskDescriptor } from "./task-loader";
+
+    export let task: TaskDescriptor | null | undefined
 
     export let showSolution: boolean = false
     $: {
-        taskId
+        task
         showSolution = false
     }
 
     let status: TaskStatus | undefined
-    $: if (taskId) status = $taskStatuses.get(taskId)
+    $: if (task) status = $taskStatuses.get(task.id)
+    let referenceId: string | null
+    $: {
+        if (task != null) {
+            const r = task.taskReference || task.id
+            if (referenceId != r)
+                referenceId = r
+        }
+    }
 </script>
 <style>
     div {
@@ -34,8 +44,15 @@ import { taskStatuses } from "./task-status-cache";
 </style>
 
 <div>
-    {#if taskId != null}
-    {#await grabAssignment(nonNull(taskId))}
+    {#if task != null}
+    {#if nonNull(task).type == "text"}
+        <div class="header">
+            <div class="title"><h3>{nonNull(task).title}</h3></div>
+        </div>
+        {@html nonNull(task).htmlContent || "Toto je prázdný textový node 😢"}
+    {:else if nonNull(task).type == "open-data"}
+
+    {#await grabAssignment(nonNull(referenceId))}
         Načítám úlohu
     {:then task}
         <div class="header">
@@ -65,7 +82,7 @@ import { taskStatuses } from "./task-status-cache";
             </a>
             {:else}
             <h4>Řešení</h4>
-            {#await grabSolution(nonNull(taskId))}
+            {#await grabSolution(referenceId)}
                 Načítám...
             {:then solution}
                 {@html solution.description}
@@ -73,5 +90,7 @@ import { taskStatuses } from "./task-status-cache";
             {/if}
         </div>
     {/await}
+
+    {/if}
     {/if}
 </div>
