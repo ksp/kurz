@@ -42,7 +42,11 @@
     ensureTextFits();
   });
   // every time after that
-  $: { task.task.title; ensureTextFits(); }
+  $: {
+    task.task.title;
+    if (text_element)
+      ensureTextFits();
+  }
 
   // dragging
   let dragging: boolean = false;
