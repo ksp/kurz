@@ -50,14 +50,6 @@ export function createEdges(nodes: TaskDescriptor[]): TaskEdge[] {
 export async function loadTasks(): Promise<TasksFile> {
     const r = await fetch("/tasks.json")
     const j = await r.json()
-
-    // backward compatibility
-    if (j.positions != null) {
-        for (const [id,  pos] of Object.entries(j.positions)) {
-            j.tasks.find((t) => t.id == id).position = pos;
-        }
-    }
-     
     return j
 }
 

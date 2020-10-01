@@ -242,7 +242,6 @@
 
 <Graph
   {tasks}
-  {repulsionForce}
   on:selectTask={clickTask}
   on:preSelectTask={startHovering}
   bind:this={graph}
