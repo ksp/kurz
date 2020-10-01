@@ -11,6 +11,7 @@
 
   let hovering: boolean = false;
   let text_element: SVGTextElement;
+  let mainGroup: SVGGElement;
 
   $: cx = task === undefined || task.x === undefined ? 0 : task.x;
   $: cy = task === undefined || task.y === undefined ? 0 : task.y;
@@ -45,12 +46,15 @@
     dragging = true;
     e.preventDefault();
     e.stopPropagation();
+
+    window.addEventListener("mousemove", drag)
+    window.addEventListener("mouseup", dragStop, { once: true })
   }
   function drag(e: MouseEvent) {
     if (!draggingEnabled) return;
     if (!dragging) return;
 
-    let [x, y] = d3.pointer(e);
+    let [x, y] = d3.pointer(e, mainGroup);
     task.x = x;
     task.y = y;
     eventDispatcher("positionChange");
@@ -63,6 +67,7 @@
     dragging = false;
     e.preventDefault();
     e.stopPropagation();
+    window.removeEventListener("mousemove", drag)
   }
 
   function dblclick(e: MouseEvent) {
@@ -103,12 +108,11 @@
 </style>
 
 <g
+  bind:this={mainGroup}
   on:mouseenter={enter}
   on:mouseleave={leave}
   on:click={click}
   on:mousedown={dragStart}
-  on:mouseup={dragStop}
-  on:mousemove={drag}
   on:dblclick={dblclick}
   class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.task.type}">
   {#if task.task.type == 'label'}
