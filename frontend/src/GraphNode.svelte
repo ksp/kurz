@@ -82,7 +82,12 @@
     stroke: gainsboro;
 
     cursor: default;
-  } 
+  }
+
+  .label > ellipse {
+    fill: transparent;
+    stroke: transparent;
+  }
   g:hover > .taskNode {
     fill: #ffb3a2;
   }
