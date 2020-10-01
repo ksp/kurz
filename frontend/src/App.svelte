@@ -6,8 +6,6 @@
   import TaskPanel from "./TaskPanel.svelte";
   import Editor from "./Editor.svelte";
   import Modal from "svelte-simple-modal";
-import GraphEdge from "./GraphEdge.svelte";
-import TaskDetailEditor from "./TaskDetailEditor.svelte";
 
   const tasksPromise: Promise<TasksFile> = loadTasks();
 

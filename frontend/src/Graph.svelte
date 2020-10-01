@@ -26,7 +26,6 @@
   let [nodes, edges] = createNodesAndEdges(tasks);
   function hack() {
     [nodes, edges] = createNodesAndEdges(tasks, nodes, edges);
-    //runSimulation();
   }
   $: {
     tasks;
