@@ -253,7 +253,9 @@
             "requires": [
                 "label-uvod"
             ],
-            "comment": "úvodní kecy o tom, jak to celé funguje"
+            "comment": "úvodní kecy o tom, jak to celé funguje",
+            "title": "Start",
+            "htmlContent": "<p>Aktuálně je celý projekt v <strong>BETA režimu</strong>. Pokud najdeš libovolnou chybu nebo pokud Tě napadá, že by se dalo cokoliv vylepšit (a ideálně jak), dej prosím vědět Vaškovi a Standovi. Díky!</p><h2>Vítej v našem novém kurzu!</h2><p>Pokud tě napadá, jak by se tento <strong>projekt mohl jmenovat</strong>, dej nám vědět!</p><h3>Co zde (časem) najdeš?</h3><ul><li>Základní kurz programování (dříve byl samostatně)</li><li>Roztříděné úlohy ze starších ročníků a sérií</li><li>Staré seriály</li><li>…a další úlohy, které jsme odněkud vyhrabali nebo nově vyrobili</li></ul><h3>Co budu mít z toho, že budu úlohy zde řešit?</h3><p>Něco se můžeš naučit a z toho můžeš mít dobrý pocit. Nic jiného teď neslibujeme. Splnit zde úlohu je to samé jako splnit ji ve cvičišti. Navíc ono k úlohám jsou většinou přístupná vzorová řešení, takže soutěžit zde nedává moc smysl.</p>"
         }
     ],
     "clusters": {
