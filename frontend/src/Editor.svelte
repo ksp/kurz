@@ -2,9 +2,9 @@
   import { getContext } from "svelte";
 
   import Graph from "./Graph.svelte";
-  import { nonNull } from "./helpers";
+  import { nonNull, saveToLocalDisk } from "./helpers";
   import type { TaskDescriptor, TasksFile } from "./tasks";
-  import { saveTasks, getCategories } from "./tasks";
+  import { saveTasks, getCategories, tasksToString } from "./tasks";
   import TaskDisplay from "./TaskDisplay.svelte";
   import TaskDetailEditor from "./TaskDetailEditor.svelte";
   import { forceSimulation } from "./force-simulation";
@@ -60,6 +60,10 @@
 
   async function saveCurrentState() {
     await saveTasks(tasks);
+  }
+
+  function saveLocally() {
+    saveToLocalDisk("tasks.json", tasksToString(tasks));
   }
 
   function openTaskDetailEditorButton(e: CustomEvent<TaskDescriptor>) {
@@ -260,6 +264,7 @@
       <h3>Toolbox</h3>
       <div>
         <button on:click={saveCurrentState}>Uložit aktuální stav</button>
+        <button on:click={saveLocally}>Stáhnout data</button>
       </div>
       <div class="gap" />
       <div>

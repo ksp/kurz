@@ -57,13 +57,16 @@ function normalizeTasks(tasks: TasksFile) {
     tasks.tasks.sort((t1, t2) => t1.id.localeCompare(t2.id))
 }
 
-export async function saveTasks(tasks: TasksFile) {
+export function tasksToString(tasks: TasksFile): string {
     normalizeTasks(tasks);
+    return JSON.stringify(tasks, null, 4)
+}
 
+export async function saveTasks(tasks: TasksFile) {
     // request options
     const options = {
         method: 'POST',
-        body: JSON.stringify(tasks, null, 4),
+        body: tasksToString(tasks),
         headers: {
             'Content-Type': 'application/json'
         }
