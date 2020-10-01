@@ -6,6 +6,8 @@
   import TaskPanel from "./TaskPanel.svelte";
   import Editor from "./Editor.svelte";
   import Modal from "svelte-simple-modal";
+import GraphEdge from "./GraphEdge.svelte";
+import TaskDetailEditor from "./TaskDetailEditor.svelte";
 
   const tasksPromise: Promise<TasksFile> = loadTasks();
 
@@ -39,8 +41,8 @@
         <div style="height: 100%">
           <Graph
             tasks={t}
-            on:selectTask={(e) => (location.hash = `#task/${e.detail.id}`)}
-            on:preSelectTask={(e) => taskPanel.preSelect(e.detail)}
+            on:selectTask={(e) => { if (e.detail.type != "label") (location.hash = `#task/${e.detail.id}`)}}
+            on:preSelectTask={(e) => taskPanel.preSelect(e.detail) }
             on:unPreSelectTask={(e) => taskPanel.unPreselect(e.detail)} />
         </div>
       </TasksLoader>

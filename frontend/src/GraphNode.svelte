@@ -73,9 +73,16 @@
 </script>
 
 <style>
-  g {
+  g:not(.label) {
     cursor: pointer;
   }
+  .label {
+    font-size: 1.5em;
+    fill: gainsboro;
+    stroke: gainsboro;
+
+    cursor: default;
+  } 
   g:hover > .taskNode {
     fill: #ffb3a2;
   }
@@ -88,12 +95,6 @@
   .solved .taskNode {
     fill: green; /* TODO */
   }
-
-  .label {
-    font-size: 1.5em;
-    fill: gainsboro;
-    stroke: gainsboro;
-  }
 </style>
 
 <g
@@ -104,13 +105,12 @@
   on:mouseup={dragStop}
   on:mousemove={drag}
   on:dblclick={dblclick}
-  class={status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''}>
+  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.task.type}">
   {#if task.task.type == 'label'}
     {#if draggingEnabled }
       <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
     {/if}
     <text
-      class="label"
       bind:this={text_element}
       x={cx}
       y={cy + 5}

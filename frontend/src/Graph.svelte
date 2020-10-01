@@ -7,8 +7,6 @@
   import { createNodesAndEdges } from "./graph-types";
   import { taskForce } from "./task-force";
   import { taskStatuses } from './task-status-cache'
-  import { grabTaskStates, isLoggedIn } from "./ksp-task-grabber";
-  import type { TaskStatus } from "./ksp-task-grabber"
 
   export let tasks: TasksFile;
   export let repulsionForce: number = -1000;

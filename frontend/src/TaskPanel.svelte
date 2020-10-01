@@ -11,6 +11,9 @@
     let heightClass: "closed" | "collapsed" | "full" | "preview" = "collapsed"
 
     export function preSelect(task: TaskDescriptor) {
+        // don't show anything for labels
+        if (task.type == "label") return;
+
         if (heightClass != "full") {
             selectedTask = task
             heightClass = "preview"
