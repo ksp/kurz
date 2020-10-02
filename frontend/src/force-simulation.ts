@@ -91,10 +91,8 @@ export function forceSimulation(tasks: TasksFile, ticked: (positions: Map<string
         .force(
             "link",
             d3
-                .forceLink() // This force provides links between nodes
-                .id(function (d) {
-                    return d.id;
-                }) // This provide  the id of a node
+                .forceLink<TaskId, SimulationLinkDatum<TaskId>>() // This force provides links between nodes
+                .id(d => d.id) // This provide  the id of a node
                 .links(edges) // and this the list of links
         )
         .force("charge", d3.forceManyBody().strength(repulsionForce)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
