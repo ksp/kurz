@@ -52,7 +52,7 @@
 
     function saveAndExit() {
         if (editData.task.type == "text")
-            editData.task.htmlContent = editor.getData()
+            editData.task.htmlContent = editor.getData();
         Object.assign(task, editData.task);
 
         // kategorie musíme první odevšad odstranit
@@ -73,9 +73,16 @@
         // a nakonec zavřít dialog
         close();
     }
-
-  
 </script>
+
+<style>
+    .fakeInput {
+        border: 1px solid lightgray;
+        padding: 0.5em;
+        display: inline-block;
+        margin: 0.5em;
+    }
+</style>
 
 <div>
     <div>
@@ -97,10 +104,15 @@
         <span contenteditable="true" bind:textContent={editData.task.title} />
     </h1>
     <div>
-        <h3>Interní komentář</h3>
-        <div contenteditable="true" bind:textContent={editData.task.comment} />
+        <div style="display: inline-block">Interní komentář: </div>
+        <div class="fakeInput" contenteditable="true" bind:textContent={editData.task.comment} />
     </div>
-    <div style="display: {editData.task.type == "text" ? 'block' : 'none'}">
+    {#if editData.task.type == 'open-data'}
+        <label>
+            Task reference: <input type="text" bind:value={editData.task.taskReference} />
+        </label>
+    {/if}
+    <div style="display: {editData.task.type == 'text' ? 'block' : 'none'}">
         <h3>HTML obsah</h3>
         <textarea id="editor">{editData.task.htmlContent}</textarea>
     </div>
