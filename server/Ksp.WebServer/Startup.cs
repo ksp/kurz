@@ -82,8 +82,11 @@ namespace Ksp.WebServer
                     opt.WithHttpClientName("RedirectClient");
 
                     opt.WithBeforeSend((cx, request) => {
-                        request.Headers.Authorization =
-                            new AuthenticationHeaderValue("Basic", "SECRET");
+                        if (request.Headers.Authorization is null)
+                        {
+                            request.Headers.Authorization =
+                                new AuthenticationHeaderValue("Basic", "SECRET");
+                        }
                         if (request.Headers.Referrer is object)
                             request.Headers.Referrer =
                                 new UriBuilder(request.Headers.Referrer) {
