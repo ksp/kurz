@@ -9,7 +9,9 @@
 
   export let tasks: TasksFile;
   export let nodeDraggingEnabled: boolean = false;
+  export let selectionToolEnabled: boolean = false;
   export let showHiddenEdges: boolean = false;
+  export let selection: Set<TaskDescriptor> = new Set();
 
   let hoveredTask: null | string = null;
 
@@ -18,6 +20,8 @@
   let clientHeight: number;
   let clientWidth: number;
   let svgElement: SVGElement;
+  let innerSvgGroup: SVGElement;
+  let selectionRectangle: [[number, number], [number, number]] | null = null;
 
   $: nodes = tasks.tasks;
   $: edges = createEdges(nodes);
@@ -25,6 +29,11 @@
   const eventDispatcher = createEventDispatcher();
   function nodeClick(task: TaskDescriptor) {
     function eventHandler(e: CustomEvent<MouseEvent>) {
+      if (selectionToolEnabled) {
+        selection.clear();
+        selection.add(task);
+        selection = selection;
+      }
       eventDispatcher("selectTask", task);
     }
     return eventHandler;
@@ -61,6 +70,110 @@
     d3.select(container).call(zoomer);
   }
 
+  function groupSelectionHandler(e: MouseEvent) {
+    // not enabled?
+    if (!selectionToolEnabled) return;
+
+    // not a right button?
+    if (e.button != 2) return;
+
+    // setup drag start
+    const startPos = d3.pointer(e, innerSvgGroup);
+
+    // prevent default
+    e.preventDefault();
+    e.stopPropagation();
+
+    function updateSelection() {
+      selection.clear();
+      tasks.tasks.forEach((t) => {
+        if (
+          selectionRectangle![0][0] < (t.position ?? [0, 0])[0] &&
+          (t.position ?? [0, 0])[0] < selectionRectangle![1][0] &&
+          selectionRectangle![0][1] < (t.position ?? [0, 0])[1] &&
+          (t.position ?? [0, 0])[1] < selectionRectangle![1][1]
+        )
+          selection.add(t);
+      });
+      selection = selection;
+    }
+
+    // setup mouse move
+    function mouseMove(e: MouseEvent) {
+      const np = d3.pointer(e, innerSvgGroup);
+      selectionRectangle = [
+        [Math.min(np[0], startPos[0]), Math.min(np[1], startPos[1])],
+        [Math.max(np[0], startPos[0]), Math.max(np[1], startPos[1])],
+      ];
+      updateSelection();
+    }
+    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("mouseup", mouseUp, { once: true });
+
+    // setup mouse down
+    function mouseUp(e: MouseEvent) {
+      // not a right button?
+      if (e.button != 2) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      // save selection
+      const np = d3.pointer(e, innerSvgGroup);
+      selectionRectangle = [
+        [Math.min(np[0], startPos[0]), Math.min(np[1], startPos[1])],
+        [Math.max(np[0], startPos[0]), Math.max(np[1], startPos[1])],
+      ];
+      updateSelection();
+      selectionRectangle = null;
+
+      // cleanup listeners
+      window.removeEventListener("mousemove", mouseMove);
+    }
+  }
+
+  // dragging
+  function dragStart(e: MouseEvent) {
+    if (!nodeDraggingEnabled) return;
+
+    // is the left button pressed?
+    if (e.button != 0) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    let startPos = d3.pointer(e, innerSvgGroup);
+
+    function drag(e: MouseEvent) {
+      if (!nodeDraggingEnabled) return;
+
+      const currPos = d3.pointer(e, innerSvgGroup);
+      const [dx, dy] = [currPos[0] - startPos[0], currPos[1] - startPos[1]];
+      for (const [t, _] of selection.entries()) {
+        t.position = [
+          (t.position ?? [0, 0])[0] + dx,
+          (t.position ?? [0, 0])[1] + dy,
+        ];
+      }
+      tasks = tasks;
+      startPos = currPos;
+
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    function dragStop(e: MouseEvent) {
+      if (!nodeDraggingEnabled) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+      window.removeEventListener("mousemove", drag);
+    }
+
+    window.addEventListener("mousemove", drag);
+    window.addEventListener("mouseup", dragStop, { once: true });
+  }
+
   onMount(() => {
     setupZoom();
   });
@@ -85,26 +198,49 @@
   :global(#page) {
     flex-grow: 1;
   }
+
+  rect {
+    fill: transparent;
+    stroke-dasharray: 5, 5;
+    stroke: gainsboro;
+  }
 </style>
 
-<div bind:this={container} bind:clientHeight bind:clientWidth>
+<div
+  bind:this={container}
+  bind:clientHeight
+  bind:clientWidth
+  on:mousedown={groupSelectionHandler}
+  on:contextmenu={(e) => {
+    if (selectionToolEnabled) {
+      e.preventDefault();
+      return false;
+    }
+  }}>
   <svg bind:this={svgElement} viewBox="{0},{0},{clientWidth},{clientHeight}">
     <g>
-      <g transform="translate({clientWidth / 2}, {clientHeight / 2})">
+      <g
+        bind:this={innerSvgGroup}
+        transform="translate({clientWidth / 2}, {clientHeight / 2})">
+        {#if selectionRectangle != null}
+          <rect
+            x={selectionRectangle[0][0]}
+            y={selectionRectangle[0][1]}
+            width={selectionRectangle[1][0] - selectionRectangle[0][0]}
+            height={selectionRectangle[1][1] - selectionRectangle[0][1]} />
+        {/if}
         {#each edges as edge}
           <GraphEdge {edge} showLabelEdge={showHiddenEdges} />
         {/each}
         {#each nodes as task}
           <GraphNode
             {task}
+            on:mousedown={dragStart}
+            selected={selection.has(task)}
             on:taskClick
             on:click={nodeClick(task)}
             on:hoveringChange={nodeHover(task)}
-            on:positionChange={() => {
-              tasks = tasks;
-            }}
             status={$taskStatuses.get(task.id)}
-            draggingEnabled={nodeDraggingEnabled}
             on:dblclick={nodeDoubleClick(task)} />
         {/each}
       </g>

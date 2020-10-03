@@ -246,6 +246,7 @@
 
 <Graph
   {tasks}
+  selectionToolEnabled={true}
   on:selectTask={clickTask}
   on:preSelectTask={startHovering}
   bind:this={graph}
@@ -256,7 +257,7 @@
 <div class="container">
   <div class="topLeftHint">
     Last clicked: <b>{clicked.join(' | ')}</b><br /><i>Double click na node
-      otevře detail. Po kliknutí na label se zobrazí možnost rotace.</i>
+      otevře detail. Po kliknutí na label se zobrazí možnost rotace. Držením pravého tlačítka je možné udělat skupinový výběr.</i>
   </div>
 
   <div class="right">

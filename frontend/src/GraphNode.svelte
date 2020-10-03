@@ -6,7 +6,7 @@
   import type { TaskDescriptor } from "./tasks";
 
   export let task: TaskDescriptor;
-  export let draggingEnabled: boolean = false;
+  export let selected: bool = false;
   export let status: TaskStatus | undefined = undefined;
 
   let hovering: boolean = false;
@@ -47,36 +47,6 @@
       ensureTextFits();
   }
 
-  // dragging
-  let dragging: boolean = false;
-  function dragStart(e: MouseEvent) {
-    if (!draggingEnabled) return;
-
-    dragging = true;
-    e.preventDefault();
-    e.stopPropagation();
-
-    window.addEventListener("mousemove", drag)
-    window.addEventListener("mouseup", dragStop, { once: true })
-  }
-  function drag(e: MouseEvent) {
-    if (!draggingEnabled) return;
-    if (!dragging) return;
-
-    task.position = d3.pointer(e, mainGroup);
-    eventDispatcher("positionChange");
-    e.preventDefault();
-    e.stopPropagation();
-  }
-  function dragStop(e: MouseEvent) {
-    if (!draggingEnabled) return;
-
-    dragging = false;
-    e.preventDefault();
-    e.stopPropagation();
-    window.removeEventListener("mousemove", drag)
-  }
-
   function dblclick(e: MouseEvent) {
     eventDispatcher("dblclick", e);
     e.stopPropagation();
@@ -112,18 +82,23 @@
   .solved .taskNode {
     fill: green; /* TODO */
   }
+
+  .selected > ellipse {
+    stroke-width: 4px;
+    stroke: red;
+  }
 </style>
 
 <g
   bind:this={mainGroup}
+  on:mousedown
   on:mouseenter={enter}
   on:mouseleave={leave}
   on:click={click}
-  on:mousedown={dragStart}
   on:dblclick={dblclick}
-  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.type}">
+  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.type} {selected ? 'selected' : 'notSelected'}">
   {#if task.type == 'label'}
-    {#if draggingEnabled }
+    {#if selected }
       <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
     {/if}
     <text
