@@ -38,14 +38,14 @@ function fixAllLinks(e: any) {
     }
 }
 
-type ParsedTaskId = {
+export type ParsedTaskId = {
     rocnik: string
     z: boolean
     serie: string
     uloha: string
 }
 
-function parseTaskId(id: string): ParsedTaskId | null {
+export function parseTaskId(id: string): ParsedTaskId | null {
     const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
     if (!m) return null
     const [_, rocnik, z, serie, uloha] = m
@@ -135,7 +135,7 @@ function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
     })
 }
 
-async function fetchHtml(url: string) {
+export async function fetchHtml(url: string) {
     const r = await fetch(url, { headers: { "Accept": "text/html,application/xhtml+xml" } })
     if (r.status >= 400) {
         throw Error(r.statusText)

@@ -1,10 +1,11 @@
 <script type="ts">
-    import { grabAssignment, grabSolution } from "./ksp-task-grabber";
+    import { grabAssignment, grabSolution, isLoggedIn } from "./ksp-task-grabber";
     import type { TaskStatus } from "./ksp-task-grabber";
     import { nonNull } from './helpers'
     import App from "./App.svelte";
     import { taskStatuses } from "./task-status-cache";
     import type { TaskDescriptor } from "./tasks";
+import Odevzdavatko from "./Odevzdavatko.svelte";
 
     export let task: TaskDescriptor | null | undefined
 
@@ -24,6 +25,14 @@
                 referenceId = r
         }
     }
+
+    let loginUrl: string = null!
+    function updateLoginUrl() {
+        loginUrl = `/z/auth/login.cgi?redirect=${encodeURIComponent(location.href)}`
+    }
+    updateLoginUrl()
+    window.addEventListener("onhashchange", updateLoginUrl)
+
 </script>
 <style>
     div {
@@ -72,7 +81,8 @@
             </div>
         </div>
         {@html task.description}
-        <div class="clearfloat" />
+
+        <hr class="clearfloat" />
 
         <div class="solution">
             {#if !showSolution}
@@ -82,13 +92,22 @@
             </a>
             {:else}
             <h4>Řešení</h4>
-            {#await grabSolution(referenceId)}
+            {#await grabSolution(nonNull(referenceId))}
                 Načítám...
             {:then solution}
                 {@html solution.description}
             {/await}
             {/if}
         </div>
+
+        {#if !showSolution}
+        <hr class="clearfloat" />
+        {#if isLoggedIn()}
+            <Odevzdavatko id={task.id} />
+        {:else}
+            <p class="zs-warning">Pro odevzdávání je potřeba se <a href={loginUrl}>přihlásit</a>.</p>
+        {/if}
+        {/if}
     {/await}
 
     {/if}
