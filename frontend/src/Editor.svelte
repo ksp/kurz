@@ -249,6 +249,7 @@
   selectionToolEnabled={true}
   on:selectTask={clickTask}
   on:preSelectTask={startHovering}
+  showCenterMarker={true}
   bind:this={graph}
   {nodeDraggingEnabled}
   on:openTask={openTaskDetailEditorButton}

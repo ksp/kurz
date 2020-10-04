@@ -12,6 +12,7 @@
   export let selectionToolEnabled: boolean = false;
   export let showHiddenEdges: boolean = false;
   export let selection: Set<TaskDescriptor> = new Set();
+  export let showCenterMarker: boolean = false;
 
   let hoveredTask: null | string = null;
 
@@ -199,6 +200,10 @@
     flex-grow: 1;
   }
 
+  :global(#footer) {
+    z-index: 20;
+  }
+
   rect {
     fill: transparent;
     stroke-dasharray: 5, 5;
@@ -228,6 +233,10 @@
             y={selectionRectangle[0][1]}
             width={selectionRectangle[1][0] - selectionRectangle[0][0]}
             height={selectionRectangle[1][1] - selectionRectangle[0][1]} />
+        {/if}
+        {#if showCenterMarker}
+          <line x1="10000" y1="0" x2="-10000" y2="0" stroke="gray" stroke-width="1px" stroke-dasharray="15,15" />
+          <line x1="0" y1="10000" x2="0" y2="-10000" stroke="gray" stroke-width="1px" stroke-dasharray="15,15" />
         {/if}
         {#each edges as edge}
           <GraphEdge {edge} showLabelEdge={showHiddenEdges} />
