@@ -8,10 +8,10 @@
                 "label-1d-pole",
                 "data"
             ],
-            "title": "26-Z1-1",
+            "title": "Kevin a magnety",
             "position": [
-                -101.57299041748047,
-                97.42442321777344
+                -165.5925064086914,
+                75.26382446289062
             ],
             "taskReference": "26-Z1-1"
         },
@@ -23,10 +23,11 @@
                 "26-Z4-3"
             ],
             "position": [
-                -390.52777099609375,
-                223.46969604492188
+                -538.6227111816406,
+                223.0074005126953
             ],
-            "taskReference": "26-Z1-2"
+            "taskReference": "26-Z1-2",
+            "title": "Piškvorky"
         },
         {
             "id": "26-Z1-3",
@@ -37,10 +38,11 @@
                 "label-retezce"
             ],
             "position": [
-                -108.57014465332031,
-                413.4291076660156
+                -143.04217529296875,
+                406.042236328125
             ],
-            "taskReference": "26-Z1-3"
+            "taskReference": "26-Z1-3",
+            "title": "Zamilovaný dopis"
         },
         {
             "id": "26-Z1-4",
@@ -51,10 +53,11 @@
                 "label-grafy"
             ],
             "position": [
-                -721.7426147460938,
-                242.6431427001953
+                -811.6162109375,
+                282.03977966308594
             ],
-            "taskReference": "26-Z1-4"
+            "taskReference": "26-Z1-4",
+            "title": "Hroch v jezeře"
         },
         {
             "id": "26-Z2-1",
@@ -65,10 +68,11 @@
                 "label-1d-pole"
             ],
             "position": [
-                -40.54367446899414,
-                136.4449920654297
+                -70.56319046020508,
+                120.35980987548828
             ],
-            "taskReference": "26-Z2-1"
+            "taskReference": "26-Z2-1",
+            "title": "Had z domina"
         },
         {
             "id": "26-Z2-2",
@@ -76,10 +80,11 @@
             "comment": "SADO - triviální, procházení celých čísel v intervalu a kontrola podmínky",
             "requires": [],
             "position": [
-                -373,
-                -92
+                1167.1616821289062,
+                208.39923095703125
             ],
-            "taskReference": "26-Z2-2"
+            "taskReference": "26-Z2-2",
+            "title": "SADO"
         },
         {
             "id": "26-Z2-3",
@@ -90,10 +95,11 @@
                 "label-retezce"
             ],
             "position": [
-                -170.55516052246094,
-                448.4372253417969
+                -218.5698013305664,
+                452.1306457519531
             ],
-            "taskReference": "26-Z2-3"
+            "taskReference": "26-Z2-3",
+            "title": "Šifrovaná zpráva"
         },
         {
             "id": "26-Z2-4",
@@ -102,10 +108,10 @@
             "requires": [
                 "26-Z2-1"
             ],
-            "title": "26-Z2-4",
+            "title": "Životně důležitá úloha",
             "position": [
-                -51.54255294799805,
-                201.43836975097656
+                -44.170326232910156,
+                178.35317993164062
             ],
             "taskReference": "26-Z2-4"
         },
@@ -115,10 +121,11 @@
             "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
             "requires": [],
             "position": [
-                446,
-                -160
+                1205.6161193847656,
+                327.53318786621094
             ],
-            "taskReference": "26-Z3-1"
+            "taskReference": "26-Z3-1",
+            "title": "Zámky labyrintu"
         },
         {
             "id": "26-Z3-2",
@@ -129,10 +136,11 @@
                 "29-Z3-2"
             ],
             "position": [
-                -384.5406188964844,
-                551.4302368164062
+                -431.3240966796875,
+                546.5056457519531
             ],
-            "taskReference": "26-Z3-2"
+            "taskReference": "26-Z3-2",
+            "title": "Čarodějova šifra"
         },
         {
             "id": "26-Z3-3",
@@ -140,10 +148,11 @@
             "comment": "Hádanka - triky s dělitelností devíti a rozkladem čísel, docela hard teorie",
             "requires": [],
             "position": [
-                485,
-                -81
+                1244.6161193847656,
+                406.53318786621094
             ],
-            "taskReference": "26-Z3-3"
+            "taskReference": "26-Z3-3",
+            "title": "Hádanka"
         },
         {
             "id": "26-Z3-4",
@@ -153,10 +162,11 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -798.0394897460938,
-                422.3702087402344
+                -890.9130859375,
+                501.766845703125
             ],
-            "taskReference": "26-Z3-4"
+            "taskReference": "26-Z3-4",
+            "title": "Tvar labyrintu"
         },
         {
             "id": "26-Z4-1",
@@ -164,10 +174,11 @@
             "comment": "Vražedná čísla- WTF, teorie čísel, hard as fuck, divný",
             "requires": [],
             "position": [
-                -551.4441557449455,
-                -38.58561957493338
+                1087.2091645675546,
+                270.43162285670724
             ],
-            "taskReference": "26-Z4-1"
+            "taskReference": "26-Z4-1",
+            "title": "Vražedná čísla"
         },
         {
             "id": "26-Z4-2",
@@ -175,10 +186,11 @@
             "comment": "Sbírání vajíček - hledení mediánu, musí se to ale vymyslet, nejkratší cesta při chození tam a zpět",
             "requires": [],
             "position": [
-                -633.6757896792913,
-                1.4284188628810082
+                1004.9775306332087,
+                310.44566129452164
             ],
-            "taskReference": "26-Z4-2"
+            "taskReference": "26-Z4-2",
+            "title": "Sbírání vajíček"
         },
         {
             "id": "26-Z4-3",
@@ -188,10 +200,10 @@
                 "26-Z1-1",
                 "label-2d-pole"
             ],
-            "title": "26-Z4-3",
+            "title": "Hra Othello",
             "position": [
-                -332.5494689941406,
-                180.4159698486328
+                -480.6444091796875,
+                179.95367431640625
             ],
             "taskReference": "26-Z4-3"
         },
@@ -203,10 +215,11 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -618.3238525390625,
-                418.6714782714844
+                -675.1974487304688,
+                442.068115234375
             ],
-            "taskReference": "26-Z4-4"
+            "taskReference": "26-Z4-4",
+            "title": "Hlídači v labyrintu"
         },
         {
             "id": "27-Z2-1",
@@ -217,10 +230,11 @@
                 "label-1d-pole"
             ],
             "position": [
-                -152.5541534423828,
-                146.43653869628906
+                -235.95565795898438,
+                131.96937561035156
             ],
-            "taskReference": "27-Z2-1"
+            "taskReference": "27-Z2-1",
+            "title": "Závorky z cereálií"
         },
         {
             "id": "29-Z1-1",
@@ -229,10 +243,10 @@
             "requires": [
                 "label-zelvy"
             ],
-            "title": "29-Z1-1",
+            "title": "Kevinova želva",
             "position": [
-                152,
-                434
+                153.23114013671875,
+                435.23114013671875
             ],
             "taskReference": "29-Z1-1"
         },
@@ -243,10 +257,10 @@
             "requires": [
                 "27-Z2-1"
             ],
-            "title": "29-Z1-3",
+            "title": "Petrova statistika",
             "position": [
-                -166.53085327148438,
-                205.43795776367188
+                -239.7012176513672,
+                191.6642303466797
             ],
             "taskReference": "29-Z1-3"
         },
@@ -258,10 +272,11 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -995.0092163085938,
-                426.0633850097656
+                -1084.8828125,
+                465.46002197265625
             ],
-            "taskReference": "29-Z1-4"
+            "taskReference": "29-Z1-4",
+            "title": "Zuzčin výlet"
         },
         {
             "id": "29-Z2-1",
@@ -271,10 +286,11 @@
                 "29-Z1-1"
             ],
             "position": [
-                231,
-                499
+                263.0097351074219,
+                491.6130676269531
             ],
-            "taskReference": "29-Z2-1"
+            "taskReference": "29-Z2-1",
+            "title": "Krocení zlé želvy"
         },
         {
             "id": "29-Z3-1",
@@ -284,10 +300,11 @@
                 "26-Z4-3"
             ],
             "position": [
-                -267.55303955078125,
-                230.44407653808594
+                -394.7185363769531,
+                232.44407653808594
             ],
-            "taskReference": "29-Z3-1"
+            "taskReference": "29-Z3-1",
+            "title": "Želva na dvorku"
         },
         {
             "id": "29-Z3-2",
@@ -298,10 +315,11 @@
                 "label-retezce"
             ],
             "position": [
-                -241.55032348632812,
-                488.43450927734375
+                -321.57469177246094,
+                498.2836608886719
             ],
-            "taskReference": "29-Z3-2"
+            "taskReference": "29-Z3-2",
+            "title": "Písemka z angličtiny"
         },
         {
             "id": "29-Z3-3",
@@ -309,10 +327,11 @@
             "comment": "Šestková čísla — mega voser implementovat, spíš matematická úloha, převod dešitkových čísel do hacknutých římských",
             "requires": [],
             "position": [
-                470,
-                -213
+                1229.6161193847656,
+                274.53318786621094
             ],
-            "taskReference": "29-Z3-3"
+            "taskReference": "29-Z3-3",
+            "title": "Šestková čísla"
         },
         {
             "id": "29-Z4-3",
@@ -326,17 +345,18 @@
                 119,
                 511
             ],
-            "taskReference": "29-Z4-3"
+            "taskReference": "29-Z4-3",
+            "title": "Želva v akváriu"
         },
         {
             "id": "31-Z1-1",
             "type": "open-data",
             "requires": [],
             "comment": "úloha s odčítáním času",
-            "title": "31-Z1-1",
+            "title": "Zuzka a poník",
             "position": [
-                -127,
-                -262
+                1255.5751953125,
+                131.96621704101562
             ],
             "taskReference": "31-Z1-1"
         },
@@ -348,10 +368,11 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -698.3235473632812,
-                428.5255126953125
+                -763.1971435546875,
+                493.9221496582031
             ],
-            "taskReference": "31-Z1-2"
+            "taskReference": "31-Z1-2",
+            "title": "Ukradený jezdec"
         },
         {
             "id": "31-Z1-4",
@@ -360,10 +381,10 @@
             "requires": [
                 "26-Z1-2"
             ],
-            "title": "31-Z1-4",
+            "title": "Piškvorky naslepo",
             "position": [
-                -430.5250549316406,
-                278.4659423828125
+                -578.6199951171875,
+                278.00364685058594
             ],
             "taskReference": "31-Z1-4"
         },
@@ -375,10 +396,11 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -894.0621948242188,
-                424.8323059082031
+                -1028.935791015625,
+                523.2289428710938
             ],
-            "taskReference": "31-Z3-2"
+            "taskReference": "31-Z3-2",
+            "title": "Zámek obrazovky"
         },
         {
             "id": "31-Z3-3",
@@ -389,10 +411,11 @@
                 "label-grafy"
             ],
             "position": [
-                -809.14794921875,
-                274.6507263183594
+                -899.0215454101562,
+                314.04736328125
             ],
-            "taskReference": "31-Z3-3"
+            "taskReference": "31-Z3-3",
+            "title": "Stáda hrochů"
         },
         {
             "id": "data",
@@ -430,8 +453,8 @@
             "title": "Pole",
             "rotationAngle": 337,
             "position": [
-                -120.56800842285156,
-                53.46208953857422
+                -184.5875244140625,
+                31.301490783691406
             ]
         },
         {
@@ -442,8 +465,8 @@
             "title": "2D pole",
             "rotationAngle": 340,
             "position": [
-                -350.5476379394531,
-                141.41993713378906
+                -498.642578125,
+                140.9576416015625
             ]
         },
         {
@@ -454,8 +477,8 @@
             "title": "Grafy",
             "rotationAngle": 342,
             "position": [
-                -789.450927734375,
-                214.32875061035156
+                -879.3245239257812,
+                253.7253875732422
             ]
         },
         {
@@ -468,8 +491,8 @@
             "title": "Grafy, ale neuspořádané",
             "htmlContent": "<p>undefined</p>",
             "position": [
-                -826.3731079101562,
-                359.58056640625
+                -916.2467041015625,
+                398.9772033691406
             ]
         },
         {
@@ -480,8 +503,8 @@
             "title": "Textové řetězce",
             "rotationAngle": 326,
             "position": [
-                -209.55250549316406,
-                410.4397888183594
+                -256.3359832763672,
+                405.51519775390625
             ]
         },
         {
@@ -514,11 +537,11 @@
             "requires": [
                 "programovani"
             ],
-            "title": "placeholder-kurz-programovani",
-            "htmlContent": "<p>Tady by měl začítat kurz programování</p>",
+            "title": "Placeholder pro základní kurz programování",
+            "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p>",
             "position": [
-                452,
-                62
+                464.3114318847656,
+                68.15572357177734
             ]
         },
         {
@@ -543,7 +566,7 @@
             ],
             "comment": "úvodní kecy o tom, jak to celé funguje",
             "title": "Start",
-            "htmlContent": "<p>Aktuálně je celý projekt v <strong>BETA režimu</strong>. Pokud najdeš libovolnou chybu nebo pokud Tě napadá, že by se dalo cokoliv vylepšit (a ideálně jak), dej prosím vědět Vaškovi a Standovi. Díky!</p><h2>Vítej v našem novém kurzu!</h2><p>Pokud tě napadá, jak by se tento <strong>projekt mohl jmenovat</strong>, dej nám vědět!</p><h3>Co zde (časem) najdeš?</h3><ul><li>Základní kurz programování (dříve byl samostatně)</li><li>Roztříděné úlohy ze starších ročníků a sérií</li><li>Staré seriály</li><li>…a další úlohy, které jsme odněkud vyhrabali nebo nově vyrobili</li></ul><h3>Co budu mít z toho, že budu úlohy zde řešit?</h3><p>Něco se můžeš naučit a z toho můžeš mít dobrý pocit. Nic jiného teď neslibujeme. Splnit zde úlohu je to samé jako splnit ji ve cvičišti. Navíc ono k úlohám jsou většinou přístupná vzorová řešení, takže soutěžit zde nedává moc smysl.</p>",
+            "htmlContent": "<p>Aktuálně je celý projekt v <strong>BETA režimu</strong>. Pokud najdeš libovolnou chybu nebo pokud Tě napadá, že by se dalo cokoliv vylepšit (a ideálně jak), dej prosím vědět Vaškovi a Standovi. Díky!</p><h2>Vítej v našem novém kurzu!</h2><p>Pokud tě napadá, jak by se tento <strong>projekt mohl jmenovat</strong>, dej nám vědět!</p><h3>Co zde (časem) najdeš?</h3><ul><li>Základní kurz programování (dříve byl samostatně)</li><li>Roztříděné úlohy ze starších ročníků a sérií</li><li>Staré seriály</li><li>…a další úlohy, které jsme odněkud vyhrabali nebo nově vyrobili</li></ul><h3>Co budu mít z toho, že budu úlohy zde řešit?</h3><p>Něco se můžeš naučit a z toho můžeš mít dobrý pocit. Nic jiného teď neslibujeme. Splnit zde úlohu je to samé jako splnit ji ve cvičišti. Navíc ono k úlohám jsou většinou přístupná vzorová řešení, takže soutěžit zde nedává moc smysl.</p><p>Ohledně vzorových řešení – je čistě na Tobě, zda budeš úlohy řešit poctivě, nebo jestli si budeš číst řešení před tím, než vymyslíš něco vlastního. Zabránit Ti v tom nedokážeme a ani nechceme. Pokud se chceš něco naučit, nebo si něco procvičit, tak doporučujeme vzorová řešení otevírat až po vlastním řešení, případně když se zasekneš. Získáš tak z kurzu nejvíce.</p>",
             "position": [
                 38,
                 -176
@@ -585,8 +608,8 @@
         ],
         "Grafy": [
             "26-Z1-4",
-            "26-Z4-4",
             "26-Z3-4",
+            "26-Z4-4",
             "29-Z1-4",
             "31-Z1-2",
             "31-Z3-2",
