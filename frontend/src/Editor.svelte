@@ -185,6 +185,8 @@
     margin: 5px;
     border: 1px solid gray;
     padding: 5px;
+
+    overflow-y: auto;
   }
 
   .taskDetails {
