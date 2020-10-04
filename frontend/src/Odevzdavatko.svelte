@@ -3,7 +3,7 @@
     import type { TaskStatus } from "./ksp-task-grabber";
     import type { TaskSubmitStatus, SubtaskSubmitStatus } from './ksp-submit-api'
     import * as api from './ksp-submit-api'
-    import { taskStatuses } from './task-status-cache'
+    import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
 
     export let id: string;
     const taskFromCache: TaskStatus | undefined = $taskStatuses.get(id)
@@ -129,6 +129,7 @@
 
     async function upload(file: File) {
         const x = await api.submit(id, uploadSubtaskId!, file)
+        refreshTaskStatus([id])
         alert(x.verdict)
     }
 
