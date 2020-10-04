@@ -17,7 +17,7 @@ export const taskStatuses = readable(lastVal, write => {
 export function refresh(ids: string[]) {
     if (!isLoggedIn()) return;
 
-    grabTaskStates(ids).then(t => {
+    return grabTaskStates(ids).then(t => {
         const tt = Array.from(t.entries())
         writeFn(new Map(Array.from(lastVal.entries()).concat(tt)))
         localStorage.setItem("taskStatuses-cache", JSON.stringify(tt))

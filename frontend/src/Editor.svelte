@@ -8,6 +8,8 @@
   import TaskDisplay from "./TaskDisplay.svelte";
   import TaskDetailEditor from "./TaskDetailEditor.svelte";
   import { forceSimulation } from "./force-simulation";
+  import { refresh as refreshTaskStatuses, taskStatuses } from './task-status-cache'
+import { isLoggedIn } from "./ksp-task-grabber";
 
   export let tasks: TasksFile;
 
@@ -154,6 +156,26 @@
       t.rotationAngle = angle;
       tasks = tasks;
     }
+  }
+
+  async function loadYear() {
+    if (!isLoggedIn()) {
+      alert("Musíš se přihlásit")
+      return
+    }
+    const y = prompt("Který ročník (číslo 26...X)")
+    await refreshTaskStatuses([`${y}-Z1-1`])
+    const newTasks = Array.from($taskStatuses.values()).filter(t => t.id.startsWith(y + "-") && !tasks.tasks.find(tt => tt.type == "open-data" && tt.taskReference == t.id))
+    const newDescriptors: TaskDescriptor[] =
+      newTasks.map(t => ({
+        type: "open-data",
+        id: t.id,
+        taskReference: t.id,
+        requires: [],
+        position: [0, 0],
+        title: t.name
+      }))
+    tasks.tasks = [...tasks.tasks, ...newDescriptors]
   }
 </script>
 
@@ -309,6 +331,9 @@
           Úhel rotace: <input bind:value={angle} type="range" max="360" min="0" on:change={setAngleToTheCurrentLabel} />
         </div>
       {/if}
+      <div>
+        <button on:click={loadYear} disabled={!isLoggedIn()} title={isLoggedIn() ? "Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou" : "Je nutné být přihlášený a na stránce v KSP template."}>Nahrát celý ročník</button>
+      </div>
     </div>
 
     <div class="taskDetails">
