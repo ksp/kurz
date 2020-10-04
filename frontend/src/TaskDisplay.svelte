@@ -83,6 +83,13 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
         {@html task.description}
 
         <hr class="clearfloat" />
+        {#if isLoggedIn()}
+            <Odevzdavatko id={task.id} />
+        {:else}
+            <p class="zs-warning">Pro odevzdávání je potřeba se <a href={loginUrl}>přihlásit</a>.</p>
+        {/if}
+
+        <hr class="clearfloat" />
 
         <div class="solution">
             {#if !showSolution}
@@ -100,14 +107,6 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
             {/if}
         </div>
 
-        {#if !showSolution}
-        <hr class="clearfloat" />
-        {#if isLoggedIn()}
-            <Odevzdavatko id={task.id} />
-        {:else}
-            <p class="zs-warning">Pro odevzdávání je potřeba se <a href={loginUrl}>přihlásit</a>.</p>
-        {/if}
-        {/if}
     {/await}
 
     {/if}
