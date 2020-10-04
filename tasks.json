@@ -457,6 +457,72 @@
             "title": "Koňské skoky"
         },
         {
+            "type": "open-data",
+            "id": "28-1-1",
+            "taskReference": "28-1-1",
+            "requires": [],
+            "position": [
+                2578.840576171875,
+                1147.3673400878906
+            ],
+            "title": "Jízda na biomotorce"
+        },
+        {
+            "type": "open-data",
+            "id": "28-1-5",
+            "taskReference": "28-1-5",
+            "requires": [],
+            "position": [
+                2578.8408203125,
+                1227.2563781738281
+            ],
+            "title": "Likvidace plísně"
+        },
+        {
+            "type": "open-data",
+            "id": "28-2-5",
+            "taskReference": "28-2-5",
+            "requires": [],
+            "position": [
+                2579.950439453125,
+                1310.4740905761719
+            ],
+            "title": "Hlídání věznice"
+        },
+        {
+            "type": "open-data",
+            "id": "28-3-5",
+            "taskReference": "28-3-5",
+            "requires": [],
+            "position": [
+                2434.5966796875,
+                1312.6931457519531
+            ],
+            "title": "Závaží z fošen"
+        },
+        {
+            "type": "open-data",
+            "id": "28-4-4",
+            "taskReference": "28-4-4",
+            "requires": [],
+            "position": [
+                2251.517822265625,
+                1337.1037902832031
+            ],
+            "title": "Podivuhodný obraz"
+        },
+        {
+            "type": "open-data",
+            "id": "28-5-6",
+            "taskReference": "28-5-6",
+            "requires": [],
+            "position": [
+                2071.767333984375,
+                1343.7611389160156
+            ],
+            "title": "Sloty na iridium"
+        },
+        {
             "id": "28-Z1-1",
             "type": "open-data",
             "taskReference": "28-Z1-1",
@@ -647,6 +713,61 @@
                 -379.39630126953125
             ],
             "title": "Čtyřková"
+        },
+        {
+            "type": "open-data",
+            "id": "29-1-4",
+            "taskReference": "29-1-4",
+            "requires": [],
+            "position": [
+                2426.829833984375,
+                1231.6946105957031
+            ],
+            "title": "Zběsilý útěk"
+        },
+        {
+            "type": "open-data",
+            "id": "29-2-4",
+            "taskReference": "29-2-4",
+            "requires": [],
+            "position": [
+                2267.0517578125,
+                1250.5573425292969
+            ],
+            "title": "Nejsložitější záhon"
+        },
+        {
+            "type": "open-data",
+            "id": "29-3-1",
+            "taskReference": "29-3-1",
+            "requires": [],
+            "position": [
+                2419.062744140625,
+                1162.9012756347656
+            ],
+            "title": "Verbování"
+        },
+        {
+            "type": "open-data",
+            "id": "29-4-3",
+            "taskReference": "29-4-3",
+            "requires": [],
+            "position": [
+                2269.270751953125,
+                1179.5448913574219
+            ],
+            "title": "Výhružné dopisy"
+        },
+        {
+            "type": "open-data",
+            "id": "29-5-1",
+            "taskReference": "29-5-1",
+            "requires": [],
+            "position": [
+                2420.17236328125,
+                1096.3271789550781
+            ],
+            "title": "Holubí pošta"
         },
         {
             "id": "29-Z1-1",
@@ -857,6 +978,61 @@
             "title": "Hledání součtu"
         },
         {
+            "type": "open-data",
+            "id": "30-1-4",
+            "taskReference": "30-1-4",
+            "requires": [],
+            "position": [
+                2426.829833984375,
+                1017.5477600097656
+            ],
+            "title": "Cesta v bunkru"
+        },
+        {
+            "type": "open-data",
+            "id": "30-2-4",
+            "taskReference": "30-2-4",
+            "requires": [],
+            "position": [
+                2291.462158203125,
+                823.3730773925781
+            ],
+            "title": "Komprimace"
+        },
+        {
+            "type": "open-data",
+            "id": "30-3-1",
+            "taskReference": "30-3-1",
+            "requires": [],
+            "position": [
+                2260.394287109375,
+                885.5089416503906
+            ],
+            "title": "Vlnění"
+        },
+        {
+            "type": "open-data",
+            "id": "30-4-5",
+            "taskReference": "30-4-5",
+            "requires": [],
+            "position": [
+                2434.596923828125,
+                816.7156677246094
+            ],
+            "title": "Frňákovník"
+        },
+        {
+            "type": "open-data",
+            "id": "30-5-2",
+            "taskReference": "30-5-2",
+            "requires": [],
+            "position": [
+                2432.377685546875,
+                878.8515930175781
+            ],
+            "title": "Útěk z trezorů"
+        },
+        {
             "id": "30-Z1-1",
             "type": "open-data",
             "taskReference": "30-Z1-1",
@@ -1049,6 +1225,61 @@
             ]
         },
         {
+            "type": "open-data",
+            "id": "31-1-1",
+            "taskReference": "31-1-1",
+            "requires": [],
+            "position": [
+                2438.366792678833,
+                941.1978244781494
+            ],
+            "title": "Karkulčin byznys"
+        },
+        {
+            "type": "open-data",
+            "id": "31-2-4",
+            "taskReference": "31-2-4",
+            "requires": [],
+            "position": [
+                2276.184907913208,
+                942.7135105133057
+            ],
+            "title": "Továrna na perník"
+        },
+        {
+            "type": "open-data",
+            "id": "31-3-3",
+            "taskReference": "31-3-3",
+            "requires": [],
+            "position": [
+                2253.449312210083,
+                1036.687936782837
+            ],
+            "title": "Přebírání hrachu"
+        },
+        {
+            "type": "open-data",
+            "id": "31-4-3",
+            "taskReference": "31-4-3",
+            "requires": [],
+            "position": [
+                2268.606294631958,
+                1107.9266452789307
+            ],
+            "title": "Nejvíc spánku"
+        },
+        {
+            "type": "open-data",
+            "id": "31-5-3",
+            "taskReference": "31-5-3",
+            "requires": [],
+            "position": [
+                2095.814790725708,
+                1282.2340183258057
+            ],
+            "title": "Kváskový chléb"
+        },
+        {
             "id": "31-Z1-1",
             "type": "open-data",
             "requires": [],
@@ -1227,6 +1458,28 @@
         },
         {
             "type": "open-data",
+            "id": "31-Z4-3",
+            "taskReference": "31-Z4-3",
+            "requires": [],
+            "position": [
+                1538.031099319458,
+                801.7519016265869
+            ],
+            "title": "Probíhání bludištěm"
+        },
+        {
+            "type": "open-data",
+            "id": "31-Z4-4",
+            "taskReference": "31-Z4-4",
+            "requires": [],
+            "position": [
+                1499.911958694458,
+                901.5865573883057
+            ],
+            "title": "Ohnivý únik"
+        },
+        {
+            "type": "open-data",
             "id": "32-1-1",
             "taskReference": "32-1-1",
             "requires": [],
@@ -1396,8 +1649,8 @@
             "taskReference": "32-Z3-2",
             "requires": [],
             "position": [
-                1479.155632019043,
-                782.5684385299683
+                1159.339469909668,
+                868.9643125534058
             ],
             "title": "Sářina omalovánka"
         },
@@ -1526,6 +1779,17 @@
             "position": [
                 43,
                 -98
+            ]
+        },
+        {
+            "id": "KSP-h-ulohy",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "KSP-H úlohy",
+            "position": [
+                2225.972201347351,
+                625.0823974609375
             ]
         },
         {
