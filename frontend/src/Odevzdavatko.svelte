@@ -201,5 +201,9 @@
 
         <input type="file" on:change={fileChange}> (nebo přetáhni soubor na stránku)
     </div>
+    <div>
+        Vstup expiruje za {Math.floor(expiresInSec / 60)}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+    }s.
+    </div>
     {/if}
 </div>
