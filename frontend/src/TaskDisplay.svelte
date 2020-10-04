@@ -15,16 +15,16 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
         showSolution = false
     }
 
-    let status: TaskStatus | undefined
-    $: if (task) status = $taskStatuses.get(task.id)
     let referenceId: string | null
     $: {
         if (task != null) {
-            const r = task.taskReference || task.id
+            const r = task.taskReference
             if (referenceId != r)
                 referenceId = r
         }
     }
+    let status: TaskStatus | undefined
+    $: if (task) status = $taskStatuses.get(referenceId!)
 
     let loginUrl: string = null!
     function updateLoginUrl() {
@@ -69,7 +69,7 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
 
             <div class="status">
                 <p>
-                    {task.id} | {task.points} bodů
+                    {referenceId} | {task.points} bodů
                     {#if status && status.submitted}
                         {#if nonNull(status).solved}
                         | Vyřešeno 🥳
@@ -84,7 +84,7 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
 
         <hr class="clearfloat" />
         {#if isLoggedIn()}
-            <Odevzdavatko id={task.id} />
+            <Odevzdavatko id={nonNull(referenceId)} />
         {:else}
             <p class="zs-warning">Pro odevzdávání je potřeba se <a href={loginUrl}>přihlásit</a>.</p>
         {/if}
