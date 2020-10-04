@@ -49,6 +49,11 @@
     function eventHandler(hovering: CustomEvent<boolean>) {
       if (hovering.detail) {
         hoveredTask = task.id;
+        if (!selection.has(task)) {
+          selection.clear();
+          selection.add(task);
+          selection = selection;
+        }
         eventDispatcher("preSelectTask", task);
       } else {
         if (hoveredTask == task.id) hoveredTask = null;
@@ -235,8 +240,22 @@
             height={selectionRectangle[1][1] - selectionRectangle[0][1]} />
         {/if}
         {#if showCenterMarker}
-          <line x1="10000" y1="0" x2="-10000" y2="0" stroke="gray" stroke-width="1px" stroke-dasharray="15,15" />
-          <line x1="0" y1="10000" x2="0" y2="-10000" stroke="gray" stroke-width="1px" stroke-dasharray="15,15" />
+          <line
+            x1="10000"
+            y1="0"
+            x2="-10000"
+            y2="0"
+            stroke="gray"
+            stroke-width="1px"
+            stroke-dasharray="15,15" />
+          <line
+            x1="0"
+            y1="10000"
+            x2="0"
+            y2="-10000"
+            stroke="gray"
+            stroke-width="1px"
+            stroke-dasharray="15,15" />
         {/if}
         {#each edges as edge}
           <GraphEdge {edge} showLabelEdge={showHiddenEdges} />
