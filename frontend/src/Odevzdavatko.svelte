@@ -46,6 +46,7 @@
 
     $: {
         tick
+        task
         expiresInSec = subtaskId ? calcExpires(subtaskId) : 0
     }
     window.setInterval(() => { tick++ }, 1000)
@@ -184,7 +185,6 @@
             {/each}
         </select>
         vstup.
-        
     </div>
 
     {#if validSubmitSubtasks.length > 0}
@@ -202,8 +202,11 @@
         <input type="file" on:change={fileChange}> (nebo přetáhni soubor na stránku)
     </div>
     <div>
-        Vstup expiruje za {Math.floor(expiresInSec / 60)}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-    }s.
+        {#if expiresInSec > 60*60*24*30}
+            Vstup neexpiruje.
+        {:else}
+            Vstup expiruje za {Math.floor(expiresInSec / 60 / 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec / 60 % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}s.
+        {/if}
     </div>
     {/if}
 </div>
