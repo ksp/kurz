@@ -222,6 +222,105 @@
             "title": "Hlídači v labyrintu"
         },
         {
+            "type": "open-data",
+            "id": "27-1-4",
+            "taskReference": "27-1-4",
+            "requires": [],
+            "position": [
+                2106.817985534668,
+                1146.6559019088745
+            ],
+            "title": "Head-up display"
+        },
+        {
+            "type": "open-data",
+            "id": "27-2-5",
+            "taskReference": "27-2-5",
+            "requires": [],
+            "position": [
+                1217.155632019043,
+                1124.5684385299683
+            ],
+            "title": "Nejdelší příkaz"
+        },
+        {
+            "type": "open-data",
+            "id": "27-3-5",
+            "taskReference": "27-3-5",
+            "requires": [],
+            "position": [
+                1110.0876388549805,
+                1190.2755918502808
+            ],
+            "title": "Komprese obrazu"
+        },
+        {
+            "type": "open-data",
+            "id": "27-4-5",
+            "taskReference": "27-4-5",
+            "requires": [],
+            "position": [
+                2081.3400802612305,
+                790.309832572937
+            ],
+            "title": "Večeře pro opraváře"
+        },
+        {
+            "type": "open-data",
+            "id": "27-5-3",
+            "taskReference": "27-5-3",
+            "requires": [],
+            "position": [
+                2056.503044128418,
+                625.5225400924683
+            ],
+            "title": "Čekání na poště"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z1-1",
+            "taskReference": "27-Z1-1",
+            "requires": [],
+            "position": [
+                1056.8284225463867,
+                1438.8191709518433
+            ],
+            "title": "Na zastávce"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z1-2",
+            "taskReference": "27-Z1-2",
+            "requires": [],
+            "position": [
+                1490.469108581543,
+                1555.3852109909058
+            ],
+            "title": "Kalkulačka"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z1-3",
+            "taskReference": "27-Z1-3",
+            "requires": [],
+            "position": [
+                1518.409294128418,
+                1245.754168510437
+            ],
+            "title": "Slovník T9"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z1-4",
+            "taskReference": "27-Z1-4",
+            "requires": [],
+            "position": [
+                1333.111198425293,
+                1194.713885307312
+            ],
+            "title": "Lyžař"
+        },
+        {
             "id": "27-Z2-1",
             "type": "open-data",
             "comment": "Závorky z cereálií - 2 průchody pole, závorky",
@@ -235,6 +334,127 @@
             ],
             "taskReference": "27-Z2-1",
             "title": "Závorky z cereálií"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z2-2",
+            "taskReference": "27-Z2-2",
+            "requires": [],
+            "position": [
+                898.155632019043,
+                1242.5684385299683
+            ],
+            "title": "Hrnce od Horsta"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z2-3",
+            "taskReference": "27-Z2-3",
+            "requires": [],
+            "position": [
+                809.155632019043,
+                1312.5684385299683
+            ],
+            "title": "Nápis na tričku"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z2-4",
+            "taskReference": "27-Z2-4",
+            "requires": [],
+            "position": [
+                1017.155632019043,
+                1255.5684385299683
+            ],
+            "title": "Hořící auto"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z3-1",
+            "taskReference": "27-Z3-1",
+            "requires": [],
+            "position": [
+                1399.729850769043,
+                1329.4574766159058
+            ],
+            "title": "Kevin nabíječ, s.r.o."
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z3-2",
+            "taskReference": "27-Z3-2",
+            "requires": [],
+            "position": [
+                1269.155632019043,
+                1015.5684385299683
+            ],
+            "title": "Nedej vitagen"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z3-3",
+            "taskReference": "27-Z3-3",
+            "requires": [],
+            "position": [
+                1593.6696701049805,
+                1315.6443662643433
+            ],
+            "title": "Superstromy"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z3-4",
+            "taskReference": "27-Z3-4",
+            "requires": [],
+            "position": [
+                1557.155632019043,
+                1168.5684385299683
+            ],
+            "title": "Robo Rally"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z4-1",
+            "taskReference": "27-Z4-1",
+            "requires": [],
+            "position": [
+                1436.155632019043,
+                1014.5684385299683
+            ],
+            "title": "Záhada Pražského orloje"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z4-2",
+            "taskReference": "27-Z4-2",
+            "requires": [],
+            "position": [
+                1028.155632019043,
+                1032.5684385299683
+            ],
+            "title": "Unavení u oken"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z4-3",
+            "taskReference": "27-Z4-3",
+            "requires": [],
+            "position": [
+                974.155632019043,
+                1158.5684385299683
+            ],
+            "title": "Běžkaři v Praze!"
+        },
+        {
+            "type": "open-data",
+            "id": "27-Z4-4",
+            "taskReference": "27-Z4-4",
+            "requires": [],
+            "position": [
+                870.155632019043,
+                1114.5684385299683
+            ],
+            "title": "Koňské skoky"
         },
         {
             "id": "28-Z1-1",
@@ -1004,6 +1224,281 @@
                 -439.8162841796875
             ],
             "title": "Závažíčka na druhou"
+        },
+        {
+            "type": "open-data",
+            "id": "32-1-1",
+            "taskReference": "32-1-1",
+            "requires": [],
+            "position": [
+                2098.499687194824,
+                1213.835223197937
+            ],
+            "title": "Zkomolené vysílání"
+        },
+        {
+            "type": "open-data",
+            "id": "32-2-2",
+            "taskReference": "32-2-2",
+            "requires": [],
+            "position": [
+                2080.4985275268555,
+                862.9364805221558
+            ],
+            "title": "Mezihvězdné jízdní řády"
+        },
+        {
+            "type": "open-data",
+            "id": "32-3-1",
+            "taskReference": "32-3-1",
+            "requires": [],
+            "position": [
+                2102.0034103393555,
+                937.4345273971558
+            ],
+            "title": "Zkrat"
+        },
+        {
+            "type": "open-data",
+            "id": "32-4-4",
+            "taskReference": "32-4-4",
+            "requires": [],
+            "position": [
+                2101.0969161987305,
+                1080.7460508346558
+            ],
+            "title": "Zpětný signál"
+        },
+        {
+            "type": "open-data",
+            "id": "32-5-5",
+            "taskReference": "32-5-5",
+            "requires": [],
+            "position": [
+                2098.2350997924805,
+                1004.0238218307495
+            ],
+            "title": "Druhá kostra"
+        },
+        {
+            "type": "open-data",
+            "id": "32-5-6",
+            "taskReference": "32-5-6",
+            "requires": [],
+            "position": [
+                2058.4335861206055,
+                715.0660581588745
+            ],
+            "title": "Geocaching s odhadem"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z1-1",
+            "taskReference": "32-Z1-1",
+            "requires": [],
+            "position": [
+                1411.155632019043,
+                1141.5684385299683
+            ],
+            "title": "Kevin v papírnictví"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z1-2",
+            "taskReference": "32-Z1-2",
+            "requires": [],
+            "position": [
+                1248.442741394043,
+                1383.991473197937
+            ],
+            "title": "Chybná účtenka"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z1-3",
+            "taskReference": "32-Z1-3",
+            "requires": [],
+            "position": [
+                1140.155632019043,
+                1328.5684385299683
+            ],
+            "title": "Školní knihy"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z1-4",
+            "taskReference": "32-Z1-4",
+            "requires": [],
+            "position": [
+                959.155632019043,
+                1308.5684385299683
+            ],
+            "title": "Plánek školy"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z2-1",
+            "taskReference": "32-Z2-1",
+            "requires": [],
+            "position": [
+                1572.155632019043,
+                1029.5684385299683
+            ],
+            "title": "Prší"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z2-2",
+            "taskReference": "32-Z2-2",
+            "requires": [],
+            "position": [
+                1471.155632019043,
+                681.5684385299683
+            ],
+            "title": "Turnaj hada"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z2-3",
+            "taskReference": "32-Z2-3",
+            "requires": [],
+            "position": [
+                986.155632019043,
+                816.5684385299683
+            ],
+            "title": "Panika v chodbě"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z2-4",
+            "taskReference": "32-Z2-4",
+            "requires": [],
+            "position": [
+                1228.155632019043,
+                733.5684385299683
+            ],
+            "title": "Opisování v testu"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z3-1",
+            "taskReference": "32-Z3-1",
+            "requires": [],
+            "position": [
+                1327.155632019043,
+                622.5684385299683
+            ],
+            "title": "Tiskařský stroj"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z3-2",
+            "taskReference": "32-Z3-2",
+            "requires": [],
+            "position": [
+                1479.155632019043,
+                782.5684385299683
+            ],
+            "title": "Sářina omalovánka"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z3-3",
+            "taskReference": "32-Z3-3",
+            "requires": [],
+            "position": [
+                870.155632019043,
+                1200.5684385299683
+            ],
+            "title": "Akční ceny"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z3-4",
+            "taskReference": "32-Z3-4",
+            "requires": [],
+            "position": [
+                1272.883903503418,
+                1309.1140928268433
+            ],
+            "title": "Dálnice"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z4-1",
+            "taskReference": "32-Z4-1",
+            "requires": [],
+            "position": [
+                1107.155632019043,
+                680.5684385299683
+            ],
+            "title": "Jednobarevné praní"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z4-2",
+            "taskReference": "32-Z4-2",
+            "requires": [],
+            "position": [
+                1595.155632019043,
+                1108.5684385299683
+            ],
+            "title": "Hoří chleba?"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z4-3",
+            "taskReference": "32-Z4-3",
+            "requires": [],
+            "position": [
+                1420.5522384643555,
+                1229.4311094284058
+            ],
+            "title": "Esej do bloku"
+        },
+        {
+            "type": "open-data",
+            "id": "32-Z4-4",
+            "taskReference": "32-Z4-4",
+            "requires": [],
+            "position": [
+                748.155632019043,
+                1242.5684385299683
+            ],
+            "title": "Bomberman uklízí"
+        },
+        {
+            "type": "open-data",
+            "id": "33-Z1-1",
+            "taskReference": "33-Z1-1",
+            "requires": [],
+            "position": [
+                801.155632019043,
+                1045.5684385299683
+            ],
+            "title": "Kontrola závorkových programů"
+        },
+        {
+            "type": "open-data",
+            "id": "33-Z1-2",
+            "taskReference": "33-Z1-2",
+            "requires": [],
+            "position": [
+                802.155632019043,
+                744.5684385299683
+            ],
+            "title": "Sobotní den železnice"
+        },
+        {
+            "type": "open-data",
+            "id": "33-Z1-3",
+            "taskReference": "33-Z1-3",
+            "requires": [],
+            "position": [
+                816.155632019043,
+                635.5684385299683
+            ],
+            "title": "Petrův zmatený výlet"
         },
         {
             "id": "data",
