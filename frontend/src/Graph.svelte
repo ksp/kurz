@@ -264,7 +264,7 @@
           <GraphNode
             {task}
             on:mousedown={dragStart}
-            selected={selection.has(task)}
+            selected={selectionToolEnabled && selection.has(task)}
             on:taskClick
             on:click={nodeClick(task)}
             on:hoveringChange={nodeHover(task)}
