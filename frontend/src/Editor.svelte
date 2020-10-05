@@ -17,7 +17,7 @@ import { isLoggedIn } from "./ksp-task-grabber";
   let clicked: string[] = [];
   let graph: Graph;
   let currentTask: TaskDescriptor | null = null;
-  let nodeDraggingEnabled: boolean = false;
+  let nodeDraggingEnabled: boolean = true;
   let angle: number;
   let showHiddenEdges: boolean = false;
   const { open } = getContext("simple-modal");

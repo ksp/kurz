@@ -23,6 +23,7 @@
   let svgElement: SVGElement;
   let innerSvgGroup: SVGElement;
   let selectionRectangle: [[number, number], [number, number]] | null = null;
+  let dragInProgress: boolean = false;
 
   $: nodes = tasks.tasks;
   $: edges = createEdges(nodes);
@@ -49,7 +50,7 @@
     function eventHandler(hovering: CustomEvent<boolean>) {
       if (hovering.detail) {
         hoveredTask = task.id;
-        if (!selection.has(task)) {
+        if (!selection.has(task) && !dragInProgress) {
           selection.clear();
           selection.add(task);
           selection = selection;
@@ -145,6 +146,7 @@
     // is the left button pressed?
     if (e.button != 0) return;
 
+    dragInProgress = true;
     e.preventDefault();
     e.stopPropagation();
 
@@ -171,6 +173,7 @@
     function dragStop(e: MouseEvent) {
       if (!nodeDraggingEnabled) return;
 
+      dragInProgress = false;
       e.preventDefault();
       e.stopPropagation();
       window.removeEventListener("mousemove", drag);
