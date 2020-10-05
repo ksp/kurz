@@ -64,7 +64,7 @@ function getLocation(id: string, solution: boolean): TaskLocation | null {
         }
     } else {
         return {
-            url: `/ulohy/${rocnik}/${urlX}${serie}.html`,
+            url: `/h/ulohy/${rocnik}/${urlX}${serie}.html`,
             startElement: `task-${id}`
         }
     }
