@@ -5,13 +5,12 @@
             "type": "open-data",
             "comment": "Kevin a magnety - triviální, lineární průchod pole",
             "requires": [
-                "label-1d-pole",
-                "data"
+                "label-1d-pole"
             ],
             "title": "Kevin a magnety",
             "position": [
-                -165.5925064086914,
-                75.26382446289062
+                -189.06538772583008,
+                385.50855255126953
             ],
             "taskReference": "26-Z1-1"
         },
@@ -23,8 +22,8 @@
                 "26-Z4-3"
             ],
             "position": [
-                -538.6227111816406,
-                223.0074005126953
+                -944.0588073730469,
+                567.9119110107422
             ],
             "taskReference": "26-Z1-2",
             "title": "Piškvorky"
@@ -34,12 +33,11 @@
             "type": "open-data",
             "comment": "Zamilovaný dopis - triviální, procházení stringů po znacích a kontrola podmínek",
             "requires": [
-                "26-Z1-1",
                 "label-retezce"
             ],
             "position": [
-                -143.04217529296875,
-                406.042236328125
+                -410.1086120605469,
+                -450.99761962890625
             ],
             "taskReference": "26-Z1-3",
             "title": "Zamilovaný dopis"
@@ -49,12 +47,11 @@
             "type": "open-data",
             "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
             "requires": [
-                "26-Z4-3",
                 "label-grafy"
             ],
             "position": [
-                -811.6162109375,
-                282.03977966308594
+                -1492.7423095703125,
+                12.952919006347656
             ],
             "taskReference": "26-Z1-4",
             "title": "Hroch v jezeře"
@@ -64,12 +61,12 @@
             "type": "open-data",
             "comment": "Had z domina - triviální, linerání průchod pole a počítání, na kolika místech platí podmínka, vyžaduje práci se dvojicemi",
             "requires": [
-                "26-Z1-1",
-                "label-1d-pole"
+                "label-1d-pole",
+                "slozene-datove-struktury"
             ],
             "position": [
-                -70.56319046020508,
-                120.35980987548828
+                -638.927375793457,
+                404.47967529296875
             ],
             "taskReference": "26-Z2-1",
             "title": "Had z domina"
@@ -95,8 +92,8 @@
                 "label-retezce"
             ],
             "position": [
-                -218.5698013305664,
-                452.1306457519531
+                -485.63623809814453,
+                -404.9092102050781
             ],
             "taskReference": "26-Z2-3",
             "title": "Šifrovaná zpráva"
@@ -110,8 +107,8 @@
             ],
             "title": "Životně důležitá úloha",
             "position": [
-                -44.170326232910156,
-                178.35317993164062
+                -631.1951813697815,
+                466.20511627197266
             ],
             "taskReference": "26-Z2-4"
         },
@@ -132,12 +129,11 @@
             "type": "open-data",
             "comment": "Čarodějova šifra - šifrování mřížkou, práce se stringy, rotace matice, vhodné na code review?, docela hard",
             "requires": [
-                "26-Z4-3",
                 "29-Z3-2"
             ],
             "position": [
-                -431.3240966796875,
-                546.5056457519531
+                -698.3905334472656,
+                -310.5342102050781
             ],
             "taskReference": "26-Z3-2",
             "title": "Čarodějova šifra"
@@ -162,8 +158,8 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -890.9130859375,
-                501.766845703125
+                -1572.0391845703125,
+                232.67998504638672
             ],
             "taskReference": "26-Z3-4",
             "title": "Tvar labyrintu"
@@ -186,8 +182,8 @@
             "comment": "Sbírání vajíček - hledení mediánu, musí se to ale vymyslet, nejkratší cesta při chození tam a zpět",
             "requires": [],
             "position": [
-                1004.9775306332087,
-                310.44566129452164
+                543.2475501644587,
+                -786.0833304046971
             ],
             "taskReference": "26-Z4-2",
             "title": "Sbírání vajíček"
@@ -197,13 +193,12 @@
             "type": "open-data",
             "comment": "Hra Othello - link na 26-Z1-2, procházení 2D pole po různých směrech",
             "requires": [
-                "26-Z1-1",
                 "label-2d-pole"
             ],
             "title": "Hra Othello",
             "position": [
-                -480.6444091796875,
-                179.95367431640625
+                -886.0805053710938,
+                524.8581848144531
             ],
             "taskReference": "26-Z4-3"
         },
@@ -215,8 +210,8 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -675.1974487304688,
-                442.068115234375
+                -1356.3235473632812,
+                172.98125457763672
             ],
             "taskReference": "26-Z4-4",
             "title": "Hlídači v labyrintu"
@@ -329,8 +324,8 @@
                 "label-1d-pole"
             ],
             "position": [
-                -235.95565795898438,
-                131.96937561035156
+                -126.93786239624023,
+                442.21407318115234
             ],
             "taskReference": "27-Z2-1",
             "title": "Závorky z cereálií"
@@ -529,8 +524,8 @@
             "comment": "triviální, průchod pole",
             "requires": [],
             "position": [
-                1574.8651123046875,
-                -54.023719787597656
+                24.578619956970215,
+                450.8261528015137
             ],
             "title": "Kevinův leták"
         },
@@ -565,8 +560,8 @@
             "comment": "hledání komponent souvislosti",
             "requires": [],
             "position": [
-                1383.2698974609375,
-                -202.57998657226562
+                -1438.7784957885742,
+                355.7752151489258
             ],
             "title": "Zuzčina zvědavost"
         },
@@ -577,8 +572,8 @@
             "comment": "hledání podřetězce",
             "requires": [],
             "position": [
-                1483.3087158203125,
-                -193.50497436523438
+                -345.0656204223633,
+                -277.733154296875
             ],
             "title": "Před muzeem"
         },
@@ -589,8 +584,8 @@
             "comment": "Collatzova domněnka",
             "requires": [],
             "position": [
-                1450.6412353515625,
-                -508.93878173828125
+                1401.8692626953125,
+                -524.0748901367188
             ],
             "title": "Práce pro Sáru"
         },
@@ -613,8 +608,8 @@
             "comment": "spojový seznam nebo eulerovský tah",
             "requires": [],
             "position": [
-                1442.344970703125,
-                -274.54248046875
+                1438.6514892578125,
+                -256.07530212402344
             ],
             "title": "Rozsypaná turbína"
         },
@@ -625,8 +620,8 @@
             "comment": "nalezení minima a maxima",
             "requires": [],
             "position": [
-                1096.826171875,
-                -141.4437255859375
+                479.60821533203125,
+                -825.9333801269531
             ],
             "title": "Místo oslavy"
         },
@@ -685,8 +680,8 @@
             "comment": "triviální průchod 2D pole",
             "requires": [],
             "position": [
-                754.1712036132812,
-                -282.5687561035156
+                -983.1208801269531,
+                -267.4325942993164
             ],
             "title": "Vykopávky"
         },
@@ -697,8 +692,8 @@
             "comment": "binární vyhledávání, třídění",
             "requires": [],
             "position": [
-                880.9987182617188,
-                -358.81500244140625
+                -272.4446258544922,
+                661.3140869140625
             ],
             "title": "Mocniny"
         },
@@ -709,8 +704,8 @@
             "comment": "dynamické programování, práce s čísly",
             "requires": [],
             "position": [
-                814.6162109375,
-                -379.39630126953125
+                962.614013671875,
+                -700.6187744140625
             ],
             "title": "Čtyřková"
         },
@@ -778,8 +773,8 @@
             ],
             "title": "Kevinova želva",
             "position": [
-                153.23114013671875,
-                435.23114013671875
+                536.0025634765625,
+                428.0677185058594
             ],
             "taskReference": "29-Z1-1"
         },
@@ -788,10 +783,12 @@
             "type": "open-data",
             "taskReference": "29-Z1-2",
             "comment": "Sářiny pamlsky — triviální, výpis přirozených čísel na základě pravidel",
-            "requires": [],
+            "requires": [
+                "algoritmy"
+            ],
             "position": [
-                1433.2462158203125,
-                -348.25872802734375
+                -221.7577782869339,
+                50.265974044799805
             ],
             "title": "Sářiny pamlsky"
         },
@@ -804,8 +801,8 @@
             ],
             "title": "Petrova statistika",
             "position": [
-                -239.7012176513672,
-                191.6642303466797
+                -108.29062271118164,
+                496.31075286865234
             ],
             "taskReference": "29-Z1-3"
         },
@@ -817,8 +814,8 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -1084.8828125,
-                465.46002197265625
+                -1766.0089111328125,
+                196.37316131591797
             ],
             "taskReference": "29-Z1-4",
             "title": "Zuzčin výlet"
@@ -831,8 +828,8 @@
                 "29-Z1-1"
             ],
             "position": [
-                263.0097351074219,
-                491.6130676269531
+                645.7811584472656,
+                484.44964599609375
             ],
             "taskReference": "29-Z2-1",
             "title": "Krocení zlé želvy"
@@ -856,8 +853,8 @@
             "comment": "Petr v říši divů — grafy - prohledávání (rozpad na komponenty)",
             "requires": [],
             "position": [
-                1576.2962646484375,
-                -488.655029296875
+                -1597.2468719482422,
+                369.05931854248047
             ],
             "title": "Petr v říši divů"
         },
@@ -881,8 +878,8 @@
                 "26-Z4-3"
             ],
             "position": [
-                -394.7185363769531,
-                232.44407653808594
+                -800.1546325683594,
+                577.3485870361328
             ],
             "taskReference": "29-Z3-1",
             "title": "Želva na dvorku"
@@ -896,8 +893,8 @@
                 "label-retezce"
             ],
             "position": [
-                -321.57469177246094,
-                498.2836608886719
+                -588.6411285400391,
+                -358.7561950683594
             ],
             "taskReference": "29-Z3-2",
             "title": "Písemka z angličtiny"
@@ -921,8 +918,8 @@
             "comment": "Zdobení stromečku — grafy - prohledávání, hledání kružnice v grafu, zmateně zadané",
             "requires": [],
             "position": [
-                1613.5562744140625,
-                -297.6412353515625
+                -833.7737121582031,
+                642.0138244628906
             ],
             "title": "Zdobení stromečku"
         },
@@ -959,8 +956,8 @@
                 "29-Z2-1"
             ],
             "position": [
-                119,
-                511
+                501.77142333984375,
+                503.8365783691406
             ],
             "taskReference": "29-Z4-3",
             "title": "Želva v akváriu"
@@ -1040,8 +1037,8 @@
             "comment": "Trivka, chození po souřadnicích",
             "requires": [],
             "position": [
-                572.9862060546875,
-                -361.655029296875
+                -992.762939453125,
+                -321.29197692871094
             ]
         },
         {
@@ -1076,8 +1073,8 @@
             "comment": "Sousednost v grafu",
             "requires": [],
             "position": [
-                596.0599365234375,
-                -297.4825439453125
+                -1565.0438842773438,
+                316.3718795776367
             ]
         },
         {
@@ -1088,8 +1085,8 @@
             "comment": "Trivka, projít string a skippovat duplikáty",
             "requires": [],
             "position": [
-                640.2936401367188,
-                -213.85252380371094
+                -403.6249237060547,
+                -350.6728820800781
             ]
         },
         {
@@ -1112,8 +1109,8 @@
             "comment": "Sestavení stromu a vypsání cesty do kořene",
             "requires": [],
             "position": [
-                807.9862060546875,
-                -24.777490615844727
+                -1327.8906602859497,
+                244.3093490600586
             ]
         },
         {
@@ -1124,8 +1121,8 @@
             "comment": " Práce s 2d polem",
             "requires": [],
             "position": [
-                960.7762451171875,
-                -208.45751953125
+                -1148.1920623779297,
+                -521.2710113525391
             ]
         },
         {
@@ -1136,8 +1133,8 @@
             "comment": " Hledání dvou čísel s co největším rozdílem",
             "requires": [],
             "position": [
-                1047.8624877929688,
-                2.5687755346298218
+                -9.45107650756836,
+                388.4032596349716
             ]
         },
         {
@@ -1148,8 +1145,8 @@
             "comment": "Výroba palindromu",
             "requires": [],
             "position": [
-                1335.9012451171875,
-                -74.43122863769531
+                -512.0505065917969,
+                -285.66261291503906
             ]
         },
         {
@@ -1184,8 +1181,8 @@
             "comment": " Prefixové součty",
             "requires": [],
             "position": [
-                983.1099853515625,
-                -302.6050109863281
+                -1140.9943389892578,
+                -474.1478576660156
             ]
         },
         {
@@ -1196,8 +1193,8 @@
             "comment": "Provházení bludiště",
             "requires": [],
             "position": [
-                1138.3812255859375,
-                -378.9012451171875
+                -1713.9394073486328,
+                315.67919158935547
             ]
         },
         {
@@ -1208,8 +1205,8 @@
             "comment": "ProhledávánI grafu",
             "requires": [],
             "position": [
-                1306.1600341796875,
-                -363.9637756347656
+                -1414.956787109375,
+                298.2016830444336
             ]
         },
         {
@@ -1220,8 +1217,8 @@
             "comment": "Trivka, práce souřadnicemi",
             "requires": [],
             "position": [
-                1238.6287841796875,
-                -164.0612335205078
+                -1050.291244506836,
+                -367.55816745758057
             ]
         },
         {
@@ -1282,12 +1279,14 @@
         {
             "id": "31-Z1-1",
             "type": "open-data",
-            "requires": [],
+            "requires": [
+                "algoritmy"
+            ],
             "comment": "úloha s odčítáním času",
             "title": "Zuzka a poník",
             "position": [
-                1255.5751953125,
-                131.96621704101562
+                -351.18514251708984,
+                52.94647216796875
             ],
             "taskReference": "31-Z1-1"
         },
@@ -1299,8 +1298,8 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -763.1971435546875,
-                493.9221496582031
+                -1444.3232421875,
+                224.83528900146484
             ],
             "taskReference": "31-Z1-2",
             "title": "Ukradený jezdec"
@@ -1312,8 +1311,8 @@
             "comment": "průnik N intervalů (3D na kvádrech)",
             "requires": [],
             "position": [
-                978.01123046875,
-                -112.03751373291016
+                954.6195068359375,
+                -144.04727935791016
             ],
             "title": "Průnik kvádrů"
         },
@@ -1326,8 +1325,8 @@
             ],
             "title": "Piškvorky naslepo",
             "position": [
-                -578.6199951171875,
-                278.00364685058594
+                -984.0560913085938,
+                622.9081573486328
             ],
             "taskReference": "31-Z1-4"
         },
@@ -1350,8 +1349,8 @@
             "comment": "2D pole (simulace tetrisu)",
             "requires": [],
             "position": [
-                1333.40625,
-                -291.3462677001953
+                -1101.829833984375,
+                -422.52608489990234
             ],
             "title": "Tetris bez dozoru"
         },
@@ -1399,8 +1398,8 @@
                 "label-grafy-pracovni-poznamka"
             ],
             "position": [
-                -1028.935791015625,
-                523.2289428710938
+                -1710.0618896484375,
+                254.14208221435547
             ],
             "taskReference": "31-Z3-2",
             "title": "Zámek obrazovky"
@@ -1414,8 +1413,8 @@
                 "label-grafy"
             ],
             "position": [
-                -899.0215454101562,
-                314.04736328125
+                -1580.1476440429688,
+                44.96050262451172
             ],
             "taskReference": "31-Z3-3",
             "title": "Stáda hrochů"
@@ -1439,8 +1438,8 @@
             "comment": "sort + průchod pole (nejosamělejší bod na přímce)",
             "requires": [],
             "position": [
-                872.5675048828125,
-                -481.3587646484375
+                -210.8751163482666,
+                705.6483154296875
             ],
             "title": "Nejosamělejší kamarád"
         },
@@ -1754,17 +1753,32 @@
             "title": "Petrův zmatený výlet"
         },
         {
-            "id": "data",
+            "id": "algoritmy",
             "type": "text",
             "comment": "...",
             "requires": [
                 "jak-resit-ulohy"
             ],
-            "title": "Data a algoritmy",
-            "htmlContent": "<h2>Datové struktury</h2><p>V programech potřebujeme nějak reprezentovat data o reálném světě. Paměť počítače je ale jen dlouhá sekvence bytů (malých čísel). Abychom mohli reprezentovat něco komplikovanějšího, skládáme si v paměti <strong>datové struktury.</strong> Technicky je to akorát hromada čísel, kterým přikládáme speciální význam. Pro potřeby programátora je ale často podstatnější ten samotný speciální význam, než hodnota čísel, kterými je zapsán.</p><p>Úlohy, které najdeš dále, se všechny zabývají nějakou datovou strukturou. Jsou uspořádány s rostoucí obtížností a pro pochopení složitějších datových struktur je často potřeba mít vštípené detaily struktury předchozí.</p><h2>Algoritmy</h2><p>Datové struktury jsou nám samotné k ničemu. K jejich smysluplnému využití potřebujeme nějaký důvod. Datovou strukturou jenom reprezentujeme nějaký stav světa. Proto v úlohách najdeš krom datových struktur také využití různých algoritmů - ověřených postupů, jak řešit nějaké druhy problémů.</p>",
+            "title": "Algoritmy",
+            "htmlContent": "<h2>Algoritmy</h2><p>Každý program je vlastně popis nějakého pracovního postupu. Té samotné myšlence, oddělené od konkrétního způsobu implementace, říkáme <strong>algoritmus</strong>.</p><p>Algoritmy jsou principy, které zůstávají stejné neustále. Algoritmy vymyšlené před 50 lety jsou často stále to nejlepší, co známe. Často i to nejlepší, co je vůbec možné. Proto dává smysl zabývat se studiem samotných algoritmů. Programovací jazyky se mění. Metoda zápisu toho samého algoritmu často také. Ale základní myšlenka je pořád stejná.</p>",
             "position": [
-                -163,
-                -83
+                -283.2298583984375,
+                -7.579597473144531
+            ]
+        },
+        {
+            "id": "data",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "31-Z1-1",
+                "29-Z1-2"
+            ],
+            "title": "Datové struktury",
+            "htmlContent": "<p>Ruku v ruce s algoritmy jdou data. Nemít data, tak nemáme co počítat, že?</p><h2>Data v počítači</h2><p>Data, nad kterými v programu pracujeme, ukládáme do paměti. Fyzicky je pamět hodně dlouhá posloupnost jedniček a nul – bitů. To je ale nepraktické a tak bity skupinkujeme do bytů – 8 bitů aneb čísel od 0 do 255.</p><p>Takže paměť je jen hodně číslíček za sebou, jak ale tedy vznikají například obrázky, na které na monitoru koukáme? Jak vlastně můžeme reprezentovat větší čísla než 255? Jednou z možností je například zapisovat si jednotlivé cifry velkého čísla. Ještě pak potřebujeme vědět, kolik jich je, ale tuhle informaci si můžeme uložit například na začátek.</p><p>FIXME obrázek</p><p>Právě jsme si popsali, jak z jednoduchých základních kamenů, posloupnosti malých čísel, postavit něco většího. Něco, čemu vznešeně říkáme datová struktura.</p><h2>Datové struktury</h2><p>Datové struktury popisují, jak reprezentovat nějaké komplexní informace z jednodušších bloků (na nejnižší úrovni z posloupnosti čísel). Velmi blízce souvisí s algoritmy. Mnoho algoritmů by nám bez datových struktur bylo k ničemu a naopak mnoho datových struktur by nedávalo smysl bez algoritmů. My si proto budeme povídat o datových strukturách a algoritmech společně.</p><p>Úlohy, které najdeš dále, se zabývají nějakou datovou strukturou nebo algoritmem. Jsou uspořádány s rostoucí obtížností a může se stát, že pro pochopení složitějších úloh je často potřeba mít vštípené detaily struktury předchozí.</p>",
+            "position": [
+                -282.6019515991211,
+                121.71680343151093
             ]
         },
         {
@@ -1777,8 +1791,8 @@
             "title": "Jak řešit úlohy?",
             "htmlContent": "",
             "position": [
-                43,
-                -98
+                -2.4084014892578125,
+                -61.00055694580078
             ]
         },
         {
@@ -1800,8 +1814,8 @@
             "title": "Pole",
             "rotationAngle": 337,
             "position": [
-                -184.5875244140625,
-                31.301490783691406
+                -220.3435287475586,
+                280.00611877441406
             ]
         },
         {
@@ -1812,8 +1826,8 @@
             "title": "2D pole",
             "rotationAngle": 340,
             "position": [
-                -498.642578125,
-                140.9576416015625
+                -904.0786743164062,
+                485.8621520996094
             ]
         },
         {
@@ -1824,8 +1838,8 @@
             "title": "Grafy",
             "rotationAngle": 342,
             "position": [
-                -879.3245239257812,
-                253.7253875732422
+                -1560.4506225585938,
+                -15.361473083496094
             ]
         },
         {
@@ -1838,8 +1852,8 @@
             "title": "Grafy, ale neuspořádané",
             "htmlContent": "<p>undefined</p>",
             "position": [
-                -916.2467041015625,
-                398.9772033691406
+                -1597.372802734375,
+                129.89034271240234
             ]
         },
         {
@@ -1850,8 +1864,8 @@
             "title": "Textové řetězce",
             "rotationAngle": 326,
             "position": [
-                -256.3359832763672,
-                405.51519775390625
+                -523.4024200439453,
+                -451.524658203125
             ]
         },
         {
@@ -1861,8 +1875,8 @@
             "requires": [],
             "title": "Úvod",
             "position": [
-                42,
-                -243
+                -3.4084014892578125,
+                -206.00055694580078
             ]
         },
         {
@@ -1873,8 +1887,8 @@
             "title": "Želvy",
             "rotationAngle": 43,
             "position": [
-                205,
-                407
+                587.7714233398438,
+                399.8365783691406
             ]
         },
         {
@@ -1887,8 +1901,36 @@
             "title": "Placeholder pro základní kurz programování",
             "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p>",
             "position": [
-                464.3114318847656,
-                68.15572357177734
+                249.0419158935547,
+                81.61006927490234
+            ]
+        },
+        {
+            "id": "Pole",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "data"
+            ],
+            "title": "Pole",
+            "htmlContent": "<p>kecy</p>",
+            "position": [
+                -275.86041259765625,
+                333.4576416015625
+            ]
+        },
+        {
+            "id": "pole-s-poradim",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "Pole"
+            ],
+            "title": "Seřazená pole",
+            "htmlContent": "<p>undefined</p>",
+            "position": [
+                -277.13867950439453,
+                602.650089263916
             ]
         },
         {
@@ -1901,8 +1943,22 @@
             "title": "Programování",
             "htmlContent": "<p>Počítače nemluví lidskou řečí. Aspoň zatím. Pokud jim chceme vysvětlit nějaký komplikovanější problém, potřebujeme mluvit správnou řečí - nějakým <strong>programovacím jazykem.</strong></p><h2>Jaký programovací jazyk použít?</h2><p>Programovacích jazyků je více a každý se hodí na něco jiného. S roustoucími zkušenostmi se pravděpodobně naučíš přecházet mezi několika programovacími jazyky podle toho, jaký problém zrovna řešíš.</p><p>Pro řešení úloh Ti doporučujeme <strong>Python 3</strong>. Pokud se ho chceš naučit, můžeš zkusit projít kurzem, který jsme pro Tebe připravili.</p>",
             "position": [
-                144,
-                2
+                93.54621887207031,
+                15.45430612564087
+            ]
+        },
+        {
+            "id": "slozene-datove-struktury",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "Pole"
+            ],
+            "title": "Složené datové struktury",
+            "htmlContent": "<p>kecy</p>",
+            "position": [
+                -557.9161376953125,
+                351.5024108886719
             ]
         },
         {
@@ -1915,8 +1971,8 @@
             "title": "Start",
             "htmlContent": "<p>Aktuálně je celý projekt v <strong>BETA režimu</strong>. Pokud najdeš libovolnou chybu nebo pokud Tě napadá, že by se dalo cokoliv vylepšit (a ideálně jak), dej prosím vědět Vaškovi a Standovi. Díky!</p><h2>Vítej v našem novém kurzu!</h2><p>Pokud tě napadá, jak by se tento <strong>projekt mohl jmenovat</strong>, dej nám vědět!</p><h3>Co zde (časem) najdeš?</h3><ul><li>Základní kurz programování (dříve byl samostatně)</li><li>Roztříděné úlohy ze starších ročníků a sérií</li><li>Staré seriály</li><li>…a další úlohy, které jsme odněkud vyhrabali nebo nově vyrobili</li></ul><h3>Co budu mít z toho, že budu úlohy zde řešit?</h3><p>Něco se můžeš naučit a z toho můžeš mít dobrý pocit. Nic jiného teď neslibujeme. Splnit zde úlohu je to samé jako splnit ji ve cvičišti. Navíc ono k úlohám jsou většinou přístupná vzorová řešení, takže soutěžit zde nedává moc smysl.</p><p>Ohledně vzorových řešení – je čistě na Tobě, zda budeš úlohy řešit poctivě, nebo jestli si budeš číst řešení před tím, než vymyslíš něco vlastního. Zabránit Ti v tom nedokážeme a ani nechceme. Pokud se chceš něco naučit, nebo si něco procvičit, tak doporučujeme vzorová řešení otevírat až po vlastním řešení, případně když se zasekneš. Získáš tak z kurzu nejvíce.</p>",
             "position": [
-                38,
-                -176
+                -7.4084014892578125,
+                -139.00055694580078
             ]
         }
     ],
