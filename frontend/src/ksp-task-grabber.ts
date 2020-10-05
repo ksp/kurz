@@ -56,16 +56,15 @@ function getLocation(id: string, solution: boolean): TaskLocation | null {
     const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
     if (!m) return null
     const [_, rocnik, z, serie, uloha] = m
+    const urlX = solution ? "reseni" : "zadani"
     if (z == 'Z') {
-        const urlX = solution ? "reseni" : "zadani"
         return {
-            url: `z/ulohy/${rocnik}/${urlX}${serie}.html`,
+            url: `/z/ulohy/${rocnik}/${urlX}${serie}.html`,
             startElement: `task-${id}`
         }
     } else {
-        const urlX = solution ? "solution" : "tasks"
         return {
-            url: `tasks/${rocnik}/${urlX}${serie}.html`,
+            url: `/ulohy/${rocnik}/${urlX}${serie}.html`,
             startElement: `task-${id}`
         }
     }
