@@ -111,6 +111,11 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
 
     let r = ""
     for (const e of elements) {
+        // hack: remove the paragraph with the matching text. Occurs in KSP-H, but is useless in this context.
+        if (e.innerText.trim().replace(/\s+/g, " ") == "Toto je praktická open-data úloha. V odevzdávacím systému si necháte vygenerovat vstupy a odevzdáte příslušné výstupy. Záleží jen na vás, jak výstupy vyrobíte.") {
+            continue;
+        }
+
         fixAllLinks(e)
         r += e.outerHTML + "\n"
     }
