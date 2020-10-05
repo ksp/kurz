@@ -103,6 +103,12 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
         e = e.nextElementSibling as HTMLElement
     }
 
+    // hack: remove img tag that shows this task is a practical one. Some tasks have it, some don't, so we remove it for consistency
+    const intoImgTag = elements[0]?.firstElementChild
+    if (intoImgTag && intoImgTag.tagName.toLowerCase() == "img" && intoImgTag.classList.contains("leftfloat")) {
+        intoImgTag.remove()
+    }
+
     let r = ""
     for (const e of elements) {
         fixAllLinks(e)
