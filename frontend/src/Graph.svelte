@@ -18,8 +18,8 @@
 
   // Svelte automatically fills these with a reference
   let container: HTMLElement;
-  let clientHeight: number;
-  let clientWidth: number;
+  let clientHeight: number = window.innerHeight;
+  let clientWidth: number = window.innerWidth;
   let svgElement: SVGElement;
   let innerSvgGroup: SVGElement;
   let selectionRectangle: [[number, number], [number, number]] | null = null;

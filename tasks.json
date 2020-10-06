@@ -465,7 +465,8 @@
                 2578.840576171875,
                 1147.3673400878906
             ],
-            "title": "Jízda na biomotorce"
+            "title": "Jízda na biomotorce",
+            "comment": "Prohledávání statového prostoru - hledání cesty v obohacneném grafu"
         },
         {
             "type": "open-data",
@@ -985,10 +986,11 @@
             "taskReference": "30-1-4",
             "requires": [],
             "position": [
-                2426.829833984375,
+                2425.829833984375,
                 1017.5477600097656
             ],
-            "title": "Cesta v bunkru"
+            "title": "Cesta v bunkru",
+            "comment": "Hledání cesty v hilbertově křivce"
         },
         {
             "type": "open-data",
@@ -1232,8 +1234,8 @@
             "taskReference": "31-1-1",
             "requires": [],
             "position": [
-                2438.366792678833,
-                941.1978244781494
+                2454.366792678833,
+                946.1978244781494
             ],
             "title": "Karkulčin byznys"
         },
@@ -1243,8 +1245,8 @@
             "taskReference": "31-2-4",
             "requires": [],
             "position": [
-                2276.184907913208,
-                942.7135105133057
+                2271.184907913208,
+                947.7135105133057
             ],
             "title": "Továrna na perník"
         },
@@ -2051,6 +2053,9 @@
         ],
         "Nápad": [
             "26-Z4-2"
+        ],
+        "matematické": [
+            "30-1-4"
         ]
     }
 }
