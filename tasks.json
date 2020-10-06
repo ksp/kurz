@@ -33,11 +33,12 @@
             "type": "open-data",
             "comment": "Zamilovaný dopis - triviální, procházení stringů po znacích a kontrola podmínek",
             "requires": [
-                "label-retezce"
+                "label-retezce",
+                "30-Z1-3"
             ],
             "position": [
-                -410.1086120605469,
-                -450.99761962890625
+                -385.37432861328125,
+                -453.4102783203125
             ],
             "taskReference": "26-Z1-3",
             "title": "Zamilovaný dopis"
@@ -88,12 +89,12 @@
             "type": "open-data",
             "comment": "Šifrovaná zpráva - práce s řetězci, hledání mapování mezi písmenky (substitučka) a validace, že jinde substitučka funguje",
             "requires": [
-                "26-Z1-3",
-                "label-retezce"
+                "label-retezce",
+                "26-Z1-3"
             ],
             "position": [
                 -485.63623809814453,
-                -404.9092102050781
+                -406.0977783203125
             ],
             "taskReference": "26-Z2-3",
             "title": "Šifrovaná zpráva"
@@ -288,10 +289,11 @@
             "taskReference": "27-Z1-2",
             "requires": [],
             "position": [
-                1490.469108581543,
-                1555.3852109909058
+                1739.7698287963867,
+                -160.9592409133911
             ],
-            "title": "Kalkulačka"
+            "title": "Kalkulačka",
+            "comment": "jednoduché načtení vstupu a pak vyhodnocení"
         },
         {
             "type": "open-data",
@@ -369,10 +371,11 @@
             "taskReference": "27-Z3-1",
             "requires": [],
             "position": [
-                1399.729850769043,
-                1329.4574766159058
+                489.8798141479492,
+                1566.5902891159058
             ],
-            "title": "Kevin nabíječ, s.r.o."
+            "title": "Kevin nabíječ, s.r.o.",
+            "comment": "chyták v posledním vstupu, jinak fakt jednoduchá"
         },
         {
             "type": "open-data",
@@ -391,10 +394,11 @@
             "taskReference": "27-Z3-3",
             "requires": [],
             "position": [
-                1593.6696701049805,
-                1315.6443662643433
+                110.0786280632019,
+                727.598406791687
             ],
-            "title": "Superstromy"
+            "title": "Superstromy",
+            "comment": "třízení pole (info o counting sortu)"
         },
         {
             "type": "open-data",
@@ -413,10 +417,11 @@
             "taskReference": "27-Z4-1",
             "requires": [],
             "position": [
-                1436.155632019043,
-                1014.5684385299683
+                1573.334342956543,
+                -36.192124366760254
             ],
-            "title": "Záhada Pražského orloje"
+            "title": "Záhada Pražského orloje",
+            "comment": "Euklidův algoritmus, potřeba vymyslet přes matematiku"
         },
         {
             "type": "open-data",
@@ -446,8 +451,8 @@
             "taskReference": "27-Z4-4",
             "requires": [],
             "position": [
-                870.155632019043,
-                1114.5684385299683
+                1363.676628112793,
+                1480.8441953659058
             ],
             "title": "Koňské skoky"
         },
@@ -536,8 +541,8 @@
             "comment": "dělitelnost",
             "requires": [],
             "position": [
-                1468.0250244140625,
-                -49.02372360229492
+                1741.000244140625,
+                39.6094856262207
             ],
             "title": "Sářina hra"
         },
@@ -548,8 +553,8 @@
             "comment": "dělení a modulení",
             "requires": [],
             "position": [
-                1400.1099853515625,
-                -145.4812469482422
+                1519.6990966796875,
+                37.605228424072266
             ],
             "title": "Petrovy stromy"
         },
@@ -608,8 +613,8 @@
             "comment": "spojový seznam nebo eulerovský tah",
             "requires": [],
             "position": [
-                1438.6514892578125,
-                -256.07530212402344
+                -552.0953826904297,
+                713.5716896057129
             ],
             "title": "Rozsypaná turbína"
         },
@@ -632,8 +637,8 @@
             "comment": "matematika",
             "requires": [],
             "position": [
-                818.8499145507812,
-                -206.74127197265625
+                1637.5750732421875,
+                40.6045036315918
             ],
             "title": "Zlomkovník"
         },
@@ -656,8 +661,8 @@
             "comment": "rekurze (není to jednoduché)",
             "requires": [],
             "position": [
-                1073.7274169921875,
-                -258.63002014160156
+                982.91064453125,
+                -295.6294708251953
             ],
             "title": "Zbývající úkoly"
         },
@@ -668,8 +673,8 @@
             "comment": "souřadnice",
             "requires": [],
             "position": [
-                859.5786743164062,
-                -276.0987548828125
+                509.86163330078125,
+                -157.92288208007812
             ],
             "title": "Půdorys"
         },
@@ -680,8 +685,8 @@
             "comment": "triviální průchod 2D pole",
             "requires": [],
             "position": [
-                -983.1208801269531,
-                -267.4325942993164
+                -928.4460144042969,
+                -222.2663803100586
             ],
             "title": "Vykopávky"
         },
@@ -704,8 +709,8 @@
             "comment": "dynamické programování, práce s čísly",
             "requires": [],
             "position": [
-                962.614013671875,
-                -700.6187744140625
+                505.1663513183594,
+                123.459716796875
             ],
             "title": "Čtyřková"
         },
@@ -829,7 +834,7 @@
             ],
             "position": [
                 645.7811584472656,
-                484.44964599609375
+                485.86309814453125
             ],
             "taskReference": "29-Z2-1",
             "title": "Krocení zlé želvy"
@@ -841,8 +846,8 @@
             "comment": "Sářina volba — spíš triviální, hledání společných vlasností na dvou stejně dlouhých polích",
             "requires": [],
             "position": [
-                1410.2337646484375,
-                -441.5187683105469
+                -577.4003295898438,
+                573.2033996582031
             ],
             "title": "Sářina volba"
         },
@@ -865,8 +870,8 @@
             "comment": "Zuzka: Cesta tam a zase zpátky — nejdelší rostoucí podposloupnost splňující podmínku, příběh i vstup připomínají 28-Z4-5",
             "requires": [],
             "position": [
-                1631.98876953125,
-                -358.9374694824219
+                347.90077209472656,
+                -454.14956760406494
             ],
             "title": "Zuzka: Cesta tam a zase zpátky"
         },
@@ -918,8 +923,8 @@
             "comment": "Zdobení stromečku — grafy - prohledávání, hledání kružnice v grafu, zmateně zadané",
             "requires": [],
             "position": [
-                -833.7737121582031,
-                642.0138244628906
+                -1223.6292419433594,
+                342.4906921386719
             ],
             "title": "Zdobení stromečku"
         },
@@ -930,8 +935,8 @@
             "comment": "Šíření viru — vopruz načítat vstup, přímočaré kvadratické řešení, trochu důmyslnější optimální, podhodnocená as fuck, šíření viru v grafu",
             "requires": [],
             "position": [
-                1570.2962646484375,
-                -265.0612487792969
+                -1222.72802734375,
+                406.6653747558594
             ],
             "title": "Šíření viru"
         },
@@ -942,8 +947,8 @@
             "comment": "Vybírání atrakcí — ezy hladový řešení, pokud si ho umíte zdůvodnit, což není úplně triviální, máme K lidí, pro každého přípustný interval a K² čísel, které každému chceme přidělit",
             "requires": [],
             "position": [
-                1634.2974853515625,
-                -199.5549774169922
+                596.6312255859375,
+                96.44056701660156
             ],
             "title": "Vybírání atrakcí"
         },
@@ -969,8 +974,8 @@
             "comment": "Hledání součtu — ezy housenka pokud umíte číst, hledání podposloupnosti se součtem co nejbližším zadanému, celé v kladných číslech",
             "requires": [],
             "position": [
-                1610.87744140625,
-                -133.54248046875
+                378.12322998046875,
+                -405.99293518066406
             ],
             "title": "Hledání součtu"
         },
@@ -1049,8 +1054,8 @@
             "comment": "Hladový algoritmus",
             "requires": [],
             "position": [
-                1046.9624633789062,
-                -526.9387512207031
+                -570.9222412109375,
+                107.09713745117188
             ]
         },
         {
@@ -1061,8 +1066,8 @@
             "comment": "Hledání nejčastějšího výskytu ",
             "requires": [],
             "position": [
-                721.6036987304688,
-                -430.6800231933594
+                -271.56785583496094,
+                -510.6902160644531
             ]
         },
         {
@@ -1097,8 +1102,8 @@
             "comment": "Chození po souřadnicích, detekce kolizí",
             "requires": [],
             "position": [
-                702.7511596679688,
-                -135.3337631225586
+                513.1159057617188,
+                -111.86053466796875
             ]
         },
         {
@@ -1121,8 +1126,8 @@
             "comment": " Práce s 2d polem",
             "requires": [],
             "position": [
-                -1148.1920623779297,
-                -521.2710113525391
+                -1107.7801971435547,
+                -419.0527801513672
             ]
         },
         {
@@ -1157,8 +1162,8 @@
             "comment": "Voser implementovat, hledání klíčů na odemčení dveří",
             "requires": [],
             "position": [
-                1233.739990234375,
-                -237.59249877929688
+                1280.2218017578125,
+                -275.69879150390625
             ]
         },
         {
@@ -1285,8 +1290,8 @@
             "comment": "úloha s odčítáním času",
             "title": "Zuzka a poník",
             "position": [
-                -351.18514251708984,
-                52.94647216796875
+                -349.1861801147461,
+                54.13505554199219
             ],
             "taskReference": "31-Z1-1"
         },
@@ -1337,8 +1342,8 @@
             "comment": "hešování (objednávka pizzy po dílcích, ceil(group by typ, sum, / 8)))",
             "requires": [],
             "position": [
-                1127.4437255859375,
-                -64.70246124267578
+                1182.9420166015625,
+                -121.8834228515625
             ],
             "title": "Objednávka pizzy"
         },
@@ -1349,8 +1354,8 @@
             "comment": "2D pole (simulace tetrisu)",
             "requires": [],
             "position": [
-                -1101.829833984375,
-                -422.52608489990234
+                -959.19970703125,
+                -270.38741302490234
             ],
             "title": "Tetris bez dozoru"
         },
@@ -1361,8 +1366,8 @@
             "comment": "ňáký šachy, předzpracování, hledání nejbližších věží a střelců in bulk - chce lepší tag",
             "requires": [],
             "position": [
-                720.4924926757812,
-                -342.6925354003906
+                851.67236328125,
+                952.2879638671875
             ],
             "title": "Spousta figurek"
         },
@@ -1373,8 +1378,8 @@
             "comment": "hledání periody v desetinném čísle",
             "requires": [],
             "position": [
-                927.677490234375,
-                -439.93878173828125
+                1841.7220458984375,
+                38.87567901611328
             ],
             "title": "Zmatematika"
         },
@@ -1385,8 +1390,8 @@
             "comment": "triviální - zapamatování stringů (vybírání rýmů)",
             "requires": [],
             "position": [
-                1253.751220703125,
-                -437.8525390625
+                -224.54463958740234,
+                -419.3528137207031
             ],
             "title": "Tvůrčí krize"
         },
@@ -1426,8 +1431,8 @@
             "comment": "geometrie - přihrádky/zametání (vypsat všechny dvojice bodů s vzdáleností max K)",
             "requires": [],
             "position": [
-                1142.356201171875,
-                -461.64251708984375
+                828.0521850585938,
+                204.80533599853516
             ],
             "title": "Pohyb termitů"
         },
@@ -1450,8 +1455,8 @@
             "comment": "binární čísla",
             "requires": [],
             "position": [
-                1028.8512573242188,
-                -439.8162841796875
+                1822.9569702148438,
+                -115.60995483398438
             ],
             "title": "Závažíčka na druhou"
         },
@@ -1615,8 +1620,8 @@
             "taskReference": "32-Z2-3",
             "requires": [],
             "position": [
-                986.155632019043,
-                816.5684385299683
+                1686.191276550293,
+                928.291277885437
             ],
             "title": "Panika v chodbě"
         },
@@ -1659,8 +1664,8 @@
             "taskReference": "32-Z3-3",
             "requires": [],
             "position": [
-                870.155632019043,
-                1200.5684385299683
+                1255.4586715698242,
+                1507.3838682174683
             ],
             "title": "Akční ceny"
         },
@@ -1670,8 +1675,8 @@
             "taskReference": "32-Z3-4",
             "requires": [],
             "position": [
-                1272.883903503418,
-                1309.1140928268433
+                1671.468864440918,
+                1398.2491025924683
             ],
             "title": "Dálnice"
         },
@@ -1725,8 +1730,8 @@
             "taskReference": "33-Z1-1",
             "requires": [],
             "position": [
-                801.155632019043,
-                1045.5684385299683
+                116.6659164428711,
+                514.1219053268433
             ],
             "title": "Kontrola závorkových programů"
         },
@@ -1736,8 +1741,8 @@
             "taskReference": "33-Z1-2",
             "requires": [],
             "position": [
-                802.155632019043,
-                744.5684385299683
+                876.1545333862305,
+                754.659197807312
             ],
             "title": "Sobotní den železnice"
         },
@@ -1747,8 +1752,8 @@
             "taskReference": "33-Z1-3",
             "requires": [],
             "position": [
-                816.155632019043,
-                635.5684385299683
+                1633.5070114135742,
+                1444.5108823776245
             ],
             "title": "Petrův zmatený výlet"
         },
@@ -1807,6 +1812,17 @@
             ]
         },
         {
+            "id": "label_matematicke",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Potřeba matematického pohledu",
+            "position": [
+                1671.7270526885986,
+                2.2010104656219482
+            ]
+        },
+        {
             "id": "label-1d-pole",
             "type": "label",
             "comment": "...",
@@ -1814,8 +1830,8 @@
             "title": "Pole",
             "rotationAngle": 337,
             "position": [
-                -220.3435287475586,
-                280.00611877441406
+                -228.8243637084961,
+                291.3138885498047
             ]
         },
         {
@@ -1866,6 +1882,17 @@
             "position": [
                 -523.4024200439453,
                 -451.524658203125
+            ]
+        },
+        {
+            "id": "label-trizeni",
+            "type": "label",
+            "comment": "",
+            "requires": [],
+            "title": "Třídění",
+            "position": [
+                128.4343719482422,
+                677.8480176925659
             ]
         },
         {
@@ -1971,8 +1998,8 @@
             "title": "Start",
             "htmlContent": "<p>Aktuálně je celý projekt v <strong>BETA režimu</strong>. Pokud najdeš libovolnou chybu nebo pokud Tě napadá, že by se dalo cokoliv vylepšit (a ideálně jak), dej prosím vědět Vaškovi a Standovi. Díky!</p><h2>Vítej v našem novém kurzu!</h2><p>Pokud tě napadá, jak by se tento <strong>projekt mohl jmenovat</strong>, dej nám vědět!</p><h3>Co zde (časem) najdeš?</h3><ul><li>Základní kurz programování (dříve byl samostatně)</li><li>Roztříděné úlohy ze starších ročníků a sérií</li><li>Staré seriály</li><li>…a další úlohy, které jsme odněkud vyhrabali nebo nově vyrobili</li></ul><h3>Co budu mít z toho, že budu úlohy zde řešit?</h3><p>Něco se můžeš naučit a z toho můžeš mít dobrý pocit. Nic jiného teď neslibujeme. Splnit zde úlohu je to samé jako splnit ji ve cvičišti. Navíc ono k úlohám jsou většinou přístupná vzorová řešení, takže soutěžit zde nedává moc smysl.</p><p>Ohledně vzorových řešení – je čistě na Tobě, zda budeš úlohy řešit poctivě, nebo jestli si budeš číst řešení před tím, než vymyslíš něco vlastního. Zabránit Ti v tom nedokážeme a ani nechceme. Pokud se chceš něco naučit, nebo si něco procvičit, tak doporučujeme vzorová řešení otevírat až po vlastním řešení, případně když se zasekneš. Získáš tak z kurzu nejvíce.</p>",
             "position": [
-                -7.4084014892578125,
-                -139.00055694580078
+                -1.7545125484466553,
+                -144.6544418334961
             ]
         }
     ],
