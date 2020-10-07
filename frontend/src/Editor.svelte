@@ -8,8 +8,11 @@
   import TaskDisplay from "./TaskDisplay.svelte";
   import TaskDetailEditor from "./TaskDetailEditor.svelte";
   import { forceSimulation } from "./force-simulation";
-  import { refresh as refreshTaskStatuses, taskStatuses } from './task-status-cache'
-import { isLoggedIn } from "./ksp-task-grabber";
+  import {
+    refresh as refreshTaskStatuses,
+    taskStatuses,
+  } from "./task-status-cache";
+  import { isLoggedIn } from "./ksp-task-grabber";
 
   export let tasks: TasksFile;
 
@@ -64,6 +67,18 @@ import { isLoggedIn } from "./ksp-task-grabber";
     await saveTasks(tasks);
   }
 
+  // autosave ;)
+  let saveTimeoutHandle: number | null = null;
+  function autosave() {
+    if (saveTimeoutHandle != null) clearTimeout(saveTimeoutHandle);
+
+    saveTimeoutHandle = setTimeout(async () => {
+      saveTimeoutHandle = null;
+      await saveTasks(tasks);
+    }, 5000);
+  }
+  $: { tasks; autosave(); }; 
+
   function saveLocally() {
     saveToLocalDisk("tasks.json", tasksToString(tasks));
   }
@@ -76,7 +91,7 @@ import { isLoggedIn } from "./ksp-task-grabber";
     open(
       TaskDetailEditor,
       { task: t, tasks: tasks },
-      { closeButton: false, styleWindow: { width: "50vw"} },
+      { closeButton: false, styleWindow: { width: "50vw" } },
       {
         onClose: () => {
           tasks = tasks;
@@ -160,22 +175,27 @@ import { isLoggedIn } from "./ksp-task-grabber";
 
   async function loadYear() {
     if (!isLoggedIn()) {
-      alert("Musíš se přihlásit")
-      return
+      alert("Musíš se přihlásit");
+      return;
     }
-    const y = prompt("Který ročník (číslo 26...X)")
-    await refreshTaskStatuses([`${y}-Z1-1`])
-    const newTasks = Array.from($taskStatuses.values()).filter(t => t.id.startsWith(y + "-") && !tasks.tasks.find(tt => tt.type == "open-data" && tt.taskReference == t.id))
-    const newDescriptors: TaskDescriptor[] =
-      newTasks.map(t => ({
-        type: "open-data",
-        id: t.id,
-        taskReference: t.id,
-        requires: [],
-        position: [0, 0],
-        title: t.name
-      }))
-    tasks.tasks = [...tasks.tasks, ...newDescriptors]
+    const y = prompt("Který ročník (číslo 26...X)");
+    await refreshTaskStatuses([`${y}-Z1-1`]);
+    const newTasks = Array.from($taskStatuses.values()).filter(
+      (t) =>
+        t.id.startsWith(y + "-") &&
+        !tasks.tasks.find(
+          (tt) => tt.type == "open-data" && tt.taskReference == t.id
+        )
+    );
+    const newDescriptors: TaskDescriptor[] = newTasks.map((t) => ({
+      type: "open-data",
+      id: t.id,
+      taskReference: t.id,
+      requires: [],
+      position: [0, 0],
+      title: t.name,
+    }));
+    tasks.tasks = [...tasks.tasks, ...newDescriptors];
   }
 </script>
 
@@ -332,7 +352,11 @@ import { isLoggedIn } from "./ksp-task-grabber";
         </div>
       {/if}
       <div>
-        <button on:click={loadYear} disabled={!isLoggedIn()} title={isLoggedIn() ? "Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou" : "Je nutné být přihlášený a na stránce v KSP template."}>Nahrát celý ročník</button>
+        <button
+          on:click={loadYear}
+          disabled={!isLoggedIn()}
+          title={isLoggedIn() ? 'Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou' : 'Je nutné být přihlášený a na stránce v KSP template.'}>Nahrát
+          celý ročník</button>
       </div>
     </div>
 
