@@ -83,7 +83,7 @@
     fill: green; /* TODO */
   }
 
-  .selected > ellipse {
+  .selected > ellipse, .selected > rect {
     stroke-width: 4px;
     stroke: red;
   }
@@ -111,7 +111,11 @@
       {task.title == null ? task.id : task.title}
     </text>
   {:else}
-    <ellipse class="taskNode" rx={ellipse_rx} ry={20} {cx} {cy} />
+    {#if task.type == "text"}
+      <rect class="taskNode" x={cx-ellipse_rx} y={cy-20} height={40} width={2*ellipse_rx} rx={3} />
+    {:else}
+      <ellipse class="taskNode" rx={ellipse_rx} ry={20} {cx} {cy} />
+    {/if}
     <text
       bind:this={text_element}
       x={cx}
