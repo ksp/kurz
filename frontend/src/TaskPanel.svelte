@@ -6,25 +6,9 @@
     let selectedTask: TaskDescriptor | null = null
     export let selectedTaskId: string | null = null
 
-    let heightClass: "closed" | "collapsed" | "full" | "preview" = "collapsed"
+    let heightClass: "closed" | "full" = "closed"
 
-    export function preSelect(task: TaskDescriptor) {
-        // don't show anything for labels
-        if (task.type == "label") return;
 
-        if (heightClass != "full") {
-            selectedTask = task
-            heightClass = "preview"
-        }
-    }
-
-    export function unPreselect(task: TaskDescriptor) {
-        setTimeout(() => {
-            if (selectedTask && task.id == selectedTask.id && heightClass == "preview") {
-                heightClass = "collapsed"
-            }
-        }, 10);
-    }
 
     let lastSelectedTaskId: string | null = null
 
@@ -33,8 +17,7 @@
             heightClass = "full"
             selectedTask = tasks.tasks.find(t => t.id == selectedTaskId) ?? null
         } else {
-            if ("full" == heightClass)
-                heightClass = "collapsed"
+            heightClass = "closed";
         }
         lastSelectedTaskId = selectedTaskId
     }
@@ -74,20 +57,11 @@
             padding: 0 10px 10px 10px;
         }
     }
-    /* Used when the panel is explicitly closed - collapsed would still show the hover preview */
+    /* Used when the panel is explicitly closed  */
     .panel.closed {
         display: none;
     }
-    /* Used when the panel is implicitly closed - it does not disappear when there is mouse over it */
-    .panel.collapsed:not(:hover) {
-        display: none;
-    }
-    /* Used when the user hovers over a node and we want to show that there is something - a small expandable preview */
-    .panel.preview, .panel:not(.full):hover {
-        height: 150px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+
     .panel.full {
         min-height: 420px;
         border-bottom: 2px solid #444444;
