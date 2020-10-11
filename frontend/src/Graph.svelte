@@ -1,11 +1,12 @@
 <script type="ts">
   import GraphNode from "./GraphNode.svelte";
   import GraphEdge from "./GraphEdge.svelte";
-  import { createEventDispatcher, onMount } from "svelte";
+  import { createEventDispatcher, onMount, tick } from "svelte";
   import * as d3 from "d3";
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import { createEdges } from "./tasks";
   import { taskStatuses } from "./task-status-cache";
+import { grabAssignment } from "./ksp-task-grabber";
 
   export let tasks: TasksFile;
   export let nodeDraggingEnabled: boolean = false;
@@ -14,7 +15,7 @@
   export let selection: Set<TaskDescriptor> = new Set();
   export let showCenterMarker: boolean = false;
 
-  let hoveredTask: null | string = null;
+  let hoveredTask: null | TaskDescriptor = null;
 
   // Svelte automatically fills these with a reference
   let container: HTMLElement;
@@ -24,6 +25,7 @@
   let innerSvgGroup: SVGElement;
   let selectionRectangle: [[number, number], [number, number]] | null = null;
   let dragInProgress: boolean = false;
+  let tooltipTextElement: SVGTextElement;
 
   $: nodes = tasks.tasks;
   $: edges = createEdges(nodes);
@@ -49,7 +51,7 @@
   function nodeHover(task: TaskDescriptor) {
     function eventHandler(hovering: CustomEvent<boolean>) {
       if (hovering.detail) {
-        hoveredTask = task.id;
+        hoveredTask = task;
         if (!selection.has(task) && !dragInProgress) {
           selection.clear();
           selection.add(task);
@@ -57,7 +59,7 @@
         }
         eventDispatcher("preSelectTask", task);
       } else {
-        if (hoveredTask == task.id) hoveredTask = null;
+        if (hoveredTask?.id == task.id) hoveredTask = null;
         eventDispatcher("unPreSelectTask", task);
       }
     }
@@ -186,6 +188,39 @@
   onMount(() => {
     setupZoom();
   });
+
+
+  let tooltipMaxPoints: number | null = null;
+  let tooltipCurrPoints: number | null = null;
+  $: tooltipTextPos = hoveredTask != null ? [(hoveredTask.position ?? [0,0])[0], (hoveredTask.position ?? [0,0])[1] + 40] : [0,0];
+  let tooltipBoxWidth = 0;
+  let tooltipBoxHeight = 0;
+  async function resizeTooltipBox() {
+    await tick();
+    if (tooltipTextElement == null) return;
+    const bbox = tooltipTextElement.getBBox()
+    tooltipBoxWidth = bbox.width + 10 + 10;
+    tooltipBoxHeight = bbox.height + 5 + 5;
+  }
+  $: {
+    if (hoveredTask != null) {
+      const status = $taskStatuses.get(hoveredTask.id);
+      if (status == null) {
+        const id = hoveredTask.id;
+        grabAssignment(hoveredTask.id).then(e => {
+          if (hoveredTask && hoveredTask.id == id)
+            tooltipMaxPoints = e.points;
+        })
+      } else {
+        tooltipMaxPoints = status.maxPoints;
+        tooltipCurrPoints = status.points;
+      }
+      resizeTooltipBox();
+    } else {
+      tooltipMaxPoints = null;
+      tooltipCurrPoints = null;
+    }
+  };
 </script>
 
 <style>
@@ -212,10 +247,21 @@
     z-index: 20;
   }
 
-  rect {
+  .selectionRectangle {
     fill: transparent;
     stroke-dasharray: 5, 5;
     stroke: gainsboro;
+  }
+
+  .tooltip rect {
+    stroke: #ffb3a2;
+    stroke-width: 2px;
+    fill: #000000bb;
+  }
+
+  .tooltip text {
+    /* stroke: white;*/
+    fill: white;
   }
 </style>
 
@@ -237,6 +283,7 @@
         transform="translate({clientWidth / 2}, {clientHeight / 2})">
         {#if selectionRectangle != null}
           <rect
+            class="selectionRectangle"
             x={selectionRectangle[0][0]}
             y={selectionRectangle[0][1]}
             width={selectionRectangle[1][0] - selectionRectangle[0][0]}
@@ -274,6 +321,25 @@
             status={$taskStatuses.get(task.id)}
             on:dblclick={nodeDoubleClick(task)} />
         {/each}
+        {#if hoveredTask != null && hoveredTask.type == "open-data" }
+        <g class="tooltip">
+          <rect
+            x={tooltipTextPos[0]}
+            y={tooltipTextPos[1] - 15}
+            width={tooltipBoxWidth}
+            height={tooltipBoxHeight}
+            rx="3">
+          </rect>
+          <text
+              bind:this={tooltipTextElement}
+              x={tooltipTextPos[0] + tooltipBoxWidth / 2}
+              y={tooltipTextPos[1] + 4}
+              text-anchor="middle"
+              alignment-baseline="middle">
+              {hoveredTask.type == 'open-data' ? hoveredTask.taskReference : "text"} | {tooltipCurrPoints ?? '?'} bod{ "ů yyy"[tooltipCurrPoints ?? 0] ?? "ů" } z {tooltipMaxPoints ?? '?'}
+            </text>
+        </g>
+      {/if}
       </g>
     </g>
   </svg>

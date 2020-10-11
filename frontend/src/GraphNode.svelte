@@ -1,12 +1,10 @@
 <script lang="ts">
-  import * as d3 from "d3";
-
   import { createEventDispatcher, onMount } from "svelte";
   import type { TaskStatus } from "./ksp-task-grabber";
   import type { TaskDescriptor } from "./tasks";
 
   export let task: TaskDescriptor;
-  export let selected: bool = false;
+  export let selected: boolean = false;
   export let status: TaskStatus | undefined = undefined;
 
   let hovering: boolean = false;
