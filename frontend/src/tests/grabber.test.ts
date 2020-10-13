@@ -81,7 +81,7 @@ describe('task assignment (exact match)', () => {
     const assignmentFiles = readdirSync(assignmentDir)
     for (const a of assignmentFiles) {
         const [_, id] = /(.*?)\.html/.exec(a)!
-        test(id, async () => {
+        test.concurrent(id, async () => {
             const assignment = await g.grabAssignment(id)
             const expected = readFileSync(resolve(assignmentDir, a)).toString()
             try {
@@ -98,7 +98,7 @@ describe('task solution (exact match)', () => {
     const assignmentFiles = readdirSync(assignmentDir)
     for (const a of assignmentFiles) {
         const [_, id] = /(.*?)\.html/.exec(a)!
-        test(id, async () => {
+        test.concurrent(id, async () => {
             const solution = await g.grabSolution(id)
             const expected = readFileSync(resolve(assignmentDir, a)).toString()
             try {

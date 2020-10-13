@@ -72,12 +72,17 @@ function getLocation(id: string, solution: boolean): TaskLocation {
     }
 }
 
+function htmlEncode(text: string): string {
+    const p = document.createElement("p")
+    p.textContent = text
+    return p.innerHTML
+}
+
 function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentData {
     const titleElement = doc.getElementById(startElementId)
     if (!titleElement)
         throw new Error(`Document does not contain ${startElementId}`)
     fixAllLinks(titleElement)
-    const elements = []
 
     let e = titleElement
 
@@ -90,37 +95,52 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
 
     e = e.nextElementSibling as HTMLElement
 
+    // skip first <hr>
     while (e.nextElementSibling &&
            e.tagName.toLowerCase() == "hr")
         e = e.nextElementSibling as HTMLElement
 
-    while (!e.classList.contains("story") &&
-        //    !e.classList.contains("clearfloat") &&
-           e.tagName.toLowerCase() != "h3" &&
-           e.textContent!.trim() != "Řešení"
-        )
-    {
-        elements.push(e)
-        if (!e.nextElementSibling) break;
-        e = e.nextElementSibling as HTMLElement
-    }
 
     // hack: remove img tag that shows this task is a practical one. Some tasks have it, some don't, so we remove it for consistency
-    const intoImgTag = elements[0]?.firstElementChild
+    const intoImgTag = e.firstElementChild
     if (intoImgTag && intoImgTag.tagName.toLowerCase() == "img" && intoImgTag.classList.contains("leftfloat")) {
         intoImgTag.remove()
     }
 
     let r = ""
-    for (const e of elements) {
-        // hack: remove the paragraph with the matching text. Occurs in KSP-H, but is useless in this context.
-        if (e.textContent!.trim().replace(/\s+/g, " ") == "Toto je praktická open-data úloha. V odevzdávacím systému si necháte vygenerovat vstupy a odevzdáte příslušné výstupy. Záleží jen na vás, jak výstupy vyrobíte.") {
-            continue;
+
+    copyElements: while (!e.classList.contains("story") &&
+        //    !e.classList.contains("clearfloat") &&
+           e.tagName.toLowerCase() != "h3" &&
+           e.textContent!.trim() != "Řešení"
+        ) {
+
+        processElement: {
+            // hack: remove the paragraph with the matching text. Occurs in KSP-H, but is useless in this context.
+            if (e.textContent!.trim().replace(/\s+/g, " ") == "Toto je praktická open-data úloha. V odevzdávacím systému si necháte vygenerovat vstupy a odevzdáte příslušné výstupy. Záleží jen na vás, jak výstupy vyrobíte.") {
+                break processElement
+            }
+
+            fixAllLinks(e)
+
+            r += e.outerHTML + "\n"
         }
 
-        fixAllLinks(e)
-        r += e.outerHTML + "\n"
+        let n = e.nextSibling
+        copyNodes: while(true) {
+            if (!n) {
+                break copyElements
+            }
+            if (n.nodeType == Node.ELEMENT_NODE) {
+                e = n as HTMLElement
+                break copyNodes
+            } else if (n.nodeType == Node.TEXT_NODE && n.textContent!.trim() != "") {
+                r += htmlEncode(n.textContent!)
+            }
+            n = n.nextSibling
+        }
     }
+
     return {
         description: r,
         id: id.trim(),
