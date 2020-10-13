@@ -1,7 +1,8 @@
 import * as g from '../ksp-task-grabber'
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 import type { TaskDescriptor, TasksFile } from '../tasks';
+import { action_destroyer } from 'svelte/internal';
 
 const node_fetch: any = require('node-fetch')
 
@@ -41,9 +42,9 @@ describe('tasks assignment', () => {
     for (const t of tasks.tasks) {
         if (t.type != "open-data") continue;
 
-        test(`${t.id}`, async () => {
-            const assignment = await g.grabAssignment((t as any).taskReference)
-            expect((t as any).taskReference).toEqual(assignment.id)
+        test.concurrent(`${t.id}`, async () => {
+            const assignment = await g.grabAssignment(t.taskReference)
+            expect(t.taskReference).toEqual(assignment.id)
             expect(assignment.points).toBeGreaterThanOrEqual(1)
             expect(assignment.description.trim()).toBeTruthy()
             expect(assignment.name.trim()).toBeTruthy()
@@ -66,11 +67,46 @@ describe('tasks solutions', () => {
             continue
         }
 
-        test(`${t.id}`, async () => {
+        test.concurrent(`${t.id}`, async () => {
             const sol = await g.grabSolution(t.taskReference)
             expect(t.taskReference).toEqual(sol.id)
             expect(sol.description.trim()).toBeTruthy()
             expect(sol.name.trim()).toBeTruthy()
+        })
+    }
+})
+
+describe('task assignment (exact match)', () => {
+    const assignmentDir = resolve(__dirname, "example_assignments")
+    const assignmentFiles = readdirSync(assignmentDir)
+    for (const a of assignmentFiles) {
+        const [_, id] = /(.*?)\.html/.exec(a)!
+        test(id, async () => {
+            const assignment = await g.grabAssignment(id)
+            const expected = readFileSync(resolve(assignmentDir, a)).toString()
+            try {
+                expect(assignment.description.trim()).toEqual(expected.trim())
+            } catch(e) {
+                console.warn(assignment.description)
+                throw e
+            }
+        })
+    }
+})
+describe('task solution (exact match)', () => {
+    const assignmentDir = resolve(__dirname, "example_solutions")
+    const assignmentFiles = readdirSync(assignmentDir)
+    for (const a of assignmentFiles) {
+        const [_, id] = /(.*?)\.html/.exec(a)!
+        test(id, async () => {
+            const solution = await g.grabSolution(id)
+            const expected = readFileSync(resolve(assignmentDir, a)).toString()
+            try {
+                expect(solution.description.trim()).toEqual(expected.trim())
+            } catch(e) {
+                console.log(solution.description)
+                throw e
+            }
         })
     }
 })

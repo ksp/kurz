@@ -1,0 +1,27 @@
+<p>
+K&nbsp;tomu, abychom za věci utratili co možná nejméně, potřebujeme do košíku
+postupně vybírat věci od té nejlevnější po tu nejdražší.</p>
+<p>
+Pole cen tedy vzestupně setřídíme a budeme jej postupně procházet, přičemž
+si budeme pamatovat součet cen věcí, které při průchodu potkáme. Jakmile
+při procházení přesáhne tento součet koruny vyhrazené na nákup, tak podle
+pozice v&nbsp;poli víme, kolik věcí si můžeme koupit.</p>
+<p>
+Jelikož se však zadání ptá na počet věcí, které si koupit nemůžeme, tak jako
+řešení vypíšeme počet věcí od pozice, kde jsme skončili s&nbsp;procházením, do konce
+pole cen.</p>
+<p>
+Řešení je jistě správné, určitě se totiž nemůže stát, že bychom si mohli koupit
+víc věcí, než nám vypíše algoritmus. Vyhodili jsme z&nbsp;košíku ty nejdražší věci,
+které jsme mohli, takže nám jich určitě nestačilo vyhodit méně.</p>
+<p>
+Rychlost řešení ovlivní hlavně to, jak rychle dokážeme ceny setřídit. Existují
+různé třídící algoritmy a pokud použijete nějaký algoritmus zabudovaný přímo
+v&nbsp;programovacím jazyce, běží většinou v&nbsp;čase <span class="math">O(n  <span class="nomath">log</span> n)</span>. Pokud jste si
+implementovali vlastní jednoduché třídění, pravděpodobně bude mít časovou
+složitost <span class="math">O(n<sup>2</sup>)</span>. O&nbsp;třídících algoritmech si můžete přečíst
+v&nbsp;naší <a href="http://localhost/viz/kucharky/trideni">kuchařce o&nbsp;třídění</a>.</p>
+<p><a href="http://localhost/z/ulohy/32/32Z11.py">Program (Python 3)</a></p>
+<p><a href="http://localhost/z/ulohy/32/32Z11.cpp">Program (C++)</a></p>
+<p class="author"><a href="http://localhost/kontakty/organizatori/">Tom Sláma</a></p>
+<hr class="clearfloat">

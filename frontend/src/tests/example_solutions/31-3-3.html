@@ -1,0 +1,50 @@
+<p>
+Pro každou z&nbsp;bílých figurek chceme zjistit, zda je ohrožována aspoň jednou
+černou. Můžeme zkusit vyzkoušet pro každou dvojici bílé a černé figurky, zda se
+ohrožují. Těchto dvojic je ovšem až kvadraticky mnoho a navíc se nám může stát, že
+i když by se dvojice ohrožovala, tak se mezi nimi nachází další figurka, která
+černé figurce z&nbsp;naší dvojice překáží ve výhledu a znemožňuje jí bílou figurku
+sebrat. Protože ověřit, zda dvojici nepřekáží ve výhledu další figurka, trvá
+lineárně dlouho, toto řešení je <span class="math">O(n<sup>3</sup>)</span>.</p>
+<p>
+Jelikož černé figurky jsou pouze věže a střelci, bílé figurky mohou být
+ohroženy pouze z&nbsp;dohromady osmi směrů, kterými se černé dokážou pohybovat.
+Řešení můžeme vylepšit tím, že budeme zjišťovat, zda je bílá figurka ohrožena,
+pro každý směr zvlášť. Například pokud chceme pro každou bílou figurku zjistit,
+zda je ohrožena zleva nebo zprava, stačí nám uvažovat pouze ty figurky, které
+leží na stejném řádku. Navíc každá figurka má na svém řádku nejvýše dva
+sousedy, jednoho zleva, druhého zprava. Stačí nám uvažovat jen tyto
+sousedy, protože budou všem ostatním figurkám na řádku překážet ve výhledu. Pro
+každou z&nbsp;lineárně mnoho bílých figurek tedy v&nbsp;lineárním čase najdeme ty
+figurky, které s&nbsp;nimi sdílí řádek (pro ostatní směry ty, které sdílí sloupec či
+diagonálu), v&nbsp;lineárním čase najdeme mezi nimi dva nejbližší sousedy bílé
+figurky a pro ty vyzkoušíme, zda figurku neohrožují, to jest zda se jedná o&nbsp;černé figurky a jestli jsou typu, který se umí v&nbsp;tomto směru pohybovat. Celkově je toto řešení
+<span class="math">O(n · (n + n))</span>, tedy <span class="math">O(n<sup>2</sup>)</span>.</p>
+<p>
+Abychom uměli rychle zjistit, které figurky leží na stejném řádku, můžeme si
+nejprve všechny figurky seřadit podle jejich souřadnice řádku. V&nbsp;seřazeném seznamu figurek
+leží figurky na stejném řádku vedle sebe. Pokud bychom navíc vzali
+všechny figurky na stejném řádku a seřadili je podle souřadnice sloupce a
+uložili do nějakého pole, budeme je mít uspořádané v&nbsp;tom pořadí, v&nbsp;jakém leží
+na řádku za sebou. Pro libovolnou figurku na řádku tedy umíme najít její
+sousedy prostě tak, že se podíváme v&nbsp;tomto uspořádaném poli na index o&nbsp;jedna
+nižší a o&nbsp;jedna vyšší.</p>
+<p>
+Tato dvě setřídění můžeme provést zároveň. Primárně figurky setřídíme podle
+souřadnice řádku, sekundárně pak podle souřadnice sloupce. Takové uspořádání,
+kde třídíme primárně podle jednoho kritéria a sekundárně podle jiného, se
+nazývá <i>lexikografické.</i> Nyní nám stačí projít setříděné pole a pro každou
+bílou figurku se podívat na její dva sousedy a rozhodnout, zda ji neohrožují.
+Také musíme dát pozor na to, že sousední figurky v&nbsp;setříděném poli figurek se
+nemusí nacházet na stejném řádku. Pokud je soused bíle figurky na jiném řádku,
+znamená to, že v&nbsp;daném směru se už na stejném řádku nenachází žádné figurky.
+Také si všimněme, že tímto uspořádáním najdeme všechny takové figurky, které
+bíle ohrožují ne jen z&nbsp;jednoho směru z&nbsp;osmi, ale ze dvou (zprava i zleva).</p>
+<p>
+Kompletní řešení pro každou ze čtyř „os“ (doleva-doprava, nahoru-dolů,
+diagonálně doprava nahoru, diagonálně doprava dolů) lexikograficky figurky
+uspořádá, uspořádané pole v&nbsp;lineárním čase projde a pro každou bílou figurku určí, zda
+je ohrožována. Toto řešení má tedy časovou složitost <span class="math">O(n  <span class="nomath">log</span> n)</span>.</p>
+<p><a href="http://localhost/h/ulohy/31/3133.c">Program (C)</a></p>
+<p class="author"><a href="http://localhost/kontakty/organizatori/">Kuba Pelc</a></p>
+<hr class="clearfloat">

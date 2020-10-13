@@ -1,0 +1,51 @@
+<p>
+Na podlaze se nachází sesypaný hrách s&nbsp;popelem a&nbsp;mezi tím poskakuje několik
+holoubků a&nbsp;vrabčáků. Chtějí Popelce pomoct vysbírat všechen hrách. Pro každou
+kuličku hrachu chceme zjistit, zda ji nějaký ptáček dokáže sezobnout a&nbsp;přenést
+do ošatky. Holoubci i&nbsp;vrabčáci se však pohybují každý jinak. Vrabčáci poskakují
+rovně dopředu, dozadu, doleva i&nbsp;doprava, zato holoubci chodí šikmo do všech
+čtyř stran.</p>
+<p>
+Celou situaci si lze představit jako rozmístění figurek na šachovnici.
+Holoubci představují černé střelce, vrabčáci černé věže a&nbsp;kuličky hrachu pak
+bílé pěšáky. Pro každou bílou figurku chceme zjistit, zda ji dokážeme v&nbsp;jednom
+tahu nějakou černou figurkou vyhodit.</p>
+<p>
+<i>Formát vstupu:</i> Na prvním řádku vstupu se nachází dvě čísla <span class="math">B</span>&nbsp;a&nbsp;<span class="math">C</span>, a&nbsp;to
+počet kuliček hrachu (neboli bílých figurek) a&nbsp;počet ptáčků (neboli černých
+figurek). Na dalších <span class="math">B</span>&nbsp;řádcích se nachází souřadnice kuliček hrachu jako
+dvojice čísel oddělených mezerou, číslo řádku a&nbsp;číslo sloupce udávajících, kde
+se kulička nachází. Na dalších <span class="math">C</span>&nbsp;řádcích se pak nachází pozice ptáčků – každý
+takový řádek obsahuje znak <tt>H</tt> nebo <tt>V</tt> a&nbsp;dvojici čísel udávajících
+řádek a&nbsp;sloupec, kde ptáček stojí (opět vše oddělené mezerami). Znak&nbsp;<tt>H</tt>
+značí holoubka (pohybuje se jako střelec) a&nbsp;znak&nbsp;<tt>V</tt> vrabčáka (pohybuje se
+jako věž). Figurky na vstupu mohou být seřazené náhodně.</p>
+<p>
+<i>Formát výstupu:</i> Na <span class="math">B</span>&nbsp;řádků výstupu vypište (ve stejném pořadí, jako na
+vstupu) pro každou kuličku hrachu <tt>ANO</tt> nebo <tt>NE</tt> podle toho, jestli
+existuje nějaký holoubek nebo vrabčák, který může tuto kuličku hrachu jedním
+tahem sezobnout.</p>
+<div class="leftfloat" style="width: 48%;">
+<i>Ukázkový vstup:</i>
+<pre>4 3
+0 1
+0 2
+0 3
+2 2
+V 0 0
+H 1 3
+V 3 3
+</pre>
+</div>
+<div class="rightfloat" style="width: 48%;">
+<i>Ukázkový výstup:</i>
+<pre>ANO
+ANO
+NE
+ANO
+</pre>
+<img class="rightfloat image" src="http://localhost/h/ulohy/31/t3133.png" alt="Šachovnice s&nbsp;příkladem" title="Šachovnice s&nbsp;příkladem">
+</div>
+<div class="clearfloat"></div>
+<i>Poznámka:</i>
+BUG

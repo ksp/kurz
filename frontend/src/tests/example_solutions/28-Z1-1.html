@@ -1,0 +1,65 @@
+<p>
+Nejprve si vyřešme jednodušší úlohu: jak o&nbsp;nějaké posloupnosti závorek
+poznáme, jestli je (celá) správně uzávorkovaná? Určitě musí obsahovat
+stejný počet levých a&nbsp;pravých závorek – jinak těžko mohou tvořit páry.</p>
+<p>
+Ovšem to nestačí. Uvažte třeba posloupnost <tt>())(</tt>. Ta obsahuje dvě
+levé a&nbsp;dvě pravé závorky, ale korektním uzávorkováním určitě není.
+Na třetí pozici se pokoušíme ukončit závorku „dřív, než začala“.</p>
+<p>
+Jak takovou situaci poznáme? Podíváme-li se na první tři znaky naší
+posloupnosti, vidíme, že obsahují jednu levou závorku a&nbsp;dvě pravé.
+Obecně problém nastane, pokud existuje v&nbsp;posloupnosti nějaké místo
+takové, že v&nbsp;úseku od začátku po toto místo je více pravých závorek
+než levých. Pak alespoň jedna z&nbsp;těch pravých nemá před sebou žádnou
+levou, se kterou bychom ji mohli spárovat.</p>
+<p>
+Pokud posloupnost obsahuje stejně levých a&nbsp;pravých závorek a nenastane
+problém popsaný výše, pak už si snadno rozmyslíte, že je vždy jde
+správně spárovat, a&nbsp;tedy uzávorkování je korektní.</p>
+<div class="center"><img class="image" src="http://localhost/img/hippo_table_pilot.png" alt="Ilustrace: Hroší pilot" title="Ilustrace: Hroší pilot"></div>
+<p>
+Nyní k původní úloze. Představme si, že si chceme označit všechna
+místa v&nbsp;posloupnosti, kde může končit korektní uzávorkování (začínající
+na začátku). Třeba pro příklad ze zadání to budou následující místa
+(označena hvězdičkou): <tt>(()())*()*)()</tt>.</p>
+<p>
+Jak je najdeme? Budeme postupně procházet posloupnost od začátku a&nbsp;průběžně
+si počítat, kolik levých a&nbsp;pravých závorek už jsme viděli. Pokud narazíme
+na místo, kde jsme napočítali víc pravých než levých, můžeme rovnou skončit.
+Už víme, že takové uzávorkování korektní není, a&nbsp;přidáním libovolných dalších
+závorek na konec už nemůžeme napravit chybějící závorky nalevo od aktuální
+pozice.</p>
+<p>
+Pokud tato situace ještě nenastala a&nbsp;objevíme místo, před kterým je počet
+levých a&nbsp;pravých závorek stejný, označíme si jej. Podle toho, co jsme si
+řekli výše, uzávorkování končící na tomto místě je korektní.</p>
+<p>
+Ukažme si průběh algoritmu na předchozím příkladu:</p>
+<div class="center">
+<table class="centertable borderedtable">
+<tbody><tr><td></td><td> (</td><td> (</td><td>  ) </td><td> (</td><td> ) </td><td> ) </td><td>  (</td><td> ) </td><td> ) </td><td> (</td><td> )</td></tr>
+<tr><td>Pozice        </td><td> 1 </td><td> 2 </td><td>  3 </td><td> 4 </td><td> 5 </td><td> 6 </td><td>  7 </td><td> 8 </td><td> 9 </td><td> 10 </td><td> 11</td></tr>
+<tr><td>Počet levých  </td><td> 1 </td><td> 2 </td><td>  2 </td><td> 3 </td><td> 3 </td><td> 3 </td><td>  4 </td><td> 4 </td><td> 4 </td><td> - </td><td>  -</td></tr>
+<tr><td>Počet pravých </td><td> 0 </td><td> 0 </td><td>  1 </td><td> 1 </td><td> 2 </td><td> 3 </td><td>  3 </td><td> 4 </td><td> 5 </td><td> - </td><td>  -</td></tr>
+<tr><td>Rozdíl        </td><td> 1 </td><td> 2 </td><td>  1 </td><td> 2 </td><td> 1 </td><td> 0 </td><td>  1 </td><td> 0 </td><td> -1 </td><td> - </td><td> -</td></tr>
+<tr><td>Akce          </td><td>   </td><td>   </td><td>    </td><td>   </td><td>   </td><td> * </td><td>    </td><td> * </td><td> <tt>X</tt> </td><td>   </td><td></td></tr>  
+</tbody></table>
+</div>
+<p>
+Hvězdička znamená označení místa s&nbsp;korektním uzávorkováním
+a&nbsp;<tt>X</tt> konec prohledávání, když žádné další uzávorkování korektní být
+nemůže.</p>
+<p>
+Na konci jen vypíšeme nejpravější označené místo. Všimněme si, že
+si nemusíme ukládat všechna označená místa, stačí si vždy pamatovat
+poslední dosud nalezené. Další drobné zjednodušení je místo dvou
+počítadel použít jen jedno, uchovávající rozdíl počtu dosud načtených
+levých a&nbsp;pravých závorek (řádek „rozdíl“ v&nbsp;tabulce výše). Pak označujeme,
+když je toto počítadlo rovné nule, a&nbsp;končíme, pokud klesne pod nulu.</p>
+<p><a href="http://localhost/z/ulohy/28/28Z11-1.py">Program (Python 3) – počítání obou druhů závorek</a></p>
+<p><a href="http://localhost/z/ulohy/28/28Z11-2.py">Program (Python 3) – stačí nám počítat jen levé</a></p>
+<p class="author"><a href="http://localhost/kontakty/organizatori/">Filip Štědronský</a></p>
+<p>
+<i>Pokud máte pocit, že jste zde dříve viděli něco jiného, nemýlíte se. Věříme, že toto řešení pro vás bude stravitelnější.</i></p>
+<hr class="clearfloat">
