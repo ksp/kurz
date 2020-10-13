@@ -52,12 +52,14 @@ export function parseTaskId(id: string): ParsedTaskId | null {
     return { rocnik, z: !!z, serie, uloha }
 }
 
-function getLocation(id: string, solution: boolean): TaskLocation | null {
-    const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
-    if (!m) return null
-    const [_, rocnik, z, serie, uloha] = m
+function getLocation(id: string, solution: boolean): TaskLocation {
+    const parsedId = parseTaskId(id)
+    if (!parsedId) {
+        throw new Error("Can not parse " + id)
+    }
+    const { rocnik, z, serie, uloha } = parsedId
     const urlX = solution ? "reseni" : "zadani"
-    if (z == 'Z') {
+    if (z) {
         return {
             url: `/z/ulohy/${rocnik}/${urlX}${serie}.html`,
             startElement: `task-${id}`
@@ -79,7 +81,7 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
 
     let e = titleElement
 
-    const titleMatch = /^(\d+-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?$/.exec(e.innerText.trim())
+    const titleMatch = /^(\d+-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?$/.exec(e.textContent!.trim())
     if (!titleMatch) {
         var [_, id, name, __, points] = ["", startElementId, "Neznámé jméno úlohy", "", ""]
     } else {
@@ -95,7 +97,7 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
     while (!e.classList.contains("story") &&
         //    !e.classList.contains("clearfloat") &&
            e.tagName.toLowerCase() != "h3" &&
-           e.innerText.trim() != "Řešení"
+           e.textContent!.trim() != "Řešení"
         )
     {
         elements.push(e)
@@ -112,7 +114,7 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
     let r = ""
     for (const e of elements) {
         // hack: remove the paragraph with the matching text. Occurs in KSP-H, but is useless in this context.
-        if (e.innerText.trim().replace(/\s+/g, " ") == "Toto je praktická open-data úloha. V odevzdávacím systému si necháte vygenerovat vstupy a odevzdáte příslušné výstupy. Záleží jen na vás, jak výstupy vyrobíte.") {
+        if (e.textContent!.trim().replace(/\s+/g, " ") == "Toto je praktická open-data úloha. V odevzdávacím systému si necháte vygenerovat vstupy a odevzdáte příslušné výstupy. Záleží jen na vás, jak výstupy vyrobíte.") {
             continue;
         }
 
@@ -132,10 +134,10 @@ function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
     const rows = Array.from(doc.querySelectorAll("table.zs-tasklist tr")).slice(1) as HTMLTableRowElement[]
     return rows.map(r => {
         const submitted = !r.classList.contains("zs-unsubmitted")
-        const id = r.cells[0].innerText.trim()
-        const type = r.cells[1].innerText.trim()
-        const name = r.cells[2].innerText.trim()
-        const pointsStr = r.cells[4].innerText.trim()
+        const id = r.cells[0].textContent!.trim()
+        const type = r.cells[1].textContent!.trim()
+        const name = r.cells[2].textContent!.trim()
+        const pointsStr = r.cells[4].textContent!.trim()
         const pointsMatch = /((–|\.|\d)+) *\/ *(\d+)/.exec(pointsStr)
         if (!pointsMatch) throw new Error()
         const points = +pointsMatch[1]
@@ -166,16 +168,6 @@ async function loadTask({ url, startElement }: TaskLocation): Promise<TaskAssign
     return parseTask(startElement, html)
 }
 
-function virtualTask(id: string): TaskAssignmentData {
-    return {
-        id,
-        description: "úloha je virtuální a neexistuje",
-        name: id,
-        points: 0,
-        titleHtml: "<h3>Virtuální úloha</h3>"
-    }
-}
-
 export function isLoggedIn(): boolean {
     return !!document.querySelector(".auth a[href='/profil/profil.cgi']")
 }
@@ -196,13 +188,9 @@ export async function grabTaskStates(kspIds: string[]): Promise<Map<string, Task
 }
 
 export async function grabAssignment(id: string): Promise<TaskAssignmentData> {
-    const l = getLocation(id, false)
-    if (!l) return virtualTask(id)
-    return await loadTask(l)
+    return await loadTask(getLocation(id, false))
 }
 
 export async function grabSolution(id: string): Promise<TaskAssignmentData> {
-    const l = getLocation(id, true)
-    if (!l) return virtualTask(id)
-    return await loadTask(l)
+    return await loadTask(getLocation(id, true))
 }
