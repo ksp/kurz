@@ -27,7 +27,8 @@
                 189.30658721923828
             ],
             "taskReference": "26-Z1-2",
-            "title": "Piškvorky"
+            "title": "Piškvorky",
+            "hidden": true
         },
         {
             "id": "26-Z1-3",
@@ -42,7 +43,8 @@
                 -453.4102783203125
             ],
             "taskReference": "26-Z1-3",
-            "title": "Zamilovaný dopis"
+            "title": "Zamilovaný dopis",
+            "hidden": true
         },
         {
             "id": "26-Z1-4",
@@ -56,7 +58,8 @@
                 49.330116271972656
             ],
             "taskReference": "26-Z1-4",
-            "title": "Hroch v jezeře"
+            "title": "Hroch v jezeře",
+            "hidden": true
         },
         {
             "id": "26-Z2-1",
@@ -83,7 +86,8 @@
                 208.39923095703125
             ],
             "taskReference": "26-Z2-2",
-            "title": "SADO"
+            "title": "SADO",
+            "hidden": true
         },
         {
             "id": "26-Z2-3",
@@ -98,7 +102,8 @@
                 -406.0977783203125
             ],
             "taskReference": "26-Z2-3",
-            "title": "Šifrovaná zpráva"
+            "title": "Šifrovaná zpráva",
+            "hidden": true
         },
         {
             "id": "26-Z2-4",
@@ -124,7 +129,8 @@
                 327.53318786621094
             ],
             "taskReference": "26-Z3-1",
-            "title": "Zámky labyrintu"
+            "title": "Zámky labyrintu",
+            "hidden": true
         },
         {
             "id": "26-Z3-2",
@@ -138,7 +144,8 @@
                 -310.5342102050781
             ],
             "taskReference": "26-Z3-2",
-            "title": "Čarodějova šifra"
+            "title": "Čarodějova šifra",
+            "hidden": true
         },
         {
             "id": "26-Z3-3",
@@ -150,7 +157,8 @@
                 406.53318786621094
             ],
             "taskReference": "26-Z3-3",
-            "title": "Hádanka"
+            "title": "Hádanka",
+            "hidden": true
         },
         {
             "id": "26-Z3-4",
@@ -176,7 +184,8 @@
                 270.43162285670724
             ],
             "taskReference": "26-Z4-1",
-            "title": "Vražedná čísla"
+            "title": "Vražedná čísla",
+            "hidden": true
         },
         {
             "id": "26-Z4-2",
@@ -188,7 +197,8 @@
                 -786.0833304046971
             ],
             "taskReference": "26-Z4-2",
-            "title": "Sbírání vajíček"
+            "title": "Sbírání vajíček",
+            "hidden": true
         },
         {
             "id": "26-Z4-3",
@@ -202,7 +212,8 @@
                 -1156.3182373046875,
                 146.25286102294922
             ],
-            "taskReference": "26-Z4-3"
+            "taskReference": "26-Z4-3",
+            "hidden": true
         },
         {
             "id": "26-Z4-4",
@@ -227,7 +238,8 @@
                 2106.817985534668,
                 1146.6559019088745
             ],
-            "title": "Head-up display"
+            "title": "Head-up display",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -238,7 +250,8 @@
                 1217.155632019043,
                 1124.5684385299683
             ],
-            "title": "Nejdelší příkaz"
+            "title": "Nejdelší příkaz",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -249,7 +262,8 @@
                 1110.0876388549805,
                 1190.2755918502808
             ],
-            "title": "Komprese obrazu"
+            "title": "Komprese obrazu",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -260,7 +274,8 @@
                 2081.3400802612305,
                 790.309832572937
             ],
-            "title": "Večeře pro opraváře"
+            "title": "Večeře pro opraváře",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -271,7 +286,8 @@
                 2056.503044128418,
                 625.5225400924683
             ],
-            "title": "Čekání na poště"
+            "title": "Čekání na poště",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -282,7 +298,8 @@
                 1056.8284225463867,
                 1438.8191709518433
             ],
-            "title": "Na zastávce"
+            "title": "Na zastávce",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -294,7 +311,8 @@
                 -160.9592409133911
             ],
             "title": "Kalkulačka",
-            "comment": "jednoduché načtení vstupu a pak vyhodnocení"
+            "comment": "jednoduché načtení vstupu a pak vyhodnocení",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -305,7 +323,8 @@
                 1518.409294128418,
                 1245.754168510437
             ],
-            "title": "Slovník T9"
+            "title": "Slovník T9",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -316,7 +335,8 @@
                 1333.111198425293,
                 1194.713885307312
             ],
-            "title": "Lyžař"
+            "title": "Lyžař",
+            "hidden": true
         },
         {
             "id": "27-Z2-1",
@@ -342,7 +362,8 @@
                 898.155632019043,
                 1242.5684385299683
             ],
-            "title": "Hrnce od Horsta"
+            "title": "Hrnce od Horsta",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -353,7 +374,8 @@
                 809.155632019043,
                 1312.5684385299683
             ],
-            "title": "Nápis na tričku"
+            "title": "Nápis na tričku",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -364,7 +386,8 @@
                 1017.155632019043,
                 1255.5684385299683
             ],
-            "title": "Hořící auto"
+            "title": "Hořící auto",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -376,7 +399,8 @@
                 1566.5902891159058
             ],
             "title": "Kevin nabíječ, s.r.o.",
-            "comment": "chyták v posledním vstupu, jinak fakt jednoduchá"
+            "comment": "chyták v posledním vstupu, jinak fakt jednoduchá",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -387,7 +411,8 @@
                 1269.155632019043,
                 1015.5684385299683
             ],
-            "title": "Nedej vitagen"
+            "title": "Nedej vitagen",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -399,7 +424,8 @@
                 1427.5210752487183
             ],
             "title": "Superstromy",
-            "comment": "třízení pole (info o counting sortu)"
+            "comment": "třízení pole (info o counting sortu)",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -410,7 +436,8 @@
                 1557.155632019043,
                 1168.5684385299683
             ],
-            "title": "Robo Rally"
+            "title": "Robo Rally",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -422,7 +449,8 @@
                 -36.192124366760254
             ],
             "title": "Záhada Pražského orloje",
-            "comment": "Euklidův algoritmus, potřeba vymyslet přes matematiku"
+            "comment": "Euklidův algoritmus, potřeba vymyslet přes matematiku",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -433,7 +461,8 @@
                 1028.155632019043,
                 1032.5684385299683
             ],
-            "title": "Unavení u oken"
+            "title": "Unavení u oken",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -444,7 +473,8 @@
                 974.155632019043,
                 1158.5684385299683
             ],
-            "title": "Běžkaři v Praze!"
+            "title": "Běžkaři v Praze!",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -455,7 +485,8 @@
                 1363.676628112793,
                 1480.8441953659058
             ],
-            "title": "Koňské skoky"
+            "title": "Koňské skoky",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -467,7 +498,8 @@
                 1147.3673400878906
             ],
             "title": "Jízda na biomotorce",
-            "comment": "Prohledávání statového prostoru - hledání cesty v obohacneném grafu"
+            "comment": "Prohledávání statového prostoru - hledání cesty v obohacneném grafu",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -478,7 +510,8 @@
                 2578.8408203125,
                 1227.2563781738281
             ],
-            "title": "Likvidace plísně"
+            "title": "Likvidace plísně",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -489,7 +522,8 @@
                 2579.950439453125,
                 1310.4740905761719
             ],
-            "title": "Hlídání věznice"
+            "title": "Hlídání věznice",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -500,7 +534,8 @@
                 2434.5966796875,
                 1312.6931457519531
             ],
-            "title": "Závaží z fošen"
+            "title": "Závaží z fošen",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -511,7 +546,8 @@
                 2251.517822265625,
                 1337.1037902832031
             ],
-            "title": "Podivuhodný obraz"
+            "title": "Podivuhodný obraz",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -522,7 +558,8 @@
                 2071.767333984375,
                 1343.7611389160156
             ],
-            "title": "Sloty na iridium"
+            "title": "Sloty na iridium",
+            "hidden": true
         },
         {
             "id": "28-Z1-1",
@@ -534,7 +571,8 @@
                 223.97552394866943,
                 969.916088104248
             ],
-            "title": "Kevinův leták"
+            "title": "Kevinův leták",
+            "hidden": true
         },
         {
             "id": "28-Z1-2",
@@ -546,7 +584,8 @@
                 1741.000244140625,
                 39.6094856262207
             ],
-            "title": "Sářina hra"
+            "title": "Sářina hra",
+            "hidden": true
         },
         {
             "id": "28-Z1-3",
@@ -558,7 +597,8 @@
                 1519.6990966796875,
                 37.605228424072266
             ],
-            "title": "Petrovy stromy"
+            "title": "Petrovy stromy",
+            "hidden": true
         },
         {
             "id": "28-Z1-4",
@@ -570,7 +610,8 @@
                 -1810.1290817260742,
                 392.1524124145508
             ],
-            "title": "Zuzčina zvědavost"
+            "title": "Zuzčina zvědavost",
+            "hidden": true
         },
         {
             "id": "28-Z2-1",
@@ -582,7 +623,8 @@
                 -345.0656204223633,
                 -277.733154296875
             ],
-            "title": "Před muzeem"
+            "title": "Před muzeem",
+            "hidden": true
         },
         {
             "id": "28-Z2-2",
@@ -594,7 +636,8 @@
                 1401.8692626953125,
                 -524.0748901367188
             ],
-            "title": "Práce pro Sáru"
+            "title": "Práce pro Sáru",
+            "hidden": true
         },
         {
             "id": "28-Z2-3",
@@ -606,7 +649,8 @@
                 1261.51611328125,
                 -521.9762878417969
             ],
-            "title": "Byli jsme tři"
+            "title": "Byli jsme tři",
+            "hidden": true
         },
         {
             "id": "28-Z2-4",
@@ -632,7 +676,8 @@
                 479.60821533203125,
                 -825.9333801269531
             ],
-            "title": "Místo oslavy"
+            "title": "Místo oslavy",
+            "hidden": true
         },
         {
             "id": "28-Z3-2",
@@ -644,7 +689,8 @@
                 1637.5750732421875,
                 40.6045036315918
             ],
-            "title": "Zlomkovník"
+            "title": "Zlomkovník",
+            "hidden": true
         },
         {
             "id": "28-Z3-3",
@@ -656,7 +702,8 @@
                 874.887451171875,
                 -94.75247955322266
             ],
-            "title": "Posloupnost za trest"
+            "title": "Posloupnost za trest",
+            "hidden": true
         },
         {
             "id": "28-Z3-4",
@@ -668,7 +715,8 @@
                 982.91064453125,
                 -295.6294708251953
             ],
-            "title": "Zbývající úkoly"
+            "title": "Zbývající úkoly",
+            "hidden": true
         },
         {
             "id": "28-Z4-1",
@@ -680,7 +728,8 @@
                 509.86163330078125,
                 -157.92288208007812
             ],
-            "title": "Půdorys"
+            "title": "Půdorys",
+            "hidden": true
         },
         {
             "id": "28-Z4-2",
@@ -692,7 +741,8 @@
                 -928.4460144042969,
                 -222.2663803100586
             ],
-            "title": "Vykopávky"
+            "title": "Vykopávky",
+            "hidden": true
         },
         {
             "id": "28-Z4-3",
@@ -731,7 +781,8 @@
                 2426.829833984375,
                 1231.6946105957031
             ],
-            "title": "Zběsilý útěk"
+            "title": "Zběsilý útěk",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -742,7 +793,8 @@
                 2267.0517578125,
                 1250.5573425292969
             ],
-            "title": "Nejsložitější záhon"
+            "title": "Nejsložitější záhon",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -753,7 +805,8 @@
                 2419.062744140625,
                 1162.9012756347656
             ],
-            "title": "Verbování"
+            "title": "Verbování",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -764,7 +817,8 @@
                 2269.270751953125,
                 1179.5448913574219
             ],
-            "title": "Výhružné dopisy"
+            "title": "Výhružné dopisy",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -775,7 +829,8 @@
                 2420.17236328125,
                 1096.3271789550781
             ],
-            "title": "Holubí pošta"
+            "title": "Holubí pošta",
+            "hidden": true
         },
         {
             "id": "29-Z1-1",
@@ -789,7 +844,8 @@
                 536.0025634765625,
                 428.0677185058594
             ],
-            "taskReference": "29-Z1-1"
+            "taskReference": "29-Z1-1",
+            "hidden": true
         },
         {
             "id": "29-Z1-2",
@@ -831,7 +887,8 @@
                 232.75035858154297
             ],
             "taskReference": "29-Z1-4",
-            "title": "Zuzčin výlet"
+            "title": "Zuzčin výlet",
+            "hidden": true
         },
         {
             "id": "29-Z2-1",
@@ -845,7 +902,8 @@
                 485.86309814453125
             ],
             "taskReference": "29-Z2-1",
-            "title": "Krocení zlé želvy"
+            "title": "Krocení zlé želvy",
+            "hidden": true
         },
         {
             "id": "29-Z2-2",
@@ -871,7 +929,8 @@
                 -1968.5974578857422,
                 405.43651580810547
             ],
-            "title": "Petr v říši divů"
+            "title": "Petr v říši divů",
+            "hidden": true
         },
         {
             "id": "29-Z2-4",
@@ -883,7 +942,8 @@
                 347.90077209472656,
                 -454.14956760406494
             ],
-            "title": "Zuzka: Cesta tam a zase zpátky"
+            "title": "Zuzka: Cesta tam a zase zpátky",
+            "hidden": true
         },
         {
             "id": "29-Z3-1",
@@ -897,7 +957,8 @@
                 198.7432632446289
             ],
             "taskReference": "29-Z3-1",
-            "title": "Želva na dvorku"
+            "title": "Želva na dvorku",
+            "hidden": true
         },
         {
             "id": "29-Z3-2",
@@ -912,7 +973,8 @@
                 -358.7561950683594
             ],
             "taskReference": "29-Z3-2",
-            "title": "Písemka z angličtiny"
+            "title": "Písemka z angličtiny",
+            "hidden": true
         },
         {
             "id": "29-Z3-3",
@@ -924,7 +986,8 @@
                 274.53318786621094
             ],
             "taskReference": "29-Z3-3",
-            "title": "Šestková čísla"
+            "title": "Šestková čísla",
+            "hidden": true
         },
         {
             "id": "29-Z3-4",
@@ -936,7 +999,8 @@
                 -1763.2243347167969,
                 181.82473754882812
             ],
-            "title": "Zdobení stromečku"
+            "title": "Zdobení stromečku",
+            "hidden": true
         },
         {
             "id": "29-Z4-1",
@@ -948,7 +1012,8 @@
                 -1700.1787109375,
                 235.389404296875
             ],
-            "title": "Šíření viru"
+            "title": "Šíření viru",
+            "hidden": true
         },
         {
             "id": "29-Z4-2",
@@ -977,7 +1042,8 @@
                 503.8365783691406
             ],
             "taskReference": "29-Z4-3",
-            "title": "Želva v akváriu"
+            "title": "Želva v akváriu",
+            "hidden": true
         },
         {
             "id": "29-Z4-4",
@@ -989,7 +1055,8 @@
                 378.12322998046875,
                 -405.99293518066406
             ],
-            "title": "Hledání součtu"
+            "title": "Hledání součtu",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1001,7 +1068,8 @@
                 1017.5477600097656
             ],
             "title": "Cesta v bunkru",
-            "comment": "Hledání cesty v hilbertově křivce"
+            "comment": "Hledání cesty v hilbertově křivce",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1012,7 +1080,8 @@
                 2291.462158203125,
                 823.3730773925781
             ],
-            "title": "Komprimace"
+            "title": "Komprimace",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1023,7 +1092,8 @@
                 2260.394287109375,
                 885.5089416503906
             ],
-            "title": "Vlnění"
+            "title": "Vlnění",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1034,7 +1104,8 @@
                 2434.596923828125,
                 816.7156677246094
             ],
-            "title": "Frňákovník"
+            "title": "Frňákovník",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1045,7 +1116,8 @@
                 2432.377685546875,
                 878.8515930175781
             ],
-            "title": "Útěk z trezorů"
+            "title": "Útěk z trezorů",
+            "hidden": true
         },
         {
             "id": "30-Z1-1",
@@ -1057,7 +1129,8 @@
             "position": [
                 -992.762939453125,
                 -321.29197692871094
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z1-2",
@@ -1083,7 +1156,8 @@
             "position": [
                 -271.56785583496094,
                 -510.6902160644531
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z1-4",
@@ -1095,7 +1169,8 @@
             "position": [
                 -1936.3944702148438,
                 352.7490768432617
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z2-1",
@@ -1107,7 +1182,8 @@
             "position": [
                 -403.6249237060547,
                 -350.6728820800781
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z2-2",
@@ -1119,7 +1195,8 @@
             "position": [
                 513.1159057617188,
                 -111.86053466796875
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z2-3",
@@ -1145,7 +1222,8 @@
             "position": [
                 -1107.7801971435547,
                 -419.0527801513672
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z3-1",
@@ -1171,7 +1249,8 @@
             "position": [
                 -512.0505065917969,
                 -285.66261291503906
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z3-3",
@@ -1183,7 +1262,8 @@
             "position": [
                 1280.2218017578125,
                 -275.69879150390625
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z3-4",
@@ -1195,7 +1275,8 @@
             "position": [
                 1161.6162109375,
                 -319.74127197265625
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z4-1",
@@ -1207,7 +1288,8 @@
             "position": [
                 -1140.9943389892578,
                 -474.1478576660156
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z4-2",
@@ -1219,7 +1301,8 @@
             "position": [
                 -2085.289993286133,
                 352.05638885498047
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z4-3",
@@ -1231,7 +1314,8 @@
             "position": [
                 -1786.307373046875,
                 334.5788803100586
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "30-Z4-4",
@@ -1243,7 +1327,8 @@
             "position": [
                 -1050.291244506836,
                 -367.55816745758057
-            ]
+            ],
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1254,7 +1339,8 @@
                 2454.366792678833,
                 946.1978244781494
             ],
-            "title": "Karkulčin byznys"
+            "title": "Karkulčin byznys",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1265,7 +1351,8 @@
                 2271.184907913208,
                 947.7135105133057
             ],
-            "title": "Továrna na perník"
+            "title": "Továrna na perník",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1276,7 +1363,8 @@
                 2253.449312210083,
                 1036.687936782837
             ],
-            "title": "Přebírání hrachu"
+            "title": "Přebírání hrachu",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1287,7 +1375,8 @@
                 2268.606294631958,
                 1107.9266452789307
             ],
-            "title": "Nejvíc spánku"
+            "title": "Nejvíc spánku",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1298,7 +1387,8 @@
                 2095.814790725708,
                 1282.2340183258057
             ],
-            "title": "Kváskový chléb"
+            "title": "Kváskový chléb",
+            "hidden": true
         },
         {
             "id": "31-Z1-1",
@@ -1310,7 +1400,8 @@
                 -641.1309432983398,
                 -254.37389373779297
             ],
-            "taskReference": "31-Z1-1"
+            "taskReference": "31-Z1-1",
+            "hidden": true
         },
         {
             "id": "31-Z1-2",
@@ -1324,7 +1415,8 @@
                 261.21248626708984
             ],
             "taskReference": "31-Z1-2",
-            "title": "Ukradený jezdec"
+            "title": "Ukradený jezdec",
+            "hidden": true
         },
         {
             "id": "31-Z1-3",
@@ -1336,7 +1428,8 @@
                 954.6195068359375,
                 -144.04727935791016
             ],
-            "title": "Průnik kvádrů"
+            "title": "Průnik kvádrů",
+            "hidden": true
         },
         {
             "id": "31-Z1-4",
@@ -1350,7 +1443,8 @@
                 -1254.2938232421875,
                 244.3028335571289
             ],
-            "taskReference": "31-Z1-4"
+            "taskReference": "31-Z1-4",
+            "hidden": true
         },
         {
             "id": "31-Z2-1",
@@ -1362,7 +1456,8 @@
                 1182.9420166015625,
                 -121.8834228515625
             ],
-            "title": "Objednávka pizzy"
+            "title": "Objednávka pizzy",
+            "hidden": true
         },
         {
             "id": "31-Z2-2",
@@ -1374,7 +1469,8 @@
                 -959.19970703125,
                 -270.38741302490234
             ],
-            "title": "Tetris bez dozoru"
+            "title": "Tetris bez dozoru",
+            "hidden": true
         },
         {
             "id": "31-Z2-3",
@@ -1386,7 +1482,8 @@
                 851.67236328125,
                 952.2879638671875
             ],
-            "title": "Spousta figurek"
+            "title": "Spousta figurek",
+            "hidden": true
         },
         {
             "id": "31-Z2-4",
@@ -1398,7 +1495,8 @@
                 1841.7220458984375,
                 38.87567901611328
             ],
-            "title": "Zmatematika"
+            "title": "Zmatematika",
+            "hidden": true
         },
         {
             "id": "31-Z3-1",
@@ -1410,7 +1508,8 @@
                 -224.54463958740234,
                 -419.3528137207031
             ],
-            "title": "Tvůrčí krize"
+            "title": "Tvůrčí krize",
+            "hidden": true
         },
         {
             "id": "31-Z3-2",
@@ -1424,7 +1523,8 @@
                 290.51927947998047
             ],
             "taskReference": "31-Z3-2",
-            "title": "Zámek obrazovky"
+            "title": "Zámek obrazovky",
+            "hidden": true
         },
         {
             "id": "31-Z3-3",
@@ -1439,7 +1539,8 @@
                 81.33769989013672
             ],
             "taskReference": "31-Z3-3",
-            "title": "Stáda hrochů"
+            "title": "Stáda hrochů",
+            "hidden": true
         },
         {
             "id": "31-Z3-4",
@@ -1451,7 +1552,8 @@
                 828.0521850585938,
                 204.80533599853516
             ],
-            "title": "Pohyb termitů"
+            "title": "Pohyb termitů",
+            "hidden": true
         },
         {
             "id": "31-Z4-1",
@@ -1463,7 +1565,8 @@
                 -485.9013156890869,
                 1487.4197387695312
             ],
-            "title": "Nejosamělejší kamarád"
+            "title": "Nejosamělejší kamarád",
+            "hidden": true
         },
         {
             "id": "31-Z4-2",
@@ -1475,7 +1578,8 @@
                 1822.9569702148438,
                 -115.60995483398438
             ],
-            "title": "Závažíčka na druhou"
+            "title": "Závažíčka na druhou",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1486,7 +1590,8 @@
                 1538.031099319458,
                 801.7519016265869
             ],
-            "title": "Probíhání bludištěm"
+            "title": "Probíhání bludištěm",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1497,7 +1602,8 @@
                 1499.911958694458,
                 901.5865573883057
             ],
-            "title": "Ohnivý únik"
+            "title": "Ohnivý únik",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1508,7 +1614,8 @@
                 2098.499687194824,
                 1213.835223197937
             ],
-            "title": "Zkomolené vysílání"
+            "title": "Zkomolené vysílání",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1519,7 +1626,8 @@
                 2080.4985275268555,
                 862.9364805221558
             ],
-            "title": "Mezihvězdné jízdní řády"
+            "title": "Mezihvězdné jízdní řády",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1530,7 +1638,8 @@
                 2102.0034103393555,
                 937.4345273971558
             ],
-            "title": "Zkrat"
+            "title": "Zkrat",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1541,7 +1650,8 @@
                 2101.0969161987305,
                 1080.7460508346558
             ],
-            "title": "Zpětný signál"
+            "title": "Zpětný signál",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1552,7 +1662,8 @@
                 2098.2350997924805,
                 1004.0238218307495
             ],
-            "title": "Druhá kostra"
+            "title": "Druhá kostra",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1563,7 +1674,8 @@
                 2058.4335861206055,
                 715.0660581588745
             ],
-            "title": "Geocaching s odhadem"
+            "title": "Geocaching s odhadem",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1574,7 +1686,8 @@
                 1411.155632019043,
                 1141.5684385299683
             ],
-            "title": "Kevin v papírnictví"
+            "title": "Kevin v papírnictví",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1585,7 +1698,8 @@
                 1248.442741394043,
                 1383.991473197937
             ],
-            "title": "Chybná účtenka"
+            "title": "Chybná účtenka",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1596,7 +1710,8 @@
                 1140.155632019043,
                 1328.5684385299683
             ],
-            "title": "Školní knihy"
+            "title": "Školní knihy",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1607,7 +1722,8 @@
                 959.155632019043,
                 1308.5684385299683
             ],
-            "title": "Plánek školy"
+            "title": "Plánek školy",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1618,7 +1734,8 @@
                 1572.155632019043,
                 1029.5684385299683
             ],
-            "title": "Prší"
+            "title": "Prší",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1629,7 +1746,8 @@
                 1471.155632019043,
                 681.5684385299683
             ],
-            "title": "Turnaj hada"
+            "title": "Turnaj hada",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1640,7 +1758,8 @@
                 1686.191276550293,
                 928.291277885437
             ],
-            "title": "Panika v chodbě"
+            "title": "Panika v chodbě",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1651,7 +1770,8 @@
                 1228.155632019043,
                 733.5684385299683
             ],
-            "title": "Opisování v testu"
+            "title": "Opisování v testu",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1662,7 +1782,8 @@
                 1327.155632019043,
                 622.5684385299683
             ],
-            "title": "Tiskařský stroj"
+            "title": "Tiskařský stroj",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1673,7 +1794,8 @@
                 1159.339469909668,
                 868.9643125534058
             ],
-            "title": "Sářina omalovánka"
+            "title": "Sářina omalovánka",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1684,7 +1806,8 @@
                 1255.4586715698242,
                 1507.3838682174683
             ],
-            "title": "Akční ceny"
+            "title": "Akční ceny",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1695,7 +1818,8 @@
                 1671.468864440918,
                 1398.2491025924683
             ],
-            "title": "Dálnice"
+            "title": "Dálnice",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1706,7 +1830,8 @@
                 1107.155632019043,
                 680.5684385299683
             ],
-            "title": "Jednobarevné praní"
+            "title": "Jednobarevné praní",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1717,7 +1842,8 @@
                 1595.155632019043,
                 1108.5684385299683
             ],
-            "title": "Hoří chleba?"
+            "title": "Hoří chleba?",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1728,7 +1854,8 @@
                 1420.5522384643555,
                 1229.4311094284058
             ],
-            "title": "Esej do bloku"
+            "title": "Esej do bloku",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1739,7 +1866,8 @@
                 748.155632019043,
                 1242.5684385299683
             ],
-            "title": "Bomberman uklízí"
+            "title": "Bomberman uklízí",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1752,7 +1880,8 @@
                 353.9509735107422,
                 1042.3272733688354
             ],
-            "title": "Kontrola závorkových programů"
+            "title": "Kontrola závorkových programů",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1763,7 +1892,8 @@
                 876.1545333862305,
                 754.659197807312
             ],
-            "title": "Sobotní den železnice"
+            "title": "Sobotní den železnice",
+            "hidden": true
         },
         {
             "type": "open-data",
@@ -1774,7 +1904,8 @@
                 1633.5070114135742,
                 1444.5108823776245
             ],
-            "title": "Petrův zmatený výlet"
+            "title": "Petrův zmatený výlet",
+            "hidden": true
         },
         {
             "id": "algoritmy",
@@ -1786,7 +1917,8 @@
             "position": [
                 -698.2805023193359,
                 -922.5820579528809
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "data",
@@ -1798,7 +1930,8 @@
             "position": [
                 -696.7079391479492,
                 -876.2786036729813
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "jak-resit-ulohy",
@@ -1823,7 +1956,8 @@
             "position": [
                 2225.972201347351,
                 625.0823974609375
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "kucharka-zakladni-algoritmus",
@@ -2014,7 +2148,8 @@
             "position": [
                 1671.7270526885986,
                 2.2010104656219482
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-1d-pole",
@@ -2038,7 +2173,8 @@
             "position": [
                 -1174.31640625,
                 107.25682830810547
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-grafy",
@@ -2050,7 +2186,8 @@
             "position": [
                 -1931.8012084960938,
                 21.015724182128906
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-grafy-pracovni-poznamka",
@@ -2064,7 +2201,8 @@
             "position": [
                 -1968.723388671875,
                 166.26753997802734
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-retezce",
@@ -2076,7 +2214,8 @@
             "position": [
                 -523.4024200439453,
                 -451.524658203125
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-trizeni",
@@ -2087,7 +2226,8 @@
             "position": [
                 -473.98663330078125,
                 1377.7706861495972
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-uvod",
@@ -2109,7 +2249,8 @@
             "position": [
                 -695.6980514526367,
                 -966.9375038146973
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "label-zelvy",
@@ -2121,7 +2262,8 @@
             "position": [
                 587.7714233398438,
                 399.8365783691406
-            ]
+            ],
+            "hidden": true
         },
         {
             "id": "placeholder-kurz-programovani",

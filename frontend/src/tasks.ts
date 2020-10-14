@@ -6,6 +6,7 @@ export type TaskDescriptor = {
     requires: string[]
     comment?: string
     position?: [number, number]
+    hidden?: boolean
 } & (
         {
             type: "open-data",

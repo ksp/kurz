@@ -68,7 +68,7 @@
   }
 
   // autosave ;)
-  let saveTimeoutHandle: number | null = null;
+  let saveTimeoutHandle: NodeJS.Timeout | null = null;
   function autosave() {
     if (saveTimeoutHandle != null) clearTimeout(saveTimeoutHandle);
 
@@ -77,7 +77,10 @@
       await saveTasks(tasks);
     }, 5000);
   }
-  $: { tasks; autosave(); }; 
+  $: {
+    tasks;
+    autosave();
+  }
 
   function saveLocally() {
     saveToLocalDisk("tasks.json", tasksToString(tasks));
@@ -197,6 +200,20 @@
     }));
     tasks.tasks = [...tasks.tasks, ...newDescriptors];
   }
+
+  function hideSelection() {
+    for (let t of graph.getCurrentSelection()) {
+      t.hidden = true;
+    }
+    tasks = tasks;
+  }
+
+  function showSelection() {
+    for (let t of graph.getCurrentSelection()) {
+      t.hidden = false;
+    }
+    tasks = tasks;
+  }
 </script>
 
 <style>
@@ -297,7 +314,8 @@
   bind:this={graph}
   {nodeDraggingEnabled}
   on:openTask={openTaskDetailEditorButton}
-  {showHiddenEdges} />
+  {showHiddenEdges}
+  showHidden={true} />
 
 <div class="container">
   <div class="topLeftHint">
@@ -357,6 +375,10 @@
           disabled={!isLoggedIn()}
           title={isLoggedIn() ? 'Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou' : 'Je nutné být přihlášený a na stránce v KSP template.'}>Nahrát
           celý ročník</button>
+      </div>
+      <div>
+        <button on:click={hideSelection}>Skrýt výběr</button>
+        <button on:click={showSelection}>Zobrazit výběr</button>
       </div>
     </div>
 

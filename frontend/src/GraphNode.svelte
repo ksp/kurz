@@ -41,8 +41,7 @@
   // every time after that
   $: {
     task.title;
-    if (text_element)
-      ensureTextFits();
+    if (text_element) ensureTextFits();
   }
 
   function dblclick(e: MouseEvent) {
@@ -56,6 +55,12 @@
   g:not(.label) {
     cursor: pointer;
   }
+
+  .hidden {
+    fill-opacity: 0.5;
+    stroke-opacity: 0.5;
+  }
+
   .label {
     font-size: 1.5em;
     fill: gainsboro;
@@ -81,7 +86,8 @@
     fill: green; /* TODO */
   }
 
-  .selected > ellipse, .selected > rect {
+  .selected > ellipse,
+  .selected > rect {
     stroke-width: 4px;
     stroke: red;
   }
@@ -94,9 +100,12 @@
   on:mouseleave={leave}
   on:click={click}
   on:dblclick={dblclick}
-  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''} {task.type} {selected ? 'selected' : 'notSelected'}">
+  class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''}
+    {task.type}
+    {selected ? 'selected' : 'notSelected'}
+    {task.hidden ?? false ? 'hidden' : ''}">
   {#if task.type == 'label'}
-    {#if selected }
+    {#if selected}
       <ellipse rx={ellipse_rx} ry={20} {cx} {cy} />
     {/if}
     <text
@@ -109,8 +118,14 @@
       {task.title == null ? task.id : task.title}
     </text>
   {:else}
-    {#if task.type == "text"}
-      <rect class="taskNode" x={cx-ellipse_rx} y={cy-20} height={40} width={2*ellipse_rx} rx={3} />
+    {#if task.type == 'text'}
+      <rect
+        class="taskNode"
+        x={cx - ellipse_rx}
+        y={cy - 20}
+        height={40}
+        width={2 * ellipse_rx}
+        rx={3} />
     {:else}
       <ellipse class="taskNode" rx={ellipse_rx} ry={20} {cx} {cy} />
     {/if}

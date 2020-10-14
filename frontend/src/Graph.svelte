@@ -7,6 +7,7 @@
   import { createEdges } from "./tasks";
   import { taskStatuses } from "./task-status-cache";
 import { grabAssignment } from "./ksp-task-grabber";
+import TaskDetailEditor from "./TaskDetailEditor.svelte";
 
   export let tasks: TasksFile;
   export let nodeDraggingEnabled: boolean = false;
@@ -14,6 +15,7 @@ import { grabAssignment } from "./ksp-task-grabber";
   export let showHiddenEdges: boolean = false;
   export let selection: Set<TaskDescriptor> = new Set();
   export let showCenterMarker: boolean = false;
+  export let showHidden: boolean = false;
 
   let hoveredTask: null | TaskDescriptor = null;
 
@@ -185,6 +187,10 @@ import { grabAssignment } from "./ksp-task-grabber";
     window.addEventListener("mouseup", dragStop, { once: true });
   }
 
+  export function getCurrentSelection(): Set<TaskDescriptor> {
+    return selection;
+  }
+
   onMount(() => {
     setupZoom();
   });
@@ -308,10 +314,13 @@ import { grabAssignment } from "./ksp-task-grabber";
             stroke-dasharray="15,15" />
         {/if}
         {#each edges as edge}
-          <GraphEdge {edge} showLabelEdge={showHiddenEdges} />
+          {#if showHidden || !(edge?.dependee?.hidden || edge?.dependency?.hidden)}
+            <GraphEdge {edge} showLabelEdge={showHiddenEdges} />
+          {/if}
         {/each}
         {#each nodes as task}
-          <GraphNode
+          {#if showHidden || !(task.hidden ?? false) }
+            <GraphNode
             {task}
             on:mousedown={dragStart}
             selected={selectionToolEnabled && selection.has(task)}
@@ -320,6 +329,7 @@ import { grabAssignment } from "./ksp-task-grabber";
             on:hoveringChange={nodeHover(task)}
             status={$taskStatuses.get(task.id)}
             on:dblclick={nodeDoubleClick(task)} />
+          {/if}
         {/each}
         {#if hoveredTask != null && hoveredTask.type == "open-data" }
         <g class="tooltip">
