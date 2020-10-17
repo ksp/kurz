@@ -30,6 +30,10 @@ describe('tasks.json validation', () => {
             expect(["open-data", "text", "label"]).toContain(t.type)
             if (t.type == "text") {
                 expect(t.htmlContent?.trim()).toBeTruthy()
+                if (!t.hidden) {
+                    expect(t.htmlContent).not.toContain("FIXME")
+                    expect(t.htmlContent).not.toContain("TODO")
+                }
             } else if (t.type == "open-data") {
                 expect(t.taskReference).toBeTruthy()
                 expect(g.parseTaskId(t.taskReference)).toBeTruthy()
