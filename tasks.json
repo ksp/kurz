@@ -11,7 +11,7 @@
             "title": "Kevin a magnety",
             "position": [
                 -282.3204650878906,
-                543.3955154418945
+                784.6221542358398
             ],
             "taskReference": "26-Z1-1",
             "points": 8
@@ -24,8 +24,8 @@
                 "26-Z4-3"
             ],
             "position": [
-                -1214.2965393066406,
-                189.30658721923828
+                -1980.3810119628906,
+                -886.6939468383789
             ],
             "taskReference": "26-Z1-2",
             "title": "Piškvorky",
@@ -41,8 +41,8 @@
                 "30-Z1-3"
             ],
             "position": [
-                -385.37432861328125,
-                -453.4102783203125
+                -949.4910888671875,
+                -1247.3524169921875
             ],
             "taskReference": "26-Z1-3",
             "title": "Zamilovaný dopis",
@@ -75,7 +75,7 @@
             ],
             "position": [
                 -148.51671600341797,
-                540.5557556152344
+                781.7823944091797
             ],
             "taskReference": "26-Z2-1",
             "title": "Had z domina",
@@ -104,8 +104,8 @@
                 "26-Z1-3"
             ],
             "position": [
-                -485.63623809814453,
-                -406.0977783203125
+                -1049.7529983520508,
+                -1200.0399169921875
             ],
             "taskReference": "26-Z2-3",
             "title": "Šifrovaná zpráva",
@@ -122,7 +122,7 @@
             "title": "Životně důležitá úloha",
             "position": [
                 -90.7659363746643,
-                638.6583633422852
+                879.8850021362305
             ],
             "taskReference": "26-Z2-4",
             "points": 12
@@ -149,8 +149,8 @@
                 "29-Z3-2"
             ],
             "position": [
-                -698.3905334472656,
-                -310.5342102050781
+                -1262.5072937011719,
+                -1104.4763488769531
             ],
             "taskReference": "26-Z3-2",
             "title": "Čarodějova šifra",
@@ -180,7 +180,7 @@
             ],
             "position": [
                 -1167.3428955078125,
-                1269.4301681518555
+                1510.6568069458008
             ],
             "taskReference": "26-Z3-4",
             "title": "Tvar labyrintu",
@@ -223,8 +223,8 @@
             ],
             "title": "Hra Othello",
             "position": [
-                -1156.3182373046875,
-                146.25286102294922
+                -1922.4027099609375,
+                -929.747673034668
             ],
             "taskReference": "26-Z4-3",
             "hidden": true,
@@ -239,7 +239,7 @@
             ],
             "position": [
                 -1018.3187866210938,
-                1267.3285446166992
+                1508.5551834106445
             ],
             "taskReference": "26-Z4-4",
             "title": "Hlídači v labyrintu",
@@ -373,7 +373,7 @@
             ],
             "position": [
                 -240.20307731628418,
-                610.2029342651367
+                851.429573059082
             ],
             "taskReference": "27-Z2-1",
             "title": "Závorky z cereálií",
@@ -451,8 +451,8 @@
             "taskReference": "27-Z3-3",
             "requires": [],
             "position": [
-                -492.34237718582153,
-                1427.5210752487183
+                -2202.1037907600403,
+                -397.1529359817505
             ],
             "title": "Superstromy",
             "comment": "třízení pole (info o counting sortu)",
@@ -611,8 +611,8 @@
             "comment": "triviální, průchod pole",
             "requires": [],
             "position": [
-                223.97552394866943,
-                969.916088104248
+                499.0694875717163,
+                1022.1491203308105
             ],
             "title": "Kevinův leták",
             "hidden": true,
@@ -667,8 +667,8 @@
             "comment": "hledání podřetězce",
             "requires": [],
             "position": [
-                -345.0656204223633,
-                -277.733154296875
+                -909.1823806762695,
+                -1071.67529296875
             ],
             "title": "Před muzeem",
             "hidden": true,
@@ -712,7 +712,7 @@
             ],
             "position": [
                 -1005.9761962890625,
-                857.2263526916504
+                1098.4529914855957
             ],
             "title": "Rozsypaná turbína",
             "points": 12
@@ -794,8 +794,8 @@
             "comment": "triviální průchod 2D pole",
             "requires": [],
             "position": [
-                -928.4460144042969,
-                -222.2663803100586
+                -1374.1679382324219,
+                -835.1339645385742
             ],
             "title": "Vykopávky",
             "hidden": true,
@@ -811,7 +811,7 @@
             ],
             "position": [
                 -921.8528137207031,
-                594.2841796875
+                835.5108184814453
             ],
             "title": "Mocniny",
             "points": 10
@@ -826,7 +826,7 @@
             ],
             "position": [
                 153.05905151367188,
-                265.0413360595703
+                506.2679748535156
             ],
             "title": "Čtyřková",
             "points": 12
@@ -922,7 +922,7 @@
             ],
             "position": [
                 -212.3476220369339,
-                90.17396926879883
+                331.40060806274414
             ],
             "title": "Sářiny pamlsky",
             "points": 10
@@ -937,7 +937,7 @@
             "title": "Petrova statistika",
             "position": [
                 -212.53314113616943,
-                681.3666000366211
+                922.5932388305664
             ],
             "taskReference": "29-Z1-3",
             "points": 10
@@ -984,7 +984,7 @@
             ],
             "position": [
                 -332.53578186035156,
-                650.16650390625
+                891.3931427001953
             ],
             "title": "Sářina volba",
             "points": 10
@@ -1025,8 +1025,8 @@
                 "26-Z4-3"
             ],
             "position": [
-                -1070.3923645019531,
-                198.7432632446289
+                -1836.4768371582031,
+                -877.2572708129883
             ],
             "taskReference": "29-Z3-1",
             "title": "Želva na dvorku",
@@ -1042,8 +1042,8 @@
                 "label-retezce"
             ],
             "position": [
-                -588.6411285400391,
-                -358.7561950683594
+                -1152.7578887939453,
+                -1152.6983337402344
             ],
             "taskReference": "29-Z3-2",
             "title": "Písemka z angličtiny",
@@ -1102,7 +1102,7 @@
             ],
             "position": [
                 -629.13037109375,
-                158.83949279785156
+                400.0661315917969
             ],
             "title": "Vybírání atrakcí",
             "points": 10
@@ -1212,8 +1212,8 @@
             "comment": "Trivka, chození po souřadnicích",
             "requires": [],
             "position": [
-                -992.762939453125,
-                -321.29197692871094
+                -1438.48486328125,
+                -934.1595611572266
             ],
             "hidden": true,
             "points": 8
@@ -1229,7 +1229,7 @@
             ],
             "position": [
                 -772.8814697265625,
-                152.84468841552734
+                394.07132720947266
             ],
             "points": 10
         },
@@ -1241,8 +1241,8 @@
             "comment": "Hledání nejčastějšího výskytu ",
             "requires": [],
             "position": [
-                -271.56785583496094,
-                -510.6902160644531
+                -835.6846160888672,
+                -1304.6323547363281
             ],
             "hidden": true,
             "points": 10
@@ -1269,8 +1269,8 @@
             "comment": "Trivka, projít string a skippovat duplikáty",
             "requires": [],
             "position": [
-                -403.6249237060547,
-                -350.6728820800781
+                -967.7416839599609,
+                -1144.6150207519531
             ],
             "hidden": true,
             "points": 8
@@ -1300,7 +1300,7 @@
             ],
             "position": [
                 -1317.2806749343872,
-                1270.449577331543
+                1511.6762161254883
             ],
             "points": 10
         },
@@ -1312,8 +1312,8 @@
             "comment": " Práce s 2d polem",
             "requires": [],
             "position": [
-                -1107.7801971435547,
-                -419.0527801513672
+                -1553.5021209716797,
+                -1031.9203643798828
             ],
             "hidden": true,
             "points": 12
@@ -1329,7 +1329,7 @@
             ],
             "position": [
                 8.037612915039062,
-                550.7288516759872
+                791.9554904699326
             ],
             "points": 8
         },
@@ -1341,8 +1341,8 @@
             "comment": "Výroba palindromu",
             "requires": [],
             "position": [
-                -512.0505065917969,
-                -285.66261291503906
+                -1076.1672668457031,
+                -1079.604751586914
             ],
             "hidden": true,
             "points": 10
@@ -1383,8 +1383,8 @@
             "comment": " Prefixové součty",
             "requires": [],
             "position": [
-                -1140.9943389892578,
-                -474.1478576660156
+                -1586.7162628173828,
+                -1087.0154418945312
             ],
             "hidden": true,
             "points": 8
@@ -1425,8 +1425,8 @@
             "comment": "Trivka, práce souřadnicemi",
             "requires": [],
             "position": [
-                -1050.291244506836,
-                -367.55816745758057
+                -1496.013168334961,
+                -980.4257516860962
             ],
             "hidden": true,
             "points": 12
@@ -1503,8 +1503,8 @@
             "comment": "úloha s odčítáním času",
             "title": "Zuzka a poník",
             "position": [
-                -641.1309432983398,
-                -254.37389373779297
+                -1205.247703552246,
+                -1048.316032409668
             ],
             "taskReference": "31-Z1-1",
             "hidden": true,
@@ -1549,8 +1549,8 @@
             ],
             "title": "Piškvorky naslepo",
             "position": [
-                -1254.2938232421875,
-                244.3028335571289
+                -2020.3782958984375,
+                -831.6977005004883
             ],
             "taskReference": "31-Z1-4",
             "hidden": true,
@@ -1577,8 +1577,8 @@
             "comment": "2D pole (simulace tetrisu)",
             "requires": [],
             "position": [
-                -959.19970703125,
-                -270.38741302490234
+                -1404.921630859375,
+                -883.254997253418
             ],
             "title": "Tetris bez dozoru",
             "hidden": true,
@@ -1619,8 +1619,8 @@
             "comment": "triviální - zapamatování stringů (vybírání rýmů)",
             "requires": [],
             "position": [
-                -224.54463958740234,
-                -419.3528137207031
+                -788.6613998413086,
+                -1213.2949523925781
             ],
             "title": "Tvůrčí krize",
             "hidden": true,
@@ -1680,8 +1680,8 @@
             "comment": "sort + průchod pole (nejosamělejší bod na přímce)",
             "requires": [],
             "position": [
-                -485.9013156890869,
-                1487.4197387695312
+                -2195.6627292633057,
+                -337.2542724609375
             ],
             "title": "Nejosamělejší kamarád",
             "hidden": true,
@@ -2021,8 +2021,8 @@
                 "28-Z1-1"
             ],
             "position": [
-                353.9509735107422,
-                1042.3272733688354
+                629.0449371337891,
+                1094.560305595398
             ],
             "title": "Kontrola závorkových programů",
             "hidden": true,
@@ -2091,7 +2091,7 @@
             "htmlContent": "",
             "position": [
                 -2.4084014892578125,
-                -61.00055694580078
+                180.22608184814453
             ]
         },
         {
@@ -2117,7 +2117,7 @@
             "htmlContent": "<h3>Algoritmus a&nbsp;program</h3><p>Pod tajemným slovem <i>algoritmus</i> se skrývá jen jiný výraz pro postup. Můžete si to představit jako příkaz od maminky „Běž do krámu, kup chleba, a&nbsp;když budou mít měkké rohlíky, tak jich vem tucet“. (A jako slušně vychovaní se tedy vydáte do krámu a&nbsp;koupíte tucet chlebů, protože měli měkké rohlíky :-))</p><p>Takovýto příkaz klidně můžeme nazvat algoritmem, ačkoliv to bude asi znít nezvykle&nbsp;– pojem algoritmus se totiž používá hlavně ve světě počítačů. Je to tedy nějaká posloupnost základních příkazů, která řeší nějaký problém. Výběr konkrétního programovacího jazyka rozhoduje o&nbsp;tom, jaké základní příkazy budeme mít k&nbsp;dispozici. Většinou jsou ale skoro stejné.</p><p>Mezi základní příkazy patří:</p><ul><li>Manipulace s&nbsp;daty v&nbsp;paměti (uložení či načtení hodnoty, detailněji v&nbsp;další kapitole).</li><li>Provedení nějakého numerického výpočtu (+,-,*,/).</li><li>Vyhodnocení nějaké konkrétní podmínky a&nbsp;odpovídající větvení programu: <i>Pokud platí A, tak proveď B, jinak proveď C.</i> Přitom B&nbsp;i&nbsp;C mohou být klidně celé <i>bloky kódu</i>, tedy libovolně mnoho dalších základních příkazů.</li><li>Opakování nějakého příkazu: <i>Dokud platí A, dělej B.</i> Takové konstrukci říkáme <i>cyklus</i> a&nbsp;podobně jako u&nbsp;podmínky může být B&nbsp;blok kódu, který se celý opakuje.</li><li>Vstup a&nbsp;výstup programu (typicky vstup od uživatele z&nbsp;klávesnice či načtení vstupu ze souboru; výstup pak může znamenat vypsání výsledku na obrazovku nebo třeba zapsání dat do souboru).</li></ul><p>Z&nbsp;těchto základních stavebních kamenů se skládá každý algoritmus. Programem potom rozumíme realizaci algoritmu v&nbsp;nějakém konkrétním programovacím jazyce.</p><p>U&nbsp;složitějších programů se pak často setkáme s&nbsp;problémem, že budete mít nějakou posloupnost příkazů, která se bude na spoustě míst programu opakovat, což zbytečně prodlužuje a znepřehledňuje kód.</p><p>Řešením tohoto problému je použití <i>funkcí</i>. Funkci si můžeme představit jako nějakou pojmenovanou část programu (s&nbsp;vlastní pamětí), kterou můžeme opakovaně použít tím, že ji v&nbsp;různých částech programu <i>zavoláme</i>. Funkci při zavolání předáme parametry (například seznam čísel), které se dostanou do její vnitřní paměti.</p><p>Funkce pak na základě obdržených parametrů může provádět nějaké operace, při kterých pracuje se svojí vnitřní pamětí (mluvíme o&nbsp;<i>lokální</i> paměti, změny v&nbsp;ní se neprojeví nikde mimo funkci). Na konci nám funkce může vrátit nějaký výsledek. Pokud funkce během svého běhu změní i nějaká data v&nbsp;<i>globální</i> paměti, či provede nějakou globální operaci (například výpis textu na monitor), mluvíme pak o&nbsp;funkci s&nbsp;<i>vedlejšími efekty</i> (neboli side-efekty).</p><p>Konkrétním příkladem může být funkce, která nám spočítá odmocninu ze zadaného čísla. Ta dostane jako svůj parametr číslo, uvnitř si provede nějaký výpočet, o&nbsp;který se jako uživatel funkce nemusíme starat, a&nbsp;jako výstup nám vrátí spočtenou odmocninu.</p>",
             "position": [
                 -410.8735809326172,
-                30.677772521972656
+                271.90441131591797
             ]
         },
         {
@@ -2131,7 +2131,7 @@
             "htmlContent": "<h3>Rozděl a&nbsp;panuj</h3><p>Jednou ze základních technik je rozdělení složitějšího problému na menší části, které opět můžeme rozdělit na menší a&nbsp;tak dále, dokud se nedostaneme k&nbsp;problémům tak malým, že je už umíme triviálně vyřešit.</p><h4>Binární vyhledávání v&nbsp;poli</h4><p>Představme si, že máme seřazené pole n&nbsp;prvků a&nbsp;chceme zjistit, jestli se v&nbsp;něm nachází prvek s&nbsp;hodnotou&nbsp;k. Určitě můžeme projít celé pole v&nbsp;lineárním čase (tím, že budeme brát jeden prvek za druhým a&nbsp;kontrolovat, zda je roven hodnotě&nbsp;k), ale to je zbytečně pomalé a&nbsp;nevyužívá toho, že máme pole seřazené.</p><p>Můžeme totiž začít s&nbsp;velkým problémem a&nbsp;ten postupně zmenšovat na stále menší a&nbsp;menší. Nejdříve hledáme&nbsp;k v&nbsp;celém poli. Podíváme se na jeho prostřední prvek:</p><ul><li>Pokud je roven&nbsp;k, jsme hotovi.</li><li>Je-li větší než&nbsp;k, víme, že se k&nbsp;musí nacházet nalevo od něj. Můžeme tedy hledat znovu, ale tentokrát se omezit jen na levou polovinu pole.</li><li>Analogicky, je-li menší než&nbsp;k, můžeme hledat jen v&nbsp;pravé polovině.</li></ul><p>Když tímto postupným dělením problémů na menší dojdeme až k&nbsp;poli o&nbsp;velikosti jednoho prvku, stačí tento prvek jenom porovnat, dál už se pole nepokoušíme rozdělovat.</p><p>Jelikož se nám každým krokem problém zmenší na polovinu, maximálně po log n krocích se dostaneme na pole velikosti jedna. Říkáme, že algoritmus má <i>logaritmickou časovou složitost</i>, píšeme O(log n). (Pokud není řečeno jinak, znamená pro nás v&nbsp;informatice značka log <i>dvojkový logaritmus</i>, což je funkce opačná k&nbsp;funkci 2n a&nbsp;roste o&nbsp;hodně pomaleji než funkce lineární. Pro velká&nbsp;n platí: 1 &lt; log n &lt; n a&nbsp;například log 2 = 1, log 8 = 3, log 1024 = 10.)</p><p>Prakticky postup provádíme tak, že si udržujeme levý a&nbsp;pravý okraj aktuálně zpracovávaného úseku a&nbsp;postupně je k&nbsp;sobě přibližujeme.</p><p>FIXME code</p><h4>Další aplikace</h4><p>Další typickou aplikací postupu rozděl a&nbsp;panuj je například třídění posloupnosti pomocí <i>Mergesortu</i>. Ten v&nbsp;základu funguje tak, že každou posloupnost, kterou dostane k&nbsp;setřídění, rozdělí na poloviny a každou z&nbsp;nich setřídí rekurzivním zavoláním sebe sama. Zanořování se zastaví ve chvíli, kdy třídíme posloupnost délky jedna (ta už je z&nbsp;podstaty setříděná). Pak jen v&nbsp;každém kroku ze dvou setříděných menších posloupností vyrobí jejich sléváním setříděnou posloupnost dvojnásobné délky.</p><p>Více se o&nbsp;metodě Rozděl a&nbsp;panuj můžete dozvědět ve stejnojmenné <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/rozdel-a-panuj\">kuchařce</a>.</p>",
             "position": [
                 -841.6388244628906,
-                514.1823844909668
+                755.4090232849121
             ]
         },
         {
@@ -2143,7 +2143,7 @@
             "htmlContent": "<h3>Předpočítané mezivýsledky</h3><p>Motivací k&nbsp;této kapitole je následující motto: „Proč počítat něco vícekrát, když nám to stačí spočítat jednou a&nbsp;zapamatovat si to?“.</p><p>Velmi často se totiž setkáváme s&nbsp;tím, že něco počítáme stále dokola. Jako příklad si můžeme připomenout naši rekurzivní implementaci počítání Fibonacciho čísel zmíněnou výše.</p><p>Když se podíváme na výpočet čísla fib(5), vidíme, že pro něj voláme fib(4) a&nbsp;fib(3), fib(4) volá fib(3) a&nbsp;fib(2), fib(3) volá fib(2) a&nbsp;fib(1) a&nbsp;tak dále. Všimli jste si, kolikrát se nám tyhle výpočty opakují? Některá Fibonacciho čísla spočteme totiž zbytečně mnohokrát.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-5.png\" alt=\"Strom výpočtu Fibonacciho čísla\"></figure><p>Kdybychom si je namísto opakovaného počítání někde pamatovali, mohli bychom pak odpověď na dotaz na již vypočtené číslo vytáhnout jako králíka z&nbsp;klobouku v&nbsp;konstantním čase. Zavedením jednoho globálního pole, ve kterém si tyto hodnoty pro jednotlivá n budeme pamatovat, nám sníží časovou složitost z&nbsp;O(2n) na pěkných O(n). Takovému postupu se obecně říká <i>dynamické programování</i>.</p><h4>Dynamické programování</h4><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/img/hippo_dynamit.png\" alt=\"Dynamitské programování\"></figure><p>Nejprve uveďme na pravou váhu výraz „dynamické“ v&nbsp;názvu. Nevystihuje tak úplně podstatu této techniky a jeho historické pozadí je celkem složité, avšak dnes je tento název již tak zažitý, že se už pravděpodobně nezmění.</p><p>Slovo „dynamické“ částečně odkazuje na to, že se dynamicky (za běhu programu) postupně staví řešení jednodušších problémů, která jsou následně použita pro řešení složitějších. Jeho hlavní podstatou je tedy ukládání a&nbsp;opětovné použití již jednou vypočtených údajů.</p><p>Hodí se na úlohy, které se dají dělit na podúlohy, které jsou si podobné a&nbsp;mohou se opakovat. Výsledky takovýchto podúloh si poté ukládáme a&nbsp;při dotazu na stejnou podúlohu vrátíme jen uložený výsledek a&nbsp;výpočet již neprovádíme.</p><p>Pro další prohloubení znalostí můžete na našem webu nahlédnout do další kuchařky, tentokrát nesoucí (překvapivě) název <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/dynamicke-programovani\">Dynamické programování</a>.</p>",
             "position": [
                 105.5970230102539,
-                184.27716064453125
+                425.50379943847656
             ]
         },
         {
@@ -2157,7 +2157,7 @@
             "htmlContent": "<h4>Fronta a zásobník</h4><p>S&nbsp;použitím spojových seznamů (nebo v&nbsp;jednodušším případě dokonce i polí) můžeme zkonstruovat dvě velmi užitečné datové struktury, frontu a zásobník.</p><p><i>Fronta</i> funguje tak, jak si ji asi každý z&nbsp;nás představuje: ten, kdo se do fronty postaví první, také první přijde na řadu. Trochu jinak si ji můžeme představit jako trubku, do které na jedné straně sypeme nějaké věci a na druhé je odebíráme. Anglicky je též nazývaná <i>FIFO</i> (<i>„First In, First Out“</i>).</p><p>Praktickou realizaci uděláme jednoduše spojovým seznamem. Budeme si držet dva ukazatele, jeden na začátek seznamu, druhý na konec. Když se objeví nový prvek, který do fronty budeme chtít vložit, přidáme ho na konec, zatímco při odebírání z&nbsp;fronty využijeme druhého ukazatele a vezmeme prvek ze začátku.</p><p>Druhou velmi podobnou datovou strukturou je <i>zásobník</i>. Jak už ale plyne z&nbsp;anglického názvu <i>LIFO</i> (<i>„Last In, First Out“</i>), funguje spíše jako plný šuplík: Nahoru do něj přidáváme nové prvky, a když chceme nějaký odebrat, vezmeme také zvrchu. To znamená, že první se na řadu dostane naposledy vložený prvek.</p><p>Implementace je velmi obdobná jako u&nbsp;fronty, jen bude ukazatel pouze jeden a&nbsp;bude ukazovat jenom na jeden konec spojového seznamu, konkrétně na poslední prvek.</p>",
             "position": [
                 -1178.571189880371,
-                909.8870735168457
+                1151.113712310791
             ]
         },
         {
@@ -2171,7 +2171,7 @@
             "htmlContent": "<h4>Grafy</h4><p>S&nbsp;nějakými grafy jste se již možná potkali, ale tento pojem je bohužel docela přetěžovaný. Jedním jeho významem jsou „koláčové grafy“ a&nbsp;jiné další diagramy znázorňující nějaký poměr (ať už to jsou výsledky voleb, nebo poměr lidí, kteří sledovali v&nbsp;televizi Večerníček).</p><p>Další význam můžeme nalézt v&nbsp;analytické matematice, kde se potkáme s&nbsp;grafy průběhu nějakých funkcí. My však nemáme na mysli ani jedno z&nbsp;výše zmíněných, teď se budeme bavit o&nbsp;<i>kombinatorických grafech</i>.</p><p>Grafem tedy máme na mysli nějakou množinu objektů, říkejme jim <i>vrcholy</i>, a&nbsp;nějaké vztahy mezi nimi. Tyto vztahy nazýváme <i>hranami</i> a&nbsp;jsou vyjádřené dvojicemi vrcholů, mezi kterými vedou. Ukázku takového grafu vidíme třeba na následujícím obrázku.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-3.png\" alt=\"Graf\"></figure><p>Jako praktickou ukázku grafu si můžeme například představit silniční síť nějakého státu: vrcholy budou města a&nbsp;hrany budou silnice, které mezi nimi vedou.</p><p>Občas se můžete setkat s&nbsp;pojmem <i>souvislý</i> graf. Ten znamená jen to, že mezi každými dvěma vrcholy existuje nějaká cesta. Pokud tomu tak není, je graf <i>nesouvislý</i> a&nbsp;dá se rozložit na několik menších grafů, které již souvislé jsou a&nbsp;říká se jim <i>komponenty souvislosti</i>.</p><p>Samotný graf poté můžeme doplnit tím, že si v&nbsp;každém vrcholu nebo na každé hraně budeme pamatovat nějakou hodnotu (například cenu nejlevnějšího benzínu ve městech a&nbsp;délku v&nbsp;kilometrech na silnicích). Pamatování si hodnot ve vrcholech je docela obvyklá technika a nemá speciální název, ale pokud budeme mít graf, který si pamatuje hodnoty na hranách, budeme o&nbsp;něm mluvit jako o&nbsp;<i>ohodnoceném grafu</i>.</p><p>Další možnou úpravou je, že každá hrana povede jen jedním směrem (jednosměrné silnice), takovým grafům říkáme <i>orientované</i> (pokud pak v&nbsp;orientovaném grafu chceme silnici oběma směry, prostě do něj přidáme dvě hrany, jednu v&nbsp;každém směru).</p><p>Poslední, co nám schází k&nbsp;praktickému použití grafů, je naučit se, jak je reprezentovat v&nbsp;počítači. Existuje několik možností (v popisech bude n značit počet vrcholů, m&nbsp;počet hran):</p><ul><li><strong>Seznam sousedů</strong>&nbsp;– vrcholy grafu budeme mít uložené v&nbsp;poli a&nbsp;u&nbsp;každého vrcholu budeme mít (spojový) seznam čísel dalších vrcholů, do kterých z&nbsp;aktuálního vrcholu vede hrana. Zabírá místo O(n+m) a&nbsp;hodí se pro řídké grafy (tedy grafy, kde je m&nbsp;řádově stejné jako&nbsp;n).</li><li><strong>Matice sousednosti</strong>&nbsp;– tabulka n×n, kde na souřadnicích [i,j] je jednička (nebo jiná hodnota, v&nbsp;případě ohodnoceného grafu), pokud z&nbsp;i do j vede hrana, a&nbsp;nula, pokud tam hrana není (u&nbsp;neorientovaných grafů je navíc matice symetrická&nbsp;– je jedno, jestli vezmeme [i,j] nebo [j,i]). Hodí se pro husté grafy, kde m~n2.</li><li><strong>Matice incidence</strong>&nbsp;– řádky reprezentují vrcholy, sloupce hrany. V&nbsp;každém sloupci jsou právě dvě jedničky&nbsp;– indexy vrcholů, mezi kterými hrana vede. Zabírá však O(mn) a její použití bývá dost neohrabané, takže je většinou lepší dát přednost jiné reprezentaci grafu. Je ale dobré o&nbsp;ní vědět.</li></ul><p>Grafy jsou velmi široké téma. Můžeme hledat jejich minimální kostry, můžeme v&nbsp;nich hledat nejkratší cesty či skrze ně pouštět pod tlakem vodu. Více o&nbsp;nich si tedy můžete přečíst v&nbsp;některé z&nbsp;našich specializovaných grafových kuchařek, které odkazujeme z&nbsp;našeho <a href=\"https://ksp.mff.cuni.cz/kucharky/\">kuchařkového rozcestníku</a>.</p>",
             "position": [
                 -1173.0264511108398,
-                1074.1078071594238
+                1315.3344459533691
             ]
         },
         {
@@ -2185,7 +2185,7 @@
             "htmlContent": "<h3>Hladové algoritmy</h3><p>Věřte nebo ne, ale i&nbsp;počítač se někdy cítí hladový. Po namáhavé práci mu můžeme dopřát to potěšení, aby si ukousl co největší kus dat. A&nbsp;ukážeme, že někdy je to i&nbsp;ku prospěchu. Řeč bude o&nbsp;<i>hladových algoritmech</i>.</p><p>Takovými algoritmy rozumíme ty, které hledají řešení celé úlohy po jednotlivých krocích a&nbsp;splňují následující dvě podmínky:</p><ul><li>V&nbsp;každém kroku zvolí lokálně nejlepší řešení.</li><li>Provedené rozhodnutí již nikdy neodvolává (tedy nebacktrackuje).</li></ul><p>Lokálně nejlepší řešení je takové, které v&nbsp;aktuálním kroku vybere tu možnost, která nám na tomto místě nejvíce pomůže (bez jakéhokoliv ohledu na globální stav). Může to být třeba nejvyšší hodnota, nebo nejkratší cesta v&nbsp;grafu.</p><p>Pokud ale od hladového algoritmu chceme, aby nám našel globálně nejlepší řešení, musí naše úloha splnit předpoklad, že si výběrem lokálně nejlepšího řešení nezhoršíme to globální. Tento předpoklad se nedá formulovat obecně a&nbsp;je nutné se nad ním zamyslet zvlášť u&nbsp;každé úlohy.</p><h4>Příklady hladových algoritmů</h4><p>První hladovou úlohou bude (jak jinak) automat na jídlo vracející mince. Automat by měl vracet peníze nazpět tak, aby vrátil daný obnos v&nbsp;co možná nejmenším počtu mincí. Pro náš měnový systém (máme mince hodnot 1, 2, 5, 10, 20 a&nbsp;50 Kč) lze tuto úlohu řešit hladovým algoritmem&nbsp;– v&nbsp;každém kroku algoritmu vrátíme tu největší minci, kterou můžeme (tedy pro vrácení 42 Kč to bude 42 = 20 + 20 +2 Kč).</p><p>Měnové systémy většiny států jsou postavené tak, aby fungovaly takto pěkně, neplatí to ale obecně. Zkusme si vrátit 42 Kč, pokud bychom měli jen mince hodnoty 20, 10 a&nbsp;4 Kč. Správným řešením je 42 = 20 + 10 + 4 + 4 +4 Kč, hladový algoritmus by ale zkusil vrátit 42 = 20 + 20 + … a&nbsp;tady by selhal.</p><p>Dále se velmi často dají hladovým algoritmem řešit nějaké úlohy přidávání nebo odebírání skupin prvků. Typickým příkladem je třeba rozvržení naplánovaných přednášek do učeben. Seřadíme si začátky přednášek podle času a&nbsp;postupně bereme jednu za druhou a&nbsp;umísťujeme je do volných učeben s&nbsp;nejnižším číslem.</p><p>Tím jsme si určitě nic nerozbili, protože v&nbsp;nějaké učebně přednáška být musí. Určitě budeme potřebovat tolik učeben, kolik je maximálně přednášek v&nbsp;jeden čas, a&nbsp;díky tomu si umístěním přednášky do nějaké učebny nezablokujeme místo pro jinou přednášku, jelikož nám vždy zbude dostatek volných učeben.</p><p>Kdybychom ale naopak měli pevně zadaný počet učeben a&nbsp;chtěli jsme do nich umístit co možná nejvíce přednášek, nejedná se již o&nbsp;úlohu řešitelnou hladovým algoritmem, v&nbsp;takovém případě je potřeba zvolit nějaký chytřejší postup.</p>",
             "position": [
                 -702.5907173156738,
-                66.3846549987793
+                307.6112937927246
             ]
         },
         {
@@ -2199,7 +2199,7 @@
             "htmlContent": "<h4>Knihovny</h4><p>Tyto základní struktury už jsou často předpřipravené jako součást určitých <i>knihoven</i> v&nbsp;daném jazyce. Knihovna je většinou sbírka nějakých navzájem souvisejících funkcí, které již někdo sepsal a&nbsp;které si můžeme do našeho programu načíst a&nbsp;používat. Ukázku načtení knihoven můžete vidět například ve výše zmíněném kódu v&nbsp;jazyce&nbsp;C.</p><p>Je ale velmi důležité rozumět tomu, jak knihovní funkce vnitřně fungují. Protože jedině když budeme vědět, co je jak rychlé a&nbsp;efektivní, budeme schopni psát rychlé programy.</p><p>Teď již víme, jak reprezentovat nejzákladnější datové struktury v&nbsp;počítači, ale mohlo by se nám hodit zastavit se ještě chvíli u&nbsp;dalších struktur. Tentokrát je už budeme studovat trochu teoretičtěji.</p>",
             "position": [
                 -1175.2318496704102,
-                987.8870735168457
+                1229.113712310791
             ]
         },
         {
@@ -2213,7 +2213,7 @@
             "htmlContent": "<p>První datovou strukturou, kterou si představíme a&nbsp;která se na výše nastíněnou situaci náramně hodí, je <i>pole</i>. To představuje spoustu přihrádek (proměnných) naskládaných v&nbsp;paměti za sebou, ke kterým typicky přistupujeme přes jeden společný název pole a&nbsp;jejich pořadové číslo neboli index (jako NazevPole[0], NazevPole[1], …). (Pozor, ve světě počítačů se velmi často indexuje od nuly, tedy první prvek má v&nbsp;tomto případě index 0.)</p><p>Ve většině základních jazyků je pole jen <i>statické</i>, tedy v&nbsp;okamžiku jeho vytváření musíme počítači říct, jak ho chceme velké. Některé vyšší jazyky ale nabízejí i&nbsp;pole, které se dynamicky zvětšuje, takovou konstrukci si ukážeme ve druhé části kuchařky.</p><p>Abychom nebyli omezeni jen jedním rozměrem, můžeme si klidně vyrobit pole dvourozměrné (případně obecně n-rozměrné). Dvourozměrné pole je vlastně tabulka hodnot, nazýváme ji také někdy <i>matice</i>, a&nbsp;může se nám hodit například při reprezentaci různých map (plán bludiště) nebo, jak uvidíme níže, pro reprezentaci dalších datových struktur.</p><p>U&nbsp;pole již má smysl přemýšlet, jak dlouho bude která operace trvat. Díky tomu, že jsou jednotlivé prvky v&nbsp;poli naskládané pevně za sebou, je snadné spočítat umístění konkrétní přihrádky. Proto když se počítače zeptáme na obsah přihrády pole[42], vrátí nám hodnotu ihned.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/img/hippo_array.png\" alt=\"Pole\"></figure><p>Tomu budeme říkat <i>operace v&nbsp;konstantním čase</i> a&nbsp;budeme značit, že trvá čas&nbsp;O(1). Efektivitu programu totiž nepočítáme v&nbsp;sekundách (protože každý z&nbsp;nás má asi jinak rychlý počítač), ale v&nbsp;počtu základních operací, které musí program řádově vykonat. Více o&nbsp;časové složitosti si můžete přečíst v&nbsp;<a href=\"https://ksp.mff.cuni.cz/viz/kucharky/slozitost\">kuchařce o&nbsp;složitosti</a>, nejdříve však doporučujeme dočíst tuto kuchařku.</p><p>Přidání nového prvku na konec pole také zvládneme v&nbsp;konstantním čase. Problém je přidání nového prvku někam doprostřed (což se nám typicky stane, pokud budeme chtít udržovat hodnoty v&nbsp;poli seřazené a&nbsp;zároveň do něj vkládat nové). V&nbsp;takovém případě se totiž všechny prvky za vkládaným musí posunout o&nbsp;jednu pozici dál, aby se vkládaný prvek vešel na své místo. Taková operace tedy může pro pole délky N (čili pole obsahující N prvků) trvat řádově až N kroků, což zapisujeme jako O(N) a&nbsp;říkáme, že je to vzhledem k&nbsp;N <i>lineární časová složitost</i>.</p><p>To je značná nevýhoda oproti struktuře, kterou si ukážeme za chvíli. Určitě ale pole nezavrhujme. Je to základní datová struktura, která nalezne použití ve spoustě programů, a&nbsp;jak si ve druhé části kuchařky ukážeme, můžeme ho použít třeba k&nbsp;rychlému hledání hodnoty metodou <i>binárního vyhledávání</i>. Nyní ale již slibovaná další datová struktura.</p>",
             "position": [
                 -386.3838195800781,
-                473.6440010070801
+                714.8706398010254
             ]
         },
         {
@@ -2227,7 +2227,7 @@
             "htmlContent": "<h4>Prefixové součty</h4><p>Velmi často se nám hodí si ještě před samotným výpočtem předpočítat a&nbsp;uložit nějaké hodnoty, které poté použijeme.</p><p>Představme si například problém nalezení souvislého úseku s&nbsp;největším součtem v&nbsp;nějaké posloupnosti kladných i&nbsp;záporných čísel. Že to není úplně jednoduchý příklad, si ukažme na následující posloupnosti:</p><p>1,-2,4,5,-1,-5,2,7</p><p>Máme zde dvě ryze kladné souvislé posloupnosti, každou se součtem 9 (4,5 a&nbsp;2,7). Ale přesto je výhodnější vzít i&nbsp;nějaké záporné hodnoty a&nbsp;vytvořit tak souvislou posloupnost o&nbsp;součtu 12 (zkuste ji nalézt).</p><p>Mohlo by nás napadnout, že prostě zkusíme vzít všechny možné začátky a&nbsp;všechny možné konce. To nám dává O(n2) možných posloupností (máme n&nbsp;možných začátků a&nbsp;ke každému z&nbsp;nich řádově n&nbsp;možných konců), pro každou posloupnost si spočteme součet (to zvládneme v&nbsp;O(n)) a&nbsp;budeme si pamatovat ten největší nalezený. Celý náš postup tak trvá O(n3).</p><p>To není pro takhle jednoduchou úlohu zrovna ten nejpěknější čas, zkusme ho zlepšit. Ukážeme si, jak vypočítat součet libovolné posloupnosti v&nbsp;konstantním čase. Celý princip je vlastně až kouzelně jednoduchý, ale zároveň velmi mocný. Na začátku výpočtu si do pomocného pole P stejné délky jako posloupnost na vstupu (té říkejme S) uložíme takzvané <i>prefixové součty:</i> i-tý prefixový součet je součet prvních i+1 prvků&nbsp;S, neboli P[i] = S[0] + S[1] + … + S[i].</p><p>Pro náš ukázkový případ a&nbsp;pro vstupní pole označené S by to dopadlo takto:</p><figure class=\"table\"><table><tbody><tr><td>i</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><td>S[i]</td><td>&nbsp;</td><td>1</td><td>-2</td><td>4</td><td>5</td><td>-1</td><td>-5</td><td>2</td><td>7</td></tr><tr><td>P[i]</td><td>0</td><td>1</td><td>-1</td><td>3</td><td>8</td><td>7</td><td>2</td><td>4</td><td>11</td></tr></tbody></table></figure><p>Pole prefixových součtů umíme získat v&nbsp;linerárním čase&nbsp;– prostě jen od začátku procházíme vstupní pole, počítáme si průběžný součet a&nbsp;ten zapisujeme.</p><p>Součet libovolného úseku a…b pak získáme v&nbsp;konstantním čase jako prefixový součet od začátku do indexu&nbsp;b minus prefixový součet od začátku do indexu&nbsp;a. Zapsáno programově to pak je:</p><p>soucet = P[b] - P[a-1]; To nám umožňuje snížit čas potřebný na řešení této úlohy na O(n2). To je už lepší čas; prozradíme však, že tuto úlohu lze řešit dokonce v&nbsp;lineárním čase, ale to je již nad rámec této kuchařky.</p><h4>&nbsp;</h4>",
             "position": [
                 -484.37617111206055,
-                793.9898986816406
+                1035.216537475586
             ]
         },
         {
@@ -2241,7 +2241,7 @@
             "htmlContent": "<h4>Dvourozměrné prefixové součty</h4><p>Prefixové součty se dají zobecnit i&nbsp;do více rozměrů, ale princip je vždy stejný. Například dvourozměrné prefixové součty u&nbsp;matice fungují tak, že si předpočítáme součty podmatic začínajících levým vrchním políčkem a&nbsp;končící na indexu [x,y].</p><p>Z&nbsp;toho je vidět, že prefixový součet zpravidla obsadí stejně velký prostor jako původní data, v&nbsp;tomto případě tedy budeme mít matici hodnot prefixových součtů končících na zadaných souřadnicích. Jak ale získat součet nějaké podmatice, která se nachází někde „uprostřed“ naší matice?</p><p>Použijeme stejný princip jako u&nbsp;jednorozměrného případu: Přičteme větší část, kterou chceme započítat, a&nbsp;odečteme od ní části, které započítat nechceme. Pro případ podmatice začínající vlevo nahoře na pozici [x,y] a&nbsp;končící napravo dole na [X,Y] to ilustruje následující obrázek:</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-6.png\" alt=\"Dvourozměrné prefixové součty\"></figure><p>Nejdříve přičteme celý prefixový součet končící na pozici [X,Y]. Tím jsme ale započítali i&nbsp;části A, B a&nbsp;C z&nbsp;obrázku, které započítat nechceme. Tak odečteme prefixové součty končící na indexech [X,y] a&nbsp;[x,Y]. Ale pozor, teď jsme odečetli jednou A+B a&nbsp;jednou A+C, tedy část&nbsp;A (prefixový součet končící na pozici [x,y]) jsme odečetli dvakrát, musíme ji proto ještě jednou přičíst.</p><p>Celý vzorec tedy vypadá takto:</p><p>soucet = P[X,Y] - P[X,y] - P[x,Y] + P[x,y];</p><p>Tento princip přičítání a odečítání se dá zobecnit i&nbsp;pro libovolné vyšší rozměry, ale chce to již trošku představivosti, co se má přičíst a&nbsp;kolikrát. Říká se tomu také <i>princip inkluze a&nbsp;exkluze</i> a&nbsp;najde použití nejen u&nbsp;vícerozměrných prefixových součtů.</p>",
             "position": [
                 -714.1817283630371,
-                1011.5326995849609
+                1252.7593383789062
             ]
         },
         {
@@ -2255,7 +2255,7 @@
             "htmlContent": "<h3>Reprezentace dat v&nbsp;počítači</h3><p>Celkem často si v&nbsp;průběhu výpočtu našeho algoritmu potřebujeme pamatovat nějaké hodnoty. K&nbsp;tomu nám programovací jazyky dávají nástroj s&nbsp;názvem <i>proměnná</i>. Ta představuje jakési pojmenované místo v&nbsp;paměti (přihrádku), do kterého si můžeme data ukládat a&nbsp;pak je odtud zase načítat.</p><p>Typickým příkladem může být počítání součtu čísel, která nám uživatel zadá na vstupu. Na začátku nejdříve do nějakého místa v&nbsp;paměti uložíme hodnotu&nbsp;0. Poté postupně, jak nám uživatel zadává čísla, tuto proměnnou pokaždé přečteme, k&nbsp;její hodnotě přičteme nově zadané číslo a&nbsp;výsledek opět uložíme na stejné místo.</p><p>Takovéto použití jedné proměnné je velmi jednoduché (tak jednoduché, že ho takto podrobně do řešení KSPčka nepište, není to potřeba), ale také celkem omezené. Co kdybychom si chtěli pamatovat třeba celou zadanou posloupnost čísel? Mohlo by nám stačit vyrobit si spoustu různě pojmenovaných proměnných, ale nejde to lépe? Jde.</p><p>Jednotlivé proměnné se mohou kombinovat do složitějších konstrukcí, které obecně nazýváme <i>datovými strukturami</i>. Zkusíme si ty nejzákladnější představit.</p>",
             "position": [
                 -403.3098793029785,
-                234.6855010986328
+                475.9121398925781
             ]
         },
         {
@@ -2269,7 +2269,7 @@
             "htmlContent": "<h4>Spojový seznam a&nbsp;ukazatele</h4><p>Pole jsme měli v&nbsp;paměti určené jenom tím, že počítač věděl, kde je jeho začátek a&nbsp;kolik místa v&nbsp;paměti zabírají jeho prvky. Při dotazování na konkrétní index pak podle indexu a&nbsp;podle velikosti prvků počítač přesně věděl, kam do paměti se má podívat, aby našel námi požadovaný prvek (to vše zvládl v&nbsp;konstantním čase). Jednotlivé prvky si tedy vůbec nemusely pamatovat, kde se nachází jejich sousedi, protože všechny prvky seděly v&nbsp;paměti za sebou.</p><p>Představme si ale teď situaci, kdy by si každý prvek ještě pamatoval pozice sousedů. Pak bychom mohli mít prvky libovolně rozházené v&nbsp;paměti a&nbsp;jen by se na sebe vzájemně odkazovaly (první prvek by tvrdil, že druhý je na pozici X, druhý by tvrdil, že třetí je na pozici Y, a&nbsp;tak dále).</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-1.png\" alt=\"Spojový seznam\"></figure><p>K&nbsp;lepšímu pochopení tohoto principu je důležité si vysvětlit, co to je <i>ukazatel</i> (nebo také <i>odkaz</i> či anglicky <i>pointer</i>). Každé místo v paměti počítače má své číselné označení, kterému říkáme <i>adresa</i>. Když si vytváříme nějakou pojmenovanou proměnnou, ta se vlastně odkazuje na určité místo v&nbsp;paměti a&nbsp;na tomto místě v&nbsp;paměti je její hodnota.</p><p>Co kdyby ale hodnota proměnné byla adresa nějakého jiného místa v&nbsp;paměti? Pak takové proměnné říkáme <i>pointer</i> a&nbsp;umožňuje nám vytvářet výše popsanou strukturu rozházených prvků v&nbsp;paměti.</p><p><i>Spojový seznam</i> je tedy určený svým prvním prvkem (máme v&nbsp;jedné proměnné pointer na tento prvek, který se často nazývá <i>kořen</i>, protože z&nbsp;něj „vyrůstá“ zbytek struktury) a&nbsp;poté u&nbsp;každého dalšího prvku máme za sebou uloženou hodnotu tohoto prvku a&nbsp;odkaz (pointer) na další prvek. Odkazy mezi prvky mohou být i&nbsp;obousměrné, mohou vést dokola (poslední ukazuje na první) či mohou dokonce tvořit nějakou složitější strukturu (pak to ale již nebude čistý spojový seznam).</p><p>Pokud pointer nemá nikam ukazovat, realizuje se to odkázáním tohoto pointeru na adresu NULL. To skoro doslovně říká „Neukazuji nikam“.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-2.png\" alt=\"Obousměrný cyklický spojový seznam\"></figure><p>Co nám takto vystavěná struktura umožňuje v&nbsp;porovnání s&nbsp;polem? Přístup na konkrétní prvek v&nbsp;ní stojí lineárně času, protože ho musíme „odkrokovat“ od prvního prvku (na který máme pointer), tedy musíme udělat až O(N) kroků. Pokud bychom však pointer na daný prvek už nějak měli, samozřejmě na něj můžeme přistoupit v&nbsp;konstantním čase.</p><p>Naopak přidávání prvků na konkrétní místo (i&nbsp;jejich odebírání) máme v&nbsp;podstatě zadarmo a&nbsp;spojový seznam můžeme rozšiřovat, dokud na něj máme v&nbsp;počítači paměť. Ve chvíli, kdy chceme přidat nový prvek za prvek, na který máme pointer, jen šikovně přepojíme ukazatele. Pokud předtím ukazatele vedly A→B, teď povedou A →C →B (a&nbsp;při odebírání naopak).</p>",
             "position": [
                 -1179.2408599853516,
-                823.2508125305176
+                1064.477451324463
             ]
         },
         {
@@ -2283,7 +2283,7 @@
             "htmlContent": "<h4>Stromy</h4><p>Možná si říkáte, co má informatika u&nbsp;všech elektronů společného s&nbsp;lesnictvím? Kupodivu celkem mnoho a&nbsp;bez stromů bychom se v&nbsp;leckterém případě jen těžko obešli. Informatické stromy sice nejsou většinou tak zelené, mají ale, na rozdíl od svých dřevnatých sourozenců, mnoho jiných pěkných vlastností.</p><p>Strom je vlastně speciálním případem souvislého grafu, který neobsahuje žádnou kružnici (cyklus). To znamená, že mezi každými dvěma vrcholy stromu existuje právě jedna cesta.</p><p>Díky této vlastnosti můžeme nějaký zvolený vrchol prohlásit za <i>kořen</i> a&nbsp;strom za něj pomyslně zavěsit (tak, že strom roste od kořene směrem dolů), této operaci se říká <i>zakořenění</i>. Pak můžeme mluvit o&nbsp;tom, že z&nbsp;kořene směrem dolů (informatické stromy mají tradičně kořen nahoře) vyrůstají nějaké <i>podstromy</i>.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-4.png\" alt=\"Strom\"></figure><p>Pokud je strom zakořeněný, můžeme v&nbsp;něm mluvit o&nbsp;<i>hloubce</i> každého vrcholu, neboli o&nbsp;jeho vzdálenosti od kořene. Hloubka celého stromu je pak nejdelší ze vzdáleností od kořene k&nbsp;nějakému z&nbsp;<i>listů</i> (tak říkáme vrcholům, které již nemají žádné <i>syny</i>, tedy vrcholy, které by z&nbsp;nich vyrůstaly). Podle hloubky poté můžeme vrcholy stromu uspořádat do jednotlivých <i>hladin</i>.</p><p>Velmi často používáme stromy, které jsou nějak pravidelné. Příkladem jsou třeba <i>binární stromy</i>, které mají v&nbsp;každém vrcholu maximálně dva syny (říkáme jim <i>levý a&nbsp;pravý podstrom</i>). Reprezentovat se dají buď obecně jako každý jiný strom (v&nbsp;každém vrcholu spojový seznam podstromů), nebo velmi pěkně i&nbsp;v&nbsp;poli.</p><p>Stačí si pomyslně doplnit binární strom na <i>úplný</i> (to je takový, který má všechny své hladiny plné) a pak ho od kořene směrem dolů po hladinách očíslovat (kořen dostane číslo nula, jeho synové čísla jedna a dva, další hladina čísla tři až šest, atd.).</p><p>Můžeme si všimnout, že pokud si v&nbsp;takovém očíslování vezmeme jakýkoliv vrchol s&nbsp;číslem (indexem) i, jeho synové jsou právě vrcholy s&nbsp;indexy 2i+1 a&nbsp;2i+2. Do pole níže je zapsaný binární strom z&nbsp;obrázku výše.</p><figure class=\"table\"><table><tbody><tr><td>index</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>hodnota</td><td>8</td><td>3</td><td>12</td><td>1</td><td>5</td><td>9</td><td>14</td><td>-</td><td>-</td><td>4</td><td>7</td></tr></tbody></table></figure><p>Jak plyne z&nbsp;očíslování, pro úplný binární strom je uložení v&nbsp;poli efektivní a neplýtváme místem. Pokud ale strom úplný nebude, zůstanou nám v&nbsp;poli volná místa. Uložení v&nbsp;poli se tedy vyplatí jen pro stromy, které se od úplných příliš neliší.</p><p>Speciálním případem binárních stromů jsou pak ještě <i>binární vyhledávací stromy</i>. Jsou to normální binární stromy, pro něž navíc platí, že ať si vezmeme libovolný vrchol, budou hodnoty vrcholů v&nbsp;jeho levém podstromu menší než hodnota tohoto vrcholu a&nbsp;hodnoty v&nbsp;jeho pravém podstromu naopak větší.</p><p>V&nbsp;takovém stromu pak zvládneme snadno vyhledávat. Budeme ho postupně procházet od kořene a v&nbsp;jednotlivých vrcholech budeme porovnávat hledanou a aktuální hodnotu a podle toho sestupovat do správného podstromu. Podobná technika je detailněji popsaná ve druhé části kuchařky, v&nbsp;sekci <i>Rozděl a panuj</i>.</p><p>Na složitější datové struktury stavějící na těchto základních (haldy, intervalové stromy,&nbsp;…) se můžete podívat do některé z&nbsp;našich dalších kuchařek, na jejichž přehled jsme vás už odkázali o&nbsp;kapitolu výše.</p>",
             "position": [
                 -1171.1486282348633,
-                1176.339557647705
+                1417.5661964416504
             ]
         },
         {
@@ -2307,7 +2307,7 @@
             "rotationAngle": 0,
             "position": [
                 -149.21824645996094,
-                588.2751007080078
+                829.5017395019531
             ]
         },
         {
@@ -2318,8 +2318,8 @@
             "title": "2D pole",
             "rotationAngle": 340,
             "position": [
-                -1174.31640625,
-                107.25682830810547
+                -1940.40087890625,
+                -968.7437057495117
             ],
             "hidden": true
         },
@@ -2359,8 +2359,8 @@
             "title": "Textové řetězce",
             "rotationAngle": 326,
             "position": [
-                -523.4024200439453,
-                -451.524658203125
+                -1087.5191802978516,
+                -1245.466796875
             ],
             "hidden": true
         },
@@ -2371,8 +2371,8 @@
             "requires": [],
             "title": "Třídění",
             "position": [
-                -473.98663330078125,
-                1377.7706861495972
+                -2183.748046875,
+                -446.9033250808716
             ],
             "hidden": true
         },
@@ -2384,7 +2384,7 @@
             "title": "Úvod",
             "position": [
                 -3.4084014892578125,
-                -206.00055694580078
+                35.22608184814453
             ]
         },
         {
@@ -2423,7 +2423,7 @@
             "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p>",
             "position": [
                 271.81773376464844,
-                81.61006927490234
+                322.83670806884766
             ]
         },
         {
@@ -2437,7 +2437,7 @@
             "htmlContent": "<p>Počítače nemluví lidskou řečí. Aspoň zatím. Pokud jim chceme vysvětlit nějaký komplikovanější problém, potřebujeme mluvit správnou řečí - nějakým <strong>programovacím jazykem.</strong></p><h2>Jaký programovací jazyk použít?</h2><p>Programovacích jazyků je více a každý se hodí na něco jiného. S roustoucími zkušenostmi se pravděpodobně naučíš přecházet mezi několika programovacími jazyky podle toho, jaký problém zrovna řešíš.</p><p>Pro řešení úloh Ti doporučujeme <strong>Python 3</strong>. Pokud se ho chceš naučit, můžeš zkusit projít kurzem, který jsme pro Tebe připravili.</p>",
             "position": [
                 124.60416412353516,
-                9.242716312408447
+                250.46935510635376
             ]
         },
         {
@@ -2451,7 +2451,7 @@
             "htmlContent": "<p>Aktuálně je celý projekt v <strong>BETA režimu</strong>. Pokud najdeš libovolnou chybu nebo pokud Tě napadá, že by se dalo cokoliv vylepšit (a ideálně jak), dej prosím vědět Vaškovi a Standovi. Díky!</p><h2>Vítej v našem novém kurzu!</h2><p>Pokud tě napadá, jak by se tento <strong>projekt mohl jmenovat</strong>, dej nám vědět!</p><h3>Co zde (časem) najdeš?</h3><ul><li>Základní kurz programování (dříve byl samostatně)</li><li>Roztříděné úlohy ze starších ročníků a sérií</li><li>Staré seriály</li><li>…a další úlohy, které jsme odněkud vyhrabali nebo nově vyrobili</li></ul><h3>Co budu mít z toho, že budu úlohy zde řešit?</h3><p>Něco se můžeš naučit a z toho můžeš mít dobrý pocit. Nic jiného teď neslibujeme. Splnit zde úlohu je to samé jako splnit ji ve cvičišti. Navíc ono k úlohám jsou většinou přístupná vzorová řešení, takže soutěžit zde nedává moc smysl.</p><p>Ohledně vzorových řešení – je čistě na Tobě, zda budeš úlohy řešit poctivě, nebo jestli si budeš číst řešení před tím, než vymyslíš něco vlastního. Zabránit Ti v tom nedokážeme a ani nechceme. Pokud se chceš něco naučit, nebo si něco procvičit, tak doporučujeme vzorová řešení otevírat až po vlastním řešení, případně když se zasekneš. Získáš tak z kurzu nejvíce.</p>",
             "position": [
                 -1.7545125484466553,
-                -144.6544418334961
+                96.57219696044922
             ]
         }
     ],

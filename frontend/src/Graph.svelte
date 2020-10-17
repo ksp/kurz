@@ -271,11 +271,13 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
       return false;
     }
   }}>
+  <!-- The viewBox must be set to 0,0 origin, otherwise the drag&zoom of the graph breaks -->
   <svg bind:this={svgElement} viewBox="{0},{0},{clientWidth},{clientHeight}">
     <g>
+      <!-- The translation assures that [0,0] is just bellow current KSP header in the horizontal center of the page -->
       <g
         bind:this={innerSvgGroup}
-        transform="translate({clientWidth / 2}, {clientHeight / 2})">
+        transform="translate({clientWidth / 2}, 210)">
         {#if selectionRectangle != null}
           <rect
             class="selectionRectangle"
@@ -297,7 +299,7 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
             x1="0"
             y1="10000"
             x2="0"
-            y2="-10000"
+            y2="0"
             stroke="gray"
             stroke-width="1px"
             stroke-dasharray="15,15" />
