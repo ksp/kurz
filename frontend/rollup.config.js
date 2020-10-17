@@ -10,6 +10,12 @@ import replace from '@rollup/plugin-replace'
 const production = !process.env.ROLLUP_WATCH;
 const halfProduction = production || !!process.env.HALF_PRODUCTION;
 
+// generate SVG with the current commit hash
+require('child_process').spawn('bash', ['generate_commit_image.sh'], {
+	stdio: ['ignore', 'inherit', 'inherit'],
+	shell: true
+});
+
 function serve() {
 	let server;
 	function toExit() {

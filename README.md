@@ -1,6 +1,7 @@
 # Kurzovity grafik uloh
 
-Preview: https://ksp.exyi.cz, credentials jsou stejné jako na testwebu. Automaticky nasazené z master branche
+Veřejné preview je dostupné na adrese https://ksp.vsq.cz/grafik. Automaticky se nasazuje nová verze při každém commitu do masteru. Aktuálně nasazená verze je:
+![Aktuální verze](https://ksp.vsq.cz/build/build_id.svg)
 
 ## Spuštění pro vývoj
 
