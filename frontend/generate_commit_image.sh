@@ -5,7 +5,7 @@ FILENAME=public/build/build_id.svg
 
 cd $(git rev-parse --show-toplevel)
 cd frontend
-
+mkdir -p public/build
 
 cat  > $FILENAME <<EOF
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
