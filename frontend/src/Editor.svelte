@@ -12,7 +12,7 @@
     refresh as refreshTaskStatuses,
     taskStatuses,
   } from "./task-status-cache";
-  import { isLoggedIn } from "./ksp-task-grabber";
+  import { grabAssignment, isLoggedIn } from "./ksp-task-grabber";
 
   export let tasks: TasksFile;
 
@@ -201,6 +201,22 @@
     tasks.tasks = [...tasks.tasks, ...newDescriptors];
   }
 
+  async function loadMaxPoints() {
+    const loadedTasks = await Promise.all(tasks.tasks.map(async t => {
+      if (t.type != "open-data") {
+        return t
+      }
+      const a = await grabAssignment(t.taskReference)
+      if (a.points == null)
+        throw Error(`Points are null for ${t.taskReference}`)
+      return { ...t, points: a.points }
+    }))
+
+    tasks = { ...tasks, tasks: loadedTasks }
+
+    alert("Načteno :)")
+  }
+
   function hideSelection() {
     for (let t of graph.getCurrentSelection()) {
       t.hidden = true;
@@ -373,8 +389,15 @@
         <button
           on:click={loadYear}
           disabled={!isLoggedIn()}
-          title={isLoggedIn() ? 'Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou' : 'Je nutné být přihlášený a na stránce v KSP template.'}>Nahrát
-          celý ročník</button>
+          title={isLoggedIn() ? 'Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou' : 'Je nutné být přihlášený a na stránce v KSP template.'}>
+            Nahrát celý ročník
+        </button>
+        <button
+          on:click={loadMaxPoints}
+          title="Stáhne ke každé úloze maximální počet bodů"
+          >
+          Aktualizovat počty bodů
+        </button>
       </div>
       <div>
         <button on:click={hideSelection}>Skrýt výběr</button>

@@ -10,7 +10,8 @@ export type TaskDescriptor = {
 } & (
         {
             type: "open-data",
-            taskReference: string
+            taskReference: string,
+            points: number
         }
         |
         {

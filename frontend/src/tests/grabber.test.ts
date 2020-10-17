@@ -48,6 +48,7 @@ describe('tasks assignment', () => {
             expect(assignment.points).toBeGreaterThanOrEqual(1)
             expect(assignment.description.trim()).toBeTruthy()
             expect(assignment.name.trim()).toBeTruthy()
+            expect(assignment.points).toBe(t.points)
         })
     }
 })
