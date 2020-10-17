@@ -2,6 +2,11 @@
 
 FILENAME=public/build/build_id.svg
 
+
+cd $(git rev-parse --show-toplevel)
+cd frontend
+
+
 cat  > $FILENAME <<EOF
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
