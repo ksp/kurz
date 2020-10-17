@@ -197,23 +197,25 @@
       requires: [],
       position: [0, 0],
       title: t.name,
-      points: t.points!
+      points: t.points!,
     }));
     tasks.tasks = [...tasks.tasks, ...newDescriptors];
   }
 
   async function loadMaxPoints() {
-    const loadedTasks = await Promise.all(tasks.tasks.map(async t => {
-      if (t.type != "open-data") {
-        return t
-      }
-      const a = await grabAssignment(t.taskReference)
-      return { ...t, points: a.points! }
-    }))
+    const loadedTasks = await Promise.all(
+      tasks.tasks.map(async (t) => {
+        if (t.type != "open-data") {
+          return t;
+        }
+        const a = await grabAssignment(t.taskReference);
+        return { ...t, points: a.points! };
+      })
+    );
 
-    tasks = { ...tasks, tasks: loadedTasks }
+    tasks = { ...tasks, tasks: loadedTasks };
 
-    alert("Načteno :)")
+    alert("Načteno :)");
   }
 
   function hideSelection() {
@@ -233,8 +235,6 @@
 
 <style>
   .container {
-    /*display: flex;*/
-    /* flex-direction: row;*/
     margin: 0;
     height: 99vh;
     width: 100%;
@@ -275,13 +275,25 @@
     padding: 5px;
   }
 
+  label {
+    display: block;
+  }
+
+  input:disabled {
+    color: #ccc;
+  }
   button {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
     width: 45%;
     border-radius: 0.5em;
     border: 2px solid white;
     background-color: transparent;
     color: white;
     transition: auto;
+    box-sizing: border-box;
   }
 
   button:hover:not(:disabled) {
@@ -389,12 +401,11 @@
           on:click={loadYear}
           disabled={!isLoggedIn()}
           title={isLoggedIn() ? 'Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou' : 'Je nutné být přihlášený a na stránce v KSP template.'}>
-            Nahrát celý ročník
+          Nahrát celý ročník
         </button>
         <button
           on:click={loadMaxPoints}
-          title="Stáhne ke každé úloze maximální počet bodů"
-          >
+          title="Stáhne ke každé úloze maximální počet bodů">
           Aktualizovat počty bodů
         </button>
       </div>
