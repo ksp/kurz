@@ -55,10 +55,6 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
         list-style: initial;
         margin-left: 2em;
     }
-
-    div {
-        font-size: 1.25rem;
-    }
 </style>
 
 <div>
