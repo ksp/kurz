@@ -25,6 +25,7 @@
   }
 
   function click(e: MouseEvent) {
+    e.stopPropagation();
     eventDispatcher("click", e);
   }
 

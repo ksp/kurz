@@ -81,6 +81,10 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
     d3.select(container).call(zoomer);
   }
 
+  function containerClickHandler(e: MouseEvent) {
+    eventDispatcher("closeTask");
+  }
+
   function groupSelectionHandler(e: MouseEvent) {
     // not enabled?
     if (!selectionToolEnabled) return;
@@ -271,6 +275,7 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
   bind:this={container}
   bind:clientHeight
   bind:clientWidth
+  on:click={containerClickHandler}
   on:mousedown={groupSelectionHandler}
   on:contextmenu={(e) => {
     if (selectionToolEnabled) {

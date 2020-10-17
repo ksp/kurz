@@ -39,7 +39,8 @@
         <div style="height: 100%">
           <Graph
             tasks={t}
-            on:selectTask={(e) => { if (e.detail.type != "label") (location.hash = `#task/${e.detail.id}`)}}/>
+            on:selectTask={(e) => { if (e.detail.type != "label") (location.hash = `#task/${e.detail.id}`)}}
+            on:closeTask={() => {location.hash = '#'}} />
         </div>
       </TasksLoader>
     {/if}
