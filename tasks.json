@@ -122,7 +122,7 @@
             "title": "Životně důležitá úloha",
             "position": [
                 -90.7659363746643,
-                879.8850021362305
+                880.786247253418
             ],
             "taskReference": "26-Z2-4",
             "points": 12
@@ -825,11 +825,12 @@
                 "kucharka-zakladni-dynamicke-programovani"
             ],
             "position": [
-                153.05905151367188,
-                506.2679748535156
+                -273.39971923828125,
+                1197.8036499023438
             ],
             "title": "Čtyřková",
-            "points": 12
+            "points": 12,
+            "hidden": false
         },
         {
             "type": "open-data",
@@ -1144,7 +1145,7 @@
             "taskReference": "30-1-4",
             "requires": [],
             "position": [
-                2425.829833984375,
+                2427.345458984375,
                 1017.5477600097656
             ],
             "title": "Cesta v bunkru",
@@ -1169,10 +1170,12 @@
             "type": "open-data",
             "id": "30-3-1",
             "taskReference": "30-3-1",
-            "requires": [],
+            "requires": [
+                "30-Z4-1"
+            ],
             "position": [
-                2260.394287109375,
-                885.5089416503906
+                -513.2063903808594,
+                1192.0383605957031
             ],
             "title": "Vlnění",
             "hidden": true,
@@ -1182,13 +1185,15 @@
             "type": "open-data",
             "id": "30-4-5",
             "taskReference": "30-4-5",
-            "requires": [],
+            "requires": [
+                "kucharka-zakladni-dynamicke-programovani"
+            ],
             "position": [
-                2434.596923828125,
-                816.7156677246094
+                -376.9443664550781,
+                1235.2302551269531
             ],
             "title": "Frňákovník",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -1310,12 +1315,14 @@
             "taskReference": "30-Z2-4",
             "title": "Příliš bílý displej",
             "comment": " Práce s 2d polem",
-            "requires": [],
-            "position": [
-                -1553.5021209716797,
-                -1031.9203643798828
+            "requires": [
+                "kucharka-zakladni-prefixove-soucty-2d"
             ],
-            "hidden": true,
+            "position": [
+                -710.1918792724609,
+                1333.6874084472656
+            ],
+            "hidden": false,
             "points": 12
         },
         {
@@ -1381,12 +1388,14 @@
             "taskReference": "30-Z4-1",
             "title": "Statistika sprintů",
             "comment": " Prefixové součty",
-            "requires": [],
-            "position": [
-                -1586.7162628173828,
-                -1087.0154418945312
+            "requires": [
+                "kucharka-zakladni-prefixove-soucty"
             ],
-            "hidden": true,
+            "position": [
+                -623.6291046142578,
+                1118.8409271240234
+            ],
+            "hidden": false,
             "points": 8
         },
         {
@@ -1435,13 +1444,15 @@
             "type": "open-data",
             "id": "31-1-1",
             "taskReference": "31-1-1",
-            "requires": [],
+            "requires": [
+                "28-Z4-4"
+            ],
             "position": [
-                2454.366792678833,
-                946.1978244781494
+                -280.69116020202637,
+                1289.7996921539307
             ],
             "title": "Karkulčin byznys",
-            "hidden": true,
+            "hidden": false,
             "points": 12
         },
         {
@@ -2138,12 +2149,14 @@
             "id": "kucharka-zakladni-dynamicke-programovani",
             "type": "text",
             "comment": "...",
-            "requires": [],
+            "requires": [
+                "kucharka-zakladni-prefixove-soucty"
+            ],
             "title": "Dynamické programování",
             "htmlContent": "<h3>Předpočítané mezivýsledky</h3><p>Motivací k&nbsp;této kapitole je následující motto: „Proč počítat něco vícekrát, když nám to stačí spočítat jednou a&nbsp;zapamatovat si to?“.</p><p>Velmi často se totiž setkáváme s&nbsp;tím, že něco počítáme stále dokola. Jako příklad si můžeme připomenout naši rekurzivní implementaci počítání Fibonacciho čísel zmíněnou výše.</p><p>Když se podíváme na výpočet čísla fib(5), vidíme, že pro něj voláme fib(4) a&nbsp;fib(3), fib(4) volá fib(3) a&nbsp;fib(2), fib(3) volá fib(2) a&nbsp;fib(1) a&nbsp;tak dále. Všimli jste si, kolikrát se nám tyhle výpočty opakují? Některá Fibonacciho čísla spočteme totiž zbytečně mnohokrát.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-5.png\" alt=\"Strom výpočtu Fibonacciho čísla\"></figure><p>Kdybychom si je namísto opakovaného počítání někde pamatovali, mohli bychom pak odpověď na dotaz na již vypočtené číslo vytáhnout jako králíka z&nbsp;klobouku v&nbsp;konstantním čase. Zavedením jednoho globálního pole, ve kterém si tyto hodnoty pro jednotlivá n budeme pamatovat, nám sníží časovou složitost z&nbsp;O(2n) na pěkných O(n). Takovému postupu se obecně říká <i>dynamické programování</i>.</p><h4>Dynamické programování</h4><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/img/hippo_dynamit.png\" alt=\"Dynamitské programování\"></figure><p>Nejprve uveďme na pravou váhu výraz „dynamické“ v&nbsp;názvu. Nevystihuje tak úplně podstatu této techniky a jeho historické pozadí je celkem složité, avšak dnes je tento název již tak zažitý, že se už pravděpodobně nezmění.</p><p>Slovo „dynamické“ částečně odkazuje na to, že se dynamicky (za běhu programu) postupně staví řešení jednodušších problémů, která jsou následně použita pro řešení složitějších. Jeho hlavní podstatou je tedy ukládání a&nbsp;opětovné použití již jednou vypočtených údajů.</p><p>Hodí se na úlohy, které se dají dělit na podúlohy, které jsou si podobné a&nbsp;mohou se opakovat. Výsledky takovýchto podúloh si poté ukládáme a&nbsp;při dotazu na stejnou podúlohu vrátíme jen uložený výsledek a&nbsp;výpočet již neprovádíme.</p><p>Pro další prohloubení znalostí můžete na našem webu nahlédnout do další kuchařky, tentokrát nesoucí (překvapivě) název <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/dynamicke-programovani\">Dynamické programování</a>.</p>",
             "position": [
-                105.5970230102539,
-                425.50379943847656
+                -332.6829147338867,
+                1135.6282806396484
             ]
         },
         {
@@ -2212,8 +2225,8 @@
             "title": "Pole",
             "htmlContent": "<p>První datovou strukturou, kterou si představíme a&nbsp;která se na výše nastíněnou situaci náramně hodí, je <i>pole</i>. To představuje spoustu přihrádek (proměnných) naskládaných v&nbsp;paměti za sebou, ke kterým typicky přistupujeme přes jeden společný název pole a&nbsp;jejich pořadové číslo neboli index (jako NazevPole[0], NazevPole[1], …). (Pozor, ve světě počítačů se velmi často indexuje od nuly, tedy první prvek má v&nbsp;tomto případě index 0.)</p><p>Ve většině základních jazyků je pole jen <i>statické</i>, tedy v&nbsp;okamžiku jeho vytváření musíme počítači říct, jak ho chceme velké. Některé vyšší jazyky ale nabízejí i&nbsp;pole, které se dynamicky zvětšuje, takovou konstrukci si ukážeme ve druhé části kuchařky.</p><p>Abychom nebyli omezeni jen jedním rozměrem, můžeme si klidně vyrobit pole dvourozměrné (případně obecně n-rozměrné). Dvourozměrné pole je vlastně tabulka hodnot, nazýváme ji také někdy <i>matice</i>, a&nbsp;může se nám hodit například při reprezentaci různých map (plán bludiště) nebo, jak uvidíme níže, pro reprezentaci dalších datových struktur.</p><p>U&nbsp;pole již má smysl přemýšlet, jak dlouho bude která operace trvat. Díky tomu, že jsou jednotlivé prvky v&nbsp;poli naskládané pevně za sebou, je snadné spočítat umístění konkrétní přihrádky. Proto když se počítače zeptáme na obsah přihrády pole[42], vrátí nám hodnotu ihned.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/img/hippo_array.png\" alt=\"Pole\"></figure><p>Tomu budeme říkat <i>operace v&nbsp;konstantním čase</i> a&nbsp;budeme značit, že trvá čas&nbsp;O(1). Efektivitu programu totiž nepočítáme v&nbsp;sekundách (protože každý z&nbsp;nás má asi jinak rychlý počítač), ale v&nbsp;počtu základních operací, které musí program řádově vykonat. Více o&nbsp;časové složitosti si můžete přečíst v&nbsp;<a href=\"https://ksp.mff.cuni.cz/viz/kucharky/slozitost\">kuchařce o&nbsp;složitosti</a>, nejdříve však doporučujeme dočíst tuto kuchařku.</p><p>Přidání nového prvku na konec pole také zvládneme v&nbsp;konstantním čase. Problém je přidání nového prvku někam doprostřed (což se nám typicky stane, pokud budeme chtít udržovat hodnoty v&nbsp;poli seřazené a&nbsp;zároveň do něj vkládat nové). V&nbsp;takovém případě se totiž všechny prvky za vkládaným musí posunout o&nbsp;jednu pozici dál, aby se vkládaný prvek vešel na své místo. Taková operace tedy může pro pole délky N (čili pole obsahující N prvků) trvat řádově až N kroků, což zapisujeme jako O(N) a&nbsp;říkáme, že je to vzhledem k&nbsp;N <i>lineární časová složitost</i>.</p><p>To je značná nevýhoda oproti struktuře, kterou si ukážeme za chvíli. Určitě ale pole nezavrhujme. Je to základní datová struktura, která nalezne použití ve spoustě programů, a&nbsp;jak si ve druhé části kuchařky ukážeme, můžeme ho použít třeba k&nbsp;rychlému hledání hodnoty metodou <i>binárního vyhledávání</i>. Nyní ale již slibovaná další datová struktura.</p>",
             "position": [
-                -386.3838195800781,
-                714.8706398010254
+                -396.99383544921875,
+                655.7576637268066
             ]
         },
         {
@@ -2235,13 +2248,13 @@
             "type": "text",
             "comment": "https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/",
             "requires": [
-                "kucharka-zakladni-prefixove-soucty"
+                "30-Z4-1"
             ],
             "title": "Dvourozměrné prefixové součty",
             "htmlContent": "<h4>Dvourozměrné prefixové součty</h4><p>Prefixové součty se dají zobecnit i&nbsp;do více rozměrů, ale princip je vždy stejný. Například dvourozměrné prefixové součty u&nbsp;matice fungují tak, že si předpočítáme součty podmatic začínajících levým vrchním políčkem a&nbsp;končící na indexu [x,y].</p><p>Z&nbsp;toho je vidět, že prefixový součet zpravidla obsadí stejně velký prostor jako původní data, v&nbsp;tomto případě tedy budeme mít matici hodnot prefixových součtů končících na zadaných souřadnicích. Jak ale získat součet nějaké podmatice, která se nachází někde „uprostřed“ naší matice?</p><p>Použijeme stejný princip jako u&nbsp;jednorozměrného případu: Přičteme větší část, kterou chceme započítat, a&nbsp;odečteme od ní části, které započítat nechceme. Pro případ podmatice začínající vlevo nahoře na pozici [x,y] a&nbsp;končící napravo dole na [X,Y] to ilustruje následující obrázek:</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-6.png\" alt=\"Dvourozměrné prefixové součty\"></figure><p>Nejdříve přičteme celý prefixový součet končící na pozici [X,Y]. Tím jsme ale započítali i&nbsp;části A, B a&nbsp;C z&nbsp;obrázku, které započítat nechceme. Tak odečteme prefixové součty končící na indexech [X,y] a&nbsp;[x,Y]. Ale pozor, teď jsme odečetli jednou A+B a&nbsp;jednou A+C, tedy část&nbsp;A (prefixový součet končící na pozici [x,y]) jsme odečetli dvakrát, musíme ji proto ještě jednou přičíst.</p><p>Celý vzorec tedy vypadá takto:</p><p>soucet = P[X,Y] - P[X,y] - P[x,Y] + P[x,y];</p><p>Tento princip přičítání a odečítání se dá zobecnit i&nbsp;pro libovolné vyšší rozměry, ale chce to již trošku představivosti, co se má přičíst a&nbsp;kolikrát. Říká se tomu také <i>princip inkluze a&nbsp;exkluze</i> a&nbsp;najde použití nejen u&nbsp;vícerozměrných prefixových součtů.</p>",
             "position": [
-                -714.1817283630371,
-                1252.7593383789062
+                -710.7839622497559,
+                1225.3379516601562
             ]
         },
         {
@@ -2415,15 +2428,15 @@
         {
             "id": "placeholder-kurz-programovani",
             "type": "text",
-            "comment": "...",
+            "comment": "",
             "requires": [
                 "programovani"
             ],
-            "title": "Placeholder pro základní kurz programování",
-            "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p>",
+            "title": "Základní kurz programování",
+            "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p><p>&nbsp;</p><p>Zatím je základní kurz na https://ksp.mff.cuni.cz/kurzy/zkp/1-uvod/</p>",
             "position": [
                 271.81773376464844,
-                322.83670806884766
+                324.0678482055664
             ]
         },
         {
