@@ -20,9 +20,16 @@
 	<link rel='stylesheet' href='/build/bundle.css'>
 
 	<script type="module" src='/build/bundle.js'></script>
+	<script nomodule>
+		document.onload = () => {
+			document.getElementById("svelte-root").textContent = "Tvůj prohlížeč je mentálně retardovaný, sežeň si prosím třeba aktuální Firefox."
+		}
+	</script>
 </head>
 
 <body style="padding: 0">
-	<div id="svelte-root" style="position: relative;"></div>
+	<div id="svelte-root" style="position: relative;">
+		<noscript>Interaktivní grafy bez Javascriptu neumím</noscript>
+	</div>
 </body>
 </html>
