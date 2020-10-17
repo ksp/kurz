@@ -119,7 +119,7 @@ namespace Ksp.WebServer
                             ));
                         }
 
-                        if (new [] { "text/html", "application/xhtml+xml" }.Contains(response.Content.Headers.ContentType.MediaType))
+                        if (new [] { "text/html", "application/xhtml+xml" }.Contains(response.Content?.Headers?.ContentType?.MediaType))
                         {
                             var str = await response.Content.ReadAsStringAsync();
                             str = pageRewriter.RewriteHtml(str, cx);
