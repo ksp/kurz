@@ -39,9 +39,7 @@
         <div style="height: 100%">
           <Graph
             tasks={t}
-            on:selectTask={(e) => { if (e.detail.type != "label") (location.hash = `#task/${e.detail.id}`)}}
-            on:preSelectTask={(e) => taskPanel.preSelect(e.detail) }
-            on:unPreSelectTask={(e) => taskPanel.unPreselect(e.detail)} />
+            on:selectTask={(e) => { if (e.detail.type != "label") (location.hash = `#task/${e.detail.id}`)}}/>
         </div>
       </TasksLoader>
     {/if}
