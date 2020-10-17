@@ -89,7 +89,7 @@
                 "kucharka-zakladni-algoritmus"
             ],
             "position": [
-                -428.70552825927734,
+                -427.0237350463867,
                 385.39715576171875
             ],
             "taskReference": "26-Z2-2",
@@ -611,13 +611,15 @@
             "type": "open-data",
             "taskReference": "28-Z1-1",
             "comment": "triviální, průchod pole",
-            "requires": [],
+            "requires": [
+                "26-Z2-2"
+            ],
             "position": [
-                499.0694875717163,
-                1022.1491203308105
+                -536.9149789810181,
+                485.6571464538574
             ],
             "title": "Kevinův leták",
-            "hidden": true,
+            "hidden": false,
             "points": 8
         },
         {
@@ -812,8 +814,8 @@
                 "kucharka-zakladni-binarni-vyhledavani"
             ],
             "position": [
-                -921.8528137207031,
-                835.5108184814453
+                -1133.7586975097656,
+                879.2374420166016
             ],
             "title": "Mocniny",
             "points": 10
@@ -1321,8 +1323,8 @@
                 "kucharka-zakladni-prefixove-soucty-2d"
             ],
             "position": [
-                -710.1918792724609,
-                1333.6874084472656
+                -573.9666595458984,
+                1417.7770080566406
             ],
             "hidden": false,
             "points": 12
@@ -2034,14 +2036,15 @@
             "id": "33-Z1-1",
             "taskReference": "33-Z1-1",
             "requires": [
-                "28-Z1-1"
+                "28-Z1-1",
+                "kucharka-zakladni-fronta-a-zasobnik"
             ],
             "position": [
-                629.0449371337891,
-                1094.560305595398
+                -973.7036590576172,
+                1264.421389579773
             ],
             "title": "Kontrola závorkových programů",
-            "hidden": true,
+            "hidden": false,
             "points": 8
         },
         {
@@ -2146,8 +2149,8 @@
             "title": "Rozděl a panuj - binární vyhledávání",
             "htmlContent": "<h3>Rozděl a&nbsp;panuj</h3><p>Jednou ze základních technik je rozdělení složitějšího problému na menší části, které opět můžeme rozdělit na menší a&nbsp;tak dále, dokud se nedostaneme k&nbsp;problémům tak malým, že je už umíme triviálně vyřešit.</p><h4>Binární vyhledávání v&nbsp;poli</h4><p>Představme si, že máme seřazené pole n&nbsp;prvků a&nbsp;chceme zjistit, jestli se v&nbsp;něm nachází prvek s&nbsp;hodnotou&nbsp;k. Určitě můžeme projít celé pole v&nbsp;lineárním čase (tím, že budeme brát jeden prvek za druhým a&nbsp;kontrolovat, zda je roven hodnotě&nbsp;k), ale to je zbytečně pomalé a&nbsp;nevyužívá toho, že máme pole seřazené.</p><p>Můžeme totiž začít s&nbsp;velkým problémem a&nbsp;ten postupně zmenšovat na stále menší a&nbsp;menší. Nejdříve hledáme&nbsp;k v&nbsp;celém poli. Podíváme se na jeho prostřední prvek:</p><ul><li>Pokud je roven&nbsp;k, jsme hotovi.</li><li>Je-li větší než&nbsp;k, víme, že se k&nbsp;musí nacházet nalevo od něj. Můžeme tedy hledat znovu, ale tentokrát se omezit jen na levou polovinu pole.</li><li>Analogicky, je-li menší než&nbsp;k, můžeme hledat jen v&nbsp;pravé polovině.</li></ul><p>Když tímto postupným dělením problémů na menší dojdeme až k&nbsp;poli o&nbsp;velikosti jednoho prvku, stačí tento prvek jenom porovnat, dál už se pole nepokoušíme rozdělovat.</p><p>Jelikož se nám každým krokem problém zmenší na polovinu, maximálně po log n krocích se dostaneme na pole velikosti jedna. Říkáme, že algoritmus má <i>logaritmickou časovou složitost</i>, píšeme O(log n). (Pokud není řečeno jinak, znamená pro nás v&nbsp;informatice značka log <i>dvojkový logaritmus</i>, což je funkce opačná k&nbsp;funkci 2n a&nbsp;roste o&nbsp;hodně pomaleji než funkce lineární. Pro velká&nbsp;n platí: 1 &lt; log n &lt; n a&nbsp;například log 2 = 1, log 8 = 3, log 1024 = 10.)</p><p>Prakticky postup provádíme tak, že si udržujeme levý a&nbsp;pravý okraj aktuálně zpracovávaného úseku a&nbsp;postupně je k&nbsp;sobě přibližujeme.</p><p>FIXME code</p><h4>Další aplikace</h4><p>Další typickou aplikací postupu rozděl a&nbsp;panuj je například třídění posloupnosti pomocí <i>Mergesortu</i>. Ten v&nbsp;základu funguje tak, že každou posloupnost, kterou dostane k&nbsp;setřídění, rozdělí na poloviny a každou z&nbsp;nich setřídí rekurzivním zavoláním sebe sama. Zanořování se zastaví ve chvíli, kdy třídíme posloupnost délky jedna (ta už je z&nbsp;podstaty setříděná). Pak jen v&nbsp;každém kroku ze dvou setříděných menších posloupností vyrobí jejich sléváním setříděnou posloupnost dvojnásobné délky.</p><p>Více se o&nbsp;metodě Rozděl a&nbsp;panuj můžete dozvědět ve stejnojmenné <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/rozdel-a-panuj\">kuchařce</a>.</p>",
             "position": [
-                -841.6388244628906,
-                755.4090232849121
+                -1055.2265319824219,
+                787.3630638122559
             ]
         },
         {
@@ -2258,8 +2261,8 @@
             "title": "Dvourozměrné prefixové součty",
             "htmlContent": "<h4>Dvourozměrné prefixové součty</h4><p>Prefixové součty se dají zobecnit i&nbsp;do více rozměrů, ale princip je vždy stejný. Například dvourozměrné prefixové součty u&nbsp;matice fungují tak, že si předpočítáme součty podmatic začínajících levým vrchním políčkem a&nbsp;končící na indexu [x,y].</p><p>Z&nbsp;toho je vidět, že prefixový součet zpravidla obsadí stejně velký prostor jako původní data, v&nbsp;tomto případě tedy budeme mít matici hodnot prefixových součtů končících na zadaných souřadnicích. Jak ale získat součet nějaké podmatice, která se nachází někde „uprostřed“ naší matice?</p><p>Použijeme stejný princip jako u&nbsp;jednorozměrného případu: Přičteme větší část, kterou chceme započítat, a&nbsp;odečteme od ní části, které započítat nechceme. Pro případ podmatice začínající vlevo nahoře na pozici [x,y] a&nbsp;končící napravo dole na [X,Y] to ilustruje následující obrázek:</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-6.png\" alt=\"Dvourozměrné prefixové součty\"></figure><p>Nejdříve přičteme celý prefixový součet končící na pozici [X,Y]. Tím jsme ale započítali i&nbsp;části A, B a&nbsp;C z&nbsp;obrázku, které započítat nechceme. Tak odečteme prefixové součty končící na indexech [X,y] a&nbsp;[x,Y]. Ale pozor, teď jsme odečetli jednou A+B a&nbsp;jednou A+C, tedy část&nbsp;A (prefixový součet končící na pozici [x,y]) jsme odečetli dvakrát, musíme ji proto ještě jednou přičíst.</p><p>Celý vzorec tedy vypadá takto:</p><p>soucet = P[X,Y] - P[X,y] - P[x,Y] + P[x,y];</p><p>Tento princip přičítání a odečítání se dá zobecnit i&nbsp;pro libovolné vyšší rozměry, ale chce to již trošku představivosti, co se má přičíst a&nbsp;kolikrát. Říká se tomu také <i>princip inkluze a&nbsp;exkluze</i> a&nbsp;najde použití nejen u&nbsp;vícerozměrných prefixových součtů.</p>",
             "position": [
-                -710.7839622497559,
-                1225.3379516601562
+                -577.9223289489746,
+                1311.1093139648438
             ]
         },
         {
