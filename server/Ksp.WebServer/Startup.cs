@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using AspNetCore.Proxy;
 using AspNetCore.Proxy.Builders;
@@ -39,15 +40,17 @@ namespace Ksp.WebServer
                 .ConfigurePrimaryHttpMessageHandler(h => {
                 return new HttpClientHandler {
                     AllowAutoRedirect = false,
-                    UseCookies = false
+                    UseCookies = false,
+                    AutomaticDecompression = DecompressionMethods.All
                 };
             });
             services.AddProxies();
             services.Configure<KspProxyConfig>(Configuration.GetSection(nameof(KspProxyConfig)));
+            services.AddSingleton<KspPageRewriter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<KspProxyConfig> kspProxyConfig)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<KspProxyConfig> kspProxyConfig, KspPageRewriter pageRewriter)
         {
             Console.WriteLine($"Running {env.EnvironmentName} env, root={env.ContentRootPath}, host={kspProxyConfig.Value.Host}");
 
@@ -97,7 +100,7 @@ namespace Ksp.WebServer
                         // Console.WriteLine(request);
                         return Task.CompletedTask;
                     });
-                    opt.WithAfterReceive((cx, response) => {
+                    opt.WithAfterReceive(async (cx, response) => {
                         // Console.WriteLine(response);
                         if (response.Headers.Location is object && response.Headers.Location.Host == baseUri.Host)
                         {
@@ -115,7 +118,13 @@ namespace Ksp.WebServer
                                  .Replace($"; domain={baseUri.Host}", $"; domain={cx.Request.Host.Host}")
                             ));
                         }
-                        return Task.CompletedTask;
+
+                        if (new [] { "text/html", "application/xhtml+xml" }.Contains(response.Content.Headers.ContentType.MediaType))
+                        {
+                            var str = await response.Content.ReadAsStringAsync();
+                            str = pageRewriter.RewriteHtml(str, cx);
+                            response.Content = new StringContent(str, Encoding.UTF8, "text/html");
+                        }
                     });
                 }));
         }
