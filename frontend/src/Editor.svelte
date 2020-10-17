@@ -197,6 +197,7 @@
       requires: [],
       position: [0, 0],
       title: t.name,
+      points: t.points!
     }));
     tasks.tasks = [...tasks.tasks, ...newDescriptors];
   }
@@ -207,9 +208,7 @@
         return t
       }
       const a = await grabAssignment(t.taskReference)
-      if (a.points == null)
-        throw Error(`Points are null for ${t.taskReference}`)
-      return { ...t, points: a.points }
+      return { ...t, points: a.points! }
     }))
 
     tasks = { ...tasks, tasks: loadedTasks }
