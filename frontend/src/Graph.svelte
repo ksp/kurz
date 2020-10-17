@@ -54,8 +54,15 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
     function eventHandler(hovering: CustomEvent<boolean>) {
       if (hovering.detail) {
         hoveredTask = task;
+        if (!selection.has(task) && !dragInProgress) {
+          selection.clear();
+          selection.add(task);
+          selection = selection;
+        }
+        eventDispatcher("preSelectTask", task);
       } else {
         if (hoveredTask?.id == task.id) hoveredTask = null;
+        eventDispatcher("unPreSelectTask", task);
       }
     }
     return eventHandler;
