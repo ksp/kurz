@@ -57,7 +57,7 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
     }
 
     div {
-        font-size: 1.25em;
+        font-size: 1.25rem;
     }
 </style>
 
