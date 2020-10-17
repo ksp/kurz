@@ -66,7 +66,7 @@ function plugins(editor) {
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
-		// halfProduction && terser()
+		halfProduction && !editor && terser()
 	]
 }
 
