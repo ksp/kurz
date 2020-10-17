@@ -85,14 +85,16 @@
             "id": "26-Z2-2",
             "type": "open-data",
             "comment": "SADO - triviální, procházení celých čísel v intervalu a kontrola podmínky",
-            "requires": [],
+            "requires": [
+                "kucharka-zakladni-algoritmus"
+            ],
             "position": [
-                1167.1616821289062,
-                208.39923095703125
+                -428.70552825927734,
+                385.39715576171875
             ],
             "taskReference": "26-Z2-2",
             "title": "SADO",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -121,8 +123,8 @@
             ],
             "title": "Životně důležitá úloha",
             "position": [
-                -90.7659363746643,
-                880.786247253418
+                47.204129695892334,
+                886.2504196166992
             ],
             "taskReference": "26-Z2-4",
             "points": 12
@@ -398,8 +400,8 @@
             "taskReference": "27-Z2-3",
             "requires": [],
             "position": [
-                809.155632019043,
-                1312.5684385299683
+                807.7896041870117,
+                1313.9344053268433
             ],
             "title": "Nápis na tričku",
             "hidden": true,
@@ -1178,7 +1180,7 @@
                 1192.0383605957031
             ],
             "title": "Vlnění",
-            "hidden": true,
+            "hidden": false,
             "points": 9
         },
         {
@@ -1514,8 +1516,8 @@
             "comment": "úloha s odčítáním času",
             "title": "Zuzka a poník",
             "position": [
-                -1205.247703552246,
-                -1048.316032409668
+                -1190.2212142944336,
+                -1046.9499435424805
             ],
             "taskReference": "31-Z1-1",
             "hidden": true,
@@ -1885,14 +1887,17 @@
             "type": "open-data",
             "id": "32-Z2-2",
             "taskReference": "32-Z2-2",
-            "requires": [],
+            "requires": [
+                "26-Z2-1"
+            ],
             "position": [
-                1471.155632019043,
-                681.5684385299683
+                -73.8359375,
+                919.259539604187
             ],
             "title": "Turnaj hada",
-            "hidden": true,
-            "points": 10
+            "hidden": false,
+            "points": 10,
+            "comment": "Dost hustý voser :D"
         },
         {
             "type": "open-data",
@@ -2128,7 +2133,7 @@
             "htmlContent": "<h3>Algoritmus a&nbsp;program</h3><p>Pod tajemným slovem <i>algoritmus</i> se skrývá jen jiný výraz pro postup. Můžete si to představit jako příkaz od maminky „Běž do krámu, kup chleba, a&nbsp;když budou mít měkké rohlíky, tak jich vem tucet“. (A jako slušně vychovaní se tedy vydáte do krámu a&nbsp;koupíte tucet chlebů, protože měli měkké rohlíky :-))</p><p>Takovýto příkaz klidně můžeme nazvat algoritmem, ačkoliv to bude asi znít nezvykle&nbsp;– pojem algoritmus se totiž používá hlavně ve světě počítačů. Je to tedy nějaká posloupnost základních příkazů, která řeší nějaký problém. Výběr konkrétního programovacího jazyka rozhoduje o&nbsp;tom, jaké základní příkazy budeme mít k&nbsp;dispozici. Většinou jsou ale skoro stejné.</p><p>Mezi základní příkazy patří:</p><ul><li>Manipulace s&nbsp;daty v&nbsp;paměti (uložení či načtení hodnoty, detailněji v&nbsp;další kapitole).</li><li>Provedení nějakého numerického výpočtu (+,-,*,/).</li><li>Vyhodnocení nějaké konkrétní podmínky a&nbsp;odpovídající větvení programu: <i>Pokud platí A, tak proveď B, jinak proveď C.</i> Přitom B&nbsp;i&nbsp;C mohou být klidně celé <i>bloky kódu</i>, tedy libovolně mnoho dalších základních příkazů.</li><li>Opakování nějakého příkazu: <i>Dokud platí A, dělej B.</i> Takové konstrukci říkáme <i>cyklus</i> a&nbsp;podobně jako u&nbsp;podmínky může být B&nbsp;blok kódu, který se celý opakuje.</li><li>Vstup a&nbsp;výstup programu (typicky vstup od uživatele z&nbsp;klávesnice či načtení vstupu ze souboru; výstup pak může znamenat vypsání výsledku na obrazovku nebo třeba zapsání dat do souboru).</li></ul><p>Z&nbsp;těchto základních stavebních kamenů se skládá každý algoritmus. Programem potom rozumíme realizaci algoritmu v&nbsp;nějakém konkrétním programovacím jazyce.</p><p>U&nbsp;složitějších programů se pak často setkáme s&nbsp;problémem, že budete mít nějakou posloupnost příkazů, která se bude na spoustě míst programu opakovat, což zbytečně prodlužuje a znepřehledňuje kód.</p><p>Řešením tohoto problému je použití <i>funkcí</i>. Funkci si můžeme představit jako nějakou pojmenovanou část programu (s&nbsp;vlastní pamětí), kterou můžeme opakovaně použít tím, že ji v&nbsp;různých částech programu <i>zavoláme</i>. Funkci při zavolání předáme parametry (například seznam čísel), které se dostanou do její vnitřní paměti.</p><p>Funkce pak na základě obdržených parametrů může provádět nějaké operace, při kterých pracuje se svojí vnitřní pamětí (mluvíme o&nbsp;<i>lokální</i> paměti, změny v&nbsp;ní se neprojeví nikde mimo funkci). Na konci nám funkce může vrátit nějaký výsledek. Pokud funkce během svého běhu změní i nějaká data v&nbsp;<i>globální</i> paměti, či provede nějakou globální operaci (například výpis textu na monitor), mluvíme pak o&nbsp;funkci s&nbsp;<i>vedlejšími efekty</i> (neboli side-efekty).</p><p>Konkrétním příkladem může být funkce, která nám spočítá odmocninu ze zadaného čísla. Ta dostane jako svůj parametr číslo, uvnitř si provede nějaký výpočet, o&nbsp;který se jako uživatel funkce nemusíme starat, a&nbsp;jako výstup nám vrátí spočtenou odmocninu.</p>",
             "position": [
                 -410.8735809326172,
-                271.90441131591797
+                273.27046966552734
             ]
         },
         {
@@ -2262,13 +2267,13 @@
             "type": "text",
             "comment": "https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/",
             "requires": [
-                "kucharka-zakladni-algoritmus"
+                "26-Z2-2"
             ],
             "title": "Reprezentace dat",
             "htmlContent": "<h3>Reprezentace dat v&nbsp;počítači</h3><p>Celkem často si v&nbsp;průběhu výpočtu našeho algoritmu potřebujeme pamatovat nějaké hodnoty. K&nbsp;tomu nám programovací jazyky dávají nástroj s&nbsp;názvem <i>proměnná</i>. Ta představuje jakési pojmenované místo v&nbsp;paměti (přihrádku), do kterého si můžeme data ukládat a&nbsp;pak je odtud zase načítat.</p><p>Typickým příkladem může být počítání součtu čísel, která nám uživatel zadá na vstupu. Na začátku nejdříve do nějakého místa v&nbsp;paměti uložíme hodnotu&nbsp;0. Poté postupně, jak nám uživatel zadává čísla, tuto proměnnou pokaždé přečteme, k&nbsp;její hodnotě přičteme nově zadané číslo a&nbsp;výsledek opět uložíme na stejné místo.</p><p>Takovéto použití jedné proměnné je velmi jednoduché (tak jednoduché, že ho takto podrobně do řešení KSPčka nepište, není to potřeba), ale také celkem omezené. Co kdybychom si chtěli pamatovat třeba celou zadanou posloupnost čísel? Mohlo by nám stačit vyrobit si spoustu různě pojmenovaných proměnných, ale nejde to lépe? Jde.</p><p>Jednotlivé proměnné se mohou kombinovat do složitějších konstrukcí, které obecně nazýváme <i>datovými strukturami</i>. Zkusíme si ty nejzákladnější představit.</p>",
             "position": [
-                -403.3098793029785,
-                475.9121398925781
+                -395.09653091430664,
+                494.3963623046875
             ]
         },
         {
@@ -2281,7 +2286,7 @@
             "title": "Spojový seznam",
             "htmlContent": "<h4>Spojový seznam a&nbsp;ukazatele</h4><p>Pole jsme měli v&nbsp;paměti určené jenom tím, že počítač věděl, kde je jeho začátek a&nbsp;kolik místa v&nbsp;paměti zabírají jeho prvky. Při dotazování na konkrétní index pak podle indexu a&nbsp;podle velikosti prvků počítač přesně věděl, kam do paměti se má podívat, aby našel námi požadovaný prvek (to vše zvládl v&nbsp;konstantním čase). Jednotlivé prvky si tedy vůbec nemusely pamatovat, kde se nachází jejich sousedi, protože všechny prvky seděly v&nbsp;paměti za sebou.</p><p>Představme si ale teď situaci, kdy by si každý prvek ještě pamatoval pozice sousedů. Pak bychom mohli mít prvky libovolně rozházené v&nbsp;paměti a&nbsp;jen by se na sebe vzájemně odkazovaly (první prvek by tvrdil, že druhý je na pozici X, druhý by tvrdil, že třetí je na pozici Y, a&nbsp;tak dále).</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-1.png\" alt=\"Spojový seznam\"></figure><p>K&nbsp;lepšímu pochopení tohoto principu je důležité si vysvětlit, co to je <i>ukazatel</i> (nebo také <i>odkaz</i> či anglicky <i>pointer</i>). Každé místo v paměti počítače má své číselné označení, kterému říkáme <i>adresa</i>. Když si vytváříme nějakou pojmenovanou proměnnou, ta se vlastně odkazuje na určité místo v&nbsp;paměti a&nbsp;na tomto místě v&nbsp;paměti je její hodnota.</p><p>Co kdyby ale hodnota proměnné byla adresa nějakého jiného místa v&nbsp;paměti? Pak takové proměnné říkáme <i>pointer</i> a&nbsp;umožňuje nám vytvářet výše popsanou strukturu rozházených prvků v&nbsp;paměti.</p><p><i>Spojový seznam</i> je tedy určený svým prvním prvkem (máme v&nbsp;jedné proměnné pointer na tento prvek, který se často nazývá <i>kořen</i>, protože z&nbsp;něj „vyrůstá“ zbytek struktury) a&nbsp;poté u&nbsp;každého dalšího prvku máme za sebou uloženou hodnotu tohoto prvku a&nbsp;odkaz (pointer) na další prvek. Odkazy mezi prvky mohou být i&nbsp;obousměrné, mohou vést dokola (poslední ukazuje na první) či mohou dokonce tvořit nějakou složitější strukturu (pak to ale již nebude čistý spojový seznam).</p><p>Pokud pointer nemá nikam ukazovat, realizuje se to odkázáním tohoto pointeru na adresu NULL. To skoro doslovně říká „Neukazuji nikam“.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-2.png\" alt=\"Obousměrný cyklický spojový seznam\"></figure><p>Co nám takto vystavěná struktura umožňuje v&nbsp;porovnání s&nbsp;polem? Přístup na konkrétní prvek v&nbsp;ní stojí lineárně času, protože ho musíme „odkrokovat“ od prvního prvku (na který máme pointer), tedy musíme udělat až O(N) kroků. Pokud bychom však pointer na daný prvek už nějak měli, samozřejmě na něj můžeme přistoupit v&nbsp;konstantním čase.</p><p>Naopak přidávání prvků na konkrétní místo (i&nbsp;jejich odebírání) máme v&nbsp;podstatě zadarmo a&nbsp;spojový seznam můžeme rozšiřovat, dokud na něj máme v&nbsp;počítači paměť. Ve chvíli, kdy chceme přidat nový prvek za prvek, na který máme pointer, jen šikovně přepojíme ukazatele. Pokud předtím ukazatele vedly A→B, teď povedou A →C →B (a&nbsp;při odebírání naopak).</p>",
             "position": [
-                -1179.2408599853516,
+                -1177.725112915039,
                 1064.477451324463
             ]
         },
