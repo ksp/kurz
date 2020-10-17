@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Ksp.WebServer.Controllers
@@ -33,6 +34,9 @@ namespace Ksp.WebServer.Controllers
         [HttpPost]
         public async Task<IActionResult> Post()
         {
+            if (env.IsProduction())
+                return this.Forbid();
+
             // TODO: auth org
             using var rdr = new StreamReader(HttpContext.Request.Body);
             await System.IO.File.WriteAllTextAsync(TasksJsonFile, await rdr.ReadToEndAsync());
