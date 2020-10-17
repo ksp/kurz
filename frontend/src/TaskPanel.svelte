@@ -67,17 +67,22 @@
         border-bottom: 2px solid #444444;
     }
     .closeButton {
-        display: none;
         position: absolute;
         right: 0;
         top: 0;
-        color: white;
-        background-color: red;
-        border: 0;
+        margin-top: 0.3em;
+        margin-right: 0.3em;
         cursor: pointer;
+        color: #ddd;
+        border-radius: 1.5em;
+        border: 1.5px solid #666666;
+        background: transparent;
+        font-size: 1.5em;
+        line-height: 0.7em;
+        padding: 0.4em 0.4em;
     }
     .closeButton::before {
-        content: "X";
+        content: "✖";
     }
     .panel.full .closeButton { display: inherit }
 </style>
