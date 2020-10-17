@@ -2438,9 +2438,9 @@
                 "programovani"
             ],
             "title": "Základní kurz programování",
-            "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p><p>&nbsp;</p><p>Zatím je základní kurz na https://ksp.mff.cuni.cz/kurzy/zkp/1-uvod/</p>",
+            "htmlContent": "<p>Tady by měl začítat kurz programování. Chceme ze stávajícího kurzu vybrat úlohy a dát je sem. Postupně by asi také bylo fajn to celé rozvinou do větších detailů.</p><p>&nbsp;</p><p>Zatím je základní kurz na <a href=\"https://ksp.mff.cuni.cz/kurzy/zkp/1-uvod/\">https://ksp.mff.cuni.cz/kurzy/zkp/1-uvod/</a></p>",
             "position": [
-                271.81773376464844,
+                270.30201721191406,
                 324.0678482055664
             ]
         },
