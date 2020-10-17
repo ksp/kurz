@@ -11,6 +11,7 @@ using AngleSharp.Dom;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using AngleSharp.Html;
+using Microsoft.Extensions.Options;
 
 namespace Ksp.WebServer.Controllers
 {
@@ -20,23 +21,27 @@ namespace Ksp.WebServer.Controllers
     {
         private readonly ILogger<TasksController> logger;
         private readonly IWebHostEnvironment env;
+        private readonly KspProxyConfig kspProxyConfig;
 
         public GrafikPageController(
             ILogger<TasksController> logger,
-            IWebHostEnvironment env)
+            IWebHostEnvironment env,
+            IOptions<KspProxyConfig> kspProxyConfig)
         {
             this.env = env;
+            this.kspProxyConfig = kspProxyConfig.Value;
             this.logger = logger;
         }
 
         async Task<string> FetchBlankPage()
         {
             var c = new HttpClient();
-            var rq = new HttpRequestMessage(HttpMethod.Get, "https://ksp-test.ks.matfyz.cz/blank");
+            var rq = new HttpRequestMessage(HttpMethod.Get, $"{kspProxyConfig.Host}/blank");
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xhtml+xml"));
-            rq.Headers.Authorization =
-                new AuthenticationHeaderValue("Basic", "SECRET");
+            if (!string.IsNullOrEmpty(kspProxyConfig.Authorization))
+                rq.Headers.Authorization =
+                    AuthenticationHeaderValue.Parse(kspProxyConfig.Authorization);
             if (HttpContext.Request.Headers.TryGetValue("Cookie", out var x))
                 rq.Headers.Add("Cookie", x.AsEnumerable());
             var rs = await c.SendAsync(rq);

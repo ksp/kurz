@@ -18,6 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Ksp.WebServer
 {
@@ -42,11 +43,14 @@ namespace Ksp.WebServer
                 };
             });
             services.AddProxies();
+            services.Configure<KspProxyConfig>(Configuration.GetSection(nameof(KspProxyConfig)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<KspProxyConfig> kspProxyConfig)
         {
+            Console.WriteLine($"Running {env.EnvironmentName} env, root={env.ContentRootPath}, host={kspProxyConfig.Value.Host}");
+
             app.UseDeveloperExceptionPage();
 
             app.UseRouting();
@@ -70,35 +74,32 @@ namespace Ksp.WebServer
             app.RunProxy(proxy => proxy
                 .UseHttp((context, args) =>
                 {
-                    return "https://ksp-test.ks.matfyz.cz";
+                    return kspProxyConfig.Value.Host;
                 }, opt => {
+                    var baseUri = new Uri(kspProxyConfig.Value.Host);
                     opt.WithHttpClientName("RedirectClient");
 
                     opt.WithBeforeSend((cx, request) => {
-                        if (request.Headers.Authorization is null)
+                        if (request.Headers.Authorization is null && !string.IsNullOrEmpty(kspProxyConfig.Value.Authorization))
                         {
                             request.Headers.Authorization =
-                                new AuthenticationHeaderValue("Basic", "SECRET");
+                                AuthenticationHeaderValue.Parse(kspProxyConfig.Value.Authorization);
                         }
                         if (request.Headers.Referrer is object)
+                        {
                             request.Headers.Referrer =
                                 new UriBuilder(request.Headers.Referrer) {
-                                    Host = "ksp-test.ks.matfyz.cz",
-                                    Port = 443,
-                                    Scheme = "https"
+                                    Host = baseUri.Host,
+                                    Port = baseUri.Port,
+                                    Scheme = baseUri.Scheme
                                 }.Uri;
-                        // request.Headers.Remove("X-Forwarded-For");
-                        // request.Headers.Remove("X-Forwarded-Proto");
-                        // request.Headers.Remove("X-Forwarded-Host");
-                        // request.Headers.Remove("Forwarded");
-                        // request.Headers.Remove("Origin");
-                        // request.Headers.Add("Origin", "https://ksp-test.ks.matfyz.cz");
+                        }
                         // Console.WriteLine(request);
                         return Task.CompletedTask;
                     });
                     opt.WithAfterReceive((cx, response) => {
                         // Console.WriteLine(response);
-                        if (response.Headers.Location is object && response.Headers.Location.Host == "ksp-test.ks.matfyz.cz")
+                        if (response.Headers.Location is object && response.Headers.Location.Host == baseUri.Host)
                         {
                             response.Headers.Location = new UriBuilder(response.Headers.Location) {
                                 Host = cx.Request.Host.Host,
@@ -111,7 +112,7 @@ namespace Ksp.WebServer
                             response.Headers.Remove("Set-Cookie");
                             response.Headers.Add("Set-Cookie", v.Select(s =>
                                 s.Replace("; secure", "")
-                                 .Replace("; domain=ksp-test.ks.matfyz.cz", $"; domain={cx.Request.Host.Host}")
+                                 .Replace($"; domain={baseUri.Host}", $"; domain={cx.Request.Host.Host}")
                             ));
                         }
                         return Task.CompletedTask;
