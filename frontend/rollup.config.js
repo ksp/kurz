@@ -53,7 +53,7 @@ function plugins(editor) {
 			inlineSources: !halfProduction
 		}),
 		replace({
-			"allowEditor": false,
+			"allowEditor": editor,
 		}),
 
 		// In dev mode, call `npm run start` once

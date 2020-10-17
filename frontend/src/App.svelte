@@ -11,6 +11,11 @@
   let hash = window.location.hash.substr(1);
   window.onhashchange = () => {
     hash = window.location.hash.substr(1);
+    window.setTimeout(() => window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    }), 50)
   };
   $: selectedTaskId = (/^task\/([^\/]*)/.exec(hash) || [null, null])[1];
 </script>
