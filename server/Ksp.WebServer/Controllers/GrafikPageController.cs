@@ -21,14 +21,17 @@ namespace Ksp.WebServer.Controllers
     {
         private readonly ILogger<TasksController> logger;
         private readonly IWebHostEnvironment env;
+        private readonly KspPageRewriter pageRewriter;
         private readonly KspProxyConfig kspProxyConfig;
 
         public GrafikPageController(
             ILogger<TasksController> logger,
             IWebHostEnvironment env,
-            IOptions<KspProxyConfig> kspProxyConfig)
+            IOptions<KspProxyConfig> kspProxyConfig,
+            KspPageRewriter pageRewriter)
         {
             this.env = env;
+            this.pageRewriter = pageRewriter;
             this.kspProxyConfig = kspProxyConfig.Value;
             this.logger = logger;
         }
@@ -56,6 +59,7 @@ namespace Ksp.WebServer.Controllers
             var grafik = p.ParseDocument(grafikPage);
 
             var kspTemplate = p.ParseDocument(await FetchBlankPage());
+            pageRewriter.ModifyTree(kspTemplate, "grafik");
 
             var innerBody = grafik.Body;
             innerBody.Replace(kspTemplate.Body);

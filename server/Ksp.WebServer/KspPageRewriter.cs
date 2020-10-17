@@ -1,6 +1,8 @@
 using System.IO;
 using AngleSharp.Html;
 using Microsoft.AspNetCore.Http;
+using System.Linq;
+using AngleSharp.Html.Dom;
 
 namespace Ksp.WebServer
 {
@@ -11,6 +13,15 @@ namespace Ksp.WebServer
             var p = new AngleSharp.Html.Parser.HtmlParser();
             var document = p.ParseDocument(source);
 
+            ModifyTree(document, context.Request.Path.Value.Trim('/'));
+
+            var outputHtml = new StringWriter();
+            document.ToHtml(outputHtml, new PrettyMarkupFormatter() { Indentation = "\t", NewLine = "\n" });
+            return outputHtml.ToString();
+        }
+
+        public void ModifyTree(IHtmlDocument document, string path)
+        {
             foreach (var form in document.QuerySelectorAll("form"))
             {
                 if (form.QuerySelector("input[type=password]") is null)
@@ -22,11 +33,22 @@ namespace Ksp.WebServer
                 form.Prepend(warning);
             }
 
+            var encyklopedie = document.QuerySelectorAll("#menu ul li:not(.active) a").FirstOrDefault(x => x.TextContent.Trim() == "Encyklopedie");
+            if (encyklopedie is object)
+            {
+                encyklopedie.TextContent = "Kurzy";
+                encyklopedie.SetAttribute("href", "/grafik");
+                if ("grafik" == path)
+                {
+                    encyklopedie.ParentElement.ClassList.Add("active");
+                }
+            }
 
-
-            var outputHtml = new StringWriter();
-            document.ToHtml(outputHtml, new PrettyMarkupFormatter() { Indentation = "\t", NewLine = "\n" });
-            return outputHtml.ToString();
+            var logo = document.QuerySelector("#logo > h1:nth-child(1) > a:nth-child(1)");
+            if (logo is object)
+            {
+                logo.TextContent = "KSP Hacked Edition";
+            }
         }
     }
 }
