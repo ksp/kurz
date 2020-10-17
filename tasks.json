@@ -40,12 +40,12 @@
                 "30-Z1-3"
             ],
             "position": [
-                -949.4910888671875,
-                -1247.3524169921875
+                -254.43450927734375,
+                1299.0439147949219
             ],
             "taskReference": "26-Z1-3",
             "title": "Zamilovaný dopis",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -53,15 +53,16 @@
             "type": "open-data",
             "comment": "Hroch v jezeře - BFS či jiné prohledávání, počítání velikosti komponent v 2D poli, ",
             "requires": [
-                "label-grafy"
+                "label-grafy",
+                "26-Z4-4"
             ],
             "position": [
-                -1864.0928955078125,
-                49.330116271972656
+                -923.5020141601562,
+                1551.3793830871582
             ],
             "taskReference": "26-Z1-4",
             "title": "Hroch v jezeře",
-            "hidden": true,
+            "hidden": false,
             "points": 12
         },
         {
@@ -105,12 +106,12 @@
                 "26-Z1-3"
             ],
             "position": [
-                -1049.7529983520508,
-                -1200.0399169921875
+                -354.69641876220703,
+                1346.3564147949219
             ],
             "taskReference": "26-Z2-3",
             "title": "Šifrovaná zpráva",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -150,12 +151,12 @@
                 "29-Z3-2"
             ],
             "position": [
-                -1262.5072937011719,
-                -1104.4763488769531
+                -567.4507141113281,
+                1441.9199829101562
             ],
             "taskReference": "26-Z3-2",
             "title": "Čarodějova šifra",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -240,7 +241,7 @@
             ],
             "position": [
                 -929.5531616210938,
-                1412.022590637207
+                1411.2905349731445
             ],
             "taskReference": "26-Z4-4",
             "title": "Hlídači v labyrintu",
@@ -531,14 +532,16 @@
             "type": "open-data",
             "id": "28-1-1",
             "taskReference": "28-1-1",
-            "requires": [],
+            "requires": [
+                "31-Z3-2"
+            ],
             "position": [
-                2578.840576171875,
-                1147.3673400878906
+                -842.9662780761719,
+                2112.172149658203
             ],
             "title": "Jízda na biomotorce",
             "comment": "Prohledávání statového prostoru - hledání cesty v obohacneném grafu",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -657,8 +660,8 @@
             "comment": "hledání komponent souvislosti",
             "requires": [],
             "position": [
-                -1810.1290817260742,
-                392.1524124145508
+                -805.9155197143555,
+                1901.931526184082
             ],
             "title": "Zuzčina zvědavost",
             "hidden": true,
@@ -671,11 +674,11 @@
             "comment": "hledání podřetězce",
             "requires": [],
             "position": [
-                -909.1823806762695,
-                -1071.67529296875
+                -189.9454116821289,
+                1464.5558776855469
             ],
             "title": "Před muzeem",
-            "hidden": true,
+            "hidden": false,
             "points": 8
         },
         {
@@ -952,15 +955,16 @@
             "type": "open-data",
             "comment": "Zuzčin výlet — DFS (topologické pořadí)",
             "requires": [
-                "label-grafy-pracovni-poznamka"
+                "label-grafy-pracovni-poznamka",
+                "31-Z3-3"
             ],
             "position": [
-                -2137.3594970703125,
-                232.75035858154297
+                -1133.1459350585938,
+                1742.5294723510742
             ],
             "taskReference": "29-Z1-4",
             "title": "Zuzčin výlet",
-            "hidden": true,
+            "hidden": false,
             "points": 12
         },
         {
@@ -1001,8 +1005,8 @@
             "comment": "Petr v říši divů — grafy - prohledávání (rozpad na komponenty)",
             "requires": [],
             "position": [
-                -1968.5974578857422,
-                405.43651580810547
+                -964.3838958740234,
+                1915.2156295776367
             ],
             "title": "Petr v říši divů",
             "hidden": true,
@@ -1047,12 +1051,12 @@
                 "label-retezce"
             ],
             "position": [
-                -1152.7578887939453,
-                -1152.6983337402344
+                -457.70130920410156,
+                1393.697998046875
             ],
             "taskReference": "29-Z3-2",
             "title": "Písemka z angličtiny",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -1074,13 +1078,15 @@
             "type": "open-data",
             "taskReference": "29-Z3-4",
             "comment": "Zdobení stromečku — grafy - prohledávání, hledání kružnice v grafu, zmateně zadané",
-            "requires": [],
+            "requires": [
+                "31-Z3-3"
+            ],
             "position": [
-                -1763.2243347167969,
-                181.82473754882812
+                -783.9841613769531,
+                1703.4959106445312
             ],
             "title": "Zdobení stromečku",
-            "hidden": true,
+            "hidden": false,
             "points": 12
         },
         {
@@ -1090,8 +1096,8 @@
             "comment": "Šíření viru — vopruz načítat vstup, přímočaré kvadratické řešení, trochu důmyslnější optimální, podhodnocená as fuck, šíření viru v grafu",
             "requires": [],
             "position": [
-                -1700.1787109375,
-                235.389404296875
+                -695.9651489257812,
+                1745.1685180664062
             ],
             "title": "Šíření viru",
             "hidden": true,
@@ -1147,14 +1153,16 @@
             "type": "open-data",
             "id": "30-1-4",
             "taskReference": "30-1-4",
-            "requires": [],
+            "requires": [
+                "31-Z3-2"
+            ],
             "position": [
-                2427.345458984375,
-                1017.5477600097656
+                -1071.9327087402344,
+                2107.305938720703
             ],
             "title": "Cesta v bunkru",
             "comment": "Hledání cesty v hilbertově křivce",
-            "hidden": true,
+            "hidden": false,
             "points": 15
         },
         {
@@ -1248,12 +1256,14 @@
             "taskReference": "30-Z1-3",
             "title": "Petrovo luštění zprávy",
             "comment": "Hledání nejčastějšího výskytu ",
-            "requires": [],
-            "position": [
-                -835.6846160888672,
-                -1304.6323547363281
+            "requires": [
+                "31-Z1-1"
             ],
-            "hidden": true,
+            "position": [
+                -218.60426330566406,
+                1241.7639770507812
+            ],
+            "hidden": false,
             "points": 10
         },
         {
@@ -1264,8 +1274,8 @@
             "comment": "Sousednost v grafu",
             "requires": [],
             "position": [
-                -1936.3944702148438,
-                352.7490768432617
+                -932.180908203125,
+                1862.528190612793
             ],
             "hidden": true,
             "points": 12
@@ -1278,10 +1288,10 @@
             "comment": "Trivka, projít string a skippovat duplikáty",
             "requires": [],
             "position": [
-                -967.7416839599609,
-                -1144.6150207519531
+                -272.6851043701172,
+                1401.7813110351562
             ],
-            "hidden": true,
+            "hidden": false,
             "points": 8
         },
         {
@@ -1352,10 +1362,10 @@
             "comment": "Výroba palindromu",
             "requires": [],
             "position": [
-                -1076.1672668457031,
-                -1079.604751586914
+                -381.1106872558594,
+                1466.7915802001953
             ],
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -1410,8 +1420,8 @@
             "comment": "Provházení bludiště",
             "requires": [],
             "position": [
-                -2085.289993286133,
-                352.05638885498047
+                -1081.076431274414,
+                1861.8355026245117
             ],
             "hidden": true,
             "points": 10
@@ -1424,8 +1434,8 @@
             "comment": "ProhledávánI grafu",
             "requires": [],
             "position": [
-                -1786.307373046875,
-                334.5788803100586
+                -782.0938110351562,
+                1844.3579940795898
             ],
             "hidden": true,
             "points": 10
@@ -1518,11 +1528,11 @@
             "comment": "úloha s odčítáním času",
             "title": "Zuzka a poník",
             "position": [
-                -1190.2212142944336,
-                -1046.9499435424805
+                -332.0081024169922,
+                1165.5375747680664
             ],
             "taskReference": "31-Z1-1",
-            "hidden": true,
+            "hidden": false,
             "points": 8
         },
         {
@@ -1530,15 +1540,16 @@
             "type": "open-data",
             "comment": "BFS (šachovnice, custom figurka, nejkratší cesta)  ",
             "requires": [
-                "label-grafy-pracovni-poznamka"
+                "label-grafy-pracovni-poznamka",
+                "31-Z3-3"
             ],
             "position": [
-                -1815.673828125,
-                261.21248626708984
+                -866.1637573242188,
+                1792.397315979004
             ],
             "taskReference": "31-Z1-2",
             "title": "Ukradený jezdec",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -1634,11 +1645,11 @@
             "comment": "triviální - zapamatování stringů (vybírání rýmů)",
             "requires": [],
             "position": [
-                -788.6613998413086,
-                -1213.2949523925781
+                -162.3399658203125,
+                1347.7179565429688
             ],
             "title": "Tvůrčí krize",
-            "hidden": true,
+            "hidden": false,
             "points": 8
         },
         {
@@ -1646,15 +1657,16 @@
             "type": "open-data",
             "comment": "DFS (hledání cesty v grafu po písmenech)",
             "requires": [
-                "label-grafy-pracovni-poznamka"
+                "label-grafy-pracovni-poznamka",
+                "29-Z1-4"
             ],
             "position": [
-                -2081.4124755859375,
-                290.51927947998047
+                -1077.1989135742188,
+                1800.2983932495117
             ],
             "taskReference": "31-Z3-2",
             "title": "Zámek obrazovky",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -1666,12 +1678,12 @@
                 "label-grafy"
             ],
             "position": [
-                -1951.4982299804688,
-                81.33769989013672
+                -955.0145263671875,
+                1622.0362014770508
             ],
             "taskReference": "31-Z3-3",
             "title": "Stáda hrochů",
-            "hidden": true,
+            "hidden": false,
             "points": 10
         },
         {
@@ -2191,8 +2203,8 @@
             "title": "Grafy",
             "htmlContent": "<h4>Grafy</h4><p>S&nbsp;nějakými grafy jste se již možná potkali, ale tento pojem je bohužel docela přetěžovaný. Jedním jeho významem jsou „koláčové grafy“ a&nbsp;jiné další diagramy znázorňující nějaký poměr (ať už to jsou výsledky voleb, nebo poměr lidí, kteří sledovali v&nbsp;televizi Večerníček).</p><p>Další význam můžeme nalézt v&nbsp;analytické matematice, kde se potkáme s&nbsp;grafy průběhu nějakých funkcí. My však nemáme na mysli ani jedno z&nbsp;výše zmíněných, teď se budeme bavit o&nbsp;<i>kombinatorických grafech</i>.</p><p>Grafem tedy máme na mysli nějakou množinu objektů, říkejme jim <i>vrcholy</i>, a&nbsp;nějaké vztahy mezi nimi. Tyto vztahy nazýváme <i>hranami</i> a&nbsp;jsou vyjádřené dvojicemi vrcholů, mezi kterými vedou. Ukázku takového grafu vidíme třeba na následujícím obrázku.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-3.png\" alt=\"Graf\"></figure><p>Jako praktickou ukázku grafu si můžeme například představit silniční síť nějakého státu: vrcholy budou města a&nbsp;hrany budou silnice, které mezi nimi vedou.</p><p>Občas se můžete setkat s&nbsp;pojmem <i>souvislý</i> graf. Ten znamená jen to, že mezi každými dvěma vrcholy existuje nějaká cesta. Pokud tomu tak není, je graf <i>nesouvislý</i> a&nbsp;dá se rozložit na několik menších grafů, které již souvislé jsou a&nbsp;říká se jim <i>komponenty souvislosti</i>.</p><p>Samotný graf poté můžeme doplnit tím, že si v&nbsp;každém vrcholu nebo na každé hraně budeme pamatovat nějakou hodnotu (například cenu nejlevnějšího benzínu ve městech a&nbsp;délku v&nbsp;kilometrech na silnicích). Pamatování si hodnot ve vrcholech je docela obvyklá technika a nemá speciální název, ale pokud budeme mít graf, který si pamatuje hodnoty na hranách, budeme o&nbsp;něm mluvit jako o&nbsp;<i>ohodnoceném grafu</i>.</p><p>Další možnou úpravou je, že každá hrana povede jen jedním směrem (jednosměrné silnice), takovým grafům říkáme <i>orientované</i> (pokud pak v&nbsp;orientovaném grafu chceme silnici oběma směry, prostě do něj přidáme dvě hrany, jednu v&nbsp;každém směru).</p><p>Poslední, co nám schází k&nbsp;praktickému použití grafů, je naučit se, jak je reprezentovat v&nbsp;počítači. Existuje několik možností (v popisech bude n značit počet vrcholů, m&nbsp;počet hran):</p><ul><li><strong>Seznam sousedů</strong>&nbsp;– vrcholy grafu budeme mít uložené v&nbsp;poli a&nbsp;u&nbsp;každého vrcholu budeme mít (spojový) seznam čísel dalších vrcholů, do kterých z&nbsp;aktuálního vrcholu vede hrana. Zabírá místo O(n+m) a&nbsp;hodí se pro řídké grafy (tedy grafy, kde je m&nbsp;řádově stejné jako&nbsp;n).</li><li><strong>Matice sousednosti</strong>&nbsp;– tabulka n×n, kde na souřadnicích [i,j] je jednička (nebo jiná hodnota, v&nbsp;případě ohodnoceného grafu), pokud z&nbsp;i do j vede hrana, a&nbsp;nula, pokud tam hrana není (u&nbsp;neorientovaných grafů je navíc matice symetrická&nbsp;– je jedno, jestli vezmeme [i,j] nebo [j,i]). Hodí se pro husté grafy, kde m~n2.</li><li><strong>Matice incidence</strong>&nbsp;– řádky reprezentují vrcholy, sloupce hrany. V&nbsp;každém sloupci jsou právě dvě jedničky&nbsp;– indexy vrcholů, mezi kterými hrana vede. Zabírá však O(mn) a její použití bývá dost neohrabané, takže je většinou lepší dát přednost jiné reprezentaci grafu. Je ale dobré o&nbsp;ní vědět.</li></ul><p>Grafy jsou velmi široké téma. Můžeme hledat jejich minimální kostry, můžeme v&nbsp;nich hledat nejkratší cesty či skrze ně pouštět pod tlakem vodu. Více o&nbsp;nich si tedy můžete přečíst v&nbsp;některé z&nbsp;našich specializovaných grafových kuchařek, které odkazujeme z&nbsp;našeho <a href=\"https://ksp.mff.cuni.cz/kucharky/\">kuchařkového rozcestníku</a>.</p>",
             "position": [
-                -853.4704818725586,
-                1209.9252662658691
+                -809.2669906616211,
+                1160.4436988830566
             ]
         },
         {
@@ -2353,10 +2365,10 @@
             "title": "Grafy",
             "rotationAngle": 342,
             "position": [
-                -1931.8012084960938,
-                21.015724182128906
+                -1025.697265625,
+                1579.5523328781128
             ],
-            "hidden": true
+            "hidden": false
         },
         {
             "id": "label-grafy-pracovni-poznamka",
@@ -2368,8 +2380,8 @@
             "title": "Grafy, ale neuspořádané",
             "htmlContent": "<p>undefined</p>",
             "position": [
-                -1968.723388671875,
-                166.26753997802734
+                -972.8342895507812,
+                1705.182228088379
             ],
             "hidden": true
         },
@@ -2381,10 +2393,10 @@
             "title": "Textové řetězce",
             "rotationAngle": 326,
             "position": [
-                -1087.5191802978516,
-                -1245.466796875
+                -392.4626007080078,
+                1300.9295349121094
             ],
-            "hidden": true
+            "hidden": false
         },
         {
             "id": "label-trizeni",
@@ -2433,6 +2445,18 @@
                 399.8365783691406
             ],
             "hidden": true
+        },
+        {
+            "id": "lbl-pokrocile-grafy",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Pokročilejší grafy",
+            "position": [
+                -969.0080337524414,
+                2068.4594764709473
+            ],
+            "hidden": false
         },
         {
             "id": "placeholder-kurz-programovani",
