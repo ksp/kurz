@@ -2186,7 +2186,7 @@
             "type": "text",
             "comment": "https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/",
             "requires": [
-                "kucharka-zakladni-knihovny"
+                "28-Z2-4"
             ],
             "title": "Grafy",
             "htmlContent": "<h4>Grafy</h4><p>S&nbsp;nějakými grafy jste se již možná potkali, ale tento pojem je bohužel docela přetěžovaný. Jedním jeho významem jsou „koláčové grafy“ a&nbsp;jiné další diagramy znázorňující nějaký poměr (ať už to jsou výsledky voleb, nebo poměr lidí, kteří sledovali v&nbsp;televizi Večerníček).</p><p>Další význam můžeme nalézt v&nbsp;analytické matematice, kde se potkáme s&nbsp;grafy průběhu nějakých funkcí. My však nemáme na mysli ani jedno z&nbsp;výše zmíněných, teď se budeme bavit o&nbsp;<i>kombinatorických grafech</i>.</p><p>Grafem tedy máme na mysli nějakou množinu objektů, říkejme jim <i>vrcholy</i>, a&nbsp;nějaké vztahy mezi nimi. Tyto vztahy nazýváme <i>hranami</i> a&nbsp;jsou vyjádřené dvojicemi vrcholů, mezi kterými vedou. Ukázku takového grafu vidíme třeba na následujícím obrázku.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-3.png\" alt=\"Graf\"></figure><p>Jako praktickou ukázku grafu si můžeme například představit silniční síť nějakého státu: vrcholy budou města a&nbsp;hrany budou silnice, které mezi nimi vedou.</p><p>Občas se můžete setkat s&nbsp;pojmem <i>souvislý</i> graf. Ten znamená jen to, že mezi každými dvěma vrcholy existuje nějaká cesta. Pokud tomu tak není, je graf <i>nesouvislý</i> a&nbsp;dá se rozložit na několik menších grafů, které již souvislé jsou a&nbsp;říká se jim <i>komponenty souvislosti</i>.</p><p>Samotný graf poté můžeme doplnit tím, že si v&nbsp;každém vrcholu nebo na každé hraně budeme pamatovat nějakou hodnotu (například cenu nejlevnějšího benzínu ve městech a&nbsp;délku v&nbsp;kilometrech na silnicích). Pamatování si hodnot ve vrcholech je docela obvyklá technika a nemá speciální název, ale pokud budeme mít graf, který si pamatuje hodnoty na hranách, budeme o&nbsp;něm mluvit jako o&nbsp;<i>ohodnoceném grafu</i>.</p><p>Další možnou úpravou je, že každá hrana povede jen jedním směrem (jednosměrné silnice), takovým grafům říkáme <i>orientované</i> (pokud pak v&nbsp;orientovaném grafu chceme silnici oběma směry, prostě do něj přidáme dvě hrany, jednu v&nbsp;každém směru).</p><p>Poslední, co nám schází k&nbsp;praktickému použití grafů, je naučit se, jak je reprezentovat v&nbsp;počítači. Existuje několik možností (v popisech bude n značit počet vrcholů, m&nbsp;počet hran):</p><ul><li><strong>Seznam sousedů</strong>&nbsp;– vrcholy grafu budeme mít uložené v&nbsp;poli a&nbsp;u&nbsp;každého vrcholu budeme mít (spojový) seznam čísel dalších vrcholů, do kterých z&nbsp;aktuálního vrcholu vede hrana. Zabírá místo O(n+m) a&nbsp;hodí se pro řídké grafy (tedy grafy, kde je m&nbsp;řádově stejné jako&nbsp;n).</li><li><strong>Matice sousednosti</strong>&nbsp;– tabulka n×n, kde na souřadnicích [i,j] je jednička (nebo jiná hodnota, v&nbsp;případě ohodnoceného grafu), pokud z&nbsp;i do j vede hrana, a&nbsp;nula, pokud tam hrana není (u&nbsp;neorientovaných grafů je navíc matice symetrická&nbsp;– je jedno, jestli vezmeme [i,j] nebo [j,i]). Hodí se pro husté grafy, kde m~n2.</li><li><strong>Matice incidence</strong>&nbsp;– řádky reprezentují vrcholy, sloupce hrany. V&nbsp;každém sloupci jsou právě dvě jedničky&nbsp;– indexy vrcholů, mezi kterými hrana vede. Zabírá však O(mn) a její použití bývá dost neohrabané, takže je většinou lepší dát přednost jiné reprezentaci grafu. Je ale dobré o&nbsp;ní vědět.</li></ul><p>Grafy jsou velmi široké téma. Můžeme hledat jejich minimální kostry, můžeme v&nbsp;nich hledat nejkratší cesty či skrze ně pouštět pod tlakem vodu. Více o&nbsp;nich si tedy můžete přečíst v&nbsp;některé z&nbsp;našich specializovaných grafových kuchařek, které odkazujeme z&nbsp;našeho <a href=\"https://ksp.mff.cuni.cz/kucharky/\">kuchařkového rozcestníku</a>.</p>",
@@ -2213,15 +2213,14 @@
             "id": "kucharka-zakladni-knihovny",
             "type": "text",
             "comment": "https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/",
-            "requires": [
-                "kucharka-zakladni-fronta-a-zasobnik"
-            ],
+            "requires": [],
             "title": "Knihovny",
             "htmlContent": "<h4>Knihovny</h4><p>Tyto základní struktury už jsou často předpřipravené jako součást určitých <i>knihoven</i> v&nbsp;daném jazyce. Knihovna je většinou sbírka nějakých navzájem souvisejících funkcí, které již někdo sepsal a&nbsp;které si můžeme do našeho programu načíst a&nbsp;používat. Ukázku načtení knihoven můžete vidět například ve výše zmíněném kódu v&nbsp;jazyce&nbsp;C.</p><p>Je ale velmi důležité rozumět tomu, jak knihovní funkce vnitřně fungují. Protože jedině když budeme vědět, co je jak rychlé a&nbsp;efektivní, budeme schopni psát rychlé programy.</p><p>Teď již víme, jak reprezentovat nejzákladnější datové struktury v&nbsp;počítači, ale mohlo by se nám hodit zastavit se ještě chvíli u&nbsp;dalších struktur. Tentokrát je už budeme studovat trochu teoretičtěji.</p>",
             "position": [
-                -844.5801773071289,
-                1164.7586097717285
-            ]
+                -573.0954666137695,
+                -921.101863861084
+            ],
+            "hidden": true
         },
         {
             "id": "kucharka-zakladni-pole",
