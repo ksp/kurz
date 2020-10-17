@@ -204,15 +204,18 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
   $: {
     if (hoveredTask != null) {
       const status = $taskStatuses.get(hoveredTask.id);
-      if (status == null) {
-        const id = hoveredTask.id;
-        grabAssignment(hoveredTask.id).then(e => {
-          if (hoveredTask && hoveredTask.id == id)
-            tooltipMaxPoints = e.points;
-        })
-      } else {
+      if (status) {
         tooltipMaxPoints = status.maxPoints;
         tooltipCurrPoints = status.points;
+      }
+      else if (hoveredTask.type == 'open-data') {
+        const id = hoveredTask.id;
+        grabAssignment(hoveredTask.taskReference).then(e => {
+          if (hoveredTask?.id == id) {
+            tooltipMaxPoints = e.points
+            resizeTooltipBox()
+          }
+        })
       }
       resizeTooltipBox();
     } else {
