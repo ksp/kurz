@@ -202,6 +202,8 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
     tooltipBoxHeight = bbox.height + 5 + 5;
   }
   $: {
+    tooltipMaxPoints = null;
+    tooltipCurrPoints = null;
     if (hoveredTask != null) {
       const status = $taskStatuses.get(hoveredTask.id);
       if (status) {
@@ -209,18 +211,9 @@ import TaskDetailEditor from "./TaskDetailEditor.svelte";
         tooltipCurrPoints = status.points;
       }
       else if (hoveredTask.type == 'open-data') {
-        const id = hoveredTask.id;
-        grabAssignment(hoveredTask.taskReference).then(e => {
-          if (hoveredTask?.id == id) {
-            tooltipMaxPoints = e.points
-            resizeTooltipBox()
-          }
-        })
+        tooltipMaxPoints = hoveredTask.points
       }
       resizeTooltipBox();
-    } else {
-      tooltipMaxPoints = null;
-      tooltipCurrPoints = null;
     }
   };
 </script>
