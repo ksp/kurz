@@ -6,8 +6,6 @@
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import { createEdges } from "./tasks";
   import { taskStatuses } from "./task-status-cache";
-import { grabAssignment } from "./ksp-task-grabber";
-import TaskDetailEditor from "./TaskDetailEditor.svelte";
 
   export let tasks: TasksFile;
   export let nodeDraggingEnabled: boolean = false;

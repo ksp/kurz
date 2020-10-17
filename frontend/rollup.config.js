@@ -5,13 +5,13 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
+import replace from '@rollup/plugin-replace'
 
 const production = !process.env.ROLLUP_WATCH;
 const halfProduction = production || !!process.env.HALF_PRODUCTION;
 
 function serve() {
 	let server;
-	
 	function toExit() {
 		if (server) server.kill(0);
 	}
@@ -30,33 +30,19 @@ function serve() {
 	};
 }
 
-export default {
-	input: 'src/main.ts',
-	output: {
-		sourcemap: true,
-		format: 'es',
-		name: 'app',
-		file: 'public/build/bundle.js'
-	},
-	plugins: [
-		// nodePolyfills(),
-		
+function plugins(editor) {
+	return [
 		svelte({
 			// enable run-time checks when not in production
 			dev: !halfProduction,
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
 			css: css => {
-				css.write('bundle.css');
+				css.write(editor ? 'editor.css' : 'bundle.css');
 			},
 			preprocess: sveltePreprocess(),
 		}),
 
-		// If you have external dependencies installed from
-		// npm, you'll most likely need these plugins. In
-		// some cases you'll need additional configuration -
-		// consult the documentation for details:
-		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
 			dedupe: ['svelte']
@@ -66,20 +52,42 @@ export default {
 			sourceMap: !halfProduction,
 			inlineSources: !halfProduction
 		}),
+		replace({
+			"allowEditor": false,
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
-		!production && serve(),
+		!production && !editor && serve(),
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!halfProduction && livereload('public'),
+		!halfProduction && !editor && livereload('public'),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
-		halfProduction && terser()
-	],
+		// halfProduction && terser()
+	]
+}
+
+export default [{
+	input: 'src/main.ts',
+	output: {
+		sourcemap: !halfProduction,
+		format: 'es',
+		file: 'public/build/bundle.js'
+	},
+	plugins: plugins(false),
 	watch: {
 		clearScreen: false
 	}
-};
+},
+{
+	input: 'src/editor-main.ts',
+	output: {
+		sourcemap: !halfProduction,
+		format: 'es',
+		file: 'public/build/editor.js'
+	},
+	plugins: plugins(true)
+}];

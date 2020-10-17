@@ -3,7 +3,8 @@
   "compilerOptions": {
     // "target": "ES2019"
     "strict": true,
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "module": "esnext"
   },
 
   "include": ["src/**/*"],
