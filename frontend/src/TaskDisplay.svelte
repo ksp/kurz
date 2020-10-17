@@ -50,6 +50,11 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
         text-align: right;
         font-style: italic;
     }
+    /* Workaround: ksp.css is reseting the default style for ol and ul tags */
+    div :global(ul), div :global(ol) {
+        list-style: initial;
+        margin-left: 2em;
+    }
 </style>
 
 <div>
