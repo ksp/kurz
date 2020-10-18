@@ -98,7 +98,7 @@ import { taskStatuses } from "./task-status-cache";
 
     <hr>
 
-    <a href="javascript:;" on:click={close}>Zavřít</a>
+    <a href="javascript:;" on:click|stopPropagation|preventDefault={close}>Zavřít</a>
     {#if nextTasks.length}
         <span class="splitter">|</span> Pokračování:
         {#each nextTasks as nextT}
