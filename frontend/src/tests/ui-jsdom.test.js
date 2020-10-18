@@ -5,7 +5,7 @@ const TaskPanel = require('../TaskPanel.svelte').default
 
 const node_fetch = require('node-fetch')
 
-const delay = (time=5) => new Promise((resolve) => window.setTimeout(resolve, time))
+const delay = (time=10) => new Promise((resolve) => window.setTimeout(resolve, time))
 const allPromises = []
 
 global.fetch = function(url, init) {
