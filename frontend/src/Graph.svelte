@@ -202,13 +202,11 @@
   let tooltipCurrPoints: number | null = null;
   $: tooltipTextPos = hoveredTask != null ? [(hoveredTask.position ?? [0,0])[0], (hoveredTask.position ?? [0,0])[1] + 40] : [0,0];
   let tooltipBoxWidth = 0;
-  let tooltipBoxHeight = 0;
   async function resizeTooltipBox() {
     await tick();
     if (tooltipTextElement == null) return;
     const bbox = tooltipTextElement.getBBox()
     tooltipBoxWidth = bbox.width + 10 + 10;
-    tooltipBoxHeight = bbox.height + 5 + 5;
   }
   $: {
     tooltipMaxPoints = null;
@@ -338,15 +336,16 @@
             x={tooltipTextPos[0]}
             y={tooltipTextPos[1] - 15}
             width={tooltipBoxWidth}
-            height={tooltipBoxHeight}
+            height={30}
             rx="3">
           </rect>
           <text
               bind:this={tooltipTextElement}
               x={tooltipTextPos[0] + tooltipBoxWidth / 2}
-              y={tooltipTextPos[1] + 4}
+              y={tooltipTextPos[1]}
               text-anchor="middle"
-              alignment-baseline="middle">
+              alignment-baseline="middle"
+              dominant-baseline="middle">
               {hoveredTask.type == 'open-data' ? hoveredTask.taskReference : "text"} | {tooltipCurrPoints ?? '?'} bod{ "ů yyy"[tooltipCurrPoints ?? 0] ?? "ů" } z {tooltipMaxPoints ?? '?'}
             </text>
         </g>

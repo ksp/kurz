@@ -112,9 +112,10 @@
     <text
       bind:this={text_element}
       x={cx}
-      y={cy + 5}
+      y={cy}
       text-anchor="middle"
       alignment-baseline="middle"
+      dominant-baseline="middle"
       transform="translate({cx}, {cy}) rotate({task.rotationAngle ?? 0}) translate({-cx}, {-cy})">
       {task.title == null ? task.id : task.title}
     </text>
@@ -133,8 +134,9 @@
     <text
       bind:this={text_element}
       x={cx}
-      y={cy + 5}
+      y={cy}
       text-anchor="middle"
+      dominant-baseline="middle"
       alignment-baseline="middle">
       {task.title == null ? task.id : task.title}
     </text>
