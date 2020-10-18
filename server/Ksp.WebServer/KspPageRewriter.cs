@@ -40,6 +40,8 @@ namespace Ksp.WebServer
                 encyklopedie.SetAttribute("href", "/grafik");
                 if ("grafik" == path)
                 {
+                    foreach (var li in document.QuerySelectorAll("#menu ul li.active"))
+                        li.ClassList.Remove("active");
                     encyklopedie.ParentElement.ClassList.Add("active");
                 }
             }
