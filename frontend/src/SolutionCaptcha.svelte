@@ -14,5 +14,5 @@
 
 <div>
     <p>Úlohu zatím nemáš vyřešenou, opravdu si chceš vyzradit řešení?</p>
-    {a} + {b} = <input type=text pattern="[0-9]+" on:input={e => newValue(+e.currentTarget.value)}>
+    {a} + {b} = <input type=text pattern="[0-9]*" on:input={e => newValue(+e.currentTarget.value)}>
 </div>
