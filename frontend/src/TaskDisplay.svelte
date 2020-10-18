@@ -98,7 +98,7 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
 
         <div class="solution">
             {#if !showSolution}
-            <a href="javasctipt:;"
+            <a href="javascript:;"
                on:click|preventDefault|stopPropagation={() => showSolution = true}>
                 Zobrazit řešení úlohy
             </a>
