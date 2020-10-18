@@ -9,6 +9,7 @@ Veřejné preview je dostupné na adrese https://ksp.vsq.cz/grafik. Automaticky 
 
 ```
 cd frontend/
+yarn install
 yarn dev
 ```
 
