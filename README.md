@@ -28,6 +28,7 @@ Vývojový server je magická proxy napsaná v ASP.NET Core. Na produkci není p
 * vrátit /tasks.json
 * vrátit /grafik v té KSP template (je to html obsahující jeden `div`, `link` a `script`)
 * soubory z frontend/public/ (stačí ten JavaScript a CSS)
+* linky na kurzy z menu (nebo nějak)
 
 Zároveň by se pro provoz webové aplikace hodilo přidat tato API. Aktuálně data získáváme všelijakými hacky:
 
