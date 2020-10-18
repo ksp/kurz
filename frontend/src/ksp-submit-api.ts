@@ -12,9 +12,9 @@ async function getToken(): Promise<string | undefined> {
         return apitoken = token;
     }
     const form = doc.getElementById("apitoken") as HTMLFormElement
-    const op = form.elements.namedItem("op")!.value
-    const submit = form.elements.namedItem("submit")!.value
-    const csrfToken = form.elements.namedItem("_token")!.value
+    const op = (form.elements.namedItem("op") as HTMLInputElement).value
+    const submit = (form.elements.namedItem("submit") as HTMLInputElement).value
+    const csrfToken = (form.elements.namedItem("_token") as HTMLInputElement).value
     const body = `op=${encodeURIComponent(op)}&submit=${encodeURIComponent(submit)}&_token=${encodeURIComponent(csrfToken)}`
     console.log(`Creating new API token`)
     await fetch("/auth/apitoken.cgi", { method: "POST", body, headers: [["Content-Type", "application/x-www-form-urlencoded"]], redirect: "manual" })

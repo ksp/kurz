@@ -1,9 +1,12 @@
 module.exports = {
     transform: {
         '^.+\\.ts?$': 'ts-jest',
-        '^.+\\.svelte$': 'svelte-jester',
+        '^.+\\.svelte$': [
+            'svelte-jester',
+            { "preprocess": true }
+        ]
     },
     testEnvironment: 'jsdom',
-    testRegex: '.*\\.test?\\.ts$',
+    testRegex: '.*\\.test?\\.[tj]s$',
     moduleFileExtensions: ['ts', 'js', 'svelte']
 };

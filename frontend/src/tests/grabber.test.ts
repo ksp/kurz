@@ -2,7 +2,6 @@ import * as g from '../ksp-task-grabber'
 import { readFileSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 import type { TaskDescriptor, TasksFile } from '../tasks';
-import { action_destroyer } from 'svelte/internal';
 
 const node_fetch: any = require('node-fetch')
 
