@@ -160,8 +160,11 @@ function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
         const pointsStr = r.cells[4].textContent!.trim()
         const pointsMatch = /((–|\.|\d)+) *\/ *(\d+)/.exec(pointsStr)
         if (!pointsMatch) throw new Error()
-        const points = +pointsMatch[1]
-        const maxPoints = +pointsMatch[2]
+        let points = +pointsMatch[2]
+        if (isNaN(points)) {
+            points = 0
+        }
+        const maxPoints = +pointsMatch[3]
         const solved = r.classList.contains("zs-submitted")
         return { id, name, submitted, type, points, maxPoints, solved }
     })
