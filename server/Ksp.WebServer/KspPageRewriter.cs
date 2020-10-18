@@ -16,7 +16,7 @@ namespace Ksp.WebServer
             ModifyTree(document, context.Request.Path.Value.Trim('/'));
 
             var outputHtml = new StringWriter();
-            document.ToHtml(outputHtml, new PrettyMarkupFormatter() { Indentation = "\t", NewLine = "\n" });
+            document.ToHtml(outputHtml, new HtmlMarkupFormatter());
             return outputHtml.ToString();
         }
 
