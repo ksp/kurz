@@ -48,7 +48,6 @@ import { taskStatuses } from "./task-status-cache";
         box-sizing: border-box;
         z-index: 120;
         border-radius: 30px;
-        font-size: 1.1rem;
         text-align: left;
     }
     @media only screen and (max-width: 600px) {
