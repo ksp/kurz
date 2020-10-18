@@ -5,14 +5,17 @@
     import App from "./App.svelte";
     import { taskStatuses } from "./task-status-cache";
     import type { TaskDescriptor } from "./tasks";
-import Odevzdavatko from "./Odevzdavatko.svelte";
+    import Odevzdavatko from "./Odevzdavatko.svelte";
+    import SolutionCaptcha from "./SolutionCaptcha.svelte";
 
     export let task: TaskDescriptor | null | undefined
 
+    let wantsSolution = false
     export let showSolution: boolean = false
     $: {
         task
         showSolution = false
+        wantsSolution = false
     }
 
     let referenceId: string | null
@@ -32,6 +35,14 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
     }
     updateLoginUrl()
     window.addEventListener("onhashchange", updateLoginUrl)
+
+    function maybeShowSolution() {
+        if (status && status.points > status.maxPoints - 0.01) {
+            showSolution = true
+        } else {
+            wantsSolution = true
+        }
+    }
 
 </script>
 <style>
@@ -97,18 +108,21 @@ import Odevzdavatko from "./Odevzdavatko.svelte";
         <hr class="clearfloat" />
 
         <div class="solution">
-            {#if !showSolution}
+            {#if showSolution}
+
+                <h4>Řešení</h4>
+                {#await grabSolution(nonNull(referenceId))}
+                    Načítám...
+                {:then solution}
+                    {@html solution.description}
+                {/await}
+            {:else if wantsSolution}
+                <SolutionCaptcha on:done={() => showSolution = true} />
+            {:else}
             <a href="javascript:;"
-               on:click|preventDefault|stopPropagation={() => showSolution = true}>
+               on:click|preventDefault|stopPropagation={maybeShowSolution}>
                 Zobrazit řešení úlohy
             </a>
-            {:else}
-            <h4>Řešení</h4>
-            {#await grabSolution(nonNull(referenceId))}
-                Načítám...
-            {:then solution}
-                {@html solution.description}
-            {/await}
             {/if}
         </div>
 
