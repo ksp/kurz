@@ -160,7 +160,7 @@ function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
         const pointsStr = r.cells[4].textContent!.trim()
         const pointsMatch = /((–|\.|\d)+) *\/ *(\d+)/.exec(pointsStr)
         if (!pointsMatch) throw new Error()
-        let points = +pointsMatch[2]
+        let points = +pointsMatch[1]
         // points was a dash, means 0
         if (isNaN(points)) {
             points = 0
