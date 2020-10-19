@@ -4,17 +4,19 @@
     import type { TaskSubmitStatus, SubtaskSubmitStatus } from './ksp-submit-api'
     import * as api from './ksp-submit-api'
     import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
+    import * as s from 'svelte'
 
     export let id: string;
     const taskFromCache: TaskStatus | undefined = $taskStatuses.get(id)
     let task: TaskSubmitStatus
-    let subtaskId: string | null | undefined = null
+    let subtaskId: string = "1"
     let uploadSubtaskId: string | null | undefined = null
     let expiresInSec: number = 0
-    let tick = 0
+    let tick = 1
     let validSubmitSubtasks: SubtaskSubmitStatus[] = []
     let downloading = false
     let generating = false
+    let downloadedSubtasks = new Set<string>()
 
     $: {
         if (task && task.id == "cviciste/" + id) {
@@ -33,21 +35,15 @@
         }
         subtaskId = "1"
 
-        api.taskStatus(id)
-           .then(t => {
-               task = t
-           })
-    }
+        updateTaskStatus()
 
-    $: {
-        if (!task.subtasks.find(t => t.id == subtaskId))
-            subtaskId = task.subtasks.find(t => t.points < t.max_points - 0.001)?.id
+        downloadedSubtasks.clear()
     }
 
     $: {
         tick
         task
-        expiresInSec = subtaskId ? calcExpires(subtaskId) : 0
+        expiresInSec = uploadSubtaskId ? calcExpires(uploadSubtaskId) : 0
     }
     window.setInterval(() => { tick++ }, 1000)
 
@@ -57,13 +53,40 @@
     }
     $: {
         if (!validSubmitSubtasks.map(t => t.id).includes(uploadSubtaskId!)) {
-            uploadSubtaskId = validSubmitSubtasks[0]?.id
+            uploadSubtaskId = validSubmitSubtasks.find(t => !isDone(t))?.id ?? validSubmitSubtasks[0]?.id
+        }
+    }
+
+    function updateTaskStatus() {
+        api.taskStatus(id)
+           .then(t => {
+               task = t
+               updateCurrentDownloadTask()
+           })
+    }
+
+    function updateCurrentDownloadTask() {
+        // update the default task for download
+        // prefer not-downloaded not-done.
+        const newSubtaskId =
+            task.subtasks.find(t => !isDone(t) && !downloadedSubtasks.has(t.id))?.id
+        if (newSubtaskId) {
+            subtaskId = newSubtaskId
+        }
+    }
+
+    function updateCurrentUploadTask() {
+        // update the default task for upload
+        const newSubtaskId =
+            validSubmitSubtasks.find(t => !isDone(t))?.id
+        if (newSubtaskId) {
+            uploadSubtaskId = newSubtaskId
         }
     }
 
     function calcExpires(subtask: string): number {
-        const st = task.subtasks.find(t => t.id == subtask)!
-        if (!st.input_generated) {
+        const st = task.subtasks.find(t => t.id == subtask)
+        if (!st || !st.input_generated) {
             return 0
         }
         const validUntil = new Date(st.input_valid_until!).valueOf()
@@ -75,7 +98,11 @@
         }
     }
 
-    function nameSubtask(id: string) {
+    function isDone(subtask: SubtaskSubmitStatus) {
+        return subtask.points > subtask.max_points - 0.0001
+    }
+
+    function nameSubtask(subtask: SubtaskSubmitStatus) {
         const map: any = {
             "1": "první",
             "2": "druhý",
@@ -88,7 +115,8 @@
             "9": "devátý",
             "10": "desátý"
         }
-        return map[id] ?? id
+        const check = isDone(subtask) ? " ✔️" : ""
+        return (map[subtask.id] ?? subtask.id) + check
     }
 
     function magicTrickSaveBlob(blob: Blob, fileName: string) {
@@ -110,7 +138,7 @@
         // copy to prevent races
         const [id_, subtaskId_] = [id, subtaskId]
         if (!subtaskId_) { return }
-        if (expiresInSec < 20) {
+        if (calcExpires(subtaskId_) < 20) {
             const x = await api.generateInput(id_, subtaskId_)
             if (id_ != id) { return }
             const subtasks = [...task.subtasks]
@@ -122,6 +150,13 @@
 
         const parsedId = parseTaskId(id_)
         magicTrickSaveFile(`/cviciste/?in=1:sub=${subtaskId}:task=${id_}:year=${parsedId!.rocnik}`, subtaskId_ + ".in.txt")
+        downloadedSubtasks.add(subtaskId_)
+        updateCurrentDownloadTask()
+
+        // if we have a solved task selected, select the downloaded task for upload
+        if (!uploadSubtaskId || isDone(task.subtasks.find(t => t.id == uploadSubtaskId)!)) {
+            uploadSubtaskId = subtaskId_
+        }
 
         // const blob = await api.getInput(id_, subtaskId_)
         // magicTrickSaveBlob(blob, subtaskId_ + ".in.txt")
@@ -130,7 +165,12 @@
     async function upload(file: File) {
         const x = await api.submit(id, uploadSubtaskId!, file)
         refreshTaskStatus([id])
+        const subtasks = [...task.subtasks]
+        subtasks[subtasks.findIndex(s => s.id == x.id)] = x
+        task = { ...task, subtasks }
         alert(x.verdict)
+        await s.tick() // wait for update of validSubmitSubtasks
+        updateCurrentUploadTask()
     }
 
     function fileChange(ev: Event) {
@@ -163,12 +203,12 @@
     <div class="download">
         <button class="download"
                 on:click={download}
-                disabled={subtaskId == null || downloading || generating}>
+                disabled={downloading || generating}>
             {#if generating}
                 Generuji...
             {:else if downloading}
                 Stahuji...
-            {:else if expiresInSec > 20}
+            {:else if tick && calcExpires(subtaskId) > 20}
                 Stáhnout
             {:else}
                 Vygenerovat a stáhnout
@@ -178,10 +218,7 @@
             <option value={null}></option>
             {#each task.subtasks as subtask}
                 <option value={subtask.id}>
-                    {nameSubtask(subtask.id)}
-                    {#if subtask.points > subtask.max_points - 0.0001}
-                        <span title="Splněno">✔️</span>
-                    {/if}
+                    {nameSubtask(subtask)}
                 </option>
             {/each}
         </select>
@@ -191,10 +228,10 @@
     {#if validSubmitSubtasks.length > 0}
     <div class="upload">
         Odevzdat
-        <select value={uploadSubtaskId}>
+        <select bind:value={uploadSubtaskId}>
             {#each validSubmitSubtasks as subtask}
                 <option value={subtask.id}>
-                    {nameSubtask(subtask.id)}
+                    {nameSubtask(subtask)}
                 </option>
             {/each}
         </select>
