@@ -256,7 +256,7 @@
   }
 
   .tooltip rect {
-    stroke: #ffb3a2;
+    stroke: #daca20;
     stroke-width: 2px;
     fill: #000000bb;
   }

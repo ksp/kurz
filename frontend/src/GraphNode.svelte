@@ -74,17 +74,26 @@
     fill: transparent;
     stroke: transparent;
   }
-  g:hover > .taskNode {
-    fill: #ffb3a2;
-  }
-  .taskNode {
-    fill: #69b3a2;
-  }
+
+ 
   .submitted .taskNode {
-    fill: red; /* TODO */
+    fill: #da8820; /* TODO */
+  }
+  g:hover.submitted > .taskNode {
+    fill: #ad6000;
   }
   .solved .taskNode {
-    fill: green; /* TODO */
+    fill: #58BF1C; /* TODO */
+  }
+  g:hover.solved > .taskNode {
+    fill: #389700;
+  }
+
+  .taskNode {
+    fill: #daca20;
+  }
+  g:hover > .taskNode {
+    fill: #ad9e00;
   }
 
   .selected > ellipse,
