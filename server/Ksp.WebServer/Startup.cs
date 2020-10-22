@@ -47,6 +47,7 @@ namespace Ksp.WebServer
             services.AddProxies();
             services.Configure<KspProxyConfig>(Configuration.GetSection(nameof(KspProxyConfig)));
             services.AddSingleton<KspPageRewriter>();
+            services.AddSingleton<KspAuthenticator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

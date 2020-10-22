@@ -16,32 +16,56 @@ namespace Ksp.WebServer.Controllers
     {
         private readonly ILogger<TasksController> logger;
         private readonly IWebHostEnvironment env;
+        private readonly KspAuthenticator auth;
 
-        public TasksController(ILogger<TasksController> logger, IWebHostEnvironment env)
+        public TasksController(ILogger<TasksController> logger, IWebHostEnvironment env, KspAuthenticator auth)
         {
+            this.auth = auth;
             this.env = env;
             this.logger = logger;
         }
 
-        string TasksJsonFile => Path.Combine(env.ContentRootPath, "../../tasks.json");
+        string TasksJsonFile(string suffix) => Path.Combine(env.ContentRootPath, $"../../tasks{suffix}.json");
+
+        string KspAuthCookie => this.HttpContext.Request.Cookies["ksp_auth"];
 
         [HttpGet]
         public IActionResult Get()
         {
-            return this.PhysicalFile(TasksJsonFile, "text/json");
+            string file = null;
+            if (KspAuthCookie is object)
+            {
+                var user = KspAuthenticator.ParseAuthCookie(KspAuthCookie);
+                file = TasksJsonFile("-" + user.Id.Value);
+                if (!System.IO.File.Exists(file))
+                    file = null;
+            }
+
+            file ??= TasksJsonFile("");
+
+            return this.PhysicalFile(TasksJsonFile(""), "text/json");
         }
 
         [HttpPost]
         public async Task<IActionResult> Post()
         {
-            // Saving in production is now enabled in order to allow people from the outside
-            // to modify tasks.json using the editor.
-            // if (env.IsProduction())
-            //    return this.Forbid();
+            string suffix;
+            if (env.IsDevelopment())
+            {
+                suffix = "";
+            }
+            else
+            {
+                if (KspAuthCookie is null)
+                    return StatusCode(401);
+                var user = await auth.VerifyUser(KspAuthCookie);
+                if (user == null)
+                    return StatusCode(403);
+                suffix = "-" + user.Id.Value;
+            }
 
-            // TODO: auth org
             using var rdr = new StreamReader(HttpContext.Request.Body);
-            await System.IO.File.WriteAllTextAsync(TasksJsonFile, await rdr.ReadToEndAsync());
+            await System.IO.File.WriteAllTextAsync(TasksJsonFile(suffix), await rdr.ReadToEndAsync());
             return Ok();
         }
     }
