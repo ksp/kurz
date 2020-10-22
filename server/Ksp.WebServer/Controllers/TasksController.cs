@@ -34,8 +34,10 @@ namespace Ksp.WebServer.Controllers
         [HttpPost]
         public async Task<IActionResult> Post()
         {
-            if (env.IsProduction())
-                return this.Forbid();
+            // Saving in production is now enabled in order to allow people from the outside
+            // to modify tasks.json using the editor.
+            // if (env.IsProduction())
+            //    return this.Forbid();
 
             // TODO: auth org
             using var rdr = new StreamReader(HttpContext.Request.Body);
