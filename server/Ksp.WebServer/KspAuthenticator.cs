@@ -49,7 +49,7 @@ namespace Ksp.WebServer
                 rq.Headers.Authorization =
                     AuthenticationHeaderValue.Parse(kspProxyConfig.Authorization);
             var rs = await c.SendAsync(rq);
-            logger.LogInformation("Verification request for response {code}", rs.StatusCode);
+            logger.LogInformation("Verification response {code}", rs.StatusCode);
             if (rs.StatusCode != HttpStatusCode.OK)
                 return null;
             var response = await rs.Content.ReadAsStringAsync();
@@ -68,8 +68,10 @@ namespace Ksp.WebServer
             var showName = (form?.QuerySelector("input#showname") as IHtmlInputElement)?.Value;
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(showName))
             {
+                logger.LogWarning("User {uid} verification failed: email={email}, userName={userName}, name={name}", parsedCookie.Id.Value, email, userName, showName);
                 return null;
             }
+            logger.LogWarning("User {uid} verified: email={email}, userName={userName}, name={name}", parsedCookie.Id.Value, email, userName, showName);
             return new VerifiedUserInfo(
                 parsedCookie.Id,
                 showName,
