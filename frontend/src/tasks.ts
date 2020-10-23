@@ -74,7 +74,18 @@ export async function saveTasks(tasks: TasksFile) {
         }
     }
 
-    await fetch("/tasks.json", options)
+    const result = await fetch("/tasks.json", options)
+    if (result.status != 200) throw `Failed to save tasks.json. ${result.status} ${result.statusText}`
+}
+
+export async function resetTasks() {
+    // request options
+    const options = {
+        method: 'DELETE',
+    }
+
+    const result = await fetch("/tasks.json", options)
+    if (result.status != 200) throw `Failed to reset tasks.json. ${result.status} ${result.statusText}`
 }
 
 export function createTaskMap(tasks: TasksFile): TaskMap {

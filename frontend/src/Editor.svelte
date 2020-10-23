@@ -4,7 +4,7 @@
   import Graph from "./Graph.svelte";
   import { nonNull, saveToLocalDisk } from "./helpers";
   import type { TaskDescriptor, TasksFile } from "./tasks";
-  import { saveTasks, getCategories, tasksToString } from "./tasks";
+  import { resetTasks, saveTasks, getCategories, tasksToString } from "./tasks";
   import TaskDisplay from "./TaskDisplay.svelte";
   import TaskDetailEditor from "./TaskDetailEditor.svelte";
   import { forceSimulation } from "./force-simulation";
@@ -64,7 +64,15 @@
   }
 
   async function saveCurrentState() {
-    await saveTasks(tasks);
+    await saveTasks(tasks).catch((val) => {
+      alert(val);
+    });
+  }
+
+  async function resetCurrentState() {
+    await resetTasks().catch((val) => {
+      alert(val);
+    });
   }
 
   // autosave ;)
@@ -356,14 +364,15 @@
       <h3>Toolbox</h3>
       <div>
         <button on:click={saveCurrentState}>Uložit aktuální stav</button>
-        <button on:click={saveLocally}>Stáhnout data</button>
+        <button on:click={resetCurrentState}>Resetovat aktuální stav</button>
       </div>
+      <button on:click={saveLocally}>Stáhnout data lokálně</button>
       <div class="gap" />
       <div>
         <button on:click={addTask}>Nový node</button>
         <button
           disabled={clicked.length == 0}
-          on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit {clicked[clicked.length - 1] ?? '???'}</button>
+          on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit "{clicked[clicked.length - 1] ?? '???'}"</button>
       </div>
       <div class="gap" />
       <div>
