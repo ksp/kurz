@@ -4,7 +4,7 @@
   import Graph from "./Graph.svelte";
   import { nonNull, saveToLocalDisk } from "./helpers";
   import type { TaskDescriptor, TasksFile } from "./tasks";
-  import { resetTasks, saveTasks, getCategories, tasksToString } from "./tasks";
+  import { loadTasks, resetTasks, saveTasks, getCategories, tasksToString } from "./tasks";
   import TaskDisplay from "./TaskDisplay.svelte";
   import TaskDetailEditor from "./TaskDetailEditor.svelte";
   import { forceSimulation } from "./force-simulation";
@@ -72,7 +72,8 @@
   async function resetCurrentState() {
     await resetTasks().catch((val) => {
       alert(val);
-    });
+    })
+    tasks = await loadTasks();
   }
 
   // autosave ;)
