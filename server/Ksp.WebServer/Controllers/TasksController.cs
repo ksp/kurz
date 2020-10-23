@@ -68,5 +68,24 @@ namespace Ksp.WebServer.Controllers
             await System.IO.File.WriteAllTextAsync(TasksJsonFile(suffix), await rdr.ReadToEndAsync());
             return Ok();
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete()
+        {
+            if (env.IsDevelopment())
+            {
+                return BadRequest();
+            }
+            else
+            {
+                if (KspAuthCookie is null)
+                    return StatusCode(401);
+                var user = await auth.VerifyUser(KspAuthCookie);
+                if (user == null)
+                    return StatusCode(403);
+                System.IO.File.Delete(TasksJsonFile("-" + user.Id.Value));
+                return Ok();
+            }
+        }
     }
 }
