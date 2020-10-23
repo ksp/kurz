@@ -38,7 +38,6 @@ namespace Ksp.WebServer
 
         async Task<IHtmlDocument> FetchPage(string url, string authCookie)
         {
-            Console.WriteLine($"AuthCookie={authCookie}");
             var cookies = new CookieContainer();
             cookies.Add(new Uri(kspProxyConfig.Host), new Cookie("ksp_auth", Uri.EscapeDataString(authCookie)));
             var c = new HttpClient(new HttpClientHandler { CookieContainer = cookies });
