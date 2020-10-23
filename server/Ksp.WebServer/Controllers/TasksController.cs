@@ -43,7 +43,7 @@ namespace Ksp.WebServer.Controllers
 
             file ??= TasksJsonFile("");
 
-            return this.PhysicalFile(TasksJsonFile(""), "text/json");
+            return this.PhysicalFile(file, "text/json");
         }
 
         [HttpPost]
