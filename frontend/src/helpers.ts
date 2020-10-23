@@ -6,6 +6,10 @@ export function copyFieldsThatExist(dest: any, source: any) {
     }
 }
 
+export function isEditableElement(e: Element | null | undefined) {
+    return !!(e && ((e as HTMLElement).isContentEditable || e.tagName == "INPUT" || e.tagName == "TEXTAREA" || e.tagName == "SELECT"))
+}
+
 export function saveToLocalDisk(filename: string, text: string) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));

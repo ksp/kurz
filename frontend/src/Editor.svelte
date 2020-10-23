@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
 
   import Graph from "./Graph.svelte";
-  import { nonNull, saveToLocalDisk } from "./helpers";
+  import { isEditableElement, nonNull, saveToLocalDisk } from "./helpers";
   import type { TaskDescriptor, TasksFile } from "./tasks";
   import { loadTasks, resetTasks, saveTasks, getCategories, tasksToString } from "./tasks";
   import TaskDisplay from "./TaskDisplay.svelte";
@@ -240,6 +240,28 @@
     }
     tasks = tasks;
   }
+
+  function keydown(e: KeyboardEvent) {
+    if (isEditableElement(document.activeElement)) {
+      // another element has focus - ignore our shortcuts
+      return
+    }
+    const shortcuts = {
+      "z": showSelection,
+      "s": hideSelection,
+      "o": () => removeTask(clicked[clicked.length - 1]),
+      "n": addTask,
+      "h": addEdge,
+      "<Ctrl>s": saveCurrentState,
+      "r": () => { showHiddenEdges = !showHiddenEdges },
+    } as { [name: string]: () => void }
+    const keyCode = (e.ctrlKey ? "<Ctrl>" : "") + (e.shiftKey ? "<Shift>" : "") + e.key
+    if (shortcuts[keyCode]) {
+      shortcuts[keyCode]()
+      e.stopPropagation()
+      e.preventDefault()
+    }
+  }
 </script>
 
 <style>
@@ -341,6 +363,8 @@
   }
 </style>
 
+<svelte:window on:keydown={e => keydown(e)} />
+
 <Graph
   {tasks}
   selectionToolEnabled={true}
@@ -364,24 +388,24 @@
     <div class="toolbox">
       <h3>Toolbox</h3>
       <div>
-        <button on:click={saveCurrentState}>Uložit aktuální stav</button>
+        <button on:click={saveCurrentState}>Uložit aktuální stav [C+S]</button>
         <button on:click={resetCurrentState}>Resetovat aktuální stav</button>
       </div>
       <button on:click={saveLocally}>Stáhnout data lokálně</button>
       <div class="gap" />
       <div>
-        <button on:click={addTask}>Nový node</button>
+        <button on:click={addTask}>[N]ový node</button>
         <button
           disabled={clicked.length == 0}
-          on:click={() => removeTask(clicked[clicked.length - 1])}>Odstranit "{clicked[clicked.length - 1] ?? '???'}"</button>
+          on:click={() => removeTask(clicked[clicked.length - 1])}>[O]dstranit {clicked[clicked.length - 1] ?? '???'}</button>
       </div>
       <div class="gap" />
       <div>
-        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat hranu {clicked[clicked.length - 2] ?? '???'}
+        <button disabled={clicked.length <= 1} on:click={addEdge}>Přidat [h]ranu {clicked[clicked.length - 2] ?? '???'}
           -&gt; {clicked[clicked.length - 1] ?? '???'}</button>
         <div class="checkbox">
           <label>
-            <input type="checkbox" bind:checked={showHiddenEdges} /> Zobrazit skryté
+            <input type="checkbox" bind:checked={showHiddenEdges} /> Zob[r]azit skryté
             hrany
           </label>
         </div>
@@ -420,8 +444,8 @@
         </button>
       </div>
       <div>
-        <button on:click={hideSelection}>Skrýt výběr</button>
-        <button on:click={showSelection}>Zobrazit výběr</button>
+        <button on:click={hideSelection}>[S]krýt výběr</button>
+        <button on:click={showSelection}>[Z]obrazit výběr</button>
       </div>
     </div>
 
