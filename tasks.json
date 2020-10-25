@@ -279,8 +279,8 @@
             "taskReference": "27-3-5",
             "requires": [],
             "position": [
-                1110.0876388549805,
-                1190.2755918502808
+                -1834.666145324707,
+                -733.8038759231567
             ],
             "title": "Komprese obrazu",
             "hidden": true,
@@ -466,14 +466,17 @@
             "type": "open-data",
             "id": "27-Z3-4",
             "taskReference": "27-Z3-4",
-            "requires": [],
+            "requires": [
+                "30-Z2-2"
+            ],
             "position": [
-                1557.155632019043,
-                1168.5684385299683
+                -1323.016975402832,
+                -704.395977973938
             ],
             "title": "Robo Rally",
             "hidden": true,
-            "points": 12
+            "points": 12,
+            "comment": "Navazuje na 30-Z2-2, jediný rozdíl je v otáčení a pohybu vpřed oproti pohybu do čtyř směrů"
         },
         {
             "type": "open-data",
@@ -495,8 +498,8 @@
             "taskReference": "27-Z4-2",
             "requires": [],
             "position": [
-                1028.155632019043,
-                1032.5684385299683
+                -1739.9302444458008,
+                -835.0557069778442
             ],
             "title": "Unavení u oken",
             "hidden": true,
@@ -1302,8 +1305,8 @@
             "comment": "Chození po souřadnicích, detekce kolizí",
             "requires": [],
             "position": [
-                513.1159057617188,
-                -111.86053466796875
+                -1363.7678833007812,
+                -770.5065765380859
             ],
             "hidden": true,
             "points": 10
@@ -1747,8 +1750,8 @@
             "taskReference": "31-Z4-4",
             "requires": [],
             "position": [
-                1499.911958694458,
-                901.5865573883057
+                -1727.5051555633545,
+                -771.7367458343506
             ],
             "title": "Ohnivý únik",
             "hidden": true,
@@ -1877,8 +1880,8 @@
             "taskReference": "32-Z1-4",
             "requires": [],
             "position": [
-                959.155632019043,
-                1308.5684385299683
+                -1980.3903579711914,
+                -747.920407295227
             ],
             "title": "Plánek školy",
             "hidden": true,
@@ -1958,8 +1961,8 @@
             "taskReference": "32-Z3-2",
             "requires": [],
             "position": [
-                1159.339469909668,
-                868.9643125534058
+                -1923.463508605957,
+                -680.0054445266724
             ],
             "title": "Sářina omalovánka",
             "hidden": true,
@@ -2036,8 +2039,8 @@
             "taskReference": "32-Z4-4",
             "requires": [],
             "position": [
-                748.155632019043,
-                1242.5684385299683
+                -1863.650032043457,
+                -807.0081300735474
             ],
             "title": "Bomberman uklízí",
             "hidden": true,
@@ -2078,8 +2081,8 @@
             "taskReference": "33-Z1-3",
             "requires": [],
             "position": [
-                1633.5070114135742,
-                1444.5108823776245
+                -2137.659980773926,
+                -755.8007020950317
             ],
             "title": "Petrův zmatený výlet",
             "hidden": true,
@@ -2260,7 +2263,8 @@
             "position": [
                 -394.2932434082031,
                 688.1417579650879
-            ]
+            ],
+            "hidden": false
         },
         {
             "id": "kucharka-zakladni-prefixove-soucty",
