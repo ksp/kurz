@@ -6,6 +6,7 @@
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import { createEdges } from "./tasks";
   import { taskStatuses } from "./task-status-cache";
+import { isEditableElement } from "./helpers";
 
   export let tasks: TasksFile;
   export let nodeDraggingEnabled: boolean = false;
@@ -69,14 +70,44 @@
   /**
    * Make the SVG drag&zoomable
    **/
+  let currentZoomScale = 1.0
+  const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10);
   function setupZoom() {
     function zoomed(e) {
       let svg = d3.select(svgElement).select("g");
+      currentZoomScale = e.transform.k
       svg.attr("transform", e.transform);
     }
-    const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10);
     zoomer.on("zoom", zoomed);
-    d3.select(container).call(zoomer);
+    const selection = d3.select(container) as any
+    selection.call(zoomer);
+  }
+
+  function keydown(key: KeyboardEvent) {
+    if (isEditableElement(document.activeElement)) {
+      // another element has focus - ignore our shortcuts
+      return
+    }
+
+    const selection = d3.select(container) as any
+    const c = 60 / currentZoomScale
+
+    if (key.key == "ArrowLeft" || key.key == "a") {
+      zoomer.translateBy(selection, c, 0)
+    }
+    else if (key.key == "ArrowRight" || key.key == "d") {
+      zoomer.translateBy(selection, -c, 0)
+    }
+    else if (key.key == "ArrowUp" || key.key == "w") {
+      zoomer.translateBy(selection, 0, c)
+    }
+    else if (key.key == "ArrowDown" || key.key == "s") {
+      zoomer.translateBy(selection, 0, -c)
+    } else if (key.key == "+") {
+      zoomer.scaleBy(selection, 1.2)
+    } else if (key.key == "-") {
+      zoomer.scaleBy(selection, 1/1.2)
+    }
   }
 
   function containerClickHandler(e: MouseEvent) {
@@ -266,6 +297,8 @@
     fill: white;
   }
 </style>
+
+<svelte:window on:keydown={keydown} />
 
 <div
   bind:this={container}
