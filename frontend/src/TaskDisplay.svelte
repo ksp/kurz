@@ -51,8 +51,12 @@
     }
     .header {
         display: flex;
-        width: 100%;
         flex-direction: row;
+    }
+    @media only screen and (max-width: 600px) {
+        .header {
+            margin-right: 40px;
+        }
     }
     .header div {
         flex-grow: 1;
