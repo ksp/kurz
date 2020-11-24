@@ -1,0 +1,24 @@
+#!/bin/bash
+# This script is the bottom half of tools/deploy. It runs locally at Gimli
+# in /akce/ksp/<instance>/kurzy-src/frontend, where the current source tree is already
+# checked out. It builds and installs everything.
+
+set -e
+
+# Locale is set explicitly here, for its passing over SSH is unreliable.
+unset -v $(locale | cut -d'=' -f1)	# unset locale; LC_ALL overrides all
+export LANG=C				# default for LC_* except LC_ALL
+export LC_CTYPE=cs_CZ.UTF-8
+
+echo "## Building the course"
+nice yarnpkg install --frozen-lockfile
+nice yarnpkg build
+
+DEST=../../static/kurz
+mkdir -p $DEST
+
+for f in public/build/bundle.{css,js} ../tasks.json ; do
+	b=$(basename $f)
+	cp $f $DEST/$b.new
+	mv $DEST/$b.new $DEST/$b
+done
