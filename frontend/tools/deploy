@@ -1,0 +1,117 @@
+#!/bin/bash
+# Based on ksp/web/tools/deploy
+set -e
+
+die ()
+{
+	echo >&2 "ERROR: $1"
+	exit 1
+}
+
+get_git_branch ()
+{
+	CURRENT_BRANCH=$(git symbolic-ref --short HEAD) || die "HEAD is not a symbolic ref. Your head is probably detached."
+}
+
+check_git_pushed ()
+{
+	if ! $(git diff --quiet) || ! $(git diff --cached --quiet) ; then
+		if [ -n "$KSP_FORCE_DIFF" ] ; then
+			echo "## WARNING: There are uncommitted changes, but KSP_FORCE_DIFF makes us proceed."
+		else
+			git status
+			die "There are uncommitted changes. Set KSP_FORCE_DIFF=1 if you really want to install."
+		fi
+	fi
+	if [ $(git rev-parse $CURRENT_BRANCH) != $(git rev-parse origin/$CURRENT_BRANCH) ] ; then
+		if [ -n "$KSP_FORCE_PUSHED" ] ; then
+			echo "## WARNING: There are unpushed changes, but KSP_FORCE_PUSHED makes us proceed."
+		else
+			die "There are unpushed changes. Set KSP_FORCE_PUSHED=1 if you really know what you are doing."
+		fi
+	fi
+}
+
+check_git_branch ()
+{
+	local NEED=$1
+	if [ $CURRENT_BRANCH != $NEED ] ; then
+		if [ -n "$KSP_FORCE_BRANCH" ] ; then
+			echo "## WARNING: Not on branch $NEED, but KSP_FORCE_BRANCH makes us proceed."
+		else
+			die "Public web must be installed from branch '$NEED'. Set KSP_FORCE_BRANCH=1 if you really want to install from '$CURRENT_BRANCH'."
+		fi
+	fi
+}
+
+QUICK=
+if [ "$1" = "--quick" ] ; then
+	QUICK=1
+	shift
+fi
+
+if [ $# -ne 1 -a $# -ne 2 -o "${1:0:1}" = "-" ] ; then
+	echo >&2 "Usage: $(basename $0) [--quick] <instance> [<commit>]"
+	exit 1
+fi
+INST="$1"
+COMMIT="$2"
+get_git_branch
+
+case "$INST" in
+	test)	REMOTE_LOGIN="ksp-web@gimli.ms.mff.cuni.cz"
+		REMOTE_PATH=/akce/ksp/testweb
+		;;
+	pub)	REMOTE_LOGIN="ksp-web@gimli.ms.mff.cuni.cz"
+		REMOTE_PATH=/akce/ksp/web
+		check_git_branch master
+		;;
+	*)	die "Unknown web instance $INST."
+		;;
+esac
+
+if [ -z "$COMMIT" ] ; then
+	COMMIT=$(git rev-parse HEAD)
+	echo "## Installing branch $CURRENT_BRANCH (head $COMMIT) to web instance $INST"
+else
+	COMMIT=$(git rev-parse $COMMIT)
+	echo "## Installing commit $COMMIT to web instance $INST"
+fi
+check_git_pushed
+if [ -n "$QUICK" ] ; then
+	echo "## WARNING: This is an incremental build"
+fi
+
+# XXX: Beware of quotes!
+ssh -t $REMOTE_LOGIN "
+	set -e
+	cd $REMOTE_PATH
+	echo '## Obtaining installation lock'
+	# XXX: Keep in sync with ksp/tools/deploy
+	if ! lockfile -1 -r10 $REMOTE_PATH/install.lock ; then
+		echo '## Failed to obtain $REMOTE_PATH/install.lock, please check manually'
+		exit 1
+	fi
+	install_unlock () {
+		if [ -f $REMOTE_PATH/install.lock ] ; then
+			echo '## Releasing installation lock'
+			rm -f $REMOTE_PATH/install.lock
+		fi
+	}
+	trap install_unlock SIGINT SIGHUP EXIT
+	if [ -d kurz-src ] ; then
+		echo '## Updating from repository'
+		( cd kurz-src && git fetch )
+	else
+		echo '## Cloning repository'
+		git clone --quiet --no-checkout git@gitea.ks.matfyz.cz:KSP/graf-uloh.git kurz-src
+	fi
+	echo '## Checking out files'
+	if [ -z '$QUICK' ] ; then
+		rm -rf kurz-src/*
+		( cd kurz-src && git checkout --quiet $COMMIT && git reset --hard )
+	else
+		( cd kurz-src && git checkout --quiet $COMMIT )
+	fi
+	( cd kurz-src/frontend && tools/deploy-local )
+"
