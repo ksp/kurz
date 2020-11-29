@@ -50,7 +50,7 @@ export function createEdges(nodes: TaskDescriptor[]): TaskEdge[] {
 }
 
 export async function loadTasks(): Promise<TasksFile> {
-    const r = await fetch("/tasks.json")
+    const r = await fetch("/kurz/tasks.json")
     const j = await r.json()
     return j
 }
