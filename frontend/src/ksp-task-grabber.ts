@@ -193,7 +193,7 @@ async function loadTask({ url, startElement }: TaskLocation): Promise<TaskAssign
 }
 
 export function isLoggedIn(): boolean {
-    return !!document.querySelector(".auth a[href='/profil/profil.cgi']")
+    return !!document.head.querySelector("meta[name=x-ksp-uid]")
 }
 
 export async function grabTaskStates(kspIds: string[]): Promise<Map<string, TaskStatus>> {

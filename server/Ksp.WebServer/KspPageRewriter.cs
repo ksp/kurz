@@ -38,7 +38,7 @@ namespace Ksp.WebServer
             {
                 encyklopedie.TextContent = "Kurzy";
                 encyklopedie.SetAttribute("href", "/kurz");
-                if ("grafik" == path)
+                if ("kurz" == path)
                 {
                     foreach (var li in document.QuerySelectorAll("#menu ul li.active"))
                         li.ClassList.Remove("active");

@@ -24,6 +24,8 @@ namespace Ksp.WebServer.Controllers
         private readonly KspPageRewriter pageRewriter;
         private readonly KspProxyConfig kspProxyConfig;
 
+        string KspAuthCookie => this.HttpContext.Request.Cookies["ksp_auth"];
+
         public GrafikPageController(
             ILogger<TasksController> logger,
             IWebHostEnvironment env,
@@ -59,13 +61,22 @@ namespace Ksp.WebServer.Controllers
             var grafik = p.ParseDocument(grafikPage);
 
             var kspTemplate = p.ParseDocument(await FetchBlankPage());
-            pageRewriter.ModifyTree(kspTemplate, "grafik");
+            pageRewriter.ModifyTree(kspTemplate, "kurz");
 
             var innerBody = grafik.Body;
             innerBody.Replace(kspTemplate.Body);
             var page = grafik.Body.QuerySelector("#page");
             page.InnerHtml = "";
             page.AppendNodes(innerBody.ChildNodes.ToArray());
+
+            if (KspAuthCookie is object)
+            {
+                var user = KspAuthenticator.ParseAuthCookie(KspAuthCookie);
+                var metaUser = grafik.CreateElement("meta");
+                metaUser.SetAttribute("name", "x-ksp-uid");
+                metaUser.SetAttribute("content", user.Id.Value.ToString());
+                grafik.Head.AppendChild(metaUser);
+            }
 
             foreach(var headElement in kspTemplate.Head.QuerySelectorAll("link, script"))
             {
