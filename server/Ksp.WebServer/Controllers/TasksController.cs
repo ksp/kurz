@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace Ksp.WebServer.Controllers
 {
     [ApiController]
-    [Route("tasks.json")]
+    [Route("/kurz/tasks.json")]
     public class TasksController : ControllerBase
     {
         private readonly ILogger<TasksController> logger;

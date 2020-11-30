@@ -1,7 +1,9 @@
 import App from './App.svelte';
 
+document.getElementById("page").innerHTML = "";
+
 const app = new App({
-	target: document.getElementById("svelte-root")!,
+	target: document.getElementById("page")!,
 	props: { }
 });
 
