@@ -16,7 +16,7 @@ using Microsoft.Extensions.Options;
 namespace Ksp.WebServer.Controllers
 {
     [ApiController]
-    [Route("grafik")]
+    [Route("kurz")]
     public class GrafikPageController : ControllerBase
     {
         private readonly ILogger<TasksController> logger;
