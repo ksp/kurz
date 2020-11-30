@@ -1,4 +1,4 @@
-import { fetchHtml } from "./ksp-task-grabber";
+import { fetchHtml, isLoggedIn } from "./ksp-task-grabber";
 
 let apitoken : string | null = null
 
@@ -84,4 +84,29 @@ export async function submit(id: string, subtask: string, uploadedData: string |
                 ["Content-Type", "text/plain"]
             ]
         })
+}
+export type TaskStatus = {
+    id: string
+    name: string
+    submitted: boolean
+    solved: boolean
+    points: number
+    maxPoints: number
+}
+
+export async function grabTaskSummary(): Promise<Map<string, TaskStatus>> {
+    if (!isLoggedIn()) throw new Error()
+
+    const results = await requestJson(`/api/tasks/x-summary`) as { tasks: TaskSubmitStatus[] }
+
+    function mapId(id: string) {
+        if (id.startsWith("cviciste/"))
+            return id.substr("cviciste/".length)
+        else
+            return id
+    }
+
+    return new Map<string, TaskStatus>(
+        results.tasks.map(r => [mapId(r.id), { id: mapId(r.id), maxPoints: r.max_points, name: r.name, points: r.points, solved: r.points > r.max_points - 0.001, submitted: r.points > 0 }])
+    )
 }

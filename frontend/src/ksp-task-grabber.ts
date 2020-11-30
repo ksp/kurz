@@ -14,16 +14,6 @@ type TaskLocation = {
     startElement: string
 }
 
-export type TaskStatus = {
-    id: string
-    name: string
-    submitted: boolean
-    solved: boolean
-    points: number
-    maxPoints: number
-    type: string
-}
-
 function fixAllLinks(e: any) {
     if (typeof e.src == "string") {
         e.src = e.src
@@ -150,27 +140,6 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
     }
 }
 
-function parseTaskStatuses(doc: HTMLDocument): TaskStatus[] {
-    const rows = Array.from(doc.querySelectorAll("table.zs-tasklist tr")).slice(1) as HTMLTableRowElement[]
-    return rows.map(r => {
-        const submitted = !r.classList.contains("zs-unsubmitted")
-        const id = r.cells[0].textContent!.trim()
-        const type = r.cells[1].textContent!.trim()
-        const name = r.cells[2].textContent!.trim()
-        const pointsStr = r.cells[4].textContent!.trim()
-        const pointsMatch = /((–|\.|\d)+) *\/ *(\d+)/.exec(pointsStr)
-        if (!pointsMatch) throw new Error()
-        let points = +pointsMatch[1]
-        // points was a dash, means 0
-        if (isNaN(points)) {
-            points = 0
-        }
-        const maxPoints = +pointsMatch[3]
-        const solved = r.classList.contains("zs-submitted")
-        return { id, name, submitted, type, points, maxPoints, solved }
-    })
-}
-
 export async function fetchHtml(url: string) {
     const r = await fetch(url, { headers: { "Accept": "text/html,application/xhtml+xml" } })
     if (r.status >= 400) {
@@ -194,21 +163,6 @@ async function loadTask({ url, startElement }: TaskLocation): Promise<TaskAssign
 
 export function isLoggedIn(): boolean {
     return !!document.head.querySelector("meta[name=x-ksp-uid]")
-}
-
-export async function grabTaskStates(kspIds: string[]): Promise<Map<string, TaskStatus>> {
-    if (!isLoggedIn()) throw new Error()
-
-    const ids = new Set<string>(kspIds.map(parseTaskId).filter(t => t != null).map(t => t!.rocnik))
-    const results = await Promise.all(Array.from(ids.keys()).map(async (rocnik) => {
-        const html = await fetchHtml(`/cviciste/?year=${rocnik}`)
-        return parseTaskStatuses(html)
-    }))
-
-    return new Map<string, TaskStatus>(
-        ([] as TaskStatus[]).concat(...results)
-        .map(r => [r.id, r])
-    )
 }
 
 export async function grabAssignment(id: string): Promise<TaskAssignmentData> {

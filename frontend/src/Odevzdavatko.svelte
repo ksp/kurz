@@ -1,7 +1,6 @@
 <script lang="ts">
     import { isLoggedIn, parseTaskId } from "./ksp-task-grabber";
-    import type { TaskStatus } from "./ksp-task-grabber";
-    import type { TaskSubmitStatus, SubtaskSubmitStatus } from './ksp-submit-api'
+    import type { TaskSubmitStatus, SubtaskSubmitStatus, TaskStatus } from './ksp-submit-api'
     import * as api from './ksp-submit-api'
     import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
     import * as s from 'svelte'
@@ -164,7 +163,7 @@
 
     async function upload(file: File) {
         const x = await api.submit(id, uploadSubtaskId!, file)
-        refreshTaskStatus([id])
+        refreshTaskStatus()
         const subtasks = [...task.subtasks]
         subtasks[subtasks.findIndex(s => s.id == x.id)] = x
         task = { ...task, subtasks }

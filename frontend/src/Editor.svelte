@@ -191,7 +191,7 @@
       return;
     }
     const y = prompt("Který ročník (číslo 26...X)");
-    await refreshTaskStatuses([`${y}-Z1-1`]);
+    await refreshTaskStatuses();
     const newTasks = Array.from($taskStatuses.values()).filter(
       (t) =>
         t.id.startsWith(y + "-") &&
