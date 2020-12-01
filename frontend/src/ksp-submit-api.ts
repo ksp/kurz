@@ -107,6 +107,6 @@ export async function grabTaskSummary(): Promise<Map<string, TaskStatus>> {
     }
 
     return new Map<string, TaskStatus>(
-        results.tasks.map(r => [mapId(r.id), { id: mapId(r.id), maxPoints: r.max_points, name: r.name, points: r.points, solved: r.points > r.max_points - 0.001, submitted: r.points > 0 }])
+        results.tasks.map(r => [mapId(r.id), { id: mapId(r.id), maxPoints: r.max_points, name: r.name, points: r.points ?? 0, solved: r.points > r.max_points - 0.001, submitted: r.points != null }])
     )
 }
