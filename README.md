@@ -1,11 +1,16 @@
-# Kurzovity grafik uloh
+# Kurzovitý grafík z úloh
 
-Veřejné preview je dostupné na adrese https://ksp.vsq.cz/grafik. Automaticky se nasazuje nová verze při každém commitu do masteru. Aktuálně nasazená verze je:
+Veřejné preview je dostupné na adrese https://ksp.vsq.cz/kurz. Automaticky se nasazuje nová verze při každém commitu do masteru. Aktuálně nasazená verze je:
 ![Aktuální verze](https://ksp.vsq.cz/build/build_id.svg)
+
+Veřejná verze https://ksp.mff.cuni.cz/kurz. Na interní testweb se také automaticky nasazuje verze z masteru. 
 
 ## Spuštění pro vývoj
 
-**Závislosti (Arch packages):** dotnet-sdk, yarn, aspnet-runtime
+**Závislosti:** Dotnet Core SDK, ASP.NET Core Runtime a Yarn (package manager pro JavaScript)
+
+* Windows: [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) a [dotnet](https://docs.microsoft.com/en-us/dotnet/core/install/windows?tabs=net50)
+* Arch: `pacman -S dotnet-sdk yarn aspnet-runtime`
 
 ```
 cd frontend/
@@ -13,31 +18,22 @@ yarn install
 yarn dev
 ```
 
-* **uživatel:** http://localhost:5000/grafik
-* **editor:** http://localhost:5000/grafik.html#editor
+* **uživatel:** http://localhost:5000/kurz
+* **editor:** http://localhost:5000/editor.html
 
 ## Vývoj
 
 Frontend je napsaný ve Svelte, tady je (slušný) tutoriál: https://svelte.dev/tutorial/basics.
-Pokud se nekamarádíte s JavaScriptem, existuje série knížek **You Don't Know JS (Yet)**.
-Taky používáme TypeScript (typy do Javascriptu) a D3 (magická knihovna na něco s daty a SVG)
+Pokud se nekamarádíte s JavaScriptem, existuje série knížek **You Don't Know JS (Yet)** pomocí které si můžete tento problém opravit.
+Taky používáme TypeScript (typy do Javascriptu) a D3 (magická knihovna na něco s daty a SVG).
 
-## Integrace do KSPího webu
+Vývojový server je magická proxy napsaná v ASP.NET Core. Na produkci se nepoužívá, tam backend dělá tradiční KSP web.
 
-Vývojový server je magická proxy napsaná v ASP.NET Core. Na produkci není potřeba, když KSP web přesvědčíme k tomu:
+## Editace úloh
 
-* vrátit /tasks.json
-* vrátit /grafik v té KSP template (je to html obsahující jeden `div`, `link` a `script`)
-* soubory z frontend/public/ (stačí ten JavaScript a CSS)
-* linky na kurzy z menu (nebo nějak)
+Velmi oceníme příspěvky do souboru tasks.json, kde jsou definované všechny zobrazované úlohy a texty.
+Chtěli bychom nějak inteligentně roztřídit většinu historických ůloh v KSPčku a navíc přidat další materiál (třeba seriály předělané na open-data).
+Na editaci máme napsaný editor, můžete jej použít buď lokálně a nebo hostovaný na našem serveru.
 
-Zároveň by se pro provoz webové aplikace hodilo přidat tato API. Aktuálně data získáváme všelijakými hacky:
-
-* seznam úloh ze cvičiště a získané body
-* HTML/text zadání a řešení jedné konkrétní úlohy
-* API odevzdávátka
-* Na stránce je potřeba zjistit jestli je uživatel přihlášený
-
-Dále bychom potřebovali web rozšířit o novou funkcionalitu:
-
-* definice opendatovek, co jsou technicky akorát ve cvičišti a nejsou ideálně na webu vůbec vidět
+* Lokálně si můžete spustit server podle návodu výše. Editor je na http://ksp.localhost:5000/editor.html. Editace rovnou mění soubor tasks.json, který pak commitnete do gitu a vyrobíte PR.
+* Na Vaškově serveru https://ksp.vsq.cz/editor.html. Změněný soubor si můžete stáhnout kliknutím na tlačítko "Stáhnout data lokálně", pak ho můžete commitnout do gitu.
