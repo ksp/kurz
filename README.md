@@ -37,3 +37,15 @@ Na editaci máme napsaný editor, můžete jej použít buď lokálně a nebo ho
 
 * Lokálně si můžete spustit server podle návodu výše. Editor je na http://ksp.localhost:5000/editor.html. Editace rovnou mění soubor tasks.json, který pak commitnete do gitu a vyrobíte PR.
 * Na Vaškově serveru https://ksp.vsq.cz/editor.html. Změněný soubor si můžete stáhnout kliknutím na tlačítko "Stáhnout data lokálně", pak ho můžete commitnout do gitu.
+
+### Ovládání editoru
+
+**Graf:**
+
+* **Posun grafu** stejně jako na `/kurz` - myší drag & drop mimo vrcholy. Nebo klávesnicí šipky. Zoom kolečkem nebo +/-
+* Najetí na vrchol ho označí a vpravo v panelu zobrazí jeho obsah - obsah textu a nebo zadání úlohy
+* Lze **označit** několik vrcholů najednou tažením myší se stisknutým pravým tlačítkem.
+* Označené vrcholy lze **přesouvat** klasickým drag & drop - myš musí být nad vrcholem.
+* **Nová hrana** se vyrobí tak, že klikne na dva vrcholy a stiskne tlačítko "Přidat hranu" nebo prostě `H` na klávesnici.
+* Lze **skrýt a zobrazit označené vrcholy** tlačítky "Skrýt výběr" a "Zobrazit výběr". Případně `S` a `Z` na klávesnici.
+* Double click na vrchol otevře modal dialog, kde lze editovat **obsah textových vrcholů**, editovat a číst **interní komentář**, **kategorie** a odstraňovat **hrany**.
