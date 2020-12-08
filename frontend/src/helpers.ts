@@ -22,3 +22,7 @@ export function saveToLocalDisk(filename: string, text: string) {
 
     document.body.removeChild(element);
 }
+
+export function capitalizeFirstLetter(str: string) {
+    return str[0].toUpperCase() + str.slice(1)
+}

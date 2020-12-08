@@ -4,6 +4,7 @@
     import * as api from './ksp-submit-api'
     import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
     import * as s from 'svelte'
+    import { capitalizeFirstLetter, nonNull } from "./helpers";
 
     export let id: string;
     const taskFromCache: TaskStatus | undefined = $taskStatuses.get(id)
@@ -101,7 +102,7 @@
         return subtask.points > subtask.max_points - 0.0001
     }
 
-    function nameSubtask(subtask: SubtaskSubmitStatus) {
+    function nameSubtaskId(subtaskId: string) {
         const map: any = {
             "1": "první",
             "2": "druhý",
@@ -114,8 +115,12 @@
             "9": "devátý",
             "10": "desátý"
         }
+        return map[subtaskId] ?? subtaskId
+    }
+
+    function nameSubtask(subtask: SubtaskSubmitStatus) {
         const check = isDone(subtask) ? " ✔️" : ""
-        return (map[subtask.id] ?? subtask.id) + check
+        return nameSubtaskId(subtask.id) + check
     }
 
     function magicTrickSaveBlob(blob: Blob, fileName: string) {
@@ -242,7 +247,10 @@
         {#if expiresInSec > 60*60*24*30}
             Vstup neexpiruje.
         {:else}
-            Vstup expiruje za {Math.floor(expiresInSec / 60 / 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec / 60 % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}s.
+
+            {capitalizeFirstLetter(nameSubtaskId(nonNull(uploadSubtaskId)))}
+            vstup expiruje za
+            {Math.floor(expiresInSec / 60 / 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec / 60 % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}s.
         {/if}
     </div>
     {/if}
