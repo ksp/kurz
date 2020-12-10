@@ -248,7 +248,7 @@ import { isEditableElement } from "./helpers";
         tooltipMaxPoints = status.maxPoints;
         tooltipCurrPoints = status.points;
       }
-      else if (hoveredTask.type == 'open-data') {
+      else if (hoveredTask.type == 'open-data' || hoveredTask.type == 'custom-open-data') {
         tooltipMaxPoints = hoveredTask.points
       }
       resizeTooltipBox();
@@ -363,7 +363,7 @@ import { isEditableElement } from "./helpers";
             on:dblclick={nodeDoubleClick(task)} />
           {/if}
         {/each}
-        {#if hoveredTask != null && hoveredTask.type == "open-data" }
+        {#if hoveredTask != null && ['open-data', 'custom-open-data'].includes(hoveredTask.type) }
         <g class="tooltip">
           <rect
             x={tooltipTextPos[0]}
@@ -379,7 +379,7 @@ import { isEditableElement } from "./helpers";
               text-anchor="middle"
               alignment-baseline="middle"
               dominant-baseline="middle">
-              {hoveredTask.type == 'open-data' ? hoveredTask.taskReference : "text"} | {tooltipCurrPoints ?? '?'} bod{ "ů yyy"[tooltipCurrPoints ?? 0] ?? "ů" } z {tooltipMaxPoints ?? '?'}
+              {hoveredTask.taskReference} | {tooltipCurrPoints ?? '?'} bod{ "ů yyy"[tooltipCurrPoints ?? 0] ?? "ů" } z {tooltipMaxPoints ?? '?'}
             </text>
         </g>
       {/if}

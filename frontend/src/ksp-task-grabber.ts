@@ -3,8 +3,8 @@ export type TaskAssignmentData = {
     id: string,
     name: string,
     points: number | null,
-    description: string,
-    titleHtml: string
+    description: string
+    hasSolution: boolean
 }
 
 type TaskLocation = {
@@ -136,7 +136,7 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
         id: id.trim(),
         name: name.trim(),
         points: points ? +points : null,
-        titleHtml: titleElement.outerHTML
+        hasSolution: true, // TODO: actually detect that
     }
 }
 

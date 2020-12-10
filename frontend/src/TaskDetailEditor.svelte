@@ -3,7 +3,8 @@
     import type { TaskDescriptor, TasksFile } from "./tasks";
     import { getContext } from "svelte";
     import { onMount } from "svelte";
-    import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+    import CkEditor from "./CkEditorWrapper.svelte";
+    import CkEditorWrapper from "./CkEditorWrapper.svelte";
 
     const { close } = getContext("simple-modal");
 
@@ -27,18 +28,25 @@
         categories: getCategories(tasks, task.id),
     };
 
-    // setup editor
-    let editor;
-    onMount(() => {
-        ClassicEditor.create(document.querySelector("#editor"))
-            .then((e) => {
-                editor = e;
-            })
-            .catch((error) => {
-                alert("Editor init error. Open console to see details.");
-                console.error(error);
-            });
-    });
+    $: {
+        // add missing required properties
+        if (editData.task.type == "custom-open-data") {
+            if (!editData.task.htmlAssignment) {
+                editData.task.htmlAssignment = "FIXME: napsat zadání"
+            }
+            if (editData.task.htmlSolution == null) {
+                editData.task.htmlSolution = undefined
+            }
+            if (editData.task.points == null) {
+                editData.task.points = 10
+            }
+        }
+        if (editData.task.type == "text") {
+            if (!editData.task.htmlContent) {
+                editData.task.htmlContent = "FIXME: napsat ten text"
+            }
+        }
+    }
 
     function removeCategory(catName: string) {
         return function () {
@@ -67,6 +75,24 @@
             task.originalSource.name == ""
         ) {
             task.originalSource = undefined;
+        }
+
+        const taskA = task as any
+        if (task.type != "custom-open-data") {
+            delete taskA.htmlAssignment
+            delete taskA.htmlSolution
+        }
+        if (task.type == "text") {
+            delete taskA.points
+            delete taskA.taskReference
+        } else {
+            delete taskA.htmlContent
+        }
+        if (task.type == "label") {
+            delete taskA.points
+            delete taskA.taskReference
+        } else {
+            delete taskA.rotationAngle
         }
 
         // kategorie musíme první odevšad odstranit
@@ -108,6 +134,7 @@
                     editData = editData;
                 }}>
                 <option value="open-data">open-data</option>
+                <option value="custom-open-data">custom-open-data</option>
                 <option value="text">text</option>
                 <option value="label">label</option>
             </select>
@@ -124,7 +151,7 @@
             contenteditable="true"
             bind:textContent={editData.task.comment} />
     </div>
-    {#if editData.task.type == 'open-data'}
+    {#if ['open-data', 'custom-open-data'].includes(editData.task.type) }
         <label>
             Task reference: <input type="text" bind:value={editData.task.taskReference} />
         </label>
@@ -140,9 +167,29 @@
         Odkaz na původní zdroj: <input type="url" bind:value={editData.task.originalSource.url} placeholder="absolutní URL mimo KSPí web, jinak relativní" />
     </label>
     <div style="display: {editData.task.type == 'text' ? 'block' : 'none'}">
+    {#if editData.task.type == 'text'}
+    <div>
         <h3>HTML obsah</h3>
-        <textarea id="editor">{editData.task.htmlContent}</textarea>
+        <CkEditorWrapper bind:html={editData.task.htmlContent} />
     </div>
+    {/if}
+    {#if editData.task.type == 'custom-open-data'}
+    <div>
+        <h3>Zadání</h3>
+        <label>Počet bodů: <input type=number bind:value={editData.task.points} /></label>
+        <CkEditorWrapper bind:html={editData.task.htmlAssignment} />
+
+        <label>Má řešení:
+            <input type="checkbox"
+                   checked={editData.task.htmlSolution != null}
+                   on:input={ev => editData.task.htmlSolution = ev.currentTarget.checked ? "FIXME: sem dopiš vzorové řešení" : undefined} />
+        </label>
+
+        {#if editData.task.htmlSolution != null}
+            <CkEditorWrapper bind:html={editData.task.htmlSolution} />
+        {/if}
+    </div>
+    {/if}
     <hr />
     <div>
         <h3>Kategorie</h3>

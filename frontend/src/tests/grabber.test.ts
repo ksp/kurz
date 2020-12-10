@@ -26,7 +26,7 @@ describe('tasks.json validation', () => {
             expect(typeof t.id).toBe("string")
             expect(t.title).toBeTruthy()
             expect(t.position).toBeDefined()
-            expect(["open-data", "text", "label"]).toContain(t.type)
+            expect(["open-data", "text", "label", "custom-open-data"]).toContain(t.type)
             if (t.type == "text") {
                 expect(t.htmlContent?.trim()).toBeTruthy()
                 if (!t.hidden) {
@@ -36,6 +36,15 @@ describe('tasks.json validation', () => {
             } else if (t.type == "open-data") {
                 expect(t.taskReference).toBeTruthy()
                 expect(g.parseTaskId(t.taskReference)).toBeTruthy()
+            } else if (t.type == "custom-open-data") {
+                expect(t.taskReference).toBeTruthy()
+                expect(t.title).toBeTruthy()
+                if (!t.hidden) {
+                    expect(t.htmlAssignment).not.toContain("FIXME")
+                    expect(t.htmlAssignment).not.toContain("TODO")
+                    expect(t.htmlSolution).not.toContain("FIXME")
+                    expect(t.htmlSolution).not.toContain("TODO")
+                }
             }
         })
     }

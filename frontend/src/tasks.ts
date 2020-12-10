@@ -19,6 +19,15 @@ export type TaskDescriptor = {
         }
         |
         {
+            type: "custom-open-data"
+            title: string
+            taskReference: string
+            points: number
+            htmlAssignment: string
+            htmlSolution?: string
+        }
+        |
+        {
             type: "text",
             htmlContent: string
         }
