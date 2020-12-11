@@ -19,6 +19,13 @@ describe('My First Test', () => {
     })
     it("Images and program links work", () => {
         cy.visit(host + "/kurz#task/32-Z2-2")
-        
+        cy.contains("vypište pro každého hada")
+        cy.get("img[alt='Znázornění ukázkového příkladu']")
+          .scrollIntoView()
+          .should("be.visible")
+          .and(($img) => {
+            // "naturalWidth" and "naturalHeight" are set when the image loads
+            expect($img[0].naturalWidth).to.be.greaterThan(0)
+          })
     })
 })
