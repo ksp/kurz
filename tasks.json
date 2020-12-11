@@ -2089,6 +2089,36 @@
             "points": 12
         },
         {
+            "id": "33-Z2-1",
+            "type": "open-data",
+            "comment": "...",
+            "requires": [
+                "kucharka-zakladni-fronta-a-zasobnik"
+            ],
+            "title": "Stánkař",
+            "taskReference": "33-Z2-1",
+            "position": [
+                -796,
+                1020
+            ],
+            "points": 8
+        },
+        {
+            "id": "33-Z2-3",
+            "type": "open-data",
+            "comment": "...",
+            "requires": [
+                "kucharka-zakladni-binarni-vyhledavani"
+            ],
+            "title": "Rostoucí funkce",
+            "taskReference": "33-Z2-3",
+            "position": [
+                -1001,
+                882
+            ],
+            "points": 12
+        },
+        {
             "id": "algoritmy",
             "type": "text",
             "comment": "...",
@@ -2181,7 +2211,7 @@
             "htmlContent": "<h3>Rozděl a&nbsp;panuj</h3><p>Jednou ze základních technik je rozdělení složitějšího problému na menší části, které opět můžeme rozdělit na menší a&nbsp;tak dále, dokud se nedostaneme k&nbsp;problémům tak malým, že je už umíme triviálně vyřešit.</p><h4>Binární vyhledávání v&nbsp;poli</h4><p>Představme si, že máme seřazené pole n&nbsp;prvků a&nbsp;chceme zjistit, jestli se v&nbsp;něm nachází prvek s&nbsp;hodnotou&nbsp;k. Určitě můžeme projít celé pole v&nbsp;lineárním čase (tím, že budeme brát jeden prvek za druhým a&nbsp;kontrolovat, zda je roven hodnotě&nbsp;k), ale to je zbytečně pomalé a&nbsp;nevyužívá toho, že máme pole seřazené.</p><p>Můžeme totiž začít s&nbsp;velkým problémem a&nbsp;ten postupně zmenšovat na stále menší a&nbsp;menší. Nejdříve hledáme&nbsp;k v&nbsp;celém poli. Podíváme se na jeho prostřední prvek:</p><ul><li>Pokud je roven&nbsp;k, jsme hotovi.</li><li>Je-li větší než&nbsp;k, víme, že se k&nbsp;musí nacházet nalevo od něj. Můžeme tedy hledat znovu, ale tentokrát se omezit jen na levou polovinu pole.</li><li>Analogicky, je-li menší než&nbsp;k, můžeme hledat jen v&nbsp;pravé polovině.</li></ul><p>Když tímto postupným dělením problémů na menší dojdeme až k&nbsp;poli o&nbsp;velikosti jednoho prvku, stačí tento prvek jenom porovnat, dál už se pole nepokoušíme rozdělovat.</p><p>Jelikož se nám každým krokem problém zmenší na polovinu, maximálně po log n krocích se dostaneme na pole velikosti jedna. Říkáme, že algoritmus má <i>logaritmickou časovou složitost</i>, píšeme O(log n). (Pokud není řečeno jinak, znamená pro nás v&nbsp;informatice značka log <i>dvojkový logaritmus</i>, což je funkce opačná k&nbsp;funkci 2n a&nbsp;roste o&nbsp;hodně pomaleji než funkce lineární. Pro velká&nbsp;n platí: 1 &lt; log n &lt; n a&nbsp;například log 2 = 1, log 8 = 3, log 1024 = 10.)</p><p>Prakticky postup provádíme tak, že si udržujeme levý a&nbsp;pravý okraj aktuálně zpracovávaného úseku a&nbsp;postupně je k&nbsp;sobě přibližujeme.</p><p>FIXME code</p><h4>Další aplikace</h4><p>Další typickou aplikací postupu rozděl a&nbsp;panuj je například třídění posloupnosti pomocí <i>Mergesortu</i>. Ten v&nbsp;základu funguje tak, že každou posloupnost, kterou dostane k&nbsp;setřídění, rozdělí na poloviny a každou z&nbsp;nich setřídí rekurzivním zavoláním sebe sama. Zanořování se zastaví ve chvíli, kdy třídíme posloupnost délky jedna (ta už je z&nbsp;podstaty setříděná). Pak jen v&nbsp;každém kroku ze dvou setříděných menších posloupností vyrobí jejich sléváním setříděnou posloupnost dvojnásobné délky.</p><p>Více se o&nbsp;metodě Rozděl a&nbsp;panuj můžete dozvědět ve stejnojmenné <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/rozdel-a-panuj\">kuchařce</a>.</p>",
             "position": [
                 -1055.2265319824219,
-                787.3630638122559
+                786.3630638122559
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
