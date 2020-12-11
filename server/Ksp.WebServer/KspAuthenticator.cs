@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -26,6 +27,8 @@ namespace Ksp.WebServer
             this.logger = logger;
         }
 
+        public string GetCookie(HttpContext cx) => cx.Request.Cookies[kspProxyConfig.AuthCookie];
+
         public static UnverifiedAuthCookie ParseAuthCookie(string cookie)
         {
             var s = cookie.Split(':');
@@ -39,7 +42,7 @@ namespace Ksp.WebServer
         async Task<IHtmlDocument> FetchPage(string url, string authCookie)
         {
             var cookies = new CookieContainer();
-            cookies.Add(new Uri(kspProxyConfig.Host), new Cookie("ksp_auth", Uri.EscapeDataString(authCookie)));
+            cookies.Add(new Uri(kspProxyConfig.Host), new Cookie(kspProxyConfig.AuthCookie, Uri.EscapeDataString(authCookie)));
             var c = new HttpClient(new HttpClientHandler { CookieContainer = cookies });
             var rq = new HttpRequestMessage(HttpMethod.Get, $"{kspProxyConfig.Host}/{url}");
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));

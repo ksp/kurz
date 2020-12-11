@@ -24,7 +24,7 @@ namespace Ksp.WebServer.Controllers
         private readonly KspPageRewriter pageRewriter;
         private readonly KspProxyConfig kspProxyConfig;
 
-        string KspAuthCookie => this.HttpContext.Request.Cookies["ksp_auth"];
+        string KspAuthCookie => this.HttpContext.Request.Cookies[kspProxyConfig.AuthCookie];
 
         public GrafikPageController(
             ILogger<TasksController> logger,

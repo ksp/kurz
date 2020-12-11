@@ -27,7 +27,7 @@ namespace Ksp.WebServer.Controllers
 
         string TasksJsonFile(string suffix) => Path.Combine(env.ContentRootPath, $"../../tasks{suffix}.json");
 
-        string KspAuthCookie => this.HttpContext.Request.Cookies["ksp_auth"];
+        string KspAuthCookie => auth.GetCookie(this.HttpContext);
 
         [HttpGet]
         public IActionResult Get()

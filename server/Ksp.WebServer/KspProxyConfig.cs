@@ -4,5 +4,6 @@ namespace Ksp.WebServer
     {
         public string Host { get; set; }
         public string Authorization { get; set; }
+        public string AuthCookie { get; set; }
     }
 }
