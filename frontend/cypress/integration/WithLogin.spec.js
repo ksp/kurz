@@ -37,4 +37,12 @@ describe('Functionality with login', () => {
         cy.contains("Zavřít").click()
         cy.get(".submitted.open-data.notSelected").contains("Na zastávce")
     })
+
+    it("Shows points on hover", () => {
+        login()
+        cy.contains("Sářiny pamlsky").trigger("mouseenter")
+        cy.contains("29-Z1-2 | 2 body z 10")
+        cy.contains("SADO").trigger("mouseenter")
+        cy.contains("26-Z2-2 | 0 bodů z 10")
+    })
 })
