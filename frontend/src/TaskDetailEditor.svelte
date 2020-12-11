@@ -59,14 +59,15 @@
     function saveAndExit() {
         if (editData.task.type == "text")
             editData.task.htmlContent = editor.getData();
-        if (
-            editData.task.originalSource &&
-            editData.task.originalSource.url == "" &&
-            editData.task.originalSource.name == ""
-        ) {
-            editData.task.originalSource = undefined;
-        }
+
         Object.assign(task, editData.task);
+        if (
+            task.originalSource &&
+            task.originalSource.url == "" &&
+            task.originalSource.name == ""
+        ) {
+            task.originalSource = undefined;
+        }
 
         // kategorie musíme první odevšad odstranit
         for (const t of Object.keys(tasks.clusters)) {
@@ -129,7 +130,11 @@
         </label>
     {/if}
     <label>
-        Převzato z{"zsZS".includes(editData.task.originalSource.name[0]) ? "e" : ""} <input type="text" bind:value={editData.task.originalSource.name} placeholder="např. kuchařky" />
+        Převzato z{'zsZS'.includes(editData.task.originalSource.name[0]) ? 'e' : ''}
+        <input
+            type="text"
+            bind:value={editData.task.originalSource.name}
+            placeholder="např. kuchařky" />
     </label>
     <label>
         Odkaz na původní zdroj: <input type="url" bind:value={editData.task.originalSource.url} placeholder="absolutní URL mimo KSPí web, jinak relativní" />
