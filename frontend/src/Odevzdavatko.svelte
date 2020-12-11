@@ -219,7 +219,6 @@
             {/if}
         </button>
         <select bind:value={subtaskId}>
-            <option value={null}></option>
             {#each task.subtasks as subtask}
                 <option value={subtask.id}>
                     {nameSubtask(subtask)}
