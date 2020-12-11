@@ -104,7 +104,7 @@ ssh -t $REMOTE_LOGIN "
 		( cd kurz-src && git fetch )
 	else
 		echo '## Cloning repository'
-		git clone --quiet --no-checkout git@gitea.ks.matfyz.cz:KSP/graf-uloh.git kurz-src
+		git clone --quiet --no-checkout https://github.com/ksp/kurz kurz-src
 	fi
 	echo '## Checking out files'
 	if [ -z '$QUICK' ] ; then
