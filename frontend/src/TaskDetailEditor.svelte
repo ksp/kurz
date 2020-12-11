@@ -17,6 +17,12 @@
         task: {
             ...task,
             title: task.title == null ? task.id : task.title,
+            originalSource: task.originalSource
+                ? task.originalSource
+                : {
+                      url: "",
+                      name: "",
+                  },
         },
         categories: getCategories(tasks, task.id),
     };
@@ -53,6 +59,13 @@
     function saveAndExit() {
         if (editData.task.type == "text")
             editData.task.htmlContent = editor.getData();
+        if (
+            editData.task.originalSource &&
+            editData.task.originalSource.url == "" &&
+            editData.task.originalSource.name == ""
+        ) {
+            editData.task.originalSource = undefined;
+        }
         Object.assign(task, editData.task);
 
         // kategorie musíme první odevšad odstranit
@@ -104,14 +117,23 @@
         <span contenteditable="true" bind:textContent={editData.task.title} />
     </h1>
     <div>
-        <div style="display: inline-block">Interní komentář: </div>
-        <div class="fakeInput" contenteditable="true" bind:textContent={editData.task.comment} />
+        <div style="display: inline-block">Interní komentář:</div>
+        <div
+            class="fakeInput"
+            contenteditable="true"
+            bind:textContent={editData.task.comment} />
     </div>
     {#if editData.task.type == 'open-data'}
         <label>
             Task reference: <input type="text" bind:value={editData.task.taskReference} />
         </label>
     {/if}
+    <label>
+        Převzato z{"zsZS".includes(editData.task.originalSource.name[0]) ? "e" : ""} <input type="text" bind:value={editData.task.originalSource.name} placeholder="např. kuchařky" />
+    </label>
+    <label>
+        Odkaz na původní zdroj: <input type="url" bind:value={editData.task.originalSource.url} placeholder="absolutní URL mimo KSPí web, jinak relativní" />
+    </label>
     <div style="display: {editData.task.type == 'text' ? 'block' : 'none'}">
         <h3>HTML obsah</h3>
         <textarea id="editor">{editData.task.htmlContent}</textarea>

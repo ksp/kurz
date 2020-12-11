@@ -2164,7 +2164,11 @@
             "position": [
                 -410.8735809326172,
                 273.27046966552734
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-binarni-vyhledavani",
@@ -2178,7 +2182,11 @@
             "position": [
                 -1055.2265319824219,
                 787.3630638122559
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-dynamicke-programovani",
@@ -2192,7 +2200,11 @@
             "position": [
                 415.81363677978516,
                 888.2000579833984
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-fronta-a-zasobnik",
@@ -2206,7 +2218,11 @@
             "position": [
                 -775.7975082397461,
                 949.1721229553223
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-grafy",
@@ -2220,7 +2236,11 @@
             "position": [
                 -809.2669906616211,
                 1160.4436988830566
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-hladovy-algoritmus",
@@ -2234,7 +2254,11 @@
             "position": [
                 -702.5907173156738,
                 307.6112937927246
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-knihovny",
@@ -2247,6 +2271,10 @@
                 -573.0954666137695,
                 -921.101863861084
             ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            },
             "hidden": true
         },
         {
@@ -2264,6 +2292,10 @@
                 -394.2932434082031,
                 688.1417579650879
             ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            },
             "hidden": false
         },
         {
@@ -2278,7 +2310,11 @@
             "position": [
                 264.1203804016113,
                 787.7883148193359
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-prefixove-soucty-2d",
@@ -2292,7 +2328,11 @@
             "position": [
                 170.57422256469727,
                 1063.6810913085938
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-reprezentace-dat",
@@ -2306,7 +2346,11 @@
             "position": [
                 -389.9202308654785,
                 470.58526611328125
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-spojovy-seznam",
@@ -2320,7 +2364,11 @@
             "position": [
                 -602.9680938720703,
                 850.3306617736816
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "kucharka-zakladni-stromy",
@@ -2334,7 +2382,11 @@
             "position": [
                 -973.6452713012695,
                 1311.047519683838
-            ]
+            ],
+            "originalSource": {
+                "url": "/kucharky/zakladni-algoritmy/",
+                "name": "Základní algoritmické kuchařky"
+            }
         },
         {
             "id": "label_matematicke",

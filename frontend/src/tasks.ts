@@ -6,6 +6,10 @@ export type TaskDescriptor = {
     requires: string[]
     comment?: string
     position?: [number, number]
+    originalSource?: {
+        url: string,
+        name: string,  
+    },
     hidden?: boolean
 } & (
         {
