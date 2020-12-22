@@ -129,8 +129,8 @@
 
         <div class="solution">
             {#if !task.hasSolution}
-                K úloze není zveřejněné vzorové řešení, budeš ho muset nalézt sám.
-                Rádi ti ale s řešením poradíme na <a href="https://discord.gg/AvXdx2X">našem Discordu</a> a nebo ne <a href="mailto:zdrojaky@ksp.mff.cuni.cz">zdrojaky@ksp.mff.cuni.cz</a>.
+                K úloze není zveřejněné vzorové řešení, budeš ho muset vymyslet sám.
+                Rádi Ti ale s řešením poradíme na <a href="https://discord.gg/AvXdx2X">našem Discordu</a> a nebo na <a href="mailto:zdrojaky@ksp.mff.cuni.cz">zdrojaky@ksp.mff.cuni.cz</a>.
             {:else if showSolution}
 
                 <h4>Řešení</h4>

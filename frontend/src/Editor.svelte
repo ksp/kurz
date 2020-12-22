@@ -92,7 +92,7 @@
   }
 
   function saveLocally() {
-    saveToLocalDisk("/kurz/tasks.json", tasksToString(tasks));
+    saveToLocalDisk("tasks.json", tasksToString(tasks));
   }
 
   function openTaskDetailEditorButton(e: CustomEvent<TaskDescriptor>) {

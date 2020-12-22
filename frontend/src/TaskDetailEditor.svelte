@@ -5,7 +5,7 @@
     import { onMount } from "svelte";
     import CkEditor from "./CkEditorWrapper.svelte";
     import CkEditorWrapper from "./CkEditorWrapper.svelte";
-    import { sync as ckeditorSync } from './ckeditorSynchroizer'
+    import { sync as ckeditorSync } from './ckeditorSynchronizer'
 
     const { close } = getContext("simple-modal");
 

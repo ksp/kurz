@@ -42,8 +42,10 @@ describe('tasks.json validation', () => {
                 if (!t.hidden) {
                     expect(t.htmlAssignment).not.toContain("FIXME")
                     expect(t.htmlAssignment).not.toContain("TODO")
-                    expect(t.htmlSolution).not.toContain("FIXME")
-                    expect(t.htmlSolution).not.toContain("TODO")
+                    if (t.htmlSolution) {
+                        expect(t.htmlSolution).not.toContain("FIXME")
+                        expect(t.htmlSolution).not.toContain("TODO")
+                    }
                 }
             }
         })
