@@ -140,6 +140,15 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
     }
 }
 
+export function parseZkpLecture(doc: HTMLDocument) {
+    const c = doc.getElementById("content")!
+    c.querySelector(".course-heading")!.remove()
+    c.querySelector(".course-panel")?.remove()
+    c.querySelector(".error")?.remove()
+
+    return c.innerHTML.trim()
+}
+
 export async function fetchHtml(url: string) {
     const r = await fetch(url, { headers: { "Accept": "text/html,application/xhtml+xml" } })
     if (r.status >= 400) {

@@ -249,7 +249,7 @@
     </div>
     <div>
         {#if expiresInSec > 60*60*24*30}
-            Vstup neexpiruje.
+            Vstup platí pořád.
         {:else}
 
             {capitalizeFirstLetter(nameSubtaskId(nonNull(uploadSubtaskId)))}

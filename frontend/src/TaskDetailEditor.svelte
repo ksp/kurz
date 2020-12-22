@@ -5,6 +5,7 @@
     import { onMount } from "svelte";
     import CkEditor from "./CkEditorWrapper.svelte";
     import CkEditorWrapper from "./CkEditorWrapper.svelte";
+    import { sync as ckeditorSync } from './ckeditorSynchroizer'
 
     const { close } = getContext("simple-modal");
 
@@ -18,12 +19,7 @@
         task: {
             ...task,
             title: task.title == null ? task.id : task.title,
-            originalSource: task.originalSource
-                ? task.originalSource
-                : {
-                      url: "",
-                      name: "",
-                  },
+            originalSource: task.originalSource ?? { url: "", name: "", },
         },
         categories: getCategories(tasks, task.id),
     };
@@ -65,19 +61,17 @@
     }
 
     function saveAndExit() {
-        if (editData.task.type == "text")
-            editData.task.htmlContent = editor.getData();
+        ckeditorSync()
 
         Object.assign(task, editData.task);
-        if (
-            task.originalSource &&
-            task.originalSource.url == "" &&
-            task.originalSource.name == ""
-        ) {
-            task.originalSource = undefined;
-        }
-
         const taskA = task as any
+        if (
+            taskA.originalSource &&
+            taskA.originalSource.url == "" &&
+            taskA.originalSource.name == ""
+        ) {
+            taskA.originalSource = undefined;
+        }
         if (task.type != "custom-open-data") {
             delete taskA.htmlAssignment
             delete taskA.htmlSolution
