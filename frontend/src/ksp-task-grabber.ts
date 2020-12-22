@@ -3,8 +3,8 @@ export type TaskAssignmentData = {
     id: string,
     name: string,
     points: number | null,
-    description: string,
-    titleHtml: string
+    description: string
+    hasSolution: boolean
 }
 
 type TaskLocation = {
@@ -136,8 +136,17 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
         id: id.trim(),
         name: name.trim(),
         points: points ? +points : null,
-        titleHtml: titleElement.outerHTML
+        hasSolution: true, // TODO: actually detect that
     }
+}
+
+export function parseZkpLecture(doc: HTMLDocument) {
+    const c = doc.getElementById("content")!
+    c.querySelector(".course-heading")!.remove()
+    c.querySelector(".course-panel")?.remove()
+    c.querySelector(".error")?.remove()
+
+    return c.innerHTML.trim()
 }
 
 export async function fetchHtml(url: string) {

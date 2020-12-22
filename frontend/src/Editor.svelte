@@ -12,7 +12,7 @@
     refresh as refreshTaskStatuses,
     taskStatuses,
   } from "./task-status-cache";
-  import { grabAssignment, isLoggedIn } from "./ksp-task-grabber";
+  import { fetchHtml, grabAssignment, isLoggedIn, parseZkpLecture } from "./ksp-task-grabber";
 
   export let tasks: TasksFile;
 
@@ -135,6 +135,26 @@
     tasks.tasks = [...tasks.tasks, novaUloha];
 
     openTaskDetailEditor(novaUloha);
+  }
+
+  async function reloadZkp() {
+    const lectures = tasks.tasks.filter(c => /zkp-.*-text/.test(c.id))
+    const ts = tasks.tasks.filter(c => /zkp-.*-task/.test(c.id))
+    await Promise.all(lectures.map(async l => {
+      if (l.type != "text")
+        throw Error()
+      const [_, path] = /zkp-(.*)-text/.exec(l.id)!
+      const doc = await fetchHtml(`/kurzy/zkp/${path}/`)
+      l.htmlContent = parseZkpLecture(doc)
+    }))
+    await Promise.all(ts.map(async t => {
+      if (t.type != "custom-open-data")
+        throw Error()
+      const [_, path] = /zkp-(.*)-task/.exec(t.id)!
+      const doc = await fetchHtml(`/kurzy/zkp/${path}/ukol.html`)
+      t.htmlAssignment = parseZkpLecture(doc)
+    }))
+    alert("Hotovo")
   }
 
   function removeTask(id: string) {
@@ -436,6 +456,11 @@
           disabled={!isLoggedIn()}
           title={isLoggedIn() ? 'Nahraje všechny úlohy z jednoho ročníku, které tu ještě nejsou' : 'Je nutné být přihlášený a na stránce v KSP template.'}>
           Nahrát celý ročník
+        </button>
+        <button
+          on:click={reloadZkp}
+          title={'Reloadne základní kurz programování.'}>
+          Reload ZKP
         </button>
         <button
           on:click={loadMaxPoints}

@@ -1,12 +1,14 @@
 <script type="ts">
     import { grabAssignment, grabSolution, isLoggedIn } from "./ksp-task-grabber";
-    import type { TaskStatus } from "./ksp-task-grabber";
+    import type { TaskAssignmentData } from "./ksp-task-grabber";
     import { nonNull } from './helpers'
     import App from "./App.svelte";
     import { taskStatuses } from "./task-status-cache";
-    import type { TaskDescriptor } from "./tasks";
+    import { tasksToString } from "./tasks";
+    import type { TaskDescriptor } from './tasks'
     import Odevzdavatko from "./Odevzdavatko.svelte";
     import SolutionCaptcha from "./SolutionCaptcha.svelte";
+    import type { TaskStatus } from "./ksp-submit-api";
 
     export let task: TaskDescriptor | null | undefined
 
@@ -44,6 +46,20 @@
         }
     }
 
+    function getAssignment(task: TaskDescriptor): Promise<TaskAssignmentData> {
+        if ("open-data" == task.type) {
+            return grabAssignment(task.taskReference)
+        } else if ("custom-open-data" == task.type) {
+            return Promise.resolve({
+                description: task.htmlAssignment,
+                id: task.taskReference,
+                name: task.title,
+                points: task.points,
+                hasSolution: task.htmlSolution != null
+            })
+        } else throw new Error("Invalid task type")
+    }
+
 </script>
 <style>
     div {
@@ -79,9 +95,9 @@
             <div class="title"><h3>{nonNull(task).title}</h3></div>
         </div>
         {@html nonNull(task).htmlContent || "Toto je prázdný textový node 😢"}
-    {:else if nonNull(task).type == "open-data"}
+    {:else if ["open-data", "custom-open-data"].includes(nonNull(task).type)}
 
-    {#await grabAssignment(nonNull(referenceId))}
+    {#await getAssignment(nonNull(task))}
         Načítám úlohu
     {:then task}
         <div class="header">
@@ -112,7 +128,10 @@
         <hr class="clearfloat" />
 
         <div class="solution">
-            {#if showSolution}
+            {#if !task.hasSolution}
+                K úloze není zveřejněné vzorové řešení, budeš ho muset vymyslet sám.
+                Rádi Ti ale s řešením poradíme na <a href="https://discord.gg/AvXdx2X">našem Discordu</a> a nebo na <a href="mailto:zdrojaky@ksp.mff.cuni.cz">zdrojaky@ksp.mff.cuni.cz</a>.
+            {:else if showSolution}
 
                 <h4>Řešení</h4>
                 {#await grabSolution(nonNull(referenceId))}

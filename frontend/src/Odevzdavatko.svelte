@@ -149,11 +149,16 @@
             subtasks[subtasks.findIndex(s => s.id == x.id)] = x
             task = { ...task, subtasks }
         }
-        // It's probably better to download the input using the "old" method
-        // TODO: specify that as an API
 
-        const parsedId = parseTaskId(id_)
-        magicTrickSaveFile(`/cviciste/?in=1:sub=${subtaskId}:task=${id_}:year=${parsedId!.rocnik}`, subtaskId_ + ".in.txt")
+        const subtask = task.subtasks[task.subtasks.findIndex(s => s.id == subtaskId_)]
+        if (!subtask || !subtask.download_url) {
+            return alert("Chyba: subtask nelze stáhnout")
+        }
+        // change URL to relative, so a[download] works
+        const downloadLink = new URL(subtask.download_url, location.href)
+        downloadLink.host = location.host
+        downloadLink.protocol = location.protocol
+        magicTrickSaveFile(downloadLink.href, subtaskId_ + ".in.txt")
         downloadedSubtasks.add(subtaskId_)
         updateCurrentDownloadTask()
 
@@ -244,7 +249,7 @@
     </div>
     <div>
         {#if expiresInSec > 60*60*24*30}
-            Vstup neexpiruje.
+            Vstup platí pořád.
         {:else}
 
             {capitalizeFirstLetter(nameSubtaskId(nonNull(uploadSubtaskId)))}
