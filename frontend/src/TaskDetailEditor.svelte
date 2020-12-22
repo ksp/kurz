@@ -166,7 +166,6 @@
     <label>
         Odkaz na původní zdroj: <input type="url" bind:value={editData.task.originalSource.url} placeholder="absolutní URL mimo KSPí web, jinak relativní" />
     </label>
-    <div style="display: {editData.task.type == 'text' ? 'block' : 'none'}">
     {#if editData.task.type == 'text'}
     <div>
         <h3>HTML obsah</h3>

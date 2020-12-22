@@ -51,6 +51,7 @@ export type SubtaskSubmitStatus = {
     input_valid_until?: string
     submitted_on?: string
     verdict?: string
+    download_url?: string
 }
 
 export type TaskSubmitStatus = {
