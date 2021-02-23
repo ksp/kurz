@@ -7,6 +7,7 @@
     import { capitalizeFirstLetter, nonNull } from "./helpers";
 
     export let id: string;
+    export let cviciste: boolean;
     const taskFromCache: TaskStatus | undefined = $taskStatuses.get(id)
     let task: TaskSubmitStatus
     let subtaskId: string = "1"
@@ -17,6 +18,8 @@
     let downloading = false
     let generating = false
     let downloadedSubtasks = new Set<string>()
+
+    let error: string | null = null
 
     $: {
         if (task && task.id == "cviciste/" + id) {
@@ -57,11 +60,32 @@
         }
     }
 
+    function getId() {
+        if (cviciste) {
+            return "cviciste/" + id
+        } else {
+            return id
+        }
+    }
+
     function updateTaskStatus() {
-        api.taskStatus(id)
+        if (error != null) {
+            error = "....Zkoušíme to znovu"
+        }
+        api.taskStatus(getId())
            .then(t => {
+               error = null
                task = t
                updateCurrentDownloadTask()
+           }, err => {
+               if ("errorMsg" in err) {
+                   error = err.errorMsg
+               } else {
+                   error = "" + err
+                   if (error.startsWith("[object")) {
+                       error = JSON.stringify(err)
+                   }
+               }
            })
     }
 
@@ -140,11 +164,11 @@
 
     async function download() {
         // copy to prevent races
-        const [id_, subtaskId_] = [id, subtaskId]
+        const [id_, subtaskId_] = [getId(), subtaskId]
         if (!subtaskId_) { return }
         if (calcExpires(subtaskId_) < 20) {
             const x = await api.generateInput(id_, subtaskId_)
-            if (id_ != id) { return }
+            if (id_ != getId()) { return }
             const subtasks = [...task.subtasks]
             subtasks[subtasks.findIndex(s => s.id == x.id)] = x
             task = { ...task, subtasks }
@@ -166,13 +190,10 @@
         if (!uploadSubtaskId || isDone(task.subtasks.find(t => t.id == uploadSubtaskId)!)) {
             uploadSubtaskId = subtaskId_
         }
-
-        // const blob = await api.getInput(id_, subtaskId_)
-        // magicTrickSaveBlob(blob, subtaskId_ + ".in.txt")
     }
 
     async function upload(file: File) {
-        const x = await api.submit(id, uploadSubtaskId!, file)
+        const x = await api.submit(getId(), uploadSubtaskId!, file)
         refreshTaskStatus()
         const subtasks = [...task.subtasks]
         subtasks[subtasks.findIndex(s => s.id == x.id)] = x
@@ -209,6 +230,12 @@
 <svelte:body on:drop={drop} on:dragover={dragOver} />
 
 <div class="odevzdavatko">
+    {#if error != null}
+    
+    Při načítání odevzdávátka došlo k chybě: <strong>{error}</strong>
+    <button on:click={() => updateTaskStatus()}> Zkusit načíst znovu </button>
+
+    {:else}
     <div class="download">
         <button class="download"
                 on:click={download}
@@ -257,5 +284,6 @@
             {Math.floor(expiresInSec / 60 / 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec / 60 % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}s.
         {/if}
     </div>
-    {/if}
+    {/if} <!-- validSubmitSubtasks.length > 0 -->
+    {/if} <!-- error != null -->
 </div>

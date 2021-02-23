@@ -15,7 +15,7 @@ import { loadCurrentTasks, parseTaskId } from "./ksp-task-grabber";
       function positionTasks(z: boolean) {
           const pos = z ? zPosition : hPosition
           return currentTasks.filter(x => parseTaskId(x.id)!.z == z)
-                             .map<TaskDescriptor>((x, i) => ({ ...x, position: [pos![0], pos![1] + (i+1) * 60] }))
+                             .map<TaskDescriptor>((x, i) => ({ ...x, position: [pos![0], pos![1] + (i+1) * 60], isCurrent: true }))
       }
       declaredTasks.tasks = [
           declaredTasks.tasks,

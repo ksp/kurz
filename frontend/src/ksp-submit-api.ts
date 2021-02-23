@@ -26,7 +26,7 @@ async function request(url: string, options: RequestInit = {}): Promise<Response
     const token = await getToken()
     const headers = new Headers(options.headers)
     headers.append("Authorization", "Bearer " + token)
-    const opts:  RequestInit = { ...options, headers }
+    const opts:  RequestInit = { ...options, headers, credentials: "omit" }
     const r = await fetch(url, opts)
     if (r.status >= 400) {
         throw await r.json()
@@ -63,21 +63,21 @@ export type TaskSubmitStatus = {
 }
 
 export function taskStatus(id: string): Promise<TaskSubmitStatus> {
-    return requestJson(`/api/tasks/status?task=${encodeURIComponent("cviciste/" + id)}`)
+    return requestJson(`/api/tasks/status?task=${encodeURIComponent(id)}`)
 }
 
 export function generateInput(id: string, subtask: string): Promise<SubtaskSubmitStatus> {
-    return requestJson(`/api/tasks/generate?task=${encodeURIComponent("cviciste/" + id)}&subtask=${encodeURIComponent(subtask)}`, { method: "POST" })
+    return requestJson(`/api/tasks/generate?task=${encodeURIComponent(id)}&subtask=${encodeURIComponent(subtask)}`, { method: "POST" })
 }
 
 export async function getInput(id: string, subtask: string): Promise<Blob> {
-    const r = await request(`/api/tasks/input?task=${encodeURIComponent("cviciste/" + id)}&subtask=${encodeURIComponent(subtask)}`)
+    const r = await request(`/api/tasks/input?task=${encodeURIComponent(id)}&subtask=${encodeURIComponent(subtask)}`)
     return await r.blob()
 }
 
 export async function submit(id: string, subtask: string, uploadedData: string | Blob): Promise<SubtaskSubmitStatus> {
     return requestJson(
-        `/api/tasks/submit?task=${encodeURIComponent("cviciste/" + id)}&subtask=${encodeURIComponent(subtask)}`,
+        `/api/tasks/submit?task=${encodeURIComponent(id)}&subtask=${encodeURIComponent(subtask)}`,
         {
             method: "POST",
             body: uploadedData,
@@ -108,6 +108,6 @@ export async function grabTaskSummary(): Promise<Map<string, TaskStatus>> {
     }
 
     return new Map<string, TaskStatus>(
-        results.tasks.map(r => [mapId(r.id), { id: mapId(r.id), maxPoints: r.max_points, name: r.name, points: r.points ?? 0, solved: r.points > r.max_points - 0.001, submitted: r.points != null }])
+        results.tasks.map(r => [mapId(r.id), { id: r.id, maxPoints: r.max_points, name: r.name, points: r.points ?? 0, solved: r.points > r.max_points - 0.001, submitted: r.points != null }])
     )
 }
