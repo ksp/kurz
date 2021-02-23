@@ -4,8 +4,29 @@
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import TasksLoader from "./TasksLoader.svelte";
   import TaskPanel from "./TaskPanel.svelte";
+import { loadCurrentTasks, parseTaskId } from "./ksp-task-grabber";
 
-  const tasksPromise: Promise<TasksFile> = loadTasks();
+  const tasksPromise: Promise<TasksFile> = (async function() {
+    const [declaredTasks, currentTasks] = await Promise.all([loadTasks(), loadCurrentTasks()])
+    const hLabel = declaredTasks.tasks.find(t => t.id == "current-tasks-h-label")
+    const zLabel = declaredTasks.tasks.find(t => t.id == "current-tasks-z-label")
+    const [hPosition, zPosition] = [ hLabel, zLabel ].map(t => t && t.position)
+    if (hPosition && zPosition) {
+      function positionTasks(z: boolean) {
+          const pos = z ? zPosition : hPosition
+          return currentTasks.filter(x => parseTaskId(x.id)!.z == z)
+                             .map<TaskDescriptor>((x, i) => ({ ...x, position: [pos![0], pos![1] + (i+1) * 60] }))
+      }
+      declaredTasks.tasks = [
+          declaredTasks.tasks,
+          positionTasks(true),
+          positionTasks(false),
+      ].flat()
+    }
+
+    return declaredTasks
+    
+  })()
 
   // react to hash changes
   let hash = window.location.hash.substr(1);

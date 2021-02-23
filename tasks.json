@@ -135,8 +135,8 @@
             "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
             "requires": [],
             "position": [
-                1205.6161193847656,
-                327.53318786621094
+                1516.6161193847656,
+                363.53318786621094
             ],
             "taskReference": "26-Z3-1",
             "title": "Zámky labyrintu",
@@ -165,8 +165,8 @@
             "comment": "Hádanka - triky s dělitelností devíti a rozkladem čísel, docela hard teorie",
             "requires": [],
             "position": [
-                1244.6161193847656,
-                406.53318786621094
+                1555.6161193847656,
+                442.53318786621094
             ],
             "taskReference": "26-Z3-3",
             "title": "Hádanka",
@@ -194,8 +194,8 @@
             "comment": "Vražedná čísla- WTF, teorie čísel, hard as fuck, divný",
             "requires": [],
             "position": [
-                1087.2091645675546,
-                270.43162285670724
+                1398.2091645675546,
+                306.43162285670724
             ],
             "taskReference": "26-Z4-1",
             "title": "Vražedná čísla",
@@ -1068,8 +1068,8 @@
             "comment": "Šestková čísla — mega voser implementovat, spíš matematická úloha, převod dešitkových čísel do hacknutých římských",
             "requires": [],
             "position": [
-                1229.6161193847656,
-                274.53318786621094
+                1540.6161193847656,
+                310.53318786621094
             ],
             "taskReference": "29-Z3-3",
             "title": "Šestková čísla",
@@ -1696,8 +1696,8 @@
             "comment": "geometrie - přihrádky/zametání (vypsat všechny dvojice bodů s vzdáleností max K)",
             "requires": [],
             "position": [
-                828.0521850585938,
-                204.80533599853516
+                1267.0521850585938,
+                119.80533599853516
             ],
             "title": "Pohyb termitů",
             "hidden": true,
@@ -2130,6 +2130,41 @@
                 -922.5820579528809
             ],
             "hidden": true
+        },
+        {
+            "id": "current-tasks-h-label",
+            "type": "label",
+            "comment": "Speciální label. Zobrazený podle situace",
+            "requires": [
+                "current-tasks-label"
+            ],
+            "title": "Hlavní kategorie",
+            "position": [
+                706,
+                122
+            ]
+        },
+        {
+            "id": "current-tasks-label",
+            "type": "label",
+            "comment": "Speciální popisek. Otextovaný podle situace.",
+            "requires": [],
+            "title": "Aktuální úlohy",
+            "position": [
+                827,
+                49
+            ]
+        },
+        {
+            "id": "current-tasks-z-label",
+            "type": "label",
+            "comment": "Speciální popisek",
+            "requires": [],
+            "title": "Začátečnická kategorie",
+            "position": [
+                967,
+                122
+            ]
         },
         {
             "id": "data",
