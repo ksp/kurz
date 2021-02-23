@@ -88,6 +88,9 @@
   g:hover.solved > .taskNode {
     fill: #389700;
   }
+  .current-task > .taskNode {
+    fill: #ffffff;
+  }
 
   .taskNode {
     fill: #daca20;
@@ -112,6 +115,7 @@
   on:dblclick={dblclick}
   class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''}
     {task.type}
+    {task.isCurrent ? 'current-task' : ''}
     {selected ? 'selected' : 'notSelected'}
     {task.hidden ?? false ? 'hidden' : ''}">
   {#if task.type == 'label'}
