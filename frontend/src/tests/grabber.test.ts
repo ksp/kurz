@@ -12,6 +12,7 @@ global.fetch = function(url: string, init: any) {
 const tasks_json = readFileSync("../tasks.json").toString()
 const tasks: TasksFile = JSON.parse(tasks_json)
 
+jest.setTimeout(12_000)
 
 describe('tasks.json validation', () => {
     test("unique ids", () => {
@@ -124,4 +125,126 @@ describe('task solution (exact match)', () => {
             }
         })
     }
+})
+
+describe('all tasks in a page', () => {
+    test('all assignments', async () => {
+        const tasks = await g.fetchAllTasks("/h/ulohy/33/zadani3.html")
+        expect(tasks.map(x => x.id)).toStrictEqual([ "33-3-1", "33-3-2", "33-3-3", "33-3-4", "33-3-X1", "33-3-S" ])
+    })
+    test('all solutions', async () => {
+        const tasks = await g.fetchAllTasks("/h/ulohy/33/reseni1.html")
+        expect(tasks.map(x => x.id)).toStrictEqual([ "33-1-1", "33-1-2", "33-1-3", "33-1-4", "33-1-X1" ])
+    })
+})
+
+describe('current series scraping', () => {
+    
+    test("1 series with deadline", () => {
+        document.body.innerHTML = `<div id='header'>
+        <div id='logo'>
+            <h1><a href='/'>KSP</a></h1>
+            <h2><a href='/'>Korespondenční seminář z programování</a></h2>
+        </div>
+        <div id='menu'>
+            <ul>
+                <li class='active'><a class='home' href='/'>Domů</a>
+                <li><a href='/h/'>KSP-H</a>
+                <li><a href='/z/'>KSP-Z</a>
+                <li><a href='/kucharky/'>Kuchařky</a>
+                <li><a href='/encyklopedie/'>Encyklopedie</a>
+                <li><a href='/sksp/'>Soustředění</a>
+                <li><a href='/akce/'>Ostatní</a>
+                <li><a href='/kontakty/'>Kontakty</a>
+            </ul>
+        </div>
+        <div id='headnews'>
+            <h3>Aktuálně</h3>
+            <table>
+                <tr><th>KSP-H<td><a href='/h/ulohy/33/vysledky2.html'>2. série opravena</a>, <a class='series-link' href='/h/ulohy/33/zadani3.html'>3. sérii</a> odevzdávejte do <span class='series-deadline' style='border-bottom: 1px dotted' title='lze odevzdávat až do rána dalšího dne v 8:00'>21. 2. 2022</span>
+                <tr><th>KSP-Z<td><a href='/z/ulohy/33/zadani3.html'>3. série se opravuje</a>
+                
+            </table>
+            <hr>
+            <div class='auth'>
+                <p><span class='login_label'>Nepřihlášen:</span> <a href='https://localhost:1443/auth/login.cgi?redirect=https%3a%2f%2flocalhost%3a1443%2f'>Přihlásit</a><span class='splitter'>|</span><a href='/auth/manage.cgi?mode=register'>Registrovat</a></p>
+            </div>
+        </div>
+    </div>`
+
+        expect(g.getCurrentSeries()).toStrictEqual([{ category: "H", deadline: "21. 2. 2022", link: "/h/ulohy/33/zadani3.html" }])
+    })
+
+    test("no active series", () => {
+        document.body.innerHTML = `<div id='header'>
+        <div id='logo'>
+            <h1><a href='/'>KSP</a></h1>
+            <h2><a href='/'>Korespondenční seminář z programování</a></h2>
+        </div>
+        <div id='menu'>
+            <ul>
+                <li class='active'><a class='home' href='/'>Domů</a>
+                <li><a href='/h/'>KSP-H</a>
+                <li><a href='/z/'>KSP-Z</a>
+                <li><a href='/kucharky/'>Kuchařky</a>
+                <li><a href='/encyklopedie/'>Encyklopedie</a>
+                <li><a href='/sksp/'>Soustředění</a>
+                <li><a href='/akce/'>Ostatní</a>
+                <li><a href='/kontakty/'>Kontakty</a>
+            </ul>
+        </div>
+        <div id='headnews'>
+            <h3>Aktuálně</h3>
+            <table>
+                <tr><th>KSP-H<td><a href='/h/ulohy/33/zadani3.html'>3. série se opravuje</a>
+                <tr><th>KSP-Z<td><a href='/z/ulohy/33/reseni3.html'>3. série se opravuje</a>
+                
+            </table>
+            <hr>
+            <div class='auth'>
+                <p><span class='login_label'>Nepřihlášen:</span> <a href='/auth/login.cgi?redirect=https%3a%2f%2fksp.mff.cuni.cz%2f'>Přihlásit</a><span class='splitter'>|</span><a href='/auth/manage.cgi?mode=register'>Registrovat</a></p>
+            </div>
+        </div>
+    </div>`
+
+        expect(g.getCurrentSeries()).toStrictEqual([])
+    })
+    test("2 active series", () => {
+        document.body.innerHTML = `<div id='wrapper'>
+        <div id='header'>
+            <div id='logo'>
+                <h1><a href='/'>KSP</a></h1>
+                <h2><a href='/'>Korespondenční seminář z programování</a></h2>
+            </div>
+            <div id='menu'>
+                <ul>
+                    <li class='active'><a class='home' href='/'>Domů</a>
+                    <li><a href='/h/'>KSP-H</a>
+                    <li><a href='/z/'>KSP-Z</a>
+                    <li><a href='/kucharky/'>Kuchařky</a>
+                    <li><a href='/encyklopedie/'>Encyklopedie</a>
+                    <li><a href='/sksp/'>Soustředění</a>
+                    <li><a href='/akce/'>Ostatní</a>
+                    <li><a href='/kontakty/'>Kontakty</a>
+                </ul>
+            </div>
+            <div id='headnews'>
+                <h3>Aktuálně</h3>
+                <table>
+                    <tr><th>KSP-H<td><a href='/h/ulohy/33/vysledky2.html'>2. série opravena</a>, <a class='series-link' href='/h/ulohy/33/zadani3.html'>3. sérii</a> odevzdávejte do <span class='series-deadline' style='border-bottom: 1px dotted' title='lze odevzdávat až do rána dalšího dne v 8:00'>21. 2. 2022</span>
+                    <tr><th>KSP-Z<td><a href='/z/ulohy/33/vysledky2.html'>2. série opravena</a>, <a class='series-link' href='/z/ulohy/33/zadani3.html'>3. sérii</a> odevzdávejte do <span class='series-deadline' style='border-bottom: 1px dotted' title='lze odevzdávat až do rána dalšího dne v 8:00'>14. 2. 2022</span>
+                    
+                </table>
+                <hr>
+                <div class='auth'>
+                    <p><span class='login_label'>Nepřihlášen:</span> <a href='https://localhost:1443/auth/login.cgi?redirect=https%3a%2f%2flocalhost%3a1443%2f'>Přihlásit</a><span class='splitter'>|</span><a href='/auth/manage.cgi?mode=register'>Registrovat</a></p>
+                </div>
+            </div>
+        </div>`
+
+        expect(g.getCurrentSeries()).toStrictEqual([
+            { category: "H", deadline: "21. 2. 2022", link: "/h/ulohy/33/zadani3.html" },
+            { category: "Z", deadline: "14. 2. 2022", link: "/z/ulohy/33/zadani3.html" },
+        ])
+    })
 })
