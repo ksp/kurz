@@ -148,7 +148,8 @@
             </a>
             {/if}
         </div>
-
+    {:catch}
+        Úlohu se nepodařilo načíst... Zkus stránku načíst znovu, mohlo by to být problémem s připojením. Pokud problém přetrvá, napiš nám prosím.
     {/await}
 
     {/if}
