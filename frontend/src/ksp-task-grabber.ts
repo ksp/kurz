@@ -189,7 +189,9 @@ export async function fetchAllTasks(url: string): Promise<TaskAssignmentData[]> 
                 .map(startElement => parseTask(startElement.id, html))
 }
 
-export const getCurrentSeries = (): { category: "Z" | "H", deadline: string | null | undefined, link: string }[] => Array.from(function* () {
+type ActiveSeriesModel = { category: "Z" | "H", deadline: string | null | undefined, link: string }
+
+export const getCurrentSeries = (): ActiveSeriesModel[] => Array.from(function* () {
     for (const n of Array.from(document.querySelectorAll("#headnews table tr") as NodeListOf<HTMLTableRowElement>)) {
         if (n.cells.length != 2) { continue }
 

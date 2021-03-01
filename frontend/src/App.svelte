@@ -1,32 +1,11 @@
 <script lang="ts">
   import Graph from "./Graph.svelte";
-  import { loadTasks } from "./tasks";
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import TasksLoader from "./TasksLoader.svelte";
   import TaskPanel from "./TaskPanel.svelte";
-import { loadCurrentTasks, parseTaskId } from "./ksp-task-grabber";
+  import { loadAggregatedTasks } from "./aggregate-tasks";
 
-  const tasksPromise: Promise<TasksFile> = (async function() {
-    const [declaredTasks, currentTasks] = await Promise.all([loadTasks(), loadCurrentTasks()])
-    const hLabel = declaredTasks.tasks.find(t => t.id == "current-tasks-h-label")
-    const zLabel = declaredTasks.tasks.find(t => t.id == "current-tasks-z-label")
-    const [hPosition, zPosition] = [ hLabel, zLabel ].map(t => t && t.position)
-    if (hPosition && zPosition) {
-      function positionTasks(z: boolean) {
-          const pos = z ? zPosition : hPosition
-          return currentTasks.filter(x => parseTaskId(x.id)!.z == z)
-                             .map<TaskDescriptor>((x, i) => ({ ...x, position: [pos![0], pos![1] + (i+1) * 60], isCurrent: true }))
-      }
-      declaredTasks.tasks = [
-          declaredTasks.tasks,
-          positionTasks(true),
-          positionTasks(false),
-      ].flat()
-    }
-
-    return declaredTasks
-    
-  })()
+  const tasksPromise: Promise<TasksFile> = loadAggregatedTasks()
 
   // react to hash changes
   let hash = window.location.hash.substr(1);

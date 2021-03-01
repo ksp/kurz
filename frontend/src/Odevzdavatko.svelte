@@ -4,7 +4,7 @@
     import * as api from './ksp-submit-api'
     import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
     import * as s from 'svelte'
-    import { capitalizeFirstLetter, nonNull } from "./helpers";
+    import { capitalizeFirstLetter, formatError, nonNull } from "./helpers";
 
     export let id: string;
     export let cviciste: boolean;
@@ -78,14 +78,7 @@
                task = t
                updateCurrentDownloadTask()
            }, err => {
-               if ("errorMsg" in err) {
-                   error = err.errorMsg
-               } else {
-                   error = "" + err
-                   if (error.startsWith("[object")) {
-                       error = JSON.stringify(err)
-                   }
-               }
+               error = formatError(err)
            })
     }
 
