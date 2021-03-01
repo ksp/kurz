@@ -128,7 +128,9 @@
         <hr class="clearfloat" />
 
         <div class="solution">
-            {#if !assignment.hasSolution}
+            {#if nonNull(task).isCurrent}
+                Úloha je stále soutežní a tak k ní řešení přirozeně není veřejné :)
+            {:else if !assignment.hasSolution}
                 K úloze není zveřejněné vzorové řešení, budeš ho muset vymyslet sám.
                 Rádi Ti ale s řešením poradíme na <a href="https://discord.gg/AvXdx2X">našem Discordu</a> a nebo na <a href="mailto:zdrojaky@ksp.mff.cuni.cz">zdrojaky@ksp.mff.cuni.cz</a>.
             {:else if showSolution}

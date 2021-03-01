@@ -76,6 +76,9 @@
   }
 
  
+  .current-task > .taskNode {
+    fill: #ffffff;
+  }
   .submitted .taskNode {
     fill: #da8820; /* TODO */
   }
@@ -87,9 +90,6 @@
   }
   g:hover.solved > .taskNode {
     fill: #389700;
-  }
-  .current-task > .taskNode {
-    fill: #ffffff;
   }
 
   .taskNode {

@@ -22,7 +22,7 @@
     let error: string | null = null
 
     $: {
-        if (task && task.id == "cviciste/" + id) {
+        if (task && task.id == getId()) {
             break $
         }
 
@@ -232,8 +232,20 @@
 <div class="odevzdavatko">
     {#if error != null}
     
-    Při načítání odevzdávátka došlo k chybě: <strong>{error}</strong>
-    <button on:click={() => updateTaskStatus()}> Zkusit načíst znovu </button>
+    <p class="errormessage">
+        Při načítání odevzdávátka došlo k chybě: <strong>{error}</strong>
+        <button on:click={() => updateTaskStatus()}> Zkusit načíst znovu </button>
+    </p>
+    {#if !cviciste}
+        <p>
+            Úloha je z běžící série a na odevzdávání je potřeba být v ročníku registrován.
+            Případně lze úlohu odevzdávat ve cvičišti - pak nebudeš ve výsledkovce, ale na řešení ani nemusíš být student:
+            <button on:click={() => { cviciste = true; updateTaskStatus(); } }>Přepnout se do cvičiště</button>
+        </p>
+        <p>
+            KSPí API zatím neumí odevzdávat teoretické úlohy, je možné, že se úloha nenačetla protože je teoretická. V takovém případě se přepni do odevzdávátka příslušné kategorie.
+        </p>
+    {/if}
 
     {:else}
     <div class="download">
