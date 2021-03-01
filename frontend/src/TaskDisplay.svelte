@@ -138,6 +138,9 @@
                     Načítám...
                 {:then solution}
                     {@html solution.description}
+                {:catch err}
+                    <p>Řešení se nepodařilo načíst. Je nám líto. Zkus stránku refreshnout a zkusit to znovu. Pokud si myslíš, že je chyba na naší straně, dej nám prosím vědět.</p>
+                    <p>Chyba: {err}</p>
                 {/await}
             {:else if wantsSolution}
                 <SolutionCaptcha on:done={() => showSolution = true} />
@@ -148,8 +151,9 @@
             </a>
             {/if}
         </div>
-    {:catch}
-        Úlohu se nepodařilo načíst... Zkus stránku načíst znovu, mohlo by to být problémem s připojením. Pokud problém přetrvá, napiš nám prosím.
+    {:catch err}
+        <p>Úlohu se nepodařilo načíst... Zkus stránku načíst znovu, mohlo by to být problémem s připojením. Pokud problém přetrvá, napiš nám prosím.</p>
+        <p>Chyba: {err}</p>
     {/await}
 
     {/if}
