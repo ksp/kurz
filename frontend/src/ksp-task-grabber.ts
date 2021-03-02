@@ -63,6 +63,11 @@ function getLocation(id: string, solution: boolean): TaskLocation {
     }
 }
 
+export function getLocationLink(id: string, solution: boolean = false): string {
+    const a = getLocation(id, solution);
+    return a.url + '#' + a.startElement;
+}
+
 function htmlEncode(text: string): string {
     const p = document.createElement("p")
     p.textContent = text

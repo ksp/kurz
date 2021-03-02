@@ -96,4 +96,13 @@ export default [{
 		file: 'public/build/editor.js'
 	},
 	plugins: plugins(true)
+},
+{
+	input: 'src/search-main.ts',
+	output: {
+		sourcemap: !halfProduction,
+		format: 'es',
+		file: 'public/build/search.js'
+	},
+	plugins: plugins(false)
 }];
