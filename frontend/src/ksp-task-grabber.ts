@@ -1,3 +1,4 @@
+import type { TaskDescriptor } from "./tasks"
 
 export type TaskAssignmentData = {
     id: string,
@@ -36,7 +37,7 @@ export type ParsedTaskId = {
 }
 
 export function parseTaskId(id: string): ParsedTaskId | null {
-    const m = /^(\d+)-(Z?)(\d)-(\d)$/.exec(id)
+    const m = /^(\d+)-(Z?)(\d)-(([A-Z]|\d)+)$/.exec(id)
     if (!m) return null
     const [_, rocnik, z, serie, uloha] = m
     return { rocnik, z: !!z, serie, uloha }
@@ -76,11 +77,11 @@ function parseTask(startElementId: string, doc: HTMLDocument): TaskAssignmentDat
 
     let e = titleElement
 
-    const titleMatch = /^(\d+-Z?\d+-\d+) (.*?)( \((\d+) bod.*\))?$/.exec(e.textContent!.trim())
+    const titleMatch = /^(\d+-Z?\d+-([A-Z]|\d)+) (.*?)( \((\d+) bod.*\))?$/.exec(e.textContent!.trim())
     if (!titleMatch) {
-        var [_, id, name, __, points] = ["", startElementId, "Neznámé jméno úlohy", "", ""]
+        var [_, id, name, __, points] = ["", startElementId.startsWith('task-') ? startElementId.substr(5) : startElementId, "Neznámé jméno úlohy", "", ""]
     } else {
-        var [_, id, name, __, points] = titleMatch
+        var [_, id, ___,  name, __, points] = titleMatch
     }
 
     e = e.nextElementSibling as HTMLElement
@@ -180,4 +181,45 @@ export async function grabAssignment(id: string): Promise<TaskAssignmentData> {
 
 export async function grabSolution(id: string): Promise<TaskAssignmentData> {
     return await loadTask(getLocation(id, true))
+}
+
+export async function fetchAllTasks(url: string): Promise<TaskAssignmentData[]> {
+    const html = await fetchHtml(url)
+    return Array.from(html.querySelectorAll("*[id^='task-']"))
+                .map(startElement => parseTask(startElement.id, html))
+}
+
+type ActiveSeriesModel = { category: "Z" | "H", deadline: string | null | undefined, link: string }
+
+export const getCurrentSeries = (): ActiveSeriesModel[] => Array.from(function* () {
+    for (const n of Array.from(document.querySelectorAll("#headnews table tr") as NodeListOf<HTMLTableRowElement>)) {
+        if (n.cells.length != 2) { continue }
+
+        const categoryMatch = /^KSP-([ZH])$/.exec(n.cells[0].textContent!)
+        const deadline = n.querySelector(".series-deadline")?.textContent
+        const link = n.querySelector(".series-link")?.getAttribute("href")
+        if (!link || !categoryMatch) { continue }
+        
+        yield {
+            category: categoryMatch[1] as "Z" | "H",
+            deadline,
+            link
+        }
+    }
+}())
+
+export function loadCurrentTasks(): Promise<TaskDescriptor[]> {
+    return Promise.all(getCurrentSeries().map(async f => {
+
+        var tasks = await fetchAllTasks(f.link)
+        return tasks.map<TaskDescriptor>(t => ({
+            id: t.id,
+            title: `${parseTaskId(t.id)!.uloha}: ${t.name}`,
+            type: "open-data",
+            taskReference: t.id,
+            points: t.points || 0,
+            requires: []
+        }))
+
+    })).then(a => a.flat())
 }

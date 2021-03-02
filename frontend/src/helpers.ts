@@ -26,3 +26,15 @@ export function saveToLocalDisk(filename: string, text: string) {
 export function capitalizeFirstLetter(str: string) {
     return str[0].toUpperCase() + str.slice(1)
 }
+
+export function formatError(err: any): string {
+    if ("errorMsg" in err) {
+        return err.errorMsg
+    } else {
+        let result = "" + err
+        if (result.startsWith("[object")) {
+            result = JSON.stringify(err)
+        }
+        return result
+    }
+}

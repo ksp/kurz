@@ -76,6 +76,9 @@
   }
 
  
+  .current-task > .taskNode {
+    fill: #ffffff;
+  }
   .submitted .taskNode {
     fill: #da8820; /* TODO */
   }
@@ -112,6 +115,7 @@
   on:dblclick={dblclick}
   class="{status == null ? '' : status.solved ? 'solved' : status.submitted ? 'submitted' : ''}
     {task.type}
+    {task.isCurrent ? 'current-task' : ''}
     {selected ? 'selected' : 'notSelected'}
     {task.hidden ?? false ? 'hidden' : ''}">
   {#if task.type == 'label'}

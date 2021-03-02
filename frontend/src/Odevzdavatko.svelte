@@ -4,9 +4,10 @@
     import * as api from './ksp-submit-api'
     import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
     import * as s from 'svelte'
-    import { capitalizeFirstLetter, nonNull } from "./helpers";
+    import { capitalizeFirstLetter, formatError, nonNull } from "./helpers";
 
     export let id: string;
+    export let cviciste: boolean;
     const taskFromCache: TaskStatus | undefined = $taskStatuses.get(id)
     let task: TaskSubmitStatus
     let subtaskId: string = "1"
@@ -18,8 +19,10 @@
     let generating = false
     let downloadedSubtasks = new Set<string>()
 
+    let error: string | null = null
+
     $: {
-        if (task && task.id == "cviciste/" + id) {
+        if (task && task.id == getId()) {
             break $
         }
 
@@ -57,11 +60,25 @@
         }
     }
 
+    function getId() {
+        if (cviciste) {
+            return "cviciste/" + id
+        } else {
+            return id
+        }
+    }
+
     function updateTaskStatus() {
-        api.taskStatus(id)
+        if (error != null) {
+            error = "....Zkoušíme to znovu"
+        }
+        api.taskStatus(getId())
            .then(t => {
+               error = null
                task = t
                updateCurrentDownloadTask()
+           }, err => {
+               error = formatError(err)
            })
     }
 
@@ -140,11 +157,11 @@
 
     async function download() {
         // copy to prevent races
-        const [id_, subtaskId_] = [id, subtaskId]
+        const [id_, subtaskId_] = [getId(), subtaskId]
         if (!subtaskId_) { return }
         if (calcExpires(subtaskId_) < 20) {
             const x = await api.generateInput(id_, subtaskId_)
-            if (id_ != id) { return }
+            if (id_ != getId()) { return }
             const subtasks = [...task.subtasks]
             subtasks[subtasks.findIndex(s => s.id == x.id)] = x
             task = { ...task, subtasks }
@@ -166,13 +183,10 @@
         if (!uploadSubtaskId || isDone(task.subtasks.find(t => t.id == uploadSubtaskId)!)) {
             uploadSubtaskId = subtaskId_
         }
-
-        // const blob = await api.getInput(id_, subtaskId_)
-        // magicTrickSaveBlob(blob, subtaskId_ + ".in.txt")
     }
 
     async function upload(file: File) {
-        const x = await api.submit(id, uploadSubtaskId!, file)
+        const x = await api.submit(getId(), uploadSubtaskId!, file)
         refreshTaskStatus()
         const subtasks = [...task.subtasks]
         subtasks[subtasks.findIndex(s => s.id == x.id)] = x
@@ -209,6 +223,24 @@
 <svelte:body on:drop={drop} on:dragover={dragOver} />
 
 <div class="odevzdavatko">
+    {#if error != null}
+    
+    <p class="errormessage">
+        Při načítání odevzdávátka došlo k chybě: <strong>{error}</strong>
+        <button on:click={() => updateTaskStatus()}> Zkusit načíst znovu </button>
+    </p>
+    {#if !cviciste}
+        <p>
+            Úloha je z běžící série a na odevzdávání je potřeba být v ročníku registrován.
+            Případně lze úlohu odevzdávat ve cvičišti - pak nebudeš ve výsledkovce, ale na řešení ani nemusíš být student:
+            <button on:click={() => { cviciste = true; updateTaskStatus(); } }>Přepnout se do cvičiště</button>
+        </p>
+        <p>
+            KSPí API zatím neumí odevzdávat teoretické úlohy, je možné, že se úloha nenačetla protože je teoretická. V takovém případě se přepni do odevzdávátka příslušné kategorie.
+        </p>
+    {/if}
+
+    {:else}
     <div class="download">
         <button class="download"
                 on:click={download}
@@ -257,5 +289,6 @@
             {Math.floor(expiresInSec / 60 / 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec / 60 % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{Math.floor(expiresInSec % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}s.
         {/if}
     </div>
-    {/if}
+    {/if} <!-- validSubmitSubtasks.length > 0 -->
+    {/if} <!-- error != null -->
 </div>

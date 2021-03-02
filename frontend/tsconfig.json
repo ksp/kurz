@@ -1,7 +1,7 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
-    // "target": "ES2019"
+    "target": "ES2019",
     "strict": true,
     "types": ["jest", "node"],
     "module": "esnext"

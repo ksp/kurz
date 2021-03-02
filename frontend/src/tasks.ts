@@ -11,6 +11,8 @@ export type TaskDescriptor = {
         name: string,  
     },
     hidden?: boolean
+
+    isCurrent?: boolean
 } & (
         {
             type: "open-data",

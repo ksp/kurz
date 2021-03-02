@@ -1,11 +1,11 @@
 <script lang="ts">
   import Graph from "./Graph.svelte";
-  import { loadTasks } from "./tasks";
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import TasksLoader from "./TasksLoader.svelte";
   import TaskPanel from "./TaskPanel.svelte";
+  import { loadAggregatedTasks } from "./aggregate-tasks";
 
-  const tasksPromise: Promise<TasksFile> = loadTasks();
+  const tasksPromise: Promise<TasksFile> = loadAggregatedTasks()
 
   // react to hash changes
   let hash = window.location.hash.substr(1);

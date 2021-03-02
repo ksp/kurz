@@ -5,8 +5,8 @@ describe('My First Test', () => {
     it('Url changes on navigation', () => {
         cy.visit(host + "/kurz")
         cy.contains("Start")
-        cy.contains("Jak řešit úlohy").click()
-        cy.url().should('include', '#task/jak-resit-ulohy')
+        cy.contains("Úlohy v kurzu").click()
+        cy.url().should('include', '#task/ulohy-v-kurzu')
         cy.contains("Zavřít").click()
         cy.url().should('equal',  host + "/kurz#")
     })

@@ -99,13 +99,13 @@
 
     {#await getAssignment(nonNull(task))}
         Načítám úlohu
-    {:then task}
+    {:then assignment}
         <div class="header">
-            <div class="title"><h3>{task.name}</h3></div>
+            <div class="title"><h3>{assignment.name}</h3></div>
 
             <div class="status">
                 <p>
-                    {referenceId} | {task.points} bodů
+                    {referenceId} | {assignment.points} bodů
                     {#if status && status.submitted}
                         {#if nonNull(status).solved}
                         | Vyřešeno 🥳
@@ -116,11 +116,11 @@
                 </p>
             </div>
         </div>
-        {@html task.description}
+        {@html assignment.description}
 
         <hr class="clearfloat" />
         {#if isLoggedIn()}
-            <Odevzdavatko id={nonNull(referenceId)} />
+            <Odevzdavatko id={nonNull(referenceId)} cviciste={!nonNull(task).isCurrent} />
         {:else}
             <p class="zs-warning">Pro odevzdávání je potřeba se <a href={loginUrl}>přihlásit</a>.</p>
         {/if}
@@ -128,7 +128,9 @@
         <hr class="clearfloat" />
 
         <div class="solution">
-            {#if !task.hasSolution}
+            {#if nonNull(task).isCurrent}
+                Úloha je stále soutežní a tak k ní řešení přirozeně není veřejné :)
+            {:else if !assignment.hasSolution}
                 K úloze není zveřejněné vzorové řešení, budeš ho muset vymyslet sám.
                 Rádi Ti ale s řešením poradíme na <a href="https://discord.gg/AvXdx2X">našem Discordu</a> a nebo na <a href="mailto:zdrojaky@ksp.mff.cuni.cz">zdrojaky@ksp.mff.cuni.cz</a>.
             {:else if showSolution}
