@@ -13,7 +13,6 @@
     taskStatuses,
   } from "./task-status-cache";
   import { fetchHtml, grabAssignment, isLoggedIn, parseZkpLecture } from "./ksp-task-grabber";
-import Search from "./Search.svelte";
 
   export let tasks: TasksFile;
 
@@ -491,4 +490,3 @@ import Search from "./Search.svelte";
     </div>
   </div>
 </div>
-<Search tasks={tasks} />

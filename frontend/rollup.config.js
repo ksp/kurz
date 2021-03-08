@@ -36,7 +36,7 @@ function serve() {
 	};
 }
 
-function plugins(editor) {
+function plugins(editor=false, search=false) {
 	return [
 		svelte({
 			// enable run-time checks when not in production
@@ -44,7 +44,7 @@ function plugins(editor) {
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
 			css: css => {
-				css.write(editor ? 'editor.css' : 'bundle.css');
+				css.write(editor ? 'editor.css' : search ? 'search.css' : 'bundle.css');
 			},
 			preprocess: sveltePreprocess(),
 		}),
@@ -104,5 +104,5 @@ export default [{
 		format: 'es',
 		file: 'public/build/search.js'
 	},
-	plugins: plugins(false)
+	plugins: plugins(false, true)
 }];
