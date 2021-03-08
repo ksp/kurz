@@ -9,8 +9,8 @@
             ],
             "title": "Kevin a magnety",
             "position": [
-                -475.45594787597656,
-                552.3078842163086
+                -1098.8656158447266,
+                510.8115463256836
             ],
             "taskReference": "26-Z1-1",
             "points": 8
@@ -40,8 +40,8 @@
                 "30-Z1-3"
             ],
             "position": [
-                -254.43450927734375,
-                1299.0439147949219
+                -877.8441772460938,
+                1257.5475769042969
             ],
             "taskReference": "26-Z1-3",
             "title": "Zamilovaný dopis",
@@ -57,8 +57,8 @@
                 "26-Z4-4"
             ],
             "position": [
-                -923.5020141601562,
-                1551.3793830871582
+                -1546.9116821289062,
+                1509.8830451965332
             ],
             "taskReference": "26-Z1-4",
             "title": "Hroch v jezeře",
@@ -74,8 +74,8 @@
                 "kucharka-zakladni-pole"
             ],
             "position": [
-                -230.18401336669922,
-                773.8297576904297
+                -853.5936813354492,
+                732.3334197998047
             ],
             "taskReference": "26-Z2-1",
             "title": "Had z domina",
@@ -89,8 +89,8 @@
                 "kucharka-zakladni-algoritmus"
             ],
             "position": [
-                -427.0237350463867,
-                385.39715576171875
+                -1050.4334030151367,
+                343.90081787109375
             ],
             "taskReference": "26-Z2-2",
             "title": "SADO",
@@ -106,8 +106,8 @@
                 "26-Z1-3"
             ],
             "position": [
-                -354.69641876220703,
-                1346.3564147949219
+                -978.106086730957,
+                1304.8600769042969
             ],
             "taskReference": "26-Z2-3",
             "title": "Šifrovaná zpráva",
@@ -123,8 +123,8 @@
             ],
             "title": "Životně důležitá úloha",
             "position": [
-                -151.34776544570923,
-                917.8198776245117
+                -774.7574334144592,
+                876.3235397338867
             ],
             "taskReference": "26-Z2-4",
             "points": 12
@@ -135,8 +135,8 @@
             "comment": "Zámky labyrintu - hromada ifů, vhodné možná na code review, hledání čísla z trojice takového, že je trojice aritmetrická posloupnost",
             "requires": [],
             "position": [
-                1516.6161193847656,
-                363.53318786621094
+                2079.496368408203,
+                521.1396331787109
             ],
             "taskReference": "26-Z3-1",
             "title": "Zámky labyrintu",
@@ -151,8 +151,8 @@
                 "29-Z3-2"
             ],
             "position": [
-                -567.4507141113281,
-                1441.9199829101562
+                -1190.8603820800781,
+                1400.4236450195312
             ],
             "taskReference": "26-Z3-2",
             "title": "Čarodějova šifra",
@@ -165,8 +165,8 @@
             "comment": "Hádanka - triky s dělitelností devíti a rozkladem čísel, docela hard teorie",
             "requires": [],
             "position": [
-                1555.6161193847656,
-                442.53318786621094
+                2118.496368408203,
+                600.1396331787109
             ],
             "taskReference": "26-Z3-3",
             "title": "Hádanka",
@@ -181,8 +181,8 @@
                 "kucharka-zakladni-stromy"
             ],
             "position": [
-                -1069.7008056640625,
-                1410.7956008911133
+                -1693.1104736328125,
+                1369.2992630004883
             ],
             "taskReference": "26-Z3-4",
             "title": "Tvar labyrintu",
@@ -194,8 +194,8 @@
             "comment": "Vražedná čísla- WTF, teorie čísel, hard as fuck, divný",
             "requires": [],
             "position": [
-                1398.2091645675546,
-                306.43162285670724
+                1961.089413590992,
+                464.03806816920724
             ],
             "taskReference": "26-Z4-1",
             "title": "Vražedná čísla",
@@ -240,8 +240,8 @@
                 "kucharka-zakladni-stromy"
             ],
             "position": [
-                -929.5531616210938,
-                1411.2905349731445
+                -1552.9628295898438,
+                1369.7941970825195
             ],
             "taskReference": "26-Z4-4",
             "title": "Hlídači v labyrintu",
@@ -253,8 +253,8 @@
             "taskReference": "27-1-4",
             "requires": [],
             "position": [
-                2106.817985534668,
-                1146.6559019088745
+                2669.6982345581055,
+                1304.2623472213745
             ],
             "title": "Head-up display",
             "hidden": true,
@@ -266,8 +266,8 @@
             "taskReference": "27-2-5",
             "requires": [],
             "position": [
-                1217.155632019043,
-                1124.5684385299683
+                1780.0358810424805,
+                1282.1748838424683
             ],
             "title": "Nejdelší příkaz",
             "hidden": true,
@@ -292,8 +292,8 @@
             "taskReference": "27-4-5",
             "requires": [],
             "position": [
-                2081.3400802612305,
-                790.309832572937
+                2644.220329284668,
+                947.916277885437
             ],
             "title": "Večeře pro opraváře",
             "hidden": true,
@@ -305,8 +305,8 @@
             "taskReference": "27-5-3",
             "requires": [],
             "position": [
-                2056.503044128418,
-                625.5225400924683
+                2619.3832931518555,
+                783.1289854049683
             ],
             "title": "Čekání na poště",
             "hidden": true,
@@ -320,8 +320,8 @@
                 "kucharka-zakladni-reprezentace-dat"
             ],
             "position": [
-                -382.19495391845703,
-                591.276141166687
+                -1005.604621887207,
+                549.779803276062
             ],
             "title": "Na zastávce",
             "hidden": false,
@@ -333,8 +333,8 @@
             "taskReference": "27-Z1-2",
             "requires": [],
             "position": [
-                1739.7698287963867,
-                -160.9592409133911
+                1913.8917770385742,
+                -446.83113956451416
             ],
             "title": "Kalkulačka",
             "comment": "jednoduché načtení vstupu a pak vyhodnocení",
@@ -347,8 +347,8 @@
             "taskReference": "27-Z1-3",
             "requires": [],
             "position": [
-                1518.409294128418,
-                1245.754168510437
+                2081.2895431518555,
+                1403.360613822937
             ],
             "title": "Slovník T9",
             "hidden": true,
@@ -360,8 +360,8 @@
             "taskReference": "27-Z1-4",
             "requires": [],
             "position": [
-                1333.111198425293,
-                1194.713885307312
+                1895.9914474487305,
+                1352.320330619812
             ],
             "title": "Lyžař",
             "hidden": true,
@@ -375,8 +375,8 @@
                 "kucharka-zakladni-pole"
             ],
             "position": [
-                -330.92587089538574,
-                824.1362380981445
+                -954.3355388641357,
+                782.6399002075195
             ],
             "taskReference": "27-Z2-1",
             "title": "Závorky z cereálií",
@@ -388,8 +388,8 @@
             "taskReference": "27-Z2-2",
             "requires": [],
             "position": [
-                898.155632019043,
-                1242.5684385299683
+                1461.0358810424805,
+                1400.1748838424683
             ],
             "title": "Hrnce od Horsta",
             "hidden": true,
@@ -401,8 +401,8 @@
             "taskReference": "27-Z2-3",
             "requires": [],
             "position": [
-                807.7896041870117,
-                1313.9344053268433
+                1370.6698532104492,
+                1471.5408506393433
             ],
             "title": "Nápis na tričku",
             "hidden": true,
@@ -414,8 +414,8 @@
             "taskReference": "27-Z2-4",
             "requires": [],
             "position": [
-                1017.155632019043,
-                1255.5684385299683
+                1580.0358810424805,
+                1413.1748838424683
             ],
             "title": "Hořící auto",
             "hidden": true,
@@ -427,8 +427,8 @@
             "taskReference": "27-Z3-1",
             "requires": [],
             "position": [
-                489.8798141479492,
-                1566.5902891159058
+                1030.244773864746,
+                1919.3284482955933
             ],
             "title": "Kevin nabíječ, s.r.o.",
             "comment": "chyták v posledním vstupu, jinak fakt jednoduchá",
@@ -441,8 +441,8 @@
             "taskReference": "27-Z3-2",
             "requires": [],
             "position": [
-                1269.155632019043,
-                1015.5684385299683
+                1832.0358810424805,
+                1173.1748838424683
             ],
             "title": "Nedej vitagen",
             "hidden": true,
@@ -484,8 +484,8 @@
             "taskReference": "27-Z4-1",
             "requires": [],
             "position": [
-                1573.334342956543,
-                -36.192124366760254
+                1747.4562911987305,
+                -322.0640230178833
             ],
             "title": "Záhada Pražského orloje",
             "comment": "Euklidův algoritmus, potřeba vymyslet přes matematiku",
@@ -511,8 +511,8 @@
             "taskReference": "27-Z4-3",
             "requires": [],
             "position": [
-                974.155632019043,
-                1158.5684385299683
+                1537.0358810424805,
+                1316.1748838424683
             ],
             "title": "Běžkaři v Praze!",
             "hidden": true,
@@ -524,8 +524,8 @@
             "taskReference": "27-Z4-4",
             "requires": [],
             "position": [
-                1363.676628112793,
-                1480.8441953659058
+                1926.5568771362305,
+                1638.4506406784058
             ],
             "title": "Koňské skoky",
             "hidden": true,
@@ -539,8 +539,8 @@
                 "31-Z3-2"
             ],
             "position": [
-                -842.9662780761719,
-                2112.172149658203
+                -1466.3759460449219,
+                2070.675811767578
             ],
             "title": "Jízda na biomotorce",
             "comment": "Prohledávání statového prostoru - hledání cesty v obohacneném grafu",
@@ -553,8 +553,8 @@
             "taskReference": "28-1-5",
             "requires": [],
             "position": [
-                2578.8408203125,
-                1227.2563781738281
+                3141.7210693359375,
+                1384.8628234863281
             ],
             "title": "Likvidace plísně",
             "hidden": true,
@@ -566,8 +566,8 @@
             "taskReference": "28-2-5",
             "requires": [],
             "position": [
-                2579.950439453125,
-                1310.4740905761719
+                3142.8306884765625,
+                1468.0805358886719
             ],
             "title": "Hlídání věznice",
             "hidden": true,
@@ -579,8 +579,8 @@
             "taskReference": "28-3-5",
             "requires": [],
             "position": [
-                2434.5966796875,
-                1312.6931457519531
+                2997.4769287109375,
+                1470.2995910644531
             ],
             "title": "Závaží z fošen",
             "hidden": true,
@@ -592,8 +592,8 @@
             "taskReference": "28-4-4",
             "requires": [],
             "position": [
-                2251.517822265625,
-                1337.1037902832031
+                2814.3980712890625,
+                1494.7102355957031
             ],
             "title": "Podivuhodný obraz",
             "hidden": true,
@@ -605,8 +605,8 @@
             "taskReference": "28-5-6",
             "requires": [],
             "position": [
-                2071.767333984375,
-                1343.7611389160156
+                2634.6475830078125,
+                1501.3675842285156
             ],
             "title": "Sloty na iridium",
             "hidden": true,
@@ -621,8 +621,8 @@
                 "26-Z2-2"
             ],
             "position": [
-                -584.5371713638306,
-                479.4455375671387
+                -1207.9468393325806,
+                437.9491996765137
             ],
             "title": "Kevinův leták",
             "hidden": false,
@@ -635,8 +635,8 @@
             "comment": "dělitelnost",
             "requires": [],
             "position": [
-                1741.000244140625,
-                39.6094856262207
+                1915.1221923828125,
+                -246.26241302490234
             ],
             "title": "Sářina hra",
             "hidden": true,
@@ -649,8 +649,8 @@
             "comment": "dělení a modulení",
             "requires": [],
             "position": [
-                1519.6990966796875,
-                37.605228424072266
+                1693.821044921875,
+                -248.26667022705078
             ],
             "title": "Petrovy stromy",
             "hidden": true,
@@ -663,8 +663,8 @@
             "comment": "hledání komponent souvislosti",
             "requires": [],
             "position": [
-                -805.9155197143555,
-                1901.931526184082
+                -1429.3251876831055,
+                1860.435188293457
             ],
             "title": "Zuzčina zvědavost",
             "hidden": true,
@@ -677,8 +677,8 @@
             "comment": "hledání podřetězce",
             "requires": [],
             "position": [
-                -189.9454116821289,
-                1464.5558776855469
+                -813.3550796508789,
+                1423.0595397949219
             ],
             "title": "Před muzeem",
             "hidden": false,
@@ -721,8 +721,8 @@
                 "kucharka-zakladni-spojovy-seznam"
             ],
             "position": [
-                -607.6408081054688,
-                953.0994148254395
+                -1231.0504760742188,
+                911.6030769348145
             ],
             "title": "Rozsypaná turbína",
             "points": 12
@@ -748,8 +748,8 @@
             "comment": "matematika",
             "requires": [],
             "position": [
-                1637.5750732421875,
-                40.6045036315918
+                1811.697021484375,
+                -245.26739501953125
             ],
             "title": "Zlomkovník",
             "hidden": true,
@@ -820,8 +820,8 @@
                 "kucharka-zakladni-binarni-vyhledavani"
             ],
             "position": [
-                -1133.7586975097656,
-                879.2374420166016
+                -1757.1683654785156,
+                837.7411041259766
             ],
             "title": "Mocniny",
             "points": 10
@@ -835,8 +835,8 @@
                 "kucharka-zakladni-dynamicke-programovani"
             ],
             "position": [
-                475.0968322753906,
-                950.3754272460938
+                -300.49859619140625,
+                871.3538208007812
             ],
             "title": "Čtyřková",
             "points": 12,
@@ -848,8 +848,8 @@
             "taskReference": "29-1-4",
             "requires": [],
             "position": [
-                2426.829833984375,
-                1231.6946105957031
+                2989.7100830078125,
+                1389.3010559082031
             ],
             "title": "Zběsilý útěk",
             "hidden": true,
@@ -861,8 +861,8 @@
             "taskReference": "29-2-4",
             "requires": [],
             "position": [
-                2267.0517578125,
-                1250.5573425292969
+                2829.9320068359375,
+                1408.1637878417969
             ],
             "title": "Nejsložitější záhon",
             "hidden": true,
@@ -874,8 +874,8 @@
             "taskReference": "29-3-1",
             "requires": [],
             "position": [
-                2419.062744140625,
-                1162.9012756347656
+                2981.9429931640625,
+                1320.5077209472656
             ],
             "title": "Verbování",
             "hidden": true,
@@ -887,8 +887,8 @@
             "taskReference": "29-4-3",
             "requires": [],
             "position": [
-                2269.270751953125,
-                1179.5448913574219
+                2832.1510009765625,
+                1337.1513366699219
             ],
             "title": "Výhružné dopisy",
             "hidden": true,
@@ -900,8 +900,8 @@
             "taskReference": "29-5-1",
             "requires": [],
             "position": [
-                2420.17236328125,
-                1096.3271789550781
+                2983.0526123046875,
+                1253.9336242675781
             ],
             "title": "Holubí pošta",
             "hidden": true,
@@ -932,8 +932,8 @@
                 "kucharka-zakladni-algoritmus"
             ],
             "position": [
-                -212.3476220369339,
-                331.40060806274414
+                -835.7572900056839,
+                289.90427017211914
             ],
             "title": "Sářiny pamlsky",
             "points": 10
@@ -947,8 +947,8 @@
             ],
             "title": "Petrova statistika",
             "position": [
-                -354.7449789047241,
-                905.3906631469727
+                -978.1546468734741,
+                863.8943252563477
             ],
             "taskReference": "29-Z1-3",
             "points": 10
@@ -962,8 +962,8 @@
                 "31-Z3-3"
             ],
             "position": [
-                -1133.1459350585938,
-                1742.5294723510742
+                -1756.5556030273438,
+                1701.0331344604492
             ],
             "taskReference": "29-Z1-4",
             "title": "Zuzčin výlet",
@@ -995,8 +995,8 @@
                 "kucharka-zakladni-pole"
             ],
             "position": [
-                -432.06036376953125,
-                788.9981231689453
+                -1055.4700317382812,
+                747.5017852783203
             ],
             "title": "Sářina volba",
             "points": 10
@@ -1008,8 +1008,8 @@
             "comment": "Petr v říši divů — grafy - prohledávání (rozpad na komponenty)",
             "requires": [],
             "position": [
-                -964.3838958740234,
-                1915.2156295776367
+                -1587.7935638427734,
+                1873.7192916870117
             ],
             "title": "Petr v říši divů",
             "hidden": true,
@@ -1054,8 +1054,8 @@
                 "label-retezce"
             ],
             "position": [
-                -457.70130920410156,
-                1393.697998046875
+                -1081.1109771728516,
+                1352.20166015625
             ],
             "taskReference": "29-Z3-2",
             "title": "Písemka z angličtiny",
@@ -1068,8 +1068,8 @@
             "comment": "Šestková čísla — mega voser implementovat, spíš matematická úloha, převod dešitkových čísel do hacknutých římských",
             "requires": [],
             "position": [
-                1540.6161193847656,
-                310.53318786621094
+                2103.496368408203,
+                468.13963317871094
             ],
             "taskReference": "29-Z3-3",
             "title": "Šestková čísla",
@@ -1085,8 +1085,8 @@
                 "31-Z3-3"
             ],
             "position": [
-                -783.9841613769531,
-                1703.4959106445312
+                -1407.3938293457031,
+                1661.9995727539062
             ],
             "title": "Zdobení stromečku",
             "hidden": false,
@@ -1099,8 +1099,8 @@
             "comment": "Šíření viru — vopruz načítat vstup, přímočaré kvadratické řešení, trochu důmyslnější optimální, podhodnocená as fuck, šíření viru v grafu",
             "requires": [],
             "position": [
-                -695.9651489257812,
-                1745.1685180664062
+                -1319.3748168945312,
+                1703.6721801757812
             ],
             "title": "Šíření viru",
             "hidden": true,
@@ -1115,8 +1115,8 @@
                 "kucharka-zakladni-hladovy-algoritmus"
             ],
             "position": [
-                -629.13037109375,
-                400.0661315917969
+                -1252.5400390625,
+                358.5697937011719
             ],
             "title": "Vybírání atrakcí",
             "points": 10
@@ -1160,8 +1160,8 @@
                 "31-Z3-2"
             ],
             "position": [
-                -1071.9327087402344,
-                2107.305938720703
+                -1695.3423767089844,
+                2065.809600830078
             ],
             "title": "Cesta v bunkru",
             "comment": "Hledání cesty v hilbertově křivce",
@@ -1174,8 +1174,8 @@
             "taskReference": "30-2-4",
             "requires": [],
             "position": [
-                2291.462158203125,
-                823.3730773925781
+                2854.3424072265625,
+                980.9795227050781
             ],
             "title": "Komprimace",
             "hidden": true,
@@ -1189,8 +1189,8 @@
                 "30-Z4-1"
             ],
             "position": [
-                235.2901611328125,
-                944.6101379394531
+                -540.3052673339844,
+                865.5885314941406
             ],
             "title": "Vlnění",
             "hidden": false,
@@ -1204,8 +1204,8 @@
                 "kucharka-zakladni-dynamicke-programovani"
             ],
             "position": [
-                371.55218505859375,
-                987.8020324707031
+                -404.0432434082031,
+                908.7804260253906
             ],
             "title": "Frňákovník",
             "hidden": false,
@@ -1217,8 +1217,8 @@
             "taskReference": "30-5-2",
             "requires": [],
             "position": [
-                2432.377685546875,
-                878.8515930175781
+                2995.2579345703125,
+                1036.4580383300781
             ],
             "title": "Útěk z trezorů",
             "hidden": true,
@@ -1248,8 +1248,8 @@
                 "kucharka-zakladni-hladovy-algoritmus"
             ],
             "position": [
-                -772.8814697265625,
-                394.07132720947266
+                -1396.2911376953125,
+                352.57498931884766
             ],
             "points": 10
         },
@@ -1263,8 +1263,8 @@
                 "31-Z1-1"
             ],
             "position": [
-                -218.60426330566406,
-                1241.7639770507812
+                -842.0139312744141,
+                1200.2676391601562
             ],
             "hidden": false,
             "points": 10
@@ -1277,8 +1277,8 @@
             "comment": "Sousednost v grafu",
             "requires": [],
             "position": [
-                -932.180908203125,
-                1862.528190612793
+                -1555.590576171875,
+                1821.031852722168
             ],
             "hidden": true,
             "points": 12
@@ -1291,8 +1291,8 @@
             "comment": "Trivka, projít string a skippovat duplikáty",
             "requires": [],
             "position": [
-                -272.6851043701172,
-                1401.7813110351562
+                -896.0947723388672,
+                1360.2849731445312
             ],
             "hidden": false,
             "points": 8
@@ -1321,8 +1321,8 @@
                 "kucharka-zakladni-stromy"
             ],
             "position": [
-                -1230.7342882156372,
-                1420.6914749145508
+                -1854.1439561843872,
+                1379.1951370239258
             ],
             "points": 10
         },
@@ -1336,8 +1336,8 @@
                 "kucharka-zakladni-prefixove-soucty-2d"
             ],
             "position": [
-                174.52989196777344,
-                1170.3487854003906
+                -601.0655364990234,
+                1091.3271789550781
             ],
             "hidden": false,
             "points": 12
@@ -1352,8 +1352,8 @@
                 "kucharka-zakladni-reprezentace-dat"
             ],
             "position": [
-                -263.88038635253906,
-                549.0704807043076
+                -887.2900543212891,
+                507.57414281368256
             ],
             "points": 8
         },
@@ -1365,8 +1365,8 @@
             "comment": "Výroba palindromu",
             "requires": [],
             "position": [
-                -381.1106872558594,
-                1466.7915802001953
+                -1004.5203552246094,
+                1425.2952423095703
             ],
             "hidden": false,
             "points": 10
@@ -1409,8 +1409,8 @@
                 "kucharka-zakladni-prefixove-soucty"
             ],
             "position": [
-                124.86744689941406,
-                871.4127044677734
+                -650.7279815673828,
+                792.3910980224609
             ],
             "hidden": false,
             "points": 8
@@ -1423,8 +1423,8 @@
             "comment": "Provházení bludiště",
             "requires": [],
             "position": [
-                -1081.076431274414,
-                1861.8355026245117
+                -1704.486099243164,
+                1820.3391647338867
             ],
             "hidden": true,
             "points": 10
@@ -1437,8 +1437,8 @@
             "comment": "ProhledávánI grafu",
             "requires": [],
             "position": [
-                -782.0938110351562,
-                1844.3579940795898
+                -1405.5034790039062,
+                1802.8616561889648
             ],
             "hidden": true,
             "points": 10
@@ -1465,8 +1465,8 @@
                 "28-Z4-4"
             ],
             "position": [
-                467.8053913116455,
-                1042.3714694976807
+                -307.79003715515137,
+                963.3498630523682
             ],
             "title": "Karkulčin byznys",
             "hidden": false,
@@ -1478,8 +1478,8 @@
             "taskReference": "31-2-4",
             "requires": [],
             "position": [
-                2271.184907913208,
-                947.7135105133057
+                2834.0651569366455,
+                1105.3199558258057
             ],
             "title": "Továrna na perník",
             "hidden": true,
@@ -1491,8 +1491,8 @@
             "taskReference": "31-3-3",
             "requires": [],
             "position": [
-                2253.449312210083,
-                1036.687936782837
+                2816.3295612335205,
+                1194.294382095337
             ],
             "title": "Přebírání hrachu",
             "hidden": true,
@@ -1504,8 +1504,8 @@
             "taskReference": "31-4-3",
             "requires": [],
             "position": [
-                2268.606294631958,
-                1107.9266452789307
+                2831.4865436553955,
+                1265.5330905914307
             ],
             "title": "Nejvíc spánku",
             "hidden": true,
@@ -1517,8 +1517,8 @@
             "taskReference": "31-5-3",
             "requires": [],
             "position": [
-                2095.814790725708,
-                1282.2340183258057
+                2658.6950397491455,
+                1439.8404636383057
             ],
             "title": "Kváskový chléb",
             "hidden": true,
@@ -1531,8 +1531,8 @@
             "comment": "úloha s odčítáním času",
             "title": "Zuzka a poník",
             "position": [
-                -332.0081024169922,
-                1165.5375747680664
+                -955.4177703857422,
+                1124.0412368774414
             ],
             "taskReference": "31-Z1-1",
             "hidden": false,
@@ -1547,8 +1547,8 @@
                 "31-Z3-3"
             ],
             "position": [
-                -866.1637573242188,
-                1792.397315979004
+                -1489.5734252929688,
+                1750.900978088379
             ],
             "taskReference": "31-Z1-2",
             "title": "Ukradený jezdec",
@@ -1620,8 +1620,8 @@
             "comment": "ňáký šachy, předzpracování, hledání nejbližších věží a střelců in bulk - chce lepší tag",
             "requires": [],
             "position": [
-                975.7318115234375,
-                949.9906005859375
+                1538.612060546875,
+                1107.5970458984375
             ],
             "title": "Spousta figurek",
             "hidden": true,
@@ -1634,8 +1634,8 @@
             "comment": "hledání periody v desetinném čísle",
             "requires": [],
             "position": [
-                1841.7220458984375,
-                38.87567901611328
+                2015.843994140625,
+                -246.99621963500977
             ],
             "title": "Zmatematika",
             "hidden": true,
@@ -1648,8 +1648,8 @@
             "comment": "triviální - zapamatování stringů (vybírání rýmů)",
             "requires": [],
             "position": [
-                -162.3399658203125,
-                1347.7179565429688
+                -785.7496337890625,
+                1306.2216186523438
             ],
             "title": "Tvůrčí krize",
             "hidden": false,
@@ -1664,8 +1664,8 @@
                 "29-Z1-4"
             ],
             "position": [
-                -1077.1989135742188,
-                1800.2983932495117
+                -1700.6085815429688,
+                1758.8020553588867
             ],
             "taskReference": "31-Z3-2",
             "title": "Zámek obrazovky",
@@ -1681,8 +1681,8 @@
                 "label-grafy"
             ],
             "position": [
-                -955.0145263671875,
-                1622.0362014770508
+                -1578.4241943359375,
+                1580.5398635864258
             ],
             "taskReference": "31-Z3-3",
             "title": "Stáda hrochů",
@@ -1696,8 +1696,8 @@
             "comment": "geometrie - přihrádky/zametání (vypsat všechny dvojice bodů s vzdáleností max K)",
             "requires": [],
             "position": [
-                1267.0521850585938,
-                119.80533599853516
+                1578.9122924804688,
+                -95.89800453186035
             ],
             "title": "Pohyb termitů",
             "hidden": true,
@@ -1724,8 +1724,8 @@
             "comment": "binární čísla",
             "requires": [],
             "position": [
-                1822.9569702148438,
-                -115.60995483398438
+                1997.0789184570312,
+                -401.4818534851074
             ],
             "title": "Závažíčka na druhou",
             "hidden": true,
@@ -1737,8 +1737,8 @@
             "taskReference": "31-Z4-3",
             "requires": [],
             "position": [
-                1538.031099319458,
-                801.7519016265869
+                2100.9113483428955,
+                959.3583469390869
             ],
             "title": "Probíhání bludištěm",
             "hidden": true,
@@ -1763,8 +1763,8 @@
             "taskReference": "32-1-1",
             "requires": [],
             "position": [
-                2098.499687194824,
-                1213.835223197937
+                2661.3799362182617,
+                1371.441668510437
             ],
             "title": "Zkomolené vysílání",
             "hidden": true,
@@ -1776,8 +1776,8 @@
             "taskReference": "32-2-2",
             "requires": [],
             "position": [
-                2080.4985275268555,
-                862.9364805221558
+                2643.378776550293,
+                1020.5429258346558
             ],
             "title": "Mezihvězdné jízdní řády",
             "hidden": true,
@@ -1789,8 +1789,8 @@
             "taskReference": "32-3-1",
             "requires": [],
             "position": [
-                2102.0034103393555,
-                937.4345273971558
+                2664.883659362793,
+                1095.0409727096558
             ],
             "title": "Zkrat",
             "hidden": true,
@@ -1802,8 +1802,8 @@
             "taskReference": "32-4-4",
             "requires": [],
             "position": [
-                2101.0969161987305,
-                1080.7460508346558
+                2663.977165222168,
+                1238.3524961471558
             ],
             "title": "Zpětný signál",
             "hidden": true,
@@ -1815,8 +1815,8 @@
             "taskReference": "32-5-5",
             "requires": [],
             "position": [
-                2098.2350997924805,
-                1004.0238218307495
+                2661.115348815918,
+                1161.6302671432495
             ],
             "title": "Druhá kostra",
             "hidden": true,
@@ -1828,8 +1828,8 @@
             "taskReference": "32-5-6",
             "requires": [],
             "position": [
-                2058.4335861206055,
-                715.0660581588745
+                2621.313835144043,
+                872.6725034713745
             ],
             "title": "Geocaching s odhadem",
             "hidden": true,
@@ -1841,8 +1841,8 @@
             "taskReference": "32-Z1-1",
             "requires": [],
             "position": [
-                1411.155632019043,
-                1141.5684385299683
+                1974.0358810424805,
+                1299.1748838424683
             ],
             "title": "Kevin v papírnictví",
             "hidden": true,
@@ -1854,8 +1854,8 @@
             "taskReference": "32-Z1-2",
             "requires": [],
             "position": [
-                1248.442741394043,
-                1383.991473197937
+                1811.3229904174805,
+                1541.597918510437
             ],
             "title": "Chybná účtenka",
             "hidden": true,
@@ -1867,8 +1867,8 @@
             "taskReference": "32-Z1-3",
             "requires": [],
             "position": [
-                1140.155632019043,
-                1328.5684385299683
+                1703.0358810424805,
+                1486.1748838424683
             ],
             "title": "Školní knihy",
             "hidden": true,
@@ -1893,8 +1893,8 @@
             "taskReference": "32-Z2-1",
             "requires": [],
             "position": [
-                1572.155632019043,
-                1029.5684385299683
+                2135.0358810424805,
+                1187.1748838424683
             ],
             "title": "Prší",
             "hidden": true,
@@ -1908,8 +1908,8 @@
                 "26-Z2-1"
             ],
             "position": [
-                -261.4561767578125,
-                994.5555601119995
+                -884.8658447265625,
+                953.0592222213745
             ],
             "title": "Turnaj hada",
             "hidden": false,
@@ -1922,8 +1922,8 @@
             "taskReference": "32-Z2-3",
             "requires": [],
             "position": [
-                1686.191276550293,
-                928.291277885437
+                2249.0715255737305,
+                1085.897723197937
             ],
             "title": "Panika v chodbě",
             "hidden": true,
@@ -1935,8 +1935,8 @@
             "taskReference": "32-Z2-4",
             "requires": [],
             "position": [
-                1228.155632019043,
-                733.5684385299683
+                1791.0358810424805,
+                891.1748838424683
             ],
             "title": "Opisování v testu",
             "hidden": true,
@@ -1948,8 +1948,8 @@
             "taskReference": "32-Z3-1",
             "requires": [],
             "position": [
-                1327.155632019043,
-                622.5684385299683
+                1890.0358810424805,
+                780.1748838424683
             ],
             "title": "Tiskařský stroj",
             "hidden": true,
@@ -1974,8 +1974,8 @@
             "taskReference": "32-Z3-3",
             "requires": [],
             "position": [
-                1255.4586715698242,
-                1507.3838682174683
+                1818.3389205932617,
+                1664.9903135299683
             ],
             "title": "Akční ceny",
             "hidden": true,
@@ -1987,8 +1987,8 @@
             "taskReference": "32-Z3-4",
             "requires": [],
             "position": [
-                1671.468864440918,
-                1398.2491025924683
+                2234.3491134643555,
+                1555.8555479049683
             ],
             "title": "Dálnice",
             "hidden": true,
@@ -2000,8 +2000,8 @@
             "taskReference": "32-Z4-1",
             "requires": [],
             "position": [
-                1107.155632019043,
-                680.5684385299683
+                1670.0358810424805,
+                838.1748838424683
             ],
             "title": "Jednobarevné praní",
             "hidden": true,
@@ -2013,8 +2013,8 @@
             "taskReference": "32-Z4-2",
             "requires": [],
             "position": [
-                1595.155632019043,
-                1108.5684385299683
+                2158.0358810424805,
+                1266.1748838424683
             ],
             "title": "Hoří chleba?",
             "hidden": true,
@@ -2026,8 +2026,8 @@
             "taskReference": "32-Z4-3",
             "requires": [],
             "position": [
-                1420.5522384643555,
-                1229.4311094284058
+                1983.432487487793,
+                1387.0375547409058
             ],
             "title": "Esej do bloku",
             "hidden": true,
@@ -2055,8 +2055,8 @@
                 "kucharka-zakladni-fronta-a-zasobnik"
             ],
             "position": [
-                -988.1280975341797,
-                1068.0277128219604
+                -1611.5377655029297,
+                1026.5313749313354
             ],
             "title": "Kontrola závorkových programů",
             "hidden": false,
@@ -2068,8 +2068,8 @@
             "taskReference": "33-Z1-2",
             "requires": [],
             "position": [
-                956.5634078979492,
-                777.6331968307495
+                1519.4436569213867,
+                935.2396421432495
             ],
             "title": "Sobotní den železnice",
             "hidden": true,
@@ -2098,8 +2098,8 @@
             "title": "Stánkař",
             "taskReference": "33-Z2-1",
             "position": [
-                -796,
-                1020
+                -1419.40966796875,
+                978.503662109375
             ],
             "points": 8
         },
@@ -2113,8 +2113,8 @@
             "title": "Rostoucí funkce",
             "taskReference": "33-Z2-3",
             "position": [
-                -1001,
-                882
+                -1624.40966796875,
+                840.503662109375
             ],
             "points": 12
         },
@@ -2140,8 +2140,8 @@
             ],
             "title": "Hlavní kategorie",
             "position": [
-                706,
-                122
+                486.77215576171875,
+                275.61805725097656
             ]
         },
         {
@@ -2151,9 +2151,10 @@
             "requires": [],
             "title": "Aktuální úlohy",
             "position": [
-                827,
-                49
-            ]
+                597.4627685546875,
+                150.63052368164062
+            ],
+            "hidden": true
         },
         {
             "id": "current-tasks-z-label",
@@ -2162,8 +2163,8 @@
             "requires": [],
             "title": "Začátečnická kategorie",
             "position": [
-                967,
-                122
+                747.7721557617188,
+                275.61805725097656
             ]
         },
         {
@@ -2198,8 +2199,8 @@
             "requires": [],
             "title": "KSP-H úlohy",
             "position": [
-                2225.972201347351,
-                625.0823974609375
+                2788.8524503707886,
+                782.6888427734375
             ],
             "hidden": true
         },
@@ -2213,8 +2214,8 @@
             "title": "Algoritmus",
             "htmlContent": "<h3>Algoritmus a&nbsp;program</h3><p>Pod tajemným slovem <i>algoritmus</i> se skrývá jen jiný výraz pro postup. Můžete si to představit jako příkaz od maminky „Běž do krámu, kup chleba, a&nbsp;když budou mít měkké rohlíky, tak jich vem tucet“. (A jako slušně vychovaní se tedy vydáte do krámu a&nbsp;koupíte tucet chlebů, protože měli měkké rohlíky :-))</p><p>Takovýto příkaz klidně můžeme nazvat algoritmem, ačkoliv to bude asi znít nezvykle&nbsp;– pojem algoritmus se totiž používá hlavně ve světě počítačů. Je to tedy nějaká posloupnost základních příkazů, která řeší nějaký problém. Výběr konkrétního programovacího jazyka rozhoduje o&nbsp;tom, jaké základní příkazy budeme mít k&nbsp;dispozici. Většinou jsou ale skoro stejné.</p><p>Mezi základní příkazy patří:</p><ul><li>Manipulace s&nbsp;daty v&nbsp;paměti (uložení či načtení hodnoty, detailněji v&nbsp;další kapitole).</li><li>Provedení nějakého numerického výpočtu (+,-,*,/).</li><li>Vyhodnocení nějaké konkrétní podmínky a&nbsp;odpovídající větvení programu: <i>Pokud platí A, tak proveď B, jinak proveď C.</i> Přitom B&nbsp;i&nbsp;C mohou být klidně celé <i>bloky kódu</i>, tedy libovolně mnoho dalších základních příkazů.</li><li>Opakování nějakého příkazu: <i>Dokud platí A, dělej B.</i> Takové konstrukci říkáme <i>cyklus</i> a&nbsp;podobně jako u&nbsp;podmínky může být B&nbsp;blok kódu, který se celý opakuje.</li><li>Vstup a&nbsp;výstup programu (typicky vstup od uživatele z&nbsp;klávesnice či načtení vstupu ze souboru; výstup pak může znamenat vypsání výsledku na obrazovku nebo třeba zapsání dat do souboru).</li></ul><p>Z&nbsp;těchto základních stavebních kamenů se skládá každý algoritmus. Programem potom rozumíme realizaci algoritmu v&nbsp;nějakém konkrétním programovacím jazyce.</p><p>U&nbsp;složitějších programů se pak často setkáme s&nbsp;problémem, že budete mít nějakou posloupnost příkazů, která se bude na spoustě míst programu opakovat, což zbytečně prodlužuje a znepřehledňuje kód.</p><p>Řešením tohoto problému je použití <i>funkcí</i>. Funkci si můžeme představit jako nějakou pojmenovanou část programu (s&nbsp;vlastní pamětí), kterou můžeme opakovaně použít tím, že ji v&nbsp;různých částech programu <i>zavoláme</i>. Funkci při zavolání předáme parametry (například seznam čísel), které se dostanou do její vnitřní paměti.</p><p>Funkce pak na základě obdržených parametrů může provádět nějaké operace, při kterých pracuje se svojí vnitřní pamětí (mluvíme o&nbsp;<i>lokální</i> paměti, změny v&nbsp;ní se neprojeví nikde mimo funkci). Na konci nám funkce může vrátit nějaký výsledek. Pokud funkce během svého běhu změní i nějaká data v&nbsp;<i>globální</i> paměti, či provede nějakou globální operaci (například výpis textu na monitor), mluvíme pak o&nbsp;funkci s&nbsp;<i>vedlejšími efekty</i> (neboli side-efekty).</p><p>Konkrétním příkladem může být funkce, která nám spočítá odmocninu ze zadaného čísla. Ta dostane jako svůj parametr číslo, uvnitř si provede nějaký výpočet, o&nbsp;který se jako uživatel funkce nemusíme starat, a&nbsp;jako výstup nám vrátí spočtenou odmocninu.</p>",
             "position": [
-                -410.8735809326172,
-                273.27046966552734
+                -1034.2832489013672,
+                231.77413177490234
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2231,8 +2232,8 @@
             "title": "Rozděl a panuj - binární vyhledávání",
             "htmlContent": "<h3>Rozděl a&nbsp;panuj</h3><p>Jednou ze základních technik je rozdělení složitějšího problému na menší části, které opět můžeme rozdělit na menší a&nbsp;tak dále, dokud se nedostaneme k&nbsp;problémům tak malým, že je už umíme triviálně vyřešit.</p><h4>Binární vyhledávání v&nbsp;poli</h4>\n\n            <p>\n            Představme si, že máme seřazené pole <span class='math'>n</span>&nbsp;prvků a&nbsp;chceme zjistit, jestli se v&nbsp;něm\n            nachází prvek s&nbsp;hodnotou&nbsp;<span class='math'>k</span>. Určitě můžeme projít celé pole v&nbsp;lineárním čase\n            (tím, že budeme brát jeden prvek za druhým a&nbsp;kontrolovat, zda je roven\n            hodnotě&nbsp;<span class='math'>k</span>), ale to je zbytečně pomalé a&nbsp;nevyužívá toho, že máme pole seřazené.</p>\n            \n            <p>\n            Můžeme totiž začít s&nbsp;velkým problémem a&nbsp;ten postupně zmenšovat na stále menší\n            a&nbsp;menší. Nejdříve hledáme&nbsp;<span class='math'>k</span> v&nbsp;celém poli. Podíváme se na jeho prostřední\n            prvek:</p>\n            <ul><li>Pokud je roven&nbsp;<span class='math'>k</span>, jsme hotovi.</li>\n            <li>Je-li větší než&nbsp;<span class='math'>k</span>, víme, že se <span class='math'>k</span>&nbsp;musí nacházet nalevo od něj. Můžeme tedy\n            hledat znovu, ale tentokrát se omezit jen na levou polovinu pole.</li>\n            <li>Analogicky, je-li menší než&nbsp;<span class='math'>k</span>, můžeme hledat jen v&nbsp;pravé polovině.</li>\n            </ul>\n            \n            <p>\n            Když tímto postupným dělením problémů na menší dojdeme až k&nbsp;poli o&nbsp;velikosti\n            jednoho prvku, stačí tento prvek jenom porovnat, dál už se pole nepokoušíme\n            rozdělovat.</p>\n            \n            <p>\n            Jelikož se nám každým krokem problém zmenší na polovinu, maximálně po\n            <span class='math'> <span class='nomath'>log</span> n</span> krocích se dostaneme na pole velikosti jedna. Říkáme, že algoritmus má\n            <i>logaritmickou časovou složitost</i>, píšeme <span class='math'>O(<span class='nomath'>log</span> n)</span>. (Pokud není řečeno jinak, znamená pro nás v&nbsp;informatice značka <span class='math'> <span class='nomath'>log</span> </span>\n            <i>dvojkový logaritmus</i>, což je funkce opačná k&nbsp;funkci <span class='math'>2<sup>n</sup></span> a&nbsp;roste o&nbsp;hodně\n            pomaleji než funkce lineární. Pro velká&nbsp;<span class='math'>n</span> platí: <span class='math'>1 &lt;  <span class='nomath'>log</span> n &lt; n</span> a&nbsp;například\n            <span class='math'> <span class='nomath'>log</span> 2 = 1,  <span class='nomath'>log</span> 8 = 3,  <span class='nomath'>log</span> 1024 = 10</span>.)</p>\n            \n            <p>\n            Prakticky postup provádíme tak, že si udržujeme levý a&nbsp;pravý okraj aktuálně\n            zpracovávaného úseku a&nbsp;postupně je k&nbsp;sobě přibližujeme.</p><div class='code language-python'>Ukázka v&nbsp;Pythonu jako funkce vracející index prvku nebo <span class='math'>-1</span>, pokud hledané\n            číslo nenalezne:\n            <pre>\n<code>def bin_vyhled(pole, hledane,\n               levy_index=0, pravy_index=None):\n    if pravy_index is None:\n                    pravy_index = len(pole)\n    while levy_index &lt; pravy_index:\n        prostredni = (levy_index +\n                      pravy_index) // 2\n        x = pole[prostredni]\n        if x &lt; hledane:\n            levy_index = prostredni + 1\n        elif x &gt; hledane:\n            pravy_index = prostredni\n        else:\n            return prostredni\n    return -1\n\n# Zavolání:\nprint(bin_vyhled([1,2,5,7, 8,12,16,42], 1))\n</code></pre></div><h4>Další aplikace</h4><p>Další typickou aplikací postupu rozděl a&nbsp;panuj je například třídění posloupnosti pomocí <i>Mergesortu</i>. Ten v&nbsp;základu funguje tak, že každou posloupnost, kterou dostane k&nbsp;setřídění, rozdělí na poloviny a každou z&nbsp;nich setřídí rekurzivním zavoláním sebe sama. Zanořování se zastaví ve chvíli, kdy třídíme posloupnost délky jedna (ta už je z&nbsp;podstaty setříděná). Pak jen v&nbsp;každém kroku ze dvou setříděných menších posloupností vyrobí jejich sléváním setříděnou posloupnost dvojnásobné délky.</p><p>Více se o&nbsp;metodě Rozděl a&nbsp;panuj můžete dozvědět ve stejnojmenné <a href=\"/viz/kucharky/rozdel-a-panuj\">kuchařce</a>.</p>",
             "position": [
-                -1055.2265319824219,
-                786.3630638122559
+                -1678.6361999511719,
+                744.8667259216309
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2249,8 +2250,8 @@
             "title": "Dynamické programování",
             "htmlContent": "<h3>Předpočítané mezivýsledky</h3><p>Motivací k&nbsp;této kapitole je následující motto: „Proč počítat něco vícekrát, když nám to stačí spočítat jednou a&nbsp;zapamatovat si to?“.</p><p>Velmi často se totiž setkáváme s&nbsp;tím, že něco počítáme stále dokola. Jako příklad si můžeme připomenout naši rekurzivní implementaci počítání Fibonacciho čísel zmíněnou výše.</p><p>Když se podíváme na výpočet čísla fib(5), vidíme, že pro něj voláme fib(4) a&nbsp;fib(3), fib(4) volá fib(3) a&nbsp;fib(2), fib(3) volá fib(2) a&nbsp;fib(1) a&nbsp;tak dále. Všimli jste si, kolikrát se nám tyhle výpočty opakují? Některá Fibonacciho čísla spočteme totiž zbytečně mnohokrát.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-5.png\" alt=\"Strom výpočtu Fibonacciho čísla\"></figure><p>Kdybychom si je namísto opakovaného počítání někde pamatovali, mohli bychom pak odpověď na dotaz na již vypočtené číslo vytáhnout jako králíka z&nbsp;klobouku v&nbsp;konstantním čase. Zavedením jednoho globálního pole, ve kterém si tyto hodnoty pro jednotlivá n budeme pamatovat, nám sníží časovou složitost z&nbsp;O(2n) na pěkných O(n). Takovému postupu se obecně říká <i>dynamické programování</i>.</p><h4>Dynamické programování</h4><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/img/hippo_dynamit.png\" alt=\"Dynamitské programování\"></figure><p>Nejprve uveďme na pravou váhu výraz „dynamické“ v&nbsp;názvu. Nevystihuje tak úplně podstatu této techniky a jeho historické pozadí je celkem složité, avšak dnes je tento název již tak zažitý, že se už pravděpodobně nezmění.</p><p>Slovo „dynamické“ částečně odkazuje na to, že se dynamicky (za běhu programu) postupně staví řešení jednodušších problémů, která jsou následně použita pro řešení složitějších. Jeho hlavní podstatou je tedy ukládání a&nbsp;opětovné použití již jednou vypočtených údajů.</p><p>Hodí se na úlohy, které se dají dělit na podúlohy, které jsou si podobné a&nbsp;mohou se opakovat. Výsledky takovýchto podúloh si poté ukládáme a&nbsp;při dotazu na stejnou podúlohu vrátíme jen uložený výsledek a&nbsp;výpočet již neprovádíme.</p><p>Pro další prohloubení znalostí můžete na našem webu nahlédnout do další kuchařky, tentokrát nesoucí (překvapivě) název <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/dynamicke-programovani\">Dynamické programování</a>.</p>",
             "position": [
-                415.81363677978516,
-                888.2000579833984
+                -359.7817916870117,
+                809.1784515380859
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2267,8 +2268,8 @@
             "title": "Fronta a zásobník",
             "htmlContent": "<h4>Fronta a zásobník</h4><p>S&nbsp;použitím spojových seznamů (nebo v&nbsp;jednodušším případě dokonce i polí) můžeme zkonstruovat dvě velmi užitečné datové struktury, frontu a zásobník.</p><p><i>Fronta</i> funguje tak, jak si ji asi každý z&nbsp;nás představuje: ten, kdo se do fronty postaví první, také první přijde na řadu. Trochu jinak si ji můžeme představit jako trubku, do které na jedné straně sypeme nějaké věci a na druhé je odebíráme. Anglicky je též nazývaná <i>FIFO</i> (<i>„First In, First Out“</i>).</p><p>Praktickou realizaci uděláme jednoduše spojovým seznamem. Budeme si držet dva ukazatele, jeden na začátek seznamu, druhý na konec. Když se objeví nový prvek, který do fronty budeme chtít vložit, přidáme ho na konec, zatímco při odebírání z&nbsp;fronty využijeme druhého ukazatele a vezmeme prvek ze začátku.</p><p>Druhou velmi podobnou datovou strukturou je <i>zásobník</i>. Jak už ale plyne z&nbsp;anglického názvu <i>LIFO</i> (<i>„Last In, First Out“</i>), funguje spíše jako plný šuplík: Nahoru do něj přidáváme nové prvky, a když chceme nějaký odebrat, vezmeme také zvrchu. To znamená, že první se na řadu dostane naposledy vložený prvek.</p><p>Implementace je velmi obdobná jako u&nbsp;fronty, jen bude ukazatel pouze jeden a&nbsp;bude ukazovat jenom na jeden konec spojového seznamu, konkrétně na poslední prvek.</p>",
             "position": [
-                -775.7975082397461,
-                949.1721229553223
+                -1399.207176208496,
+                907.6757850646973
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2285,8 +2286,8 @@
             "title": "Grafy",
             "htmlContent": "<h4>Grafy</h4><p>S&nbsp;nějakými grafy jste se již možná potkali, ale tento pojem je bohužel docela přetěžovaný. Jedním jeho významem jsou „koláčové grafy“ a&nbsp;jiné další diagramy znázorňující nějaký poměr (ať už to jsou výsledky voleb, nebo poměr lidí, kteří sledovali v&nbsp;televizi Večerníček).</p><p>Další význam můžeme nalézt v&nbsp;analytické matematice, kde se potkáme s&nbsp;grafy průběhu nějakých funkcí. My však nemáme na mysli ani jedno z&nbsp;výše zmíněných, teď se budeme bavit o&nbsp;<i>kombinatorických grafech</i>.</p><p>Grafem tedy máme na mysli nějakou množinu objektů, říkejme jim <i>vrcholy</i>, a&nbsp;nějaké vztahy mezi nimi. Tyto vztahy nazýváme <i>hranami</i> a&nbsp;jsou vyjádřené dvojicemi vrcholů, mezi kterými vedou. Ukázku takového grafu vidíme třeba na následujícím obrázku.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-3.png\" alt=\"Graf\"></figure><p>Jako praktickou ukázku grafu si můžeme například představit silniční síť nějakého státu: vrcholy budou města a&nbsp;hrany budou silnice, které mezi nimi vedou.</p><p>Občas se můžete setkat s&nbsp;pojmem <i>souvislý</i> graf. Ten znamená jen to, že mezi každými dvěma vrcholy existuje nějaká cesta. Pokud tomu tak není, je graf <i>nesouvislý</i> a&nbsp;dá se rozložit na několik menších grafů, které již souvislé jsou a&nbsp;říká se jim <i>komponenty souvislosti</i>.</p><p>Samotný graf poté můžeme doplnit tím, že si v&nbsp;každém vrcholu nebo na každé hraně budeme pamatovat nějakou hodnotu (například cenu nejlevnějšího benzínu ve městech a&nbsp;délku v&nbsp;kilometrech na silnicích). Pamatování si hodnot ve vrcholech je docela obvyklá technika a nemá speciální název, ale pokud budeme mít graf, který si pamatuje hodnoty na hranách, budeme o&nbsp;něm mluvit jako o&nbsp;<i>ohodnoceném grafu</i>.</p><p>Další možnou úpravou je, že každá hrana povede jen jedním směrem (jednosměrné silnice), takovým grafům říkáme <i>orientované</i> (pokud pak v&nbsp;orientovaném grafu chceme silnici oběma směry, prostě do něj přidáme dvě hrany, jednu v&nbsp;každém směru).</p><p>Poslední, co nám schází k&nbsp;praktickému použití grafů, je naučit se, jak je reprezentovat v&nbsp;počítači. Existuje několik možností (v popisech bude n značit počet vrcholů, m&nbsp;počet hran):</p><ul><li><strong>Seznam sousedů</strong>&nbsp;– vrcholy grafu budeme mít uložené v&nbsp;poli a&nbsp;u&nbsp;každého vrcholu budeme mít (spojový) seznam čísel dalších vrcholů, do kterých z&nbsp;aktuálního vrcholu vede hrana. Zabírá místo O(n+m) a&nbsp;hodí se pro řídké grafy (tedy grafy, kde je m&nbsp;řádově stejné jako&nbsp;n).</li><li><strong>Matice sousednosti</strong>&nbsp;– tabulka n×n, kde na souřadnicích [i,j] je jednička (nebo jiná hodnota, v&nbsp;případě ohodnoceného grafu), pokud z&nbsp;i do j vede hrana, a&nbsp;nula, pokud tam hrana není (u&nbsp;neorientovaných grafů je navíc matice symetrická&nbsp;– je jedno, jestli vezmeme [i,j] nebo [j,i]). Hodí se pro husté grafy, kde m~n2.</li><li><strong>Matice incidence</strong>&nbsp;– řádky reprezentují vrcholy, sloupce hrany. V&nbsp;každém sloupci jsou právě dvě jedničky&nbsp;– indexy vrcholů, mezi kterými hrana vede. Zabírá však O(mn) a její použití bývá dost neohrabané, takže je většinou lepší dát přednost jiné reprezentaci grafu. Je ale dobré o&nbsp;ní vědět.</li></ul><p>Grafy jsou velmi široké téma. Můžeme hledat jejich minimální kostry, můžeme v&nbsp;nich hledat nejkratší cesty či skrze ně pouštět pod tlakem vodu. Více o&nbsp;nich si tedy můžete přečíst v&nbsp;některé z&nbsp;našich specializovaných grafových kuchařek, které odkazujeme z&nbsp;našeho <a href=\"https://ksp.mff.cuni.cz/kucharky/\">kuchařkového rozcestníku</a>.</p>",
             "position": [
-                -809.2669906616211,
-                1160.4436988830566
+                -1432.676658630371,
+                1118.9473609924316
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2303,8 +2304,8 @@
             "title": "Hladové algoritmy",
             "htmlContent": "<h3>Hladové algoritmy</h3><p>Věřte nebo ne, ale i&nbsp;počítač se někdy cítí hladový. Po namáhavé práci mu můžeme dopřát to potěšení, aby si ukousl co největší kus dat. A&nbsp;ukážeme, že někdy je to i&nbsp;ku prospěchu. Řeč bude o&nbsp;<i>hladových algoritmech</i>.</p><p>Takovými algoritmy rozumíme ty, které hledají řešení celé úlohy po jednotlivých krocích a&nbsp;splňují následující dvě podmínky:</p><ul><li>V&nbsp;každém kroku zvolí lokálně nejlepší řešení.</li><li>Provedené rozhodnutí již nikdy neodvolává (tedy nebacktrackuje).</li></ul><p>Lokálně nejlepší řešení je takové, které v&nbsp;aktuálním kroku vybere tu možnost, která nám na tomto místě nejvíce pomůže (bez jakéhokoliv ohledu na globální stav). Může to být třeba nejvyšší hodnota, nebo nejkratší cesta v&nbsp;grafu.</p><p>Pokud ale od hladového algoritmu chceme, aby nám našel globálně nejlepší řešení, musí naše úloha splnit předpoklad, že si výběrem lokálně nejlepšího řešení nezhoršíme to globální. Tento předpoklad se nedá formulovat obecně a&nbsp;je nutné se nad ním zamyslet zvlášť u&nbsp;každé úlohy.</p><h4>Příklady hladových algoritmů</h4><p>První hladovou úlohou bude (jak jinak) automat na jídlo vracející mince. Automat by měl vracet peníze nazpět tak, aby vrátil daný obnos v&nbsp;co možná nejmenším počtu mincí. Pro náš měnový systém (máme mince hodnot 1, 2, 5, 10, 20 a&nbsp;50 Kč) lze tuto úlohu řešit hladovým algoritmem&nbsp;– v&nbsp;každém kroku algoritmu vrátíme tu největší minci, kterou můžeme (tedy pro vrácení 42 Kč to bude 42 = 20 + 20 +2 Kč).</p><p>Měnové systémy většiny států jsou postavené tak, aby fungovaly takto pěkně, neplatí to ale obecně. Zkusme si vrátit 42 Kč, pokud bychom měli jen mince hodnoty 20, 10 a&nbsp;4 Kč. Správným řešením je 42 = 20 + 10 + 4 + 4 +4 Kč, hladový algoritmus by ale zkusil vrátit 42 = 20 + 20 + … a&nbsp;tady by selhal.</p><p>Dále se velmi často dají hladovým algoritmem řešit nějaké úlohy přidávání nebo odebírání skupin prvků. Typickým příkladem je třeba rozvržení naplánovaných přednášek do učeben. Seřadíme si začátky přednášek podle času a&nbsp;postupně bereme jednu za druhou a&nbsp;umísťujeme je do volných učeben s&nbsp;nejnižším číslem.</p><p>Tím jsme si určitě nic nerozbili, protože v&nbsp;nějaké učebně přednáška být musí. Určitě budeme potřebovat tolik učeben, kolik je maximálně přednášek v&nbsp;jeden čas, a&nbsp;díky tomu si umístěním přednášky do nějaké učebny nezablokujeme místo pro jinou přednášku, jelikož nám vždy zbude dostatek volných učeben.</p><p>Kdybychom ale naopak měli pevně zadaný počet učeben a&nbsp;chtěli jsme do nich umístit co možná nejvíce přednášek, nejedná se již o&nbsp;úlohu řešitelnou hladovým algoritmem, v&nbsp;takovém případě je potřeba zvolit nějaký chytřejší postup.</p>",
             "position": [
-                -702.5907173156738,
-                307.6112937927246
+                -1326.0003852844238,
+                266.1149559020996
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2340,8 +2341,8 @@
             "title": "Pole",
             "htmlContent": "<p>První datovou strukturou, kterou si představíme a&nbsp;která se na výše nastíněnou situaci náramně hodí, je <i>pole</i>. To představuje spoustu přihrádek (proměnných) naskládaných v&nbsp;paměti za sebou, ke kterým typicky přistupujeme přes jeden společný název pole a&nbsp;jejich pořadové číslo neboli index (jako NazevPole[0], NazevPole[1], …). (Pozor, ve světě počítačů se velmi často indexuje od nuly, tedy první prvek má v&nbsp;tomto případě index 0.)</p><p>Ve většině základních jazyků je pole jen <i>statické</i>, tedy v&nbsp;okamžiku jeho vytváření musíme počítači říct, jak ho chceme velké. Některé vyšší jazyky ale nabízejí i&nbsp;pole, které se dynamicky zvětšuje, takovou konstrukci si ukážeme ve druhé části kuchařky.</p><p>Abychom nebyli omezeni jen jedním rozměrem, můžeme si klidně vyrobit pole dvourozměrné (případně obecně n-rozměrné). Dvourozměrné pole je vlastně tabulka hodnot, nazýváme ji také někdy <i>matice</i>, a&nbsp;může se nám hodit například při reprezentaci různých map (plán bludiště) nebo, jak uvidíme níže, pro reprezentaci dalších datových struktur.</p><p>U&nbsp;pole již má smysl přemýšlet, jak dlouho bude která operace trvat. Díky tomu, že jsou jednotlivé prvky v&nbsp;poli naskládané pevně za sebou, je snadné spočítat umístění konkrétní přihrádky. Proto když se počítače zeptáme na obsah přihrády pole[42], vrátí nám hodnotu ihned.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/img/hippo_array.png\" alt=\"Pole\"></figure><p>Tomu budeme říkat <i>operace v&nbsp;konstantním čase</i> a&nbsp;budeme značit, že trvá čas&nbsp;O(1). Efektivitu programu totiž nepočítáme v&nbsp;sekundách (protože každý z&nbsp;nás má asi jinak rychlý počítač), ale v&nbsp;počtu základních operací, které musí program řádově vykonat. Více o&nbsp;časové složitosti si můžete přečíst v&nbsp;<a href=\"https://ksp.mff.cuni.cz/viz/kucharky/slozitost\">kuchařce o&nbsp;složitosti</a>, nejdříve však doporučujeme dočíst tuto kuchařku.</p><p>Přidání nového prvku na konec pole také zvládneme v&nbsp;konstantním čase. Problém je přidání nového prvku někam doprostřed (což se nám typicky stane, pokud budeme chtít udržovat hodnoty v&nbsp;poli seřazené a&nbsp;zároveň do něj vkládat nové). V&nbsp;takovém případě se totiž všechny prvky za vkládaným musí posunout o&nbsp;jednu pozici dál, aby se vkládaný prvek vešel na své místo. Taková operace tedy může pro pole délky N (čili pole obsahující N prvků) trvat řádově až N kroků, což zapisujeme jako O(N) a&nbsp;říkáme, že je to vzhledem k&nbsp;N <i>lineární časová složitost</i>.</p><p>To je značná nevýhoda oproti struktuře, kterou si ukážeme za chvíli. Určitě ale pole nezavrhujme. Je to základní datová struktura, která nalezne použití ve spoustě programů, a&nbsp;jak si ve druhé části kuchařky ukážeme, můžeme ho použít třeba k&nbsp;rychlému hledání hodnoty metodou <i>binárního vyhledávání</i>. Nyní ale již slibovaná další datová struktura.</p>",
             "position": [
-                -394.2932434082031,
-                688.1417579650879
+                -1017.7029113769531,
+                646.6454200744629
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2359,8 +2360,8 @@
             "title": "Prefixové součty",
             "htmlContent": "<h4>Prefixové součty</h4><p>Velmi často se nám hodí si ještě před samotným výpočtem předpočítat a&nbsp;uložit nějaké hodnoty, které poté použijeme.</p><p>Představme si například problém nalezení souvislého úseku s&nbsp;největším součtem v&nbsp;nějaké posloupnosti kladných i&nbsp;záporných čísel. Že to není úplně jednoduchý příklad, si ukažme na následující posloupnosti:</p><p>1,-2,4,5,-1,-5,2,7</p><p>Máme zde dvě ryze kladné souvislé posloupnosti, každou se součtem 9 (4,5 a&nbsp;2,7). Ale přesto je výhodnější vzít i&nbsp;nějaké záporné hodnoty a&nbsp;vytvořit tak souvislou posloupnost o&nbsp;součtu 12 (zkuste ji nalézt).</p><p>Mohlo by nás napadnout, že prostě zkusíme vzít všechny možné začátky a&nbsp;všechny možné konce. To nám dává O(n<sup>2</sup>) možných posloupností (máme n&nbsp;možných začátků a&nbsp;ke každému z&nbsp;nich řádově n&nbsp;možných konců), pro každou posloupnost si spočteme součet (to zvládneme v&nbsp;O(n)) a&nbsp;budeme si pamatovat ten největší nalezený. Celý náš postup tak trvá O(n<sup>3</sup>).</p><p>To není pro takhle jednoduchou úlohu zrovna ten nejpěknější čas, zkusme ho zlepšit. Ukážeme si, jak vypočítat součet libovolné posloupnosti v&nbsp;konstantním čase. Celý princip je vlastně až kouzelně jednoduchý, ale zároveň velmi mocný. Na začátku výpočtu si do pomocného pole P stejné délky jako posloupnost na vstupu (té říkejme S) uložíme takzvané <i>prefixové součty:</i> i-tý prefixový součet je součet prvních i+1 prvků&nbsp;S, neboli P[i] = S[0] + S[1] + … + S[i].</p><p>Pro náš ukázkový případ a&nbsp;pro vstupní pole označené S by to dopadlo takto:</p><figure class=\"table\"><table><tbody><tr><td>i</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><td>S[i]</td><td>&nbsp;</td><td>1</td><td>-2</td><td>4</td><td>5</td><td>-1</td><td>-5</td><td>2</td><td>7</td></tr><tr><td>P[i]</td><td>0</td><td>1</td><td>-1</td><td>3</td><td>8</td><td>7</td><td>2</td><td>4</td><td>11</td></tr></tbody></table></figure><p>Pole prefixových součtů umíme získat v&nbsp;linerárním čase&nbsp;– prostě jen od začátku procházíme vstupní pole, počítáme si průběžný součet a&nbsp;ten zapisujeme.</p><p>Součet libovolného úseku a…b pak získáme v&nbsp;konstantním čase jako prefixový součet od začátku do indexu&nbsp;b minus prefixový součet od začátku do indexu&nbsp;a. Zapsáno programově to pak je:</p><p>soucet = P[b] - P[a-1]; To nám umožňuje snížit čas potřebný na řešení této úlohy na O(n<sup>2</sup>). To je už lepší čas; prozradíme však, že tuto úlohu lze řešit dokonce v&nbsp;lineárním čase, ale to je již nad rámec této kuchařky.</p><h4>&nbsp;</h4>",
             "position": [
-                264.1203804016113,
-                787.7883148193359
+                -511.47504806518555,
+                708.7667083740234
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2377,8 +2378,8 @@
             "title": "Dvourozměrné prefixové součty",
             "htmlContent": "<h4>Dvourozměrné prefixové součty</h4><p>Prefixové součty se dají zobecnit i&nbsp;do více rozměrů, ale princip je vždy stejný. Například dvourozměrné prefixové součty u&nbsp;matice fungují tak, že si předpočítáme součty podmatic začínajících levým vrchním políčkem a&nbsp;končící na indexu [x,y].</p><p>Z&nbsp;toho je vidět, že prefixový součet zpravidla obsadí stejně velký prostor jako původní data, v&nbsp;tomto případě tedy budeme mít matici hodnot prefixových součtů končících na zadaných souřadnicích. Jak ale získat součet nějaké podmatice, která se nachází někde „uprostřed“ naší matice?</p><p>Použijeme stejný princip jako u&nbsp;jednorozměrného případu: Přičteme větší část, kterou chceme započítat, a&nbsp;odečteme od ní části, které započítat nechceme. Pro případ podmatice začínající vlevo nahoře na pozici [x,y] a&nbsp;končící napravo dole na [X,Y] to ilustruje následující obrázek:</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-6.png\" alt=\"Dvourozměrné prefixové součty\"></figure><p>Nejdříve přičteme celý prefixový součet končící na pozici [X,Y]. Tím jsme ale započítali i&nbsp;části A, B a&nbsp;C z&nbsp;obrázku, které započítat nechceme. Tak odečteme prefixové součty končící na indexech [X,y] a&nbsp;[x,Y]. Ale pozor, teď jsme odečetli jednou A+B a&nbsp;jednou A+C, tedy část&nbsp;A (prefixový součet končící na pozici [x,y]) jsme odečetli dvakrát, musíme ji proto ještě jednou přičíst.</p><p>Celý vzorec tedy vypadá takto:</p><p>soucet = P[X,Y] - P[X,y] - P[x,Y] + P[x,y];</p><p>Tento princip přičítání a odečítání se dá zobecnit i&nbsp;pro libovolné vyšší rozměry, ale chce to již trošku představivosti, co se má přičíst a&nbsp;kolikrát. Říká se tomu také <i>princip inkluze a&nbsp;exkluze</i> a&nbsp;najde použití nejen u&nbsp;vícerozměrných prefixových součtů.</p>",
             "position": [
-                170.57422256469727,
-                1063.6810913085938
+                -605.0212059020996,
+                984.6594848632812
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2395,8 +2396,8 @@
             "title": "Reprezentace dat",
             "htmlContent": "<h3>Reprezentace dat v&nbsp;počítači</h3><p>Celkem často si v&nbsp;průběhu výpočtu našeho algoritmu potřebujeme pamatovat nějaké hodnoty. K&nbsp;tomu nám programovací jazyky dávají nástroj s&nbsp;názvem <i>proměnná</i>. Ta představuje jakési pojmenované místo v&nbsp;paměti (přihrádku), do kterého si můžeme data ukládat a&nbsp;pak je odtud zase načítat.</p><p>Typickým příkladem může být počítání součtu čísel, která nám uživatel zadá na vstupu. Na začátku nejdříve do nějakého místa v&nbsp;paměti uložíme hodnotu&nbsp;0. Poté postupně, jak nám uživatel zadává čísla, tuto proměnnou pokaždé přečteme, k&nbsp;její hodnotě přičteme nově zadané číslo a&nbsp;výsledek opět uložíme na stejné místo.</p><p>Takovéto použití jedné proměnné je velmi jednoduché (tak jednoduché, že ho takto podrobně do řešení KSPčka nepište, není to potřeba), ale také celkem omezené. Co kdybychom si chtěli pamatovat třeba celou zadanou posloupnost čísel? Mohlo by nám stačit vyrobit si spoustu různě pojmenovaných proměnných, ale nejde to lépe? Jde.</p><p>Jednotlivé proměnné se mohou kombinovat do složitějších konstrukcí, které obecně nazýváme <i>datovými strukturami</i>. Zkusíme si ty nejzákladnější představit.</p>",
             "position": [
-                -389.9202308654785,
-                470.58526611328125
+                -1013.3298988342285,
+                429.08892822265625
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2413,8 +2414,8 @@
             "title": "Spojový seznam",
             "htmlContent": "<h4>Spojový seznam a&nbsp;ukazatele</h4><p>Pole jsme měli v&nbsp;paměti určené jenom tím, že počítač věděl, kde je jeho začátek a&nbsp;kolik místa v&nbsp;paměti zabírají jeho prvky. Při dotazování na konkrétní index pak podle indexu a&nbsp;podle velikosti prvků počítač přesně věděl, kam do paměti se má podívat, aby našel námi požadovaný prvek (to vše zvládl v&nbsp;konstantním čase). Jednotlivé prvky si tedy vůbec nemusely pamatovat, kde se nachází jejich sousedi, protože všechny prvky seděly v&nbsp;paměti za sebou.</p><p>Představme si ale teď situaci, kdy by si každý prvek ještě pamatoval pozice sousedů. Pak bychom mohli mít prvky libovolně rozházené v&nbsp;paměti a&nbsp;jen by se na sebe vzájemně odkazovaly (první prvek by tvrdil, že druhý je na pozici X, druhý by tvrdil, že třetí je na pozici Y, a&nbsp;tak dále).</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-1.png\" alt=\"Spojový seznam\"></figure><p>K&nbsp;lepšímu pochopení tohoto principu je důležité si vysvětlit, co to je <i>ukazatel</i> (nebo také <i>odkaz</i> či anglicky <i>pointer</i>). Každé místo v paměti počítače má své číselné označení, kterému říkáme <i>adresa</i>. Když si vytváříme nějakou pojmenovanou proměnnou, ta se vlastně odkazuje na určité místo v&nbsp;paměti a&nbsp;na tomto místě v&nbsp;paměti je její hodnota.</p><p>Co kdyby ale hodnota proměnné byla adresa nějakého jiného místa v&nbsp;paměti? Pak takové proměnné říkáme <i>pointer</i> a&nbsp;umožňuje nám vytvářet výše popsanou strukturu rozházených prvků v&nbsp;paměti.</p><p><i>Spojový seznam</i> je tedy určený svým prvním prvkem (máme v&nbsp;jedné proměnné pointer na tento prvek, který se často nazývá <i>kořen</i>, protože z&nbsp;něj „vyrůstá“ zbytek struktury) a&nbsp;poté u&nbsp;každého dalšího prvku máme za sebou uloženou hodnotu tohoto prvku a&nbsp;odkaz (pointer) na další prvek. Odkazy mezi prvky mohou být i&nbsp;obousměrné, mohou vést dokola (poslední ukazuje na první) či mohou dokonce tvořit nějakou složitější strukturu (pak to ale již nebude čistý spojový seznam).</p><p>Pokud pointer nemá nikam ukazovat, realizuje se to odkázáním tohoto pointeru na adresu NULL. To skoro doslovně říká „Neukazuji nikam“.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-2.png\" alt=\"Obousměrný cyklický spojový seznam\"></figure><p>Co nám takto vystavěná struktura umožňuje v&nbsp;porovnání s&nbsp;polem? Přístup na konkrétní prvek v&nbsp;ní stojí lineárně času, protože ho musíme „odkrokovat“ od prvního prvku (na který máme pointer), tedy musíme udělat až O(N) kroků. Pokud bychom však pointer na daný prvek už nějak měli, samozřejmě na něj můžeme přistoupit v&nbsp;konstantním čase.</p><p>Naopak přidávání prvků na konkrétní místo (i&nbsp;jejich odebírání) máme v&nbsp;podstatě zadarmo a&nbsp;spojový seznam můžeme rozšiřovat, dokud na něj máme v&nbsp;počítači paměť. Ve chvíli, kdy chceme přidat nový prvek za prvek, na který máme pointer, jen šikovně přepojíme ukazatele. Pokud předtím ukazatele vedly A→B, teď povedou A →C →B (a&nbsp;při odebírání naopak).</p>",
             "position": [
-                -602.9680938720703,
-                850.3306617736816
+                -1226.3777618408203,
+                808.8343238830566
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2431,8 +2432,8 @@
             "title": "Stromy",
             "htmlContent": "<h4>Stromy</h4><p>Možná si říkáte, co má informatika u&nbsp;všech elektronů společného s&nbsp;lesnictvím? Kupodivu celkem mnoho a&nbsp;bez stromů bychom se v&nbsp;leckterém případě jen těžko obešli. Informatické stromy sice nejsou většinou tak zelené, mají ale, na rozdíl od svých dřevnatých sourozenců, mnoho jiných pěkných vlastností.</p><p>Strom je vlastně speciálním případem souvislého grafu, který neobsahuje žádnou kružnici (cyklus). To znamená, že mezi každými dvěma vrcholy stromu existuje právě jedna cesta.</p><p>Díky této vlastnosti můžeme nějaký zvolený vrchol prohlásit za <i>kořen</i> a&nbsp;strom za něj pomyslně zavěsit (tak, že strom roste od kořene směrem dolů), této operaci se říká <i>zakořenění</i>. Pak můžeme mluvit o&nbsp;tom, že z&nbsp;kořene směrem dolů (informatické stromy mají tradičně kořen nahoře) vyrůstají nějaké <i>podstromy</i>.</p><figure class=\"image\"><img src=\"https://ksp.mff.cuni.cz/kucharky/zakladni-algoritmy/zakladni_algoritmy-4.png\" alt=\"Strom\"></figure><p>Pokud je strom zakořeněný, můžeme v&nbsp;něm mluvit o&nbsp;<i>hloubce</i> každého vrcholu, neboli o&nbsp;jeho vzdálenosti od kořene. Hloubka celého stromu je pak nejdelší ze vzdáleností od kořene k&nbsp;nějakému z&nbsp;<i>listů</i> (tak říkáme vrcholům, které již nemají žádné <i>syny</i>, tedy vrcholy, které by z&nbsp;nich vyrůstaly). Podle hloubky poté můžeme vrcholy stromu uspořádat do jednotlivých <i>hladin</i>.</p><p>Velmi často používáme stromy, které jsou nějak pravidelné. Příkladem jsou třeba <i>binární stromy</i>, které mají v&nbsp;každém vrcholu maximálně dva syny (říkáme jim <i>levý a&nbsp;pravý podstrom</i>). Reprezentovat se dají buď obecně jako každý jiný strom (v&nbsp;každém vrcholu spojový seznam podstromů), nebo velmi pěkně i&nbsp;v&nbsp;poli.</p><p>Stačí si pomyslně doplnit binární strom na <i>úplný</i> (to je takový, který má všechny své hladiny plné) a pak ho od kořene směrem dolů po hladinách očíslovat (kořen dostane číslo nula, jeho synové čísla jedna a dva, další hladina čísla tři až šest, atd.).</p><p>Můžeme si všimnout, že pokud si v&nbsp;takovém očíslování vezmeme jakýkoliv vrchol s&nbsp;číslem (indexem) i, jeho synové jsou právě vrcholy s&nbsp;indexy 2i+1 a&nbsp;2i+2. Do pole níže je zapsaný binární strom z&nbsp;obrázku výše.</p><figure class=\"table\"><table><tbody><tr><td>index</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>hodnota</td><td>8</td><td>3</td><td>12</td><td>1</td><td>5</td><td>9</td><td>14</td><td>-</td><td>-</td><td>4</td><td>7</td></tr></tbody></table></figure><p>Jak plyne z&nbsp;očíslování, pro úplný binární strom je uložení v&nbsp;poli efektivní a neplýtváme místem. Pokud ale strom úplný nebude, zůstanou nám v&nbsp;poli volná místa. Uložení v&nbsp;poli se tedy vyplatí jen pro stromy, které se od úplných příliš neliší.</p><p>Speciálním případem binárních stromů jsou pak ještě <i>binární vyhledávací stromy</i>. Jsou to normální binární stromy, pro něž navíc platí, že ať si vezmeme libovolný vrchol, budou hodnoty vrcholů v&nbsp;jeho levém podstromu menší než hodnota tohoto vrcholu a&nbsp;hodnoty v&nbsp;jeho pravém podstromu naopak větší.</p><p>V&nbsp;takovém stromu pak zvládneme snadno vyhledávat. Budeme ho postupně procházet od kořene a v&nbsp;jednotlivých vrcholech budeme porovnávat hledanou a aktuální hodnotu a podle toho sestupovat do správného podstromu. Podobná technika je detailněji popsaná ve druhé části kuchařky, v&nbsp;sekci <i>Rozděl a panuj</i>.</p><p>Na složitější datové struktury stavějící na těchto základních (haldy, intervalové stromy,&nbsp;…) se můžete podívat do některé z&nbsp;našich dalších kuchařek, na jejichž přehled jsme vás už odkázali o&nbsp;kapitolu výše.</p>",
             "position": [
-                -973.6452713012695,
-                1311.047519683838
+                -1597.0549392700195,
+                1269.551181793213
             ],
             "originalSource": {
                 "url": "/kucharky/zakladni-algoritmy/",
@@ -2446,8 +2447,8 @@
             "requires": [],
             "title": "Potřeba matematického pohledu",
             "position": [
-                1671.7270526885986,
-                2.2010104656219482
+                1845.8490009307861,
+                -283.6708881855011
             ],
             "hidden": true
         },
@@ -2459,8 +2460,8 @@
             "title": "Pole",
             "rotationAngle": 0,
             "position": [
-                -322.5432434082031,
-                671.8694763183594
+                -945.9529113769531,
+                630.3731384277344
             ]
         },
         {
@@ -2477,6 +2478,17 @@
             "hidden": true
         },
         {
+            "id": "label-aktualni-ulohy",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Soutěžní úlohy →",
+            "position": [
+                183.2316188812256,
+                208.2839322090149
+            ]
+        },
+        {
             "id": "label-grafy",
             "type": "label",
             "comment": "...",
@@ -2484,8 +2496,8 @@
             "title": "Grafy",
             "rotationAngle": 342,
             "position": [
-                -1025.697265625,
-                1579.5523328781128
+                -1649.10693359375,
+                1538.0559949874878
             ],
             "hidden": false
         },
@@ -2499,10 +2511,33 @@
             "title": "Grafy, ale neuspořádané",
             "htmlContent": "<p>undefined</p>",
             "position": [
-                -972.8342895507812,
-                1705.182228088379
+                -1596.2439575195312,
+                1663.685890197754
             ],
             "hidden": true
+        },
+        {
+            "id": "label-kucharky",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "← Teoretická informatika prakticky",
+            "position": [
+                -268.6325788497925,
+                208.12596106529236
+            ]
+        },
+        {
+            "id": "label-programovani",
+            "type": "label",
+            "comment": "...",
+            "requires": [],
+            "title": "Kurz programování →",
+            "position": [
+                21.740379333496094,
+                377.9481301307678
+            ],
+            "rotationAngle": 89
         },
         {
             "id": "label-retezce",
@@ -2512,8 +2547,8 @@
             "title": "Textové řetězce",
             "rotationAngle": 326,
             "position": [
-                -392.4626007080078,
-                1300.9295349121094
+                -1015.8722686767578,
+                1259.4331970214844
             ],
             "hidden": false
         },
@@ -2572,8 +2607,8 @@
             "requires": [],
             "title": "Pokročilejší grafy",
             "position": [
-                -969.0080337524414,
-                2068.4594764709473
+                -1592.4177017211914,
+                2026.9631385803223
             ],
             "hidden": false
         },
@@ -2595,11 +2630,11 @@
             "requires": [
                 "programovani"
             ],
-            "title": "Základní kurz programování",
+            "title": "Základní kurz programování v Pythonu",
             "htmlContent": "<p>Pokud jste ještě nikdy nenapsali ani řádek kódu, pokračujte základním kurzem programování. Po několika lekcích se naučíte psát programy v jazyce Python, který je jednoduchý a stravitelný pro začátečníky, ale vhodný i pro složité a mocné úkoly. Budete znát dostatek informací pro to, abyste pochopili vzorová řešení našich <a href=\"https://ksp.mff.cuni.cz/tasks\">úloh</a>, která jsou často psaná právě v Pythonu.</p><p>Naproti tomu, pokud máte zájem o popis základních algoritmů, pak vám tato sekce příliš nepomůže, namísto toho vás odkážeme do naší <a href=\"https://ksp.mff.cuni.cz/encyklopedie\">programátorské encyklopedie</a>. Úplní nováčci ve světě informatiky by měli zamířit do <a href=\"https://ksp.mff.cuni.cz/viz/kucharky/zakladni-algoritmy\">kuchařky pro začátečníky</a>. Ti ostatní mohou z dalších textů načerpat nové vědomosti, jež se jim budou hodit jak v KSP a podobných soutěžích, tak při \"obyčejném\" psaní programů pro vlastní potřebu.</p><p>Pokročilejším řešitelům spíše doporučujeme se podívat na ostatní úlohy.</p>",
             "position": [
-                159.2126922607422,
-                302.84876251220703
+                13.71942138671875,
+                652.3672561645508
             ]
         },
         {
@@ -2612,8 +2647,8 @@
             "title": "Programování",
             "htmlContent": "<p>Počítače nemluví lidskou řečí. Aspoň zatím. Pokud jim chceme vysvětlit nějaký komplikovanější problém, potřebujeme mluvit správnou řečí - nějakým <strong>programovacím jazykem.</strong></p><h2>Jaký programovací jazyk použít?</h2><p>Programovacích jazyků je více a každý se hodí na něco jiného. S roustoucími zkušenostmi se pravděpodobně naučíš přecházet mezi několika programovacími jazyky podle toho, jaký problém zrovna řešíš.</p><p>Pro řešení úloh Ti doporučujeme <strong>Python 3</strong>. Pokud se ho chceš naučit, můžeš zkusit projít kurzem, který jsme pro Tebe připravili.</p>",
             "position": [
-                292.62711334228516,
-                216.31835412979126
+                3.194398880004883,
+                594.2665047645569
             ]
         },
         {
@@ -2628,6 +2663,20 @@
             "position": [
                 -1.7545125484466553,
                 96.57219696044922
+            ]
+        },
+        {
+            "id": "text-soutezni-ulohy",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "ulohy-v-kurzu"
+            ],
+            "title": "Aktuální soutěžní úlohy",
+            "htmlContent": "<p>Níže se objevují aktuální úlohy z obou kategorií, které v KSPčku máme. Vzhledem k soutěžnímu charakteru u úloh nenajdeš řešení, to vydáváme až později. Odevzdáním úlohy zde v kurzu úlohu odevzdáváš naprosto stejně, jako by jsi to dělal(a) z běžného webového rozhraní.</p><p>&nbsp;</p><p><strong>Poznámka</strong> - aktuálně se odevzdávání úloh trošku rozbíjí a může na Tebe vyskočit komplikovaná chybová hláška vysvětlující, co máš udělat.</p>",
+            "position": [
+                595.2002220153809,
+                220.51151180267334
             ]
         },
         {
@@ -2656,8 +2705,8 @@
             "points": 2,
             "taskReference": "zkp-1-uvod",
             "position": [
-                413.64715576171875,
-                419.45841789245605
+                268.1538848876953,
+                768.9769115447998
             ]
         },
         {
@@ -2668,8 +2717,8 @@
                 "placeholder-kurz-programovani"
             ],
             "position": [
-                221.15307426452637,
-                370.06234645843506
+                75.65980339050293,
+                719.5808401107788
             ],
             "title": "První krůčky",
             "htmlContent": "<p>Vítejte v úvodním kurzu programování. Jeho účelem je provést vás úplnými\nzáklady programování. Po jeho absolvování byste měli být schopni s trochou\nsnahy pochopit autorská řešení úloh nebo kuchařky KSP, případně sami vyřešit\njednodušší úlohy.\n\n</p><p>Pokud tedy víte, co je to podmínka, cyklus, funkce, třídění bublinkami nebo\nrekurze, pak vám tento kurz asi nepomůže.\n\n</p><p>Pokud vám bude cokoli nejasného, budete se chtít na něco zeptat, použijte\nprosím naše <a href=\"/forum\">fórum</a>, kde vám jistě někdo zkušenější rád\nporadí.\n\n</p><p>Poznámka na okraj: Může se vám to zdát jakkoli ošklivé, ale programátorskou\nlatinou je angličtina. S její znalostí se vám bude programovat o něco\njednodušeji a hlavně – v angličtině existuje drtivá většina dokumentace,\nmanuálů, návodů, odborné literatury, ale často i chybové hlášky programů jsou\njen anglicky – prostě to nikdo nepřeložil.\n\n</p><p>Na naše programátorské hrátky si musíme pořídit nějaké\nprostředí, ve kterém se jim budeme věnovat (ano, počítač je vhodný, i když\nděrovačka na <a href=\"http://cs.wikipedia.org/wiki/Děrný_štítek\">děrné\nštítky</a> by také byla zajímavá, nicméně o tom třeba někdy příště). Teď vážně\n— potřebujeme nějaký editor, ve kterém budeme psát <i>zdrojový kód</i>, a\nprogram, který nám umožní onen zdrojový kód spustit.\n\n</p><p>My se budeme učit programovat v Pythonu 3.x. Uživatelé Windows si stáhnou vhodný\nbalík ze stránek <a href=\"http://www.python.org\">http://www.python.org</a>, uživatelé Linuxu by měli Python najít\nve svém balíčkovacím systému, v drtivé většině ho pravděpodobně budou mít už\ndávno nainstalovaný, jen o tom nevědí. <strong>Dejte si ale pozor, abyste měli\nnejnovější verzi Pythonu 3.x, ne Pythonu 2.x.</strong>\n\n</p><p>Také je vhodné mít nějaký <i>textový editor</i>. Na Linuxu můžete použít\ntřeba Kate, KWrite, GEdit; později se můžete pokusit proniknout do tajů mocných\neditorů jako Vim nebo Emacs. S Windows je standardně dodáván Notepad\n(Poznámkový blok); pokud chcete něco lepšího, rozumný je třeba PSPad. Nebo si\nmůžete zkusit nainstalovat nějaké IDE — vyberte si:\n<a href=\"http://wiki.python.org/moin/IntegratedDevelopmentEnvironments\">http://wiki.python.org/moin/IntegratedDevelopmentEnvironments</a>\n\n</p><p>Otevřete si něco, do čeho můžete zadat příkaz. U Windows vám na to poslouží\nklávesová zkratka Win+R, u Linuxu si pusťte terminál – může se jmenovat\ntřeba Konsole, Terminal, XTerm, RXVT ….  Vložte\n<code>python</code> a Enter (myšofilové mohou kliknout na OK, pokud tam takové\ntlačítko mají). Otevře se vám černá obrazovka, na které bude napsáno zhruba\ntoto:\n\n</p><pre>Python 3.4.0 (default, Jun 19 2015, 14:20:21) \n[GCC 4.8.2] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n&gt;&gt;&gt;\n</pre>\n\nJeště jednou si zkontrolujte, zda je verze Pythonu, kterou jste právě spustili (na\nprvním řádku), správná: zvláště na UNIXech by se mohla spustit verze 2. V takovém\npřípadě program ukončete a zkuste to znovu, jen tentokrát zadejte <code>python3</code>.\n\n<p>Za trojšipkou na posledním řádku bude blikat kurzor. Vítejte v interaktivním módu\nPythonu.\nTen se dá používat třeba jako kalkulačka. Zadáme-li <code>1+1</code>, vypadne\n<code>2</code>. Chceme-li dělat něco složitějšího, můžeme si vyvolat výsledek\npředchozího výrazu znakem <code>_</code>. Malý příklad:\n\n</p><pre>&gt;&gt;&gt; 1+2\n3\n&gt;&gt;&gt; _*(_+1)\n12\n&gt;&gt;&gt; _**3\n1728\n&gt;&gt;&gt; (1800-_) // 2\n36\n&gt;&gt;&gt; _ // 7\n5\n&gt;&gt;&gt; _%2\n1 </pre>\n\n<p>Jak jste jistě pochopili, Python podporuje standardně <i>operátory</i>\n<code>+</code>, <code>-</code>, <code>*</code>, <code>//</code>, modulo\n<code>%</code> a operátor umocňování <code>**</code>. Dělení pomocí operátoru\n<code>//</code> je celočíselné, pokud potřebujete desetinné číslo, použijete\npodobný operátor <code>/</code>\n\n</p><pre>&gt;&gt;&gt; 13//7\n1\n&gt;&gt;&gt; 13/7\n1.8571428571428572\n&gt;&gt;&gt; 13.4/7\n1.9142857142857144\n&gt;&gt;&gt; 13.4//7\n1.0</pre>\n\n<p>Celočíselně dělit tedy můžete i desetinná čísla, výsledek bude zaokrouhlený na \nnejbližší celé číslo. \n\n</p><p>V ostatních případech Python počítá v celých číslech, dokud může. Jakmile je však\njakýkoli z operandů neceločíselný, převede se všechno na desetinná čísla. Tedy\ndokud jsou oba operandy celé číslo, je i výsledek celé číslo. Tohle pravidlo má\njednu výjimku u umocňování, zkuste přijít na to, jakou.\n\n</p><p>Počítání v celých číslech v Pythonu má zajímavou vlastnost — Python umí\npočítat s libovolně velkými celými čísly (ovšem adekvátně pomalu — má-li číslo\nmilion cifer a chceme jej vypsat na obrazovku, jedná se o megabajt dat, což už\nnějaký ten čas zabere):\n\n</p><pre>&gt;&gt;&gt; 2**2\n4\n&gt;&gt;&gt; 2**2**2\n16\n&gt;&gt;&gt; 2**2**2**2\n65536 </pre>\n\n<p><code> 2**2**2**2**2</code> popíše celou obrazovku čísly \na <code>&gt;&gt;&gt;\n2**2**2**2**2**2</code> se bude počítat brutálně dlouho, neboť se mocnina\nzávorkuje zprava — jako byste napsali <code>\n2**(2**(2**(2**(2**2))))</code>.\n\n</p><p>Naproti tomu v desetinných číslech má Python omezení na velikost:</p>\n\n<pre>&gt;&gt;&gt; 2.0**2**2**2\n65536.0\n&gt;&gt;&gt; 2.0**2**2**2**2\nTraceback (most recent call last): File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\nOverflowError: (34, 'Numerical result out of range') </pre>\n\n<p>Každý příkaz, který zadáváme, musí být buď na vlastním řádku, nebo \noddělený od sousedních příkazů středníkem. Výsledek je ale stejný:\n\n</p><pre>&gt;&gt;&gt; 2**2\n4\n&gt;&gt;&gt; 3**3\n27\n\n&gt;&gt;&gt; 2**2; 3**3\n4\n27 </pre>\n\n<p>Počítáme-li něco složitějšího, budeme si potřebovat někam uložit výsledky.\nK tomu slouží <i>proměnné</i>. Ty si můžeme představit jako paměť u kalkulačky,\naž na to, že si je můžeme pojmenovat (skoro) jakkoli. Dobrým zvykem je nazvat\nsi proměnnou podle toho, co do ní skutečně ukládáme. Už od nějakých pěti\nproměnných výš ztrácí průměrný programátor přehled, co že se to vlastně ukládá\ndo proměnné s názvem <code>zeleny_pruh</code> a co do proměnné\n<code>barrandovsky_most</code>. Odstrašujícím příkladem jsou pak obvykle\nproměnné nazvané <code>tmp1c</code> apod.\n\n</p><p>K pojmenovávání proměnných používejte malá a velká písmena anglické abecedy,\nčíslice a podtržítko <code>_</code>, přičemž název nesmí začínat číslicí. Dejte\nsi pozor na to, že <code>Bagr</code>, <code>BAGR</code>, <code>bagr</code> a\n<code>b46r</code> jsou čtyři různé názvy.  Když do proměnné chcete uložit\nnejvětší společný dělitel, pak je vhodné ji nazvat např.\n<code>nejvetsi_spolecny_delitel</code> nebo\n<code>NejvetsiSpolecnyDelitel</code>. Potom byste ale jiný víceslovný název\nměli mít ve stejném formátu — mít v jednom programu proměnnou pojmenovanou\n<code>ZlutyBagr</code> a zároveň jinou <code>modry_kombajn</code> je cesta do\npekel, kdy jednou prostě formát spletete a chyba je na světě. Berte to jako\ndobře míněné rady zkušených programátorů, nikdo vás do toho samozřejmě nenutí.\n\n</p><pre>&gt;&gt;&gt; x = 13; y = 11; z = x+y; z + 1\n25 </pre>\n\n<p>Co říká příklad? Do proměnné <code>x</code> jsme vložili 13, do proměnné\n<code>y</code> jsme vložili 11, do proměnné <code>z</code> jejich součet a pak\njsme vypsali číslo o jedna větší. To, že se vkládá (<i>přiřazuje</i>) do\nproměnné pomocí znaku <code>=</code>, neříká nic o rovnosti, klidně můžeme\nnapsat následující:\n\n</p><pre>&gt;&gt;&gt; x = 20; y = 19; x = x + y*2; x\n58 </pre>\n\n<p>Příkaz na třetím řádku prostě přepíše to, co bylo v proměnné <code>x</code>\npůvodně, a vloží tam novou hodnotu.\n\n</p><p>Abychom pořád nemuseli zadávat příkazy do terminálu — uznejme, že je to\ntrochu nepraktické — je možné si je uložit do souboru. Tomuto souboru dáme\npříponu <code>.py</code>, takže náš první program bude třeba\n<code>ahoj.py</code>.\n\n</p><p>Proč bychom si vlastně měli příkazy uložit? Náš program budeme chtít třeba\nspouštět vícekrát. Každý program, který spouštíte, je vlastně takováhle\nuložená posloupnost různých příkazů pro chytrou kalkulačku.\n\n</p><p>Otevřete si tedy textový editor (psali jsme o něm na začátku) a zapište do\nněj příkazy tak, jako byste je zadali do toho terminálu:\n\n</p><pre>x = 20\ny = 19\nx + y*2\n_**2\n</pre>\n\n<p>Pak si ho uložte na\nnějaké vhodné místo, kde ho dokážete najít. Pokud máte Windows, pohlídejte si,\naby měl příponu <code>.py</code> (někdy se systém snaží schovat před vámi\npřípony souborů; ten váš by měl mít jinou ikonu než textový dokument).\n\n</p><p>Program spustíme ve Windows tím, že na něj poklepeme; v Linuxu obvykle\nz terminálu příkazem <code>python &lt;jméno souboru&gt;</code>.\nI ve Windows je rozumnější spouštět jej z terminálu, zvláště pokud si\nchcete přečíst, co váš program vypisuje.\n<small>Nepočítejte s tím, že se tady naučíte, jak vyrábět\núžasná okýnka s klikacím menu, natož jak si napsat graficky propracovaný\nTetris, o střílečce nemluvě. To je daleko obtížnější a přesahuje náplň\nzákladního kurzu programování.</small>\n\n</p><p>Tedy, pokud jsme si program uložili do <code>C:\\Users\\Já\\Dokumenty\\ahoj.py</code>,\ntak jej spustíme příkazem <code>python C:\\Users\\Já\\Dokumenty\\ahoj.py</code>.\nUživatelé Linuxu budou mít třeba cestu <code>/home/karel/ahoj.py</code>, tak spustí <code>python /home/karel/ahoj.py</code>.\n\n</p><p>Ha, máme problém. Očekávali bychom, že náš program vypíše <code>58</code>\na pak <code>3364</code>, ale ejhle, zrada. Máme několikařádkovou chybovou hlášku, která\nnejprve sděluje, kde přesně došlo k chybě (na řádku 4), a pak sděluje konkrétní chybu.\n\n</p><pre>NameError: name '_' is not defined</pre>\n\n<p>V souboru nefunguje podtržítkový trik. To nás naštěstí nezabije, pořídíme si\no proměnnou víc a přiřadíme do ní potřebnou hodnotu.\n\n</p><pre>x = 20\ny = 19\nz = x + y*2\nz**2\n</pre>\n\n<p>Čekali byste, že teď to vypíše <code>3364</code>? Nevypíše! Python totiž\nnevypisuje hodnotu výrazu, když spouštíme nějaký soubor, místo toho si o to\nmusíme explicitně říct voláním <code>print</code>.\n\n</p><pre>x = 20\ny = 19\nz = x + y*2\nprint(z)\nprint(z**2)\n</pre>\n\n<p>Nyní se konečně dočkáme očekávaného výpisu:\n\n</p><pre>58\n3364\n</pre>\n\n<p>Proces, kterým jsme nyní prošli, se nazývá ladění, a slouží k přeměně\nnefunkčního programu na funkční. Obvykle při něm odstraňujete chyby, které jste\npředtím napáchali. Nebojte se psát s chybami. Každý programátor píše chybné programy\na pak je musí opravovat. Proto se také velmi hodí mít program uložený v souboru,\njinak byste ho museli přepisovat pořád dokola.\n\n</p><p>Nemusíme se omezovat jen na čísla, Python umí pracovat také s\n<i>řetězci</i>, čímž prostě rozumíme nějaký kus textu. Zatím se jen naučíme je\nvypisovat a skládat za sebe — ke skládání slouží operátor <code>+</code>.\nNesnažte se za sebe skládat číslo a řetězec, to si Python stěžuje — je potřeba\nmu explicitně říct, že z toho čísla má udělat řetězec:\n\n</p><pre>x = 13\ny = \"ahoj\"\nz = str(x) + y\nprint(z)\n</pre>\n\n<p>vypíše <code>13ahoj</code>.\n\n</p><p>Příkaz <code>print</code> může dostat víc <i>argumentů</i> oddělených čárkou\n– ty vypisuje na výstup oddělené mezerou. Navíc za tohle všechno ještě připíše\npřechod na nový řádek, takže cvičení: Jaký je rozdíl mezi těmito programy?</p>\n\n<ol><li><code>print(\"a\" + \"b\")</code> </li><li><code>print(\"a\", \"b\")</code>\n</li><li><code>print(\"a\")<br>print(\"b\")</code> </li></ol>\n\n<p>Python toho umí s řetězci daleko víc, ale na to se podíváme až v některém z\ndalších dílů. Ještě na závěr připojme poznámku, že pokud si do programu chcete\nnapsat nějaký komentář (a často se to hodí, abyste i za týden věděli, co to\nvlastně dělá), tak všechno od znaku <code>#</code> do konce řádku se ignoruje\n(pokud ten znak zrovna není součástí řetězce — <code>print(\"#a\")</code> opravdu\nvypíše <code>#a</code>).\n\n</p><p>Nakonec čistě technická záležitost – kódování. Python 3 automaticky počítá s tím,\nže jeho vstup, výstup, program, všechno, je v UTF-8. Pokud vám textový editor\nvyrábí soubory v jiném kódování, zkuste se porozhlédnout v jeho nastavení,\njestli tam náhodou není volba kódování. (Většinou tam je.)\n\n\t\t\t\t\t</p>"
@@ -2686,8 +2735,8 @@
             "points": 5,
             "taskReference": "zkp-2-vstup",
             "position": [
-                433.03204345703125,
-                508.8215411901474
+                287.5387725830078,
+                858.3400348424911
             ]
         },
         {
@@ -2698,8 +2747,8 @@
                 "zkp-1-uvod-task"
             ],
             "position": [
-                255.6112232208252,
-                453.68502712249756
+                110.11795234680176,
+                803.2035207748413
             ],
             "title": "Čtení vstupu",
             "htmlContent": "<p>Co by to bylo za program, který by si něco počítal a vůbec by si nepřečetl,\nco mu říkáme na vstupu? K tomu slouží různé funkce, pro začátek nám bude\nstačit <code>input</code>. Vyzkoušejte následující program:\n\n</p><pre>print(\"Jak se jmenuješ?\")\na = input()\nprint(\"Zadal jsi jméno:\", a)\n</pre>\n\n<p>Funkce <code>input()</code> umí i rovnou zadat dotaz. Jaký je rozdíl mezi\nnásledujícím programem a předchozím?\n\n</p><pre>a = input(\"Jak se jmenuješ? \")\nprint(\"Zadal jsi jméno:\", a)\n</pre>\n\n<p>Funkce <code>input()</code> vrací řetězec. Jak z něj udělat číslo?\nFunkcemi <code>int()</code> pro celé číslo nebo\n<code>float()</code> pro desetinné číslo. Pokud bude na vstupu něco, co se na\nčíslo převést nedá (zkuste si zavolat <code>int(\"bagr\")</code>), program si\nnebere servítky a spadne. Co s tím, si ukážeme někdy později, protentokrát nám\nbude stačit ujištění, že u úloh KSP tohle řešit nemusíme — data vždy splňují\nformát v zadání (není-li explicitně uvedeno jinak).\n\n</p><p>Některé vstupy jsou příliš velké na to, abyste je na vstup přenášeli\nmetodou Copy-Paste, takže je možné si vstup <i>přesměrovat ze souboru</i>. To\nby měla umět jak linuxová, tak windowsová příkazová řádka. Spouštíte-li tedy\nprogram příkazem <code>python prg.py</code>, stačí za to připsat\n<code>&lt;vstup</code> a systém předstírá, že jste programu zadali postupně\ncelý soubor „vstup“ na klávesnici.\n\n</p><p>Podobně lze přesměrovat i výstup konstrukcí <code>&gt;vystup</code>. Takže\npro zpracování vstupu úlohy pravděpodobně použijete něco jako\n<code>python program.py &lt;01.in &gt;01.out</code>, počkáte, až program doběhne,\na pošlete nám soubor <code>01.out</code>…\n\n</p><p>Zkuste si tedy napsat program, který na vstupu přijme celé číslo a vypíše\njeho dvojnásobek (nebo třetí mocninu, nebo výsledek jakékoli jiné operace).\nNavíc… zkuste odhadnout, co dělá tento program:\n\n</p><pre>a = int(input())\nb = int(input())\nprint(a, \"+\", b, \"=\", a+b)\n</pre>\n\n<p>Python má však daleko mocnější matematiku, kterou je však třeba nahrát\npříkazem <code>import math</code>. Tím se zpřístupní nejrůznější matematické\nfunkce (goniometrické, logaritmy, …). Volají se pak takto:\n<code>math.sin(10)</code> — znamená to: „Vezmi <i>objekt</i> <code>math</code>\na použij z něj funkci <code>sin</code>.“ Objekt si můžete představit jako\ntakovou černou skříňku, která vám poskytuje nějaké funkce a nějaká data,\npřičemž se typicky vůbec nemusíte starat o to, jak to uvnitř vypadá. Kompletní\npřehled obsahu <code>math</code> získáte v interaktivním módu po zadání\n\n</p><pre>import math\nhelp(math)\n</pre>\n\n<p>Slíbili jsme si minule, že si povíme něco víc o řetězcích. Ony jsou totiž\npro Python také objekty. Napíšete-li tedy <code>x = \"ahoj\".upper()</code>,\nbudete mít v proměnné <code>x</code> řetězec <code>AHOJ</code>, neboť funkce\n<code>upper</code> udělá z malých písmen velká (na písmenkách s diakritikou to\nmoc nefunguje). Kompletní přehled je možno získat zase v interaktivním módu po\nzadání <code>help(str)</code>.\n\n</p><p>Občas je potřeba umět určit délku řetězce. Na to se používá funkce\n<code>len()</code>, která toto určí: <code>print(len(\"asdfghjkl\"))</code>\nvypíše <code>9</code>, což je přesně počet znaků v řetězci.\n\n</p><p>V řetězci navíc můžeme indexovat: <code>a[i]</code> je <code>i</code>-té\npísmenko řetězce <code>a</code>, přičemž indexujeme od nuly:\n<code>\"abcdefgh\"[4]</code> je <code>\"e\"</code>. Co však udělat nemůžete, je\npřiřazení do písmenka: <code>a[3] = \"x\"</code> skončí chybou.\n\n</p><p>Můžeme dokonce vytáhnout z řetězce jeho část: <code>a[i:j]</code> je kus\nřetězce <code>a</code>, který začíná jeho <code>i</code>-tým znakem a končí\n<b>před</b> jeho <code>j</code>-tým znakem (pozor, indexujeme od nuly). Takže\n<code>\"abcdefgh\"[2:4]</code> je <code>\"cd\"</code>. Jako cvičení zkuste přijít\nna to, co se stane, když nějakou z těchto mezí vynecháme (např.\n<code>a[2:]</code>), a co když použijeme zápornou mez nebo číslo přesahující\ndélku řetězce…\n\n\t\t\t\t\t</p>"
@@ -2716,8 +2765,8 @@
             "points": 5,
             "taskReference": "zkp-3-podminky",
             "position": [
-                460.4480094909668,
-                586.0247769355774
+                314.95473861694336,
+                935.5432705879211
             ]
         },
         {
@@ -2728,8 +2777,8 @@
                 "zkp-2-vstup-task"
             ],
             "position": [
-                292.6892261505127,
-                538.5459585189819
+                147.19595527648926,
+                888.0644521713257
             ],
             "title": "Podmínky a cykly",
             "htmlContent": "<p>Byla by to neskutečná nuda, kdyby náš program vždycky běžel stejně —\nprovedl stejné příkazy od začátku do konce a skončil. On by taky byl často\ndost k ničemu. Proto existuje podmínka, neboli větvení.\n\n</p><p>Jak na to? Použijeme příkaz <code>if</code>, za něj napíšeme podmínku a\npotom\tpříslušné dvě varianty kódu. Jedna se provede, pokud je podmínka\nsplněna, druhá v opačném případě — při nesplnění.\n\n</p><pre>a = int(input())\nif a % 2 == 1:\n\tprint(\"Zadané číslo je liché.\")\nelse:\n\tprint(\"Zadané číslo je sudé.\")\n</pre>\n\n<p>Vysvětleme si, co jsme vlastně napsali. Program přečte ze vstupu číslo a\nvypíše, jestli je liché nebo sudé. Jak to dělá? Za slovem <code>if</code> je\nnapsaná podmínka. Ta je datového typu <i>logická hodnota</i>. Stejně jako máme typ\n<i>řetězec (str)</i>, <i>celé číslo (int)</i> nebo <i>desetinné číslo\n(float)</i>, tak nyní budeme mít navíc typ <i>logická hodnota (bool)</i>.\nTen může nabývat hodnoty <i>pravda (True)</i> nebo <i>nepravda (False)</i>.\n\n</p><p>K vytvoření logické hodnoty použijeme operátor porovnání <code>==</code>\n(pozor, neplést s operátorem přiřazení <code>=</code>). Vrací True tehdy a jen\ntehdy, když se levá strana rovná pravé. V našem případě je zrovna pravá strana\nvždy rovna 1, takže si program spočítá zbytek po dělení <code>a</code>\ndvěma, což je 1 pro všechna lichá čísla. Tedy pokud jsme zadali liché číslo,\npodmínka se vyhodnotí jako True.\n\n</p><p>Hodnotu True převezme příkaz <code>if</code>, který rozhodne, že se provede\nhned ta větev kódu, která následuje za ním. Pokud by číslo liché nebylo (resp.\npodmínka by nebyla splněna, vyhodnotila by se jako False), větev by se\nneprovedla.\n\n</p><p>Abychom nepřišli zkrátka ani ve druhém případě, existuje klíčové slovo\n<code>else</code>, po kterém následuje větev (<i>blok</i>) provedená při\nnesplnění podmínky. Tuhle větev můžeme klidně vynechat a nikomu to vadit\nnebude. Takže i následující kód je správně.\n\n</p><pre>a = int(input())\nif a == 0:\n\tprint(\"Na vstupu byla nula.\")\n\tprint(\"Sakra lidi, to vás fakt nenapadlo nic lepšího než nula?\")\n\nprint(\"Ahoj ☺\")\n</pre>\n\n<p>Předložený program si nejprve postěžuje, pokud na vstupu byla\nnula (pokud ne, tak mu to nevadí), a pak pozdraví „Ahoj ☺“.\n\n</p><p>Povšimněte si zásadní věci. Kód celé jedné větve je stejně <i>odsazen</i>.\nTo je důležité pro rozpoznání, který příkaz patří ještě do stejného bloku a\nkterý už ne. Je na vás, jak bude odsazování vypadat. Buď to je znak tabulátoru,\nnebo skupina mezer. Musí to být ale konzistentní, jinak si Python bude stěžovat.\n\n</p><p>Co když potřebujeme rozlišit více variant než dvě? Tento kód počítá výraz\n<i>1/|a|</i> (převrácená hodnota absolutní hodnoty)\n\n</p><pre>if a == 0:\n\tprint(\"Nulou neumím dělit.\")\nelse:\n\tif a &gt; 0:\n\t\tprint(1/a)\n\telse:\n\t\tprint(-1/a)\n</pre>\n\n<p>Vidíte tu zradu v odsazování? Kdybychom potřebovali ještě víc možností,\nutekl by nám kód nepřiměřeně doprava. Proto existuje ještě klíčové slovo\n<code>elif</code>, kterým se tohoto odsazení můžeme zbavit. Vysvětlení\npříkladem (kód je ekvivalentní tomu předchozímu):\n\n</p><pre>if a == 0:\n\tprint(\"Nulou neumím dělit.\")\nelif a &gt; 0:\n\tprint(1/a)\nelse:\n\tprint(-1/a)\n</pre>\n\n<p>Často potřebujeme podmínku ověřovat ne jednou, ale opakovaně. Potřebujeme\nvytvořit cyklus. K tomu slouží klíčové slovo <code>while</code>, které vždy\nověří podmínku; je-li True, provede blok; ověří podmínku; je-li True, provede\nblok; ověří podmínku; je-li True, … Když není podmínka splněna, blok se už\nneprovede a pokračuje se na další příkaz.\n\n</p><p>Ukažme si funkčnost <i>while-cyklu</i> na příkladu. Následující program čte\nze vstupu čísla, dokud jsou nenulová. Nulou je ukončen vstup; program pak\nvypíše maximum z těchto čísel. Všimněte si, že zde v podmínce používáme druhý\nz operátorů porovnání: <code>!=</code>, který je True tehdy a jen tehdy,\nmají-li výrazy na levé a na pravé straně navzájem různou hodnotu.\n\n</p><pre>a = int(input())\nprazdny_vstup = True\nmax = a\nwhile a != 0:\n\tif a &gt; max:\n\t\tmax = a\n\ta = int(input())\n\tprazdny_vstup = False\n\nif prazdny_vstup:\n\tprint(\"Na vstupu nebylo žádné číslo\")\nelse:\n\tprint(\"Maximum ze zadaných čísel je\", max)\n</pre>\n\n<p>Podmínky můžeme spojovat spojkami <code>and</code> (musí platit obě) a\n<code>or</code> (musí platit alespoň jedna), případně použít operátor\n<code>not</code> – negaci. Víc asi ukáže příklad šíleného výrazu:\n\n</p><pre>if not( (x &gt; 0 and x &lt; 256) or (y &gt;= 0 and y &lt; 256) ) or (z == 1):</pre>\n\n<p>Ještě poznamenejme, že uprostřed cyklu můžeme napsat příkaz\n<code>break</code>, kterým cyklus opustíme a skočíme na nejbližší další\npříkaz. Také se používá příkaz <code>continue</code>, kterým přeskočíme zbytek\ncyklu a spustíme další <i>iteraci</i>.\n\n</p><p>To je v této lekci vše a už zbývá akorát úloha.\n\n\t\t\t\t\t</p>"
@@ -2746,8 +2795,8 @@
             "points": 5,
             "taskReference": "zkp-4-seznamy",
             "position": [
-                523.2364025115967,
-                657.4311590194702
+                377.74313163757324,
+                1006.949652671814
             ]
         },
         {
@@ -2758,8 +2807,8 @@
                 "zkp-3-podminky-task"
             ],
             "position": [
-                354.66531562805176,
-                634.2420339584351
+                209.17204475402832,
+                983.7605276107788
             ],
             "title": "Seznamy",
             "htmlContent": "<p>Dosud jsme si povídali o datových typech, do kterých se vejde jen jedna\nhodnota (s výjimkou řetězce, se kterým ale zase nic moc neumíme). To je velice\nnepraktické, když si představíme, že bychom třeba potřebovali různě číst\ndvoumegový soubor…\n\n</p><p><i>Seznam</i> je jednorozměrná <i>datová struktura</i>, do které můžeme\nukládat různá data. Můžeme si ho představit klidně jako seznam věcí, které\nmáme nakoupit, seznam čísel, která si vsadíme do loterie, …\n\n</p><p>Je zvykem ukládat si do seznamů vždy data stejného typu (třeba jen celá\nčísla), i když by bylo možné je míchat. Ještě lepší je ukládat si tam jen\ndata stejného <b>druhu</b>, to znamená, že pokud si ukládáte počty jablek,\nhrušek a švestek, tak budete mít jedno pole na jablka, druhé na hrušky a třetí\nna švestky. <small>Správné řešení je, pokud to jde, ještě jiné. Máte-li\ntřeba mnoho zákazníků a každý si koupí J jablek, H hrušek a Š švestek, tak si\ntyhle záznamy ukládáte jako pole <i>trojic</i> (J, H, Š), takže je budete mít\nvždycky pohromadě. O tom více v příští kapitole.</small>\n\n</p><p>Jak seznam zapsat? Do hranatých závorek se napíšou jednotlivé hodnoty\noddělené čárkami: <code>s = [1, 3, 4, 7, 2, 5]</code> vytvoří proměnnou\n<code>s</code>, ve které je seznam o 6 položkách (těch zadaných).\n\n</p><p>To je sice hezké, ale jak se seznamem pracovat? Můžeme přistupovat k\njednotlivým položkám pomocí hranatých závorek: <code>s[2]</code> je třetí\nprvek seznamu, tedy v našem příkladě 4 (indexujeme od nuly),\n<code>s[x:y]</code> vezme část seznamu od prvku s indexem <code>x</code> po\nprvek s indexem <code>y-1</code> včetně. Jako cvičení si zkuste přijít na to,\nco se stane, když jeden z těchto <i>slice indexů</i> vynecháme\n(<code>s[:3])</code>, <code>s[2:]</code>)…\n\n</p><p>Nepřipomíná vám to něco? Ano, řetězec je vlastně speciální druh seznamu —\nseznam znaků. Proto téměř všechno, co jsme se naučili o řetězcích, můžeme\nlogicky použít i na seznamy: <code>len()</code> vrací počet prvků seznamu.\nSeznamy můžeme za sebe spojovat operátorem <code>+</code>. Neplatí to úplně —\nněkteré <i>metody</i> řetězců nemůžeme používat na seznamy (třeba funkci\n<code>upper</code>, <code>lower</code>, … ☺) a některé metody seznamů\nnemají zase řetězce, zvláště ty, které si ukážeme dále. Pokud to chcete vědět\núplně přesně, zkuste <code>help(str)</code> a <code>help(list)</code>.\n\n</p><p>Seznam je tedy také objekt. Mějme tedy <code>s</code> nějaký seznam a\npodívejme se, jaké všechny psí kusy s ním dokážeme provádět:\n</p><ul>\n<li><code>s.append(x)</code> přidá prvek <code>x</code> na konec seznamu.\n</li><li><code>s.count(x)</code> vrátí počet výskytů prvku <code>x</code> v seznamu.\n</li><li><code>s.index(x)</code> najde první výskyt prvku <code>x</code> v seznamu.\n</li><li><code>s.insert(i,x)</code> vloží prvek <code>x</code> do seznamu\n<b>před</b> prvek s indexem <code>i</code>.\n</li><li><code>s.pop(i)</code> ze seznamu odstraní prvek na pozici <code>i</code> a\nvrátí jej.\n</li><li><code>s.reverse()</code> seznam otočí <b>na místě</b>, to znamená, že od\nteď máte seznam <code>s</code> otočený.\n</li><li><code>s.sort()</code> seznam <i>setřídí</i> (seřadí podle velikosti\nprvků). Lze definovat i způsob, jakým je seznam tříděn, ale o tom až později. Taktéž <b>na místě</b>. Pokud jste si neuložili původní uspořádání někam jinam, tak jste o něj prachsprostě přišli.\n</li></ul>\n\n<p>Tyto funkce se dají jednoduše použít, když potřebujeme <i>frontu</i> nebo\n<i>zásobník</i>:\n\n</p><p>Frontu, neboli strukturu typu <i>FIFO</i> (first in — first out: prvek,\nkterý vložíme jako první, také první vyjmeme) vytvoříme jako obyčejný seznam.\nVkládat do fronty budeme funkcí <code>append</code>, vyjímat pak funkcí\n<code>pop(0)</code>.\n\n</p><p>Vytvořit zásobník je ještě jednodušší. Je to struktura typu <i>LIFO</i>\n(last in — first out: „první budou poslední“), k jejímuž vytvoření taktéž\npoužijeme seznam. Operace vložení je zase <code>append</code>, vyjímat budeme\npřekvapivě funkcí <code>pop()</code>, tentokrát však s prázdnými závorkami —\ntakto se vyjme právě poslední prvek …\n\n</p><p>To ještě pořád není všechno. Existuje konstrukce, které se říká\n<i>for-cyklus</i>. Tato konstrukce vezme seznam, prochází jej po prvcích pěkně\nod začátku do konce a pro každý prvek spustí zadaný blok. Dost teorie,\nukážeme si to na příkladu.\n\n</p><pre>s = [1, 6, 115, 9, 7, 0]\nfor p in s:\n\tprint(p)\n\na = 0\nfor p in s:\n\ta += p\n\tprint(a)\n</pre>\n\n<p>Program nejprve vypíše všechny prvky seznamu, na každý řádek jeden, potom\npočítá <i>prefixové součty</i> (součet vždy prvních několika prvků seznamu) a\npo řadě je všechny vypíše.\n\n</p><p>For-cyklus se také používá na provedení předem zadaného počtu iterací. Na\nto se používá funkce <code>range(x)</code>, která vrací celá čísla od\n<i>0</i> do <i>x-1</i>. Takže následující konstrukce vypíše všechna čísla od 1\ndo 100:\n\n</p><pre>for i in range(100):\n\tprint(i+1)\n</pre>\n\n<p>Pozor, ačkoliv se <code>range(x)</code> chová jako seznam čísel, \nve skutečnosti jde o tzv. <i>iterátor</i>. Představte si jej jako seznam,\nkterý se nevytvoří okamžitě, ale hodnoty v něm se spočítají v momentě, \nkdy jsou v programu potřeba. Proto <code>range(50)</code> nevypíše\nseznam čísel od 0 do 50, ačkoliv <code>range(50)[1]</code> správně vrátí\njedničku. Pokud byste si přece jen celý seznam chtěli zobrazit, použijte\nfunkci <code>list</code>, např. <code>print(list(range(50)))</code>\n\n</p><p>Poslední věcí, kterou si tady ukážeme, je generátor seznamu. Funguje to\ntak, že mu předhodíme nějaký jiný seznam a předpis, co s ním má udělat, aby\nvznikl seznam nový. Radši ukázka příkladem:\n\n</p><pre>druhe_mocniny = [a**2 for a in range(100)]\nlicha_cisla = [2*a + 1 for a in range(100)]\nmocniny_dvou = [2**a for a in range(100)]\notitulovani = [\"profesor \" + jmeno for jmeno in hoste]\n</pre>\n\n<p>Od začátku — v prvním příkazu jsme vzali čísla 0 až 99 a každé z nich jsme\numocnili na druhou. Ve druhém vyrábí výraz <i>2a + 1</i> naprosto spolehlivě\nlichá čísla. Ve třetím jsme akorát otočili výraz z prvního příkazu a máme hned\nmocniny dvojky. Celé pole se opravdu hned počítá a obvykle bez nějakých\nvelkých optimalizací, takže na <code>hm = [2**2**2**a for a in\nrange(2000)]</code> si nějakou tu chvilku (sakra dlouho) počkáme …\n\n</p><p>Poslední příkaz pak ukazuje, že tohle můžeme klidně použít i na jiné datové\ntypy, třeba řetězce — máme-li pole řetězců, můžeme pracovat s jednotlivými\nřetězci; dokonce se takhle můžeme chovat i k řetězci – explicitní rozsekání\nřetězce na znaky vůže vypadat třeba takto: <code>[a for a in retezec]</code>\n\n</p><p>S generátorem seznamu se dají dělat i daleko šílenější věci, ale o tom\ntřeba někdy příště. Za domácí úkol zkuste vyzkoumat, co dělá následující kód,\nresp. jak to dělá. Všimněte si zvláště vnoření polí (vznikne pak jakási tabulka)\na dvouparametrové varianty funkce <code>range</code>.\n\n</p><pre>for pole in [[a * b for b in range(1,11)] for a in range(1,11)]:\n\tout = \"\"\n\tfor i in pole:\n\t\tout += str(i) + \"\\t\" \n\tprint(out)\n</pre>\n\n<p>Na závěr pak obligátní úloha.\n\n\t\t\t\t\t</p>"
@@ -2776,8 +2825,8 @@
             "points": 7,
             "taskReference": "zkp-5-dalsi",
             "position": [
-                653.1999778747559,
-                749.1489496231079
+                507.7067070007324,
+                1098.6674432754517
             ]
         },
         {
@@ -2788,8 +2837,8 @@
                 "zkp-4-seznamy-task"
             ],
             "position": [
-                450.6836185455322,
-                710.6368093490601
+                305.1903476715088,
+                1060.1553030014038
             ],
             "title": "Další datové typy",
             "htmlContent": "<p>Ukážeme si další datové typy, resp. konstrukce. Prvním často používaným\ntypem je <i>tuple</i>. Tento název zní podivně, dokud si neuvědomíme, že jde\no zobecnění anglických výrazů „double“, „triple“, … rozumným překladem by tedy\nbylo <i>n</i>-tice. Tuple zapisujeme do kulatých závorek:\n\n</p><pre>jméno = (\"Petr\", \"Novák\")\nadresa = (\"Boženy Němcové\", \"42\", \"Zábřeh na Moravě\", \"789 01\")\n</pre>\n\n<p>K čemu se nám prakticky hodí? Jsou rychlejší než seznamy. Nedají se totiž\nměnit. Jednou vytvořenou tuple už nikdy nezměníte, takže se velice dobře\noptimalizuje. Zároveň pokud prostě potřebujete seznam konstant, tak je to\nčistší, neboť jakýkoli pokus o zápis Python odchytne a stěžuje si.\nZ následujícího přikladu je tedy výhodnější použít druhý řádek, pokud si\nnehodláte definovat vlastní týden:\n\n</p><pre>dny_v_tydnu = [ \"Pondělí\", \"Úterý\", \"Středa\", \"Čtvrtek\", \"Pátek\", \"Sobota\", \"Neděle\" ]\ndny_v_tydnu = ( \"Pondělí\", \"Úterý\", \"Středa\", \"Čtvrtek\", \"Pátek\", \"Sobota\", \"Neděle\" )\n</pre>\n\n<p>Další zajímavá věc je to, že můžeme udělat současné přiřazení do\nproměnných. Jak se to používá? Vizte příklad:\n\n</p><pre>(a, b) = (b, a) # výměna hodnot\n\n# výpočet n-tého Fibonacciho čísla (F(n))\nf = 1\nl = 0\nfor i in range(n):\n\t(f, l) = (f+l, f)\nprint(f)\n\n# dny v týdnu jako konstanty 0..6\n(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY) = range(7)\n</pre>\n\n<p>A poslední užitečná věc, na kterou se tuple hodí, je pohodlné generování\nřetězců. Příklad mluví za vše:\n\n</p><pre>a = 3\nb = 16\nprint(\"%d + %d = %d\" % (a, b, a+b))\nprint(str(a),\"+\",str(b),\"=\",str(a+b))\n</pre>\n\n<p>Příklad vypíše dva stejné řádky: <code>3 + 16 = 19</code>. Je snad jasné,\nkterý je přehlednější. Jak to celé funguje? Do řetězce napíšeme nějaké\n<i>formátovací značky</i>, místo kterých se do něj vloží příslušná hodnota. Ty\nzačínají znakem <code>%</code> a končí nějakým písmenem, mezi ně se vkládají\n<i>modifikátory</i>.\n\n</p><p>Možná písmena jsou následující:\n\n</p><ul>\n<li>d, i, u: celé číslo\n</li><li>e, f, g; E, F, G: desetinné číslo; vyzkoušejte si sami rozdíl\n</li><li>c: jeden znak\n</li><li>o, x, X: hodnota v osmičkové soustavě nebo v šestnáctkové s malými\npísmeny, nebo s velkými písmeny\n</li><li>r, s: řetězec (existuje rozdíl, nicméně je tak nepatrný, že ho při běžné\npráci nepostřehnete …)\n</li><li>%: %\n</li></ul>\n\n<p>Před písmeno můžete předřadit celé číslo, kterým sdělujete, kolik\n<b>minimálně</b> znaků má\nnahrazená formátovací značka zabrat. Zbytek se doplní mezerami zleva:\n<code>\"%10d\" % 15</code> se expanduje na <code>\"        15\"</code>. Pokud\nvypisujeme desetinné číslo, můžeme regulovat počet znaků před a počet znaků za\ndesetinnou čárkou: <code>%4.3f</code> určuje 4 znaky před a 3 znaky za čárkou.\nLibovolné z těchto čísel můžeme vynechat.\n\n</p><p>Pak máme modifikátory:\n\n</p><ul>\n<li>-: zarovnej vlevo, ne vpravo\n</li><li>0: nedoplňuj mezerami, ale nulami\n</li><li><i>mezera</i>: pro kladné číslo ponechej mezeru navíc, pro záporné číslo vypiš znaménko\n</li><li>+: vypiš znaménko vždy (+ i -)\n</li></ul>\n\n<p>To rozhodně není všechno; kompletní přehled si přečtěte (anglicky) v <a href=\"https://docs.python.org/3.1/library/string.html#format-string-syntax\">dokumentaci\nk Pythonu</a>.\n\n</p><p>Další struktura, kterou zde ukážeme, je <i>asociativní pole</i> –\npředstavte si seznam, ve kterém můžeme indexovat ne čísly, ale třeba dvojicí\nčísel nebo řetězci. Ten se už (logicky) nedá řadit, neboť samy indexy netvoří\nrozumnou posloupnost, ale může se hodit na spoustu jiných věcí.\n\n</p><pre>dns_to_ip = {\"localhost\":\"127.0.0.1\", \"ksp.mff.cuni.cz\":\"195.113.26.206\",\n\"www.google.com\":\"74.125.127.99\", \"lzicka.ksp.ucw.cz\":\"172.20.20.20\"}\n</pre>\n\n<p>K asociativnímu poli přistupujeme stejně jako k seznamu:\n<code>dns_to_ip[\"ksp.mff.cuni.cz\"]</code> vrátí <code>195.113.26.206</code>.\nMůžeme jej indexovat i tuplemi, ne však třeba seznamy. Tohle platí do hloubky,\ntakže klidně můžeme psát <code>pole[((13,15),(\"bagr\", 5), \"kombajn\")]</code>\n(indexování šílenou tuplí), nicméně konstrukce <code>pole[(3, [1, 2])]</code>\npoužita být nesmí.\n\n</p><p>Ano, odhadujete správně. Na indexování v asociativním poli můžeme použít\nvšechno, co je <i>read-only</i> – jen pro čtení. Což je číslo, řetězec,\ntuple, ale samo asociativní pole to třeba není. Jinak se asociativní pole\nchová velmi podobně jako seznamy; pro opravdu podrobný popis se podívejte do\ndokumentace.\n\n</p><p>Poslední věc, kterou si ukážeme, je množina (set) a zamrzlá množina\n(frozenset). Rozdíl mezi nimi je jediný – frozenset je jen pro čtení\n– nedá se po vytvoření měnit, a tedy se dá použít na indexování\nasociativního pole. Jak je vytvořit?\n\n</p><pre>s = set([\"a\", \"b\", 315])\nfs = frozenset(s)\n</pre>\n\n<p>Jako parametr funkci <code>set</code> nebo <code>frozenset</code> můžeme\npředat pole, tupli, množinu… prostě všechno, přes co se dá cyklit příkazem\n<code>for</code> (tomu se říká obecně <i>iterable</i> – iterovatelná datová\nstruktura).\n\n</p><p>V množině může být členem cokoli, čím můžeme indexovat v asociativním poli …\nje to vlastně asociativní pole, kde ale můžeme indexovat jen hodnoty\nTrue/False (v množině je nebo není).\n\n</p><p>S množinami můžeme dělat různé operace: jsou-li <code>a</code> a\n<code>b</code> dvě množiny, pak <code>a &amp; b</code> je jejich průnik a\n<code>a | b</code> jejich sjednocení.\n\n</p><p>Tolik bylo teorie. Nyní si to procvičíme prakticky.</p>"
@@ -2806,8 +2855,8 @@
             "points": 8,
             "taskReference": "zkp-6-funkce",
             "position": [
-                705.5965957641602,
-                825.3193321228027
+                560.1033248901367,
+                1174.8378257751465
             ]
         },
         {
@@ -2818,8 +2867,8 @@
                 "zkp-5-dalsi-task"
             ],
             "position": [
-                533.3919925689697,
-                794.3327016830444
+                387.8987216949463,
+                1143.8511953353882
             ],
             "title": "Funkce",
             "htmlContent": "<p>Důležitou možností v programování je volání funkcí. Tím si programátoři\nvýrazně šetří práci – jako funkci je možné napsat téměř cokoli, co pak\nakorát opakovaně voláme. Navíc, když se v kusu kódu objeví chyba a zjistíme,\nže je rozkopírován na stovce míst porůznu po zdrojáku, tak je potřeba ji\nopravit. Stokrát. Mít ten kód ve funkci, opravujeme to jen jednou.\n\n</p><p>Úplně první základní funkcí bude chybová hláška. Tu ve většině programů\nvskutku voláme na víc místech, resp. pořád.\n\n</p><pre>def error():\n\tprint(\"Error in matrix!\")\n\nerror()\n\n</pre>\n\n<p>Tento program vypíše <code>Error in matrix!</code> a skončí. Co jsme\nvlastně udělali? Klíčovým slovem <code>def</code> definujeme funkci, která má\nnázev <code>error</code> (nebo jiný identifikátor, který si vybereme). Za\nnázvem funkce jsou kulaté závorky, ve kterých zatím nic není (ale bude,\nnebojte), a dvojtečka.\n\n</p><p>Dvojtečka uvozuje co? Správně hádáte – blok kódu. Následující blok\nbude považován za vnitřek funkce a vždy, když funkci zavoláme, tak se provede\ntento blok kódu.\n\n</p><p>Funkci voláme tak, že uvedeme název funkce a za něj kulaté závorky. Zatím\nprázdné. Nemusíme ji volat jen jednou jako v předchozí ukázce:\n\n</p><pre>def trest():\n\tprint(\"Nemám jíst křídu.\")\n\nfor i in range(100):\n\ttrest()\n</pre>\n\n<p>Nebo jiná možnost:\n\n</p><pre>def error():\n\tprint(\"Některá čísla nechci.\")\n\texit()\n\nif x &lt; 0:\n\terror()\nif y &lt; 0:\n\terror()\nif z &lt; 0:\n\terror()\n</pre>\n\n<p>Ano, mohli bychom použít logické spojky <code>or</code>, ale\nz pedagogických důvodů toto neučiníme. Může se jednat třeba o nějakou\ntransakci složenou z více kroků, kdy vždycky uděláme krok a zjistíme, jestli\nse povedl. Tady se nám ale bude hodit volání funkce s parametrem. Viz příklad:\n\n</p><pre>def error(text):\n\tprint(text)\n\texit()\n\n# v proměnné `success' se ukládá, jestli transakce proběhla\notevriSoubor()\nif not(success):\n\terror(\"Chyba otevírání souboru.\")\nprectiSoubor()\nif not(success):\n\terror(\"Chyba čtení souboru.\")\nzpracujData()\nif not(success):\n\terror(\"Chyba zpracování dat.\")\n</pre>\n\n<p>Tenhle příklad je ošklivý, protože se více funkcí pere o jednu globální\nproměnnou, do které si něco ukládají. Když už, tak by tuhle informaci mohly\nmít jako návratovou hodnotu (viz dále). Kromě toho v Pythonu\nexistuje na ošetřování chyb lepší mechanismus – výjimky. O těch si\npovídat v základním kurzu nebudeme, i když to nic složitého není. Tohle byl\nopravdu jen a pouze ilustrativní příklad na funkci s parametrem.\n\n</p><p>Do závorek jsme v definici vložili jméno (zatím) jednoho parametru –\n<code>text</code>. Ten jsme určili až při volání funkce. Takže když zavoláme\n<code>error(\"Ahoj\")</code>, vypíše se <code>Ahoj</code> a program skončí.\n\n</p><p>Mimochodem, takhle funguje rovnou samotná funkce <code>exit</code>, která\numožňuje předat parametr, který se vypíše před ukončením programu; je-li to\nčíslo, jedná se o návratovou hodnotu programu (to je malé číslo, obvykle\nmezi 0 a 255, které říká systému, jestli program skončil úspěšně (0), a pokud ne (1 až 255),\ntak s jakou chybou spadnul).\n\n</p><p>Proměnné uvnitř funkce jsou lokální, tedy nejsou vidět ven, pokud na začátku\nfunkce nenapíšete <code>global x</code>, kde <code>x</code> je název proměnné.\nVyzkoušejte si, co to znamená, na trapném pedagogickém příkladu:\n\n</p><pre>def a(t):\n\tglobal b\n\tb = t\n\tc = t\n\nb = 10\nc = 10\na(5)\nprint(b, c)\n</pre>\n\n<p>Program vypíše <code>5 10</code>. Jednoduše proto, že jsme jednu\nz proměnných zglobálnili, kdežto druhou ne. Používejte <code>global</code> jen\ns velkým rozmyslem. Na předání výsledku funkce je totiž daleko vhodnější její\n<i>návratová hodnota</i>.\n\n</p><pre>def druha_mocnina(x):\n\treturn x*x\n\ny = druha_mocnina(5)\nprint(y, druha_mocnina(y))\n</pre>\n\n<p>vypíše <code>25 625</code>. Jak to všechno vypadá? Když Python zjistí, že\nv nějakém výrazu se nachází <i>volání funkce</i> (což je třeba ono\n<code>druha_mocnina(5)</code>), skočí do oné funkce, provede ji a na místo,\nkde původně bylo volání funkce, jako by vložil onu návratovou hodnotu.\nNásleduje další trapný pedagogický příklad.\n\n</p><pre>def soucin(a,b):\n\treturn a*b\n\ndef vynasob(t):\n\tglobal x\n\tx *= t\n\treturn x\n\nprint(1+2*3+4, soucin(1+2, 3+4))\nx = 2\nprint(vynasob(5)*2, vynasob(5) + vynasob(5))\n</pre>\n\n<p>Za domácí úkol si odvoďte, proč se na prvním řádku vypíše\n<code>11 21</code> a na druhém <code>20 300</code>. U druhého řádku je\npotřeba si uvědomit, že se funkce vyhodnotí při <b>každém</b> zavolání zvlášť.\nTomu, že funkce při svém zavolání mění něco, co na ní není na první pohled\nznát, se říká side-effects – vedlejší účinky – a dobrý programátor\nse snaží je buďto nemít vůbec, nebo je řádně zdokumentovat, neboť jsou častým\nzdrojem problémů.\n\n\t\t\t\t\t</p>"
@@ -2836,8 +2885,8 @@
             "points": 9,
             "taskReference": "zkp-7-rekurze",
             "position": [
-                758.3850026130676,
-                893.0274109840393
+                612.8917317390442,
+                1242.545904636383
             ]
         },
         {
@@ -2848,8 +2897,8 @@
                 "zkp-6-funkce-task"
             ],
             "position": [
-                583.9841251373291,
-                867.3363637924194
+                438.49085426330566,
+                1216.8548574447632
             ],
             "title": "Rekurze",
             "htmlContent": "<p>V předposlední lekci základního kurzu programování si povíme něco\no rekurzi. Ovládnutím tohoto mocného principu postoupíme zase o krůček dál.\nO co se jedná?\n\n</p><p>Rekurze spočívá ve volání sebe sama. Tedy funkce volá sebe sama. To zní asi\ntrochu mysticky. Nejlíp poslouží příklad, zase pedagogický, neboť jej\npoužívají a opisují snad všechny učebnice na světě. Faktoriál je definován\njako <i>N! = 1‧2‧3‧ … ‧N</i>, z čehož je vidět, že <i>N! = N‧(N-1)!</i>.\nRekurzivní funkce pak vypadá takto:\n\n</p><pre>def fact(N):\n\tif (N == 1):\n\t\treturn 1\n\telse:\n\t\treturn N*fact(N-1)\n</pre>\n\n<p>Odborníci říkají, že funkce vykoná malou část problému, načež se zavolá\nznovu na zbytek. A reálně to tak opravdu funguje. Funkce má uložený seznam\nhodnot, které umí spočítat hned (tady to je jen <i>N = 1</i>), a pokud v tomto\nseznamu požadovaná hodnota není, nebere si servítky, spočítá svůj malý kousek\na zavolá sebe sama ke spočítání zbytku (menšího).\n\n</p><p>Další pedagogickou ilustrací je počítání Fibonacciho čísel rekurzí.\n\n</p><pre>def fibo(N):\n\tif (N == 0):\n\t\treturn 0\n\telif (N == 1):\n\t\treturn 1\n\telse:\n\t\treturn fibo(N-1) + fibo(N-2)\n</pre>\n\n<p>Tady už se hodí nakreslit si <i>strom volání</i>. Ten nám prozradí mnohé\nzajímavé věci:\n\n</p><pre>          F(4)\n         /   \\\n       F(3)   \\\n      /   \\    \\\n    F(2)  F(1) F(2)\n   /   \\      /   \\\n F(0)  F(1) F(0) F(1)\n</pre>\n\n<p>Všimněte si, že <code>F(2)</code> zbytečně počítá dvakrát svoji hodnotu.\nKdybychom udělali strom pro <code>F(5)</code> nebo pro ještě vyšší hodnotu\n<i>N</i>, pak bychom načapali takového plýtvání daleko víc. Pro <i>N</i>=1000\nbudeme plýtvat tak masivně, že se funkce <code>F(x)</code> zavolá zhruba 10<sup>208</sup>-krát…\n\n</p><p>Problém plýtvání se dá vyřešit tím, že si vypočítané hodnoty budeme\nukládat. To vypadá tak, že si nejprve nadefinujeme globální pole, které potom\npostupně zaplňujeme. Ilustrace nejprve kódem a potom zase stromem volání.\n\n</p><pre>fpole = [0, 1]\ndef fibo(N):\n\tif (len(fpole) &lt; N+1): # máme malé pole, tak ho prodloužíme\n\t\tfpole.extend([0 for i in range(N+1-len(fpole))]) # vícenásobný append\n\tif (N == 0):\n\t\treturn 0\n\telse:\n\t\tif (fpole[N] == 0):\n\t\t\tfpole[N] = fibo(N-1) + fibo(N-2)\n\t\treturn fpole[N]\n</pre>\n<pre>          F(4)\n         /   \\\n       F(3)   \\\n      /   \\    \\\n    F(2)  F(1) F(2)\n   /   \\    \n F(0)  F(1) \n</pre>\n\n<p>Zde odpadl jen kousek, ale zkuste si schválně pustit nejdříve původní\nrekurzivní algoritmus třeba na <code>fibo(100)</code> a potom tenhle upravený\nna <code>fibo(1000)</code>…\n\n</p><p>Nabízí se otázka, proč to celé vlastně děláme rekurzí. Ta je zcela na\nmístě. Často se tohle ořezávání dovede až do konce, tomu se pak říká dynamické\nprogramování a vypadá to tak, že si jednoduše onen seznam počítáme od začátku.\n\n</p><pre>fpole = [0, 1]\ndef fibo(N):\n\tfor i in range(len(fpole), N+1):\n\t\tfpole.append(fpole[i-1] + fpole[i-2])\n\treturn fpole[N]\n</pre>\n\n<p>Kampak se nám poděla rekurze? <i>Rozbalili</i> jsme ji. Použili jsme ji\njako nástroj, kdy jsme postupně od přímočarého náhledu na věc (definice)\npřešli až k naprosto odlišnému způsobu řešení (který je často velmi rychlý).\n\n</p><p>Celé to nemusí být ani zdaleka jednorozměrné. Co taková kombinační čísla?\nVíme o nich, že\n<!--<i><table><tr><td>N<td rowspan=2>=<td>N-1<td rowspan=2>+<td>N-1<tr><td>k<td>k-1<td>k</table></i>-->\n<i>C(N,k) = C(N-1, k-1) + C(N-1, k)</i>. Jak to reprezentovat programově?\nJednoduše! Stačí mít funkci o dvou parametrech a správně vyřešit okrajové\npřípady.\n\n</p><pre>def C(N,k):\n\tif N == k:\n\t\treturn 1\n\tif k == 0:\n\t\treturn 1\n\treturn C(N-1, k-1) + C(N-1, k)\n</pre>\n\n<p>Tolik k rekurzi a rozbalení a teď si to vyzkoušíme na nějakých příkladech.\n\n\t\t\t\t\t</p>"
@@ -2866,8 +2915,8 @@
             "points": 10,
             "taskReference": "zkp-8-io",
             "position": [
-                775.6964454650879,
-                983.9909601211548
+                630.2031745910645,
+                1333.5094537734985
             ]
         },
         {
@@ -2878,8 +2927,8 @@
                 "zkp-7-rekurze-task"
             ],
             "position": [
-                636.80539894104,
-                945.7002553939819
+                491.3121280670166,
+                1295.2187490463257
             ],
             "title": "Vstup a výstup",
             "htmlContent": "<p>V posledním dílu kurzu budeme řešit technické záležitosti – vstup a\nvýstup. Kromě přesměrování souboru na vstup a přesměrování výstupu do souboru,\ncož jsou systémové věci, totiž umíme také přímo číst a psát zadané soubory.\n\n</p><p>Soubor je potřeba nejprve otevřít. To se dělá funkcí <code>open()</code>,\nkterá přebírá dva parametry. Prvním je jméno souboru, druhým pak mód, ve\nkterém se se souborem pracuje. Módem můžou být řetězce 'r', 'w', 'r+', 'a',\npřípadně 'rb', 'wb', 'r+b', 'ab'. Znamenají „pro čtení“, „pro zápis“, „pro\nčtení i zápis“, „pro připisování na konec souboru“. Další čtyři jsou pak totéž\nv binární formě. Ta má význam pouze na Windows (ostatní systémy to ignorují)\na vyžaduje předávání dat přesně tak, jak jsou uložena v souboru. Jinak dělají\nWindows jakousi černou magii s konci řádků.\n\n</p><p>Funkce <code>open</code> vrací objekt, který ukazuje na otevřený soubor.\nK němu lze přistupovat různými způsoby. Snažte se však v jednom programu nad\njedním souborem používat jen jednu variantu, jinak můžete dosáhnout nechtěných\nvýsledků.\n\n</p><pre>f = open(\"file\", \"r\") # otevře soubor\nline = f.readline() # přečte jeden řádek\nfile = f.read() # přečte celý soubor (když se nevejde do paměti,\n                        # řeší to až tehdy, když už paměť došla)\npart = f.read(100) # přečte 100 bajtů\nlines = f.readlines() # vytvoří pole, jehož prvky budou jednotlivé řádky\nfor line in f: # cyklí postupně přes všechny řádky souboru, zdaleka\n               # nejrychlejší způsob, jak postupně zpracovat celý soubor\n</pre>\n\n<p>Do souboru zapisujeme metodou <code>write</code> objektu <code>f</code>.\nPřebírá jeden parametr – řetězec, který chceme zapsat:\n\n</p><pre>f = open(\"file\", \"w\")\nline = \"Lorem ipsum dolor sit amet.\"\nf.write(line)\n</pre>\n\n<p>Soubor je po ukončení práce potřeba zavřít: <code>f.close()</code>.\n\n</p><p>Další věc, která se občas může hodit, je modul <code>sys</code>. Nahrává se\npodobně jako matematika – příkazem <code>import sys</code>. Obsahuje\nmimo jiné objekty <code>sys.stdin</code>, <code>sys.stdout</code> a\n<code>sys.stderr</code>, což jsou standardní vstup (z terminálu), standardní\nvýstup a standardní chybový výstup (oba na terminál). Proč jsou dva? Když\npřesměrujete výstup do souboru, tak aby se chybové hlášky nepsaly také do\nsouboru, ale stále na terminál, kde jsou užitečnější. Standardní chybový výstup\nlze také přesměrovat – konstrukcí <code>2&gt;soubor</code>. \n\n</p><p>Pokud zadáváte vstup v terminálu bez přesměrování, občas potřebujete programu\nsdělit, že žádná další data už zadávat nechcete – musíte poslat hlášku „konec \nsouboru“. Na UNIXech ji\npošlete stiskem klávesové zkratky Ctrl+D, ve Windows obvykle funguje Ctrl+Z \n(+ stiskněte Enter), ale prý se ve Windows už v terminálu neprogramuje, takže to\nmožná už zrušili.\n\n</p><p>Další zajímavou věcí v modulu <code>sys</code> je pole\n<code>sys.argv</code>, které obsahuje jako první prvek jméno sebe sama,\ntedy jméno právě běžícího programu, a jako další prvky jsou argumenty zadané\nna příkazové řádce. Pokud tedy pustíte <code>python prg.py --help</code>, pak\nse do <code>sys.argv[1]</code> uloží hodnota <code>\"--help\"</code>. Takhle je\nmožné předávat jméno souboru, ze kterého chcete číst vstup, žádat nápovědu,\nměnit ukecanost programu podle toho, co o jeho běhu chcete vědět.\nNapříklad UNIXové utility tohle masivně využívají.\n\n</p><p>Modul <code>sys</code> obsahuje ještě mnoho dalších informací, většinou\no systému, na kterém byl program puštěn. Pro kompletní popis si přečtěte\n<code>help(sys)</code> nebo manuál na internetu.\n\n</p><p>Ještě jednou věcí, která vás může při odevzdávání jiných úloh zajímat, je\nvynucená optimalizace. Když spustíte Python s parametrem <code>-O</code>,\npřečte si soubor a přeloží si ho do něčeho, z čeho se mu bude rychleji číst.\nFunguje to občas, občas ne, vyzkoušejte sami. Někdy to pomůže až desetinásobně,\njindy vůbec.\n\n</p><p>Tohle je z naší strany vše. To, co jste se z Pythonu za tento krátký\nstručný kurz naučili, není zdaleka všechno. Ani to nebylo naším cílem. Pokud se\nvám programování zalíbilo a chcete pokračovat dál, můžete se směle vrhnout do\nnašich dalších úloh, začít řešit naše série příkladů, přijet na\nsoustředění, poznat spoustu nových kamarádů, …\n\n\t\t\t\t\t</p>"
