@@ -24,7 +24,7 @@ export async function loadAggregatedTasks() {
                                }))
         }
         declaredTasks.tasks.push(...positionTasks("Z"))
-        declaredTasks.tasks.push(...positionTasks("Z"))
+        declaredTasks.tasks.push(...positionTasks("H"))
     }
 
     return declaredTasks
