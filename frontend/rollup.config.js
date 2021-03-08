@@ -62,9 +62,6 @@ function plugins(editor=false, search=false) {
 			"allowEditor": editor,
 		}),
 
-		// In dev mode, call `npm run start` once
-		// the bundle has been generated
-		!production && !editor && serve(),
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
@@ -83,7 +80,11 @@ export default [{
 		format: 'es',
 		file: 'public/build/bundle.js'
 	},
-	plugins: plugins(false),
+	plugins: plugins(false).concat([
+		// In dev mode, call `npm run start` once
+		// the bundle has been generated
+		!production && serve()
+	]),
 	watch: {
 		clearScreen: false
 	}
