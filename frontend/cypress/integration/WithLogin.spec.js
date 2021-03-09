@@ -30,6 +30,18 @@ describe('Functionality with login', () => {
         // cy.get('.download select').select("první")
         // cy.get("button.download").click()
     })
+    it('Shows submit form - ZKP', () => {
+        login()
+        cy.contains("Čtení vstupu").click({force: true})
+        cy.get("button.download") // can't test file download ;(
+
+        cy.get('.download select')
+            .select('první').should('have.value', '1')
+            .select('druhý').should('have.value', '2')
+            .select('třetí').should('have.value', '3')
+            .select('čtvrtý').should('have.value', '4')
+            .select('pátý').should('have.value', '5')
+    })
     it('Shows task colours', () => {
         login()
         cy.visit(host + "/kurz#task/27-Z1-1")
