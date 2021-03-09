@@ -71,9 +71,14 @@
    * Make the SVG drag&zoomable
    **/
   let currentZoomScale = 1.0
-  const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10);
+  const positions = tasks.tasks.map(t => t.position ?? [ 0, 0 ])
+  const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10).translateExtent([[
+    Math.min(...positions.map(p => p[0])), Math.min(...positions.map(p => p[1])) - 1000
+  ], [
+    Math.max(...positions.map(p => p[0])), Math.max(...positions.map(p => p[1])) + 1000
+  ]]);
   function setupZoom() {
-    function zoomed(e) {
+    function zoomed(e: any) {
       let svg = d3.select(svgElement).select("g");
       currentZoomScale = e.transform.k
       svg.attr("transform", e.transform);
