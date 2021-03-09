@@ -14,7 +14,7 @@
   export let showHiddenEdges: boolean = false;
   export let selection: Set<TaskDescriptor> = new Set();
   export let showCenterMarker: boolean = false;
-  export let showHidden: boolean = false;
+  export let isEditor: boolean = false;
 
   let hoveredTask: null | TaskDescriptor = null;
 
@@ -71,12 +71,20 @@
    * Make the SVG drag&zoomable
    **/
   let currentZoomScale = 1.0
-  const positions = tasks.tasks.map(t => t.position ?? [ 0, 0 ])
-  const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10).translateExtent([[
-    Math.min(...positions.map(p => p[0])), Math.min(...positions.map(p => p[1])) - 1000
-  ], [
-    Math.max(...positions.map(p => p[0])), Math.max(...positions.map(p => p[1])) + 1000
-  ]]);
+  const positions = tasks.tasks.filter(t => !t.hidden).map(t => t.position ?? [ 0, 0 ])
+  const extent = {
+    minX: Math.min(...positions.map(p => p[0])),
+    minY: Math.min(...positions.map(p => p[1])),
+    maxX: Math.max(...positions.map(p => p[0])),
+    maxY: Math.max(...positions.map(p => p[1]))
+  }
+  const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10)
+  if (!isEditor) {
+    zoomer.translateExtent([
+        [ extent.minX - 300, extent.minY - 300 ],
+        [ extent.maxX + 300, extent.maxY + 300 ]
+      ]);
+  }
   function setupZoom() {
     function zoomed(e: any) {
       let svg = d3.select(svgElement).select("g");
@@ -84,8 +92,11 @@
       svg.attr("transform", e.transform);
     }
     zoomer.on("zoom", zoomed);
-    const selection = d3.select(container) as any
+    const selection = d3.select<Element, unknown>(container)
     selection.call(zoomer);
+
+    zoomer.scaleTo(selection, 1)
+    zoomer.translateTo(selection, 0, +(container.clientHeight / 2) - 210)
   }
 
   function keydown(key: KeyboardEvent) {
@@ -322,8 +333,7 @@
     <g>
       <!-- The translation assures that [0,0] is just bellow current KSP header in the horizontal center of the page -->
       <g
-        bind:this={innerSvgGroup}
-        transform="translate({clientWidth / 2}, 210)">
+        bind:this={innerSvgGroup}>
         {#if selectionRectangle != null}
           <rect
             class="selectionRectangle"
@@ -351,12 +361,12 @@
             stroke-dasharray="15,15" />
         {/if}
         {#each edges as edge}
-          {#if showHidden || !(edge?.dependee?.hidden || edge?.dependency?.hidden)}
+          {#if isEditor || !(edge?.dependee?.hidden || edge?.dependency?.hidden)}
             <GraphEdge {edge} showLabelEdge={showHiddenEdges} />
           {/if}
         {/each}
         {#each nodes as task}
-          {#if showHidden || !(task.hidden ?? false) }
+          {#if isEditor || !(task.hidden ?? false) }
             <GraphNode
             {task}
             on:mousedown={dragStart}
