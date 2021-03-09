@@ -8,10 +8,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install # will run `yarn install` command
+          cmd: --cwd ./frontend install --frozen-lockfile # will run `yarn install` command
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: jest # will run `yarn build` command
+          cmd: --cwd ./frontend jest # will run `yarn jest` command
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: cypress open # will run `yarn test` command
+          cmd: --cwd ./frontend cypress run
