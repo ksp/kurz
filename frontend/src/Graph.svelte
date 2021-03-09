@@ -86,9 +86,11 @@
       ]);
   }
   function setupZoom() {
+    const transformLocalStorageKey = "taskGraph-transform"
     function zoomed(e: any) {
       let svg = d3.select(svgElement).select("g");
       currentZoomScale = e.transform.k
+      localStorage.setItem(transformLocalStorageKey, JSON.stringify({ scale: d3.event.scale, translate: e.translate, transform: e.transform }))
       svg.attr("transform", e.transform);
     }
     zoomer.on("zoom", zoomed);
@@ -114,7 +116,7 @@
             notTime = 1 - time
             zoomer.translateTo(selection, notTime * center[0], notTime * center[1] + time * ((container.clientHeight / 2) - 210))
           }
-        }).duration(500)
+        }).duration(location.hash ? 0 : 500)
     }
   }
 
