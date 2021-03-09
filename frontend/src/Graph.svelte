@@ -6,7 +6,7 @@
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import { createEdges } from "./tasks";
   import { taskStatuses } from "./task-status-cache";
-import { isEditableElement } from "./helpers";
+  import { isEditableElement, nonNull } from "./helpers";
 
   export let tasks: TasksFile;
   export let nodeDraggingEnabled: boolean = false;
@@ -243,7 +243,7 @@ import { isEditableElement } from "./helpers";
     tooltipMaxPoints = null;
     tooltipCurrPoints = null;
     if (hoveredTask != null) {
-      const status = $taskStatuses.get(hoveredTask.id);
+      const status = $taskStatuses.get((hoveredTask as any).taskReference);
       if (status) {
         tooltipMaxPoints = status.maxPoints;
         tooltipCurrPoints = status.points;
@@ -359,7 +359,7 @@ import { isEditableElement } from "./helpers";
             on:taskClick
             on:click={nodeClick(task)}
             on:hoveringChange={nodeHover(task)}
-            status={$taskStatuses.get(task.id)}
+            status={$taskStatuses.get(nonNull(task.taskReference))}
             on:dblclick={nodeDoubleClick(task)} />
           {/if}
         {/each}

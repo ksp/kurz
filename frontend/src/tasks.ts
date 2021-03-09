@@ -11,6 +11,7 @@ export type TaskDescriptor = {
         name: string,  
     },
     hidden?: boolean
+    taskReference?: string
 
     isCurrent?: boolean
 } & (
