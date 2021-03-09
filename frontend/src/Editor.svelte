@@ -395,7 +395,7 @@
   {nodeDraggingEnabled}
   on:openTask={openTaskDetailEditorButton}
   {showHiddenEdges}
-  showHidden={true} />
+  isEditor={true} />
 
 <div class="container">
   <div class="topLeftHint">
