@@ -81,7 +81,7 @@
   const zoomer = d3.zoom().scaleExtent([0.1, 2]).clickDistance(10)
   if (!isEditor) {
     zoomer.translateExtent([
-        [ extent.minX - 300, extent.minY - 300 ],
+        [ extent.minX - 300, extent.minY - 1000 ],
         [ extent.maxX + 300, extent.maxY + 300 ]
       ]);
   }
@@ -95,8 +95,27 @@
     const selection = d3.select<Element, unknown>(container)
     selection.call(zoomer);
 
-    zoomer.scaleTo(selection, 1)
-    zoomer.translateTo(selection, 0, +(container.clientHeight / 2) - 210)
+    const allZoom = container.clientHeight / (extent.maxY - extent.minY)
+    const center = [
+      (extent.minX + extent.maxX) / 2,
+      (extent.minY + extent.maxY) / 2,
+    ]
+    zoomer.scaleTo(selection, allZoom)
+    zoomer.translateTo(selection, center[0], center[1])
+    if (!isEditor) {
+      // at least 860px wide view should be displayed
+      var targetZoom = Math.min(1, window.innerWidth / 865)
+      d3.transition().duration(1000)
+        .tween("zoom.zoomtozero", () => {
+          return (time: number) => {
+            let notTime = 1 - time
+            zoomer.scaleTo(selection, time * targetZoom + notTime * allZoom)
+            time = Math.sqrt(time)
+            notTime = 1 - time
+            zoomer.translateTo(selection, notTime * center[0], notTime * center[1] + time * ((container.clientHeight / 2) - 210))
+          }
+        }).duration(500)
+    }
   }
 
   function keydown(key: KeyboardEvent) {
