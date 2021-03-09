@@ -106,7 +106,11 @@
     if (!isEditor) {
       // at least 860px wide view should be displayed
       var targetZoom = Math.min(1, window.innerWidth / 865)
-      d3.transition().duration(1000)
+
+      // zoom to point [0, 0]
+      // when we are in editor, we let it unzoomed
+      // when task is already open (location.hash is not empty), we perform the zoom in zero time
+      d3.transition()
         .tween("zoom.zoomtozero", () => {
           return (time: number) => {
             let notTime = 1 - time
