@@ -90,7 +90,6 @@
     function zoomed(e: any) {
       let svg = d3.select(svgElement).select("g");
       currentZoomScale = e.transform.k
-      localStorage.setItem(transformLocalStorageKey, JSON.stringify({ scale: d3.event.scale, translate: e.translate, transform: e.transform }))
       svg.attr("transform", e.transform);
     }
     zoomer.on("zoom", zoomed);
@@ -338,6 +337,7 @@
 <svelte:window on:keydown={keydown} />
 
 <div
+  class="main-svg-container"
   bind:this={container}
   bind:clientHeight
   bind:clientWidth
