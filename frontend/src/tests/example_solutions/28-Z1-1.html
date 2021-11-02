@@ -3,7 +3,7 @@ Nejprve si vyřešme jednodušší úlohu: jak o&nbsp;nějaké posloupnosti záv
 poznáme, jestli je (celá) správně uzávorkovaná? Určitě musí obsahovat
 stejný počet levých a&nbsp;pravých závorek – jinak těžko mohou tvořit páry.</p>
 <p>
-Ovšem to nestačí. Uvažte třeba posloupnost <tt>())(</tt>. Ta obsahuje dvě
+Ovšem to nestačí. Uvažte třeba posloupnost <code>())(</code>. Ta obsahuje dvě
 levé a&nbsp;dvě pravé závorky, ale korektním uzávorkováním určitě není.
 Na třetí pozici se pokoušíme ukončit závorku „dřív, než začala“.</p>
 <p>
@@ -22,7 +22,7 @@ správně spárovat, a&nbsp;tedy uzávorkování je korektní.</p>
 Nyní k původní úloze. Představme si, že si chceme označit všechna
 místa v&nbsp;posloupnosti, kde může končit korektní uzávorkování (začínající
 na začátku). Třeba pro příklad ze zadání to budou následující místa
-(označena hvězdičkou): <tt>(()())*()*)()</tt>.</p>
+(označena hvězdičkou): <code>(()())*()*)()</code>.</p>
 <p>
 Jak je najdeme? Budeme postupně procházet posloupnost od začátku a&nbsp;průběžně
 si počítat, kolik levých a&nbsp;pravých závorek už jsme viděli. Pokud narazíme
@@ -43,12 +43,12 @@ Ukažme si průběh algoritmu na předchozím příkladu:</p>
 <tr><td>Počet levých  </td><td> 1 </td><td> 2 </td><td>  2 </td><td> 3 </td><td> 3 </td><td> 3 </td><td>  4 </td><td> 4 </td><td> 4 </td><td> - </td><td>  -</td></tr>
 <tr><td>Počet pravých </td><td> 0 </td><td> 0 </td><td>  1 </td><td> 1 </td><td> 2 </td><td> 3 </td><td>  3 </td><td> 4 </td><td> 5 </td><td> - </td><td>  -</td></tr>
 <tr><td>Rozdíl        </td><td> 1 </td><td> 2 </td><td>  1 </td><td> 2 </td><td> 1 </td><td> 0 </td><td>  1 </td><td> 0 </td><td> -1 </td><td> - </td><td> -</td></tr>
-<tr><td>Akce          </td><td>   </td><td>   </td><td>    </td><td>   </td><td>   </td><td> * </td><td>    </td><td> * </td><td> <tt>X</tt> </td><td>   </td><td></td></tr>  
+<tr><td>Akce          </td><td>   </td><td>   </td><td>    </td><td>   </td><td>   </td><td> * </td><td>    </td><td> * </td><td> <code>X</code> </td><td>   </td><td></td></tr>  
 </tbody></table>
 </div>
 <p>
 Hvězdička znamená označení místa s&nbsp;korektním uzávorkováním
-a&nbsp;<tt>X</tt> konec prohledávání, když žádné další uzávorkování korektní být
+a&nbsp;<code>X</code> konec prohledávání, když žádné další uzávorkování korektní být
 nemůže.</p>
 <p>
 Na konci jen vypíšeme nejpravější označené místo. Všimněme si, že

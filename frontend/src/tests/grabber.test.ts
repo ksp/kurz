@@ -134,7 +134,7 @@ describe('all tasks in a page', () => {
     })
     test('all solutions', async () => {
         const tasks = await g.fetchAllTasks("/h/ulohy/33/reseni1.html")
-        expect(tasks.map(x => x.id)).toStrictEqual([ "33-1-1", "33-1-2", "33-1-3", "33-1-4", "33-1-X1" ])
+        expect(tasks.map(x => x.id)).toStrictEqual([ "33-1-1", "33-1-2", "33-1-3", "33-1-4", "33-1-X1", "33-1-S" ])
     })
 })
 
