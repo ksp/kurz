@@ -16,10 +16,10 @@ type TaskLocation = {
 }
 
 function fixAllLinks(e: any) {
-    if (typeof e.src == "string") {
+    if (typeof e.src == "string" && e.src != "") {
         e.src = e.src
     }
-    if (typeof e.href == "string") {
+    if (typeof e.href == "string" && e.href != "") {
         e.href = e.href
     }
     let c = (e as HTMLElement).firstElementChild
