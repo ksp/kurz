@@ -7,10 +7,11 @@
     import { getLocationLink } from './ksp-task-grabber';
 
     let query: string = "";
-    let results = [];
+    let results: Fuse.FuseResult<IndexedDocument>[] = [];
+    let limit = 20
 
     function updateSearchResults(index: Fuse<IndexedDocument>) {
-        results = index.search(query)
+        results = index.search(query, { limit: limit + 1 })
     }
 </script>
 
@@ -77,7 +78,7 @@
             </div>
         {:then index }
             <div class="center top1emPad">
-                <input placeholder="Co chceš hledat?" type="text" bind:value={query} on:keydown={function() { updateSearchResults(index) } } />
+                <input placeholder="Co chceš hledat?" type="text" bind:value={query} on:keydown={function() { limit = 20; updateSearchResults(index) } } />
             </div>
             <div class="boxofboxes">
                 {#each results as r}
@@ -89,6 +90,11 @@
                         <p>{@html r.item.solution.substring(0,300)}</p>
                     </div>
                 {/each}
+                {#if limit < results.length}
+                    <div class="more-results">
+                        <button on:click={() => { limit += 20; updateSearchResults(index) }}>další...</button>
+                    </div>
+                {/if}
             </div>
         {/await}
     </div>
