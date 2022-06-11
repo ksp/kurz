@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { isLoggedIn, parseTaskId } from "./ksp-task-grabber";
     import type { TaskSubmitStatus, SubtaskSubmitStatus, TaskStatus } from './ksp-submit-api'
     import * as api from './ksp-submit-api'
     import { taskStatuses, refresh as refreshTaskStatus } from './task-status-cache'
@@ -140,11 +139,6 @@
         return nameSubtaskId(subtask.id) + check
     }
 
-    function magicTrickSaveBlob(blob: Blob, fileName: string) {
-        const url = URL.createObjectURL(blob)
-        magicTrickSaveFile(url, fileName)
-        window.URL.revokeObjectURL(url);
-    }
     function magicTrickSaveFile(url: string, fileName: string) {
         var a = document.createElement("a");
         document.body.appendChild(a);

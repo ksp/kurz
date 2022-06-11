@@ -2,9 +2,7 @@
     import { grabAssignment, grabSolution, isLoggedIn } from "./ksp-task-grabber";
     import type { TaskAssignmentData } from "./ksp-task-grabber";
     import { nonNull } from './helpers'
-    import App from "./App.svelte";
     import { taskStatuses } from "./task-status-cache";
-    import { tasksToString } from "./tasks";
     import type { TaskDescriptor } from './tasks'
     import Odevzdavatko from "./Odevzdavatko.svelte";
     import SolutionCaptcha from "./SolutionCaptcha.svelte";
@@ -20,7 +18,7 @@
         wantsSolution = false
     }
 
-    let referenceId: string | null
+    let referenceId: string | undefined
     $: {
         if (task != null) {
             const r = task.taskReference
@@ -90,14 +88,14 @@
 
 <div>
     {#if task != null}
-    {#if nonNull(task).type == "text"}
+    {#if task.type == "text"}
         <div class="header">
-            <div class="title"><h3>{nonNull(task).title}</h3></div>
+            <div class="title"><h3>{task.title}</h3></div>
         </div>
-        {@html nonNull(task).htmlContent || "Toto je prázdný textový node 😢"}
-    {:else if ["open-data", "custom-open-data"].includes(nonNull(task).type)}
+        {@html task.htmlContent || "Toto je prázdný textový node 😢"}
+    {:else if ["open-data", "custom-open-data"].includes(task.type)}
 
-    {#await getAssignment(nonNull(task))}
+    {#await getAssignment(task)}
         Načítám úlohu
     {:then assignment}
         <div class="header">
@@ -107,10 +105,10 @@
                 <p>
                     {referenceId} | {assignment.points} bodů
                     {#if status && status.submitted}
-                        {#if nonNull(status).solved}
+                        {#if status.solved}
                         | Vyřešeno 🥳
                         {:else}
-                        | odevzdáno za {nonNull(status).points} bod{ "ů yyy"[nonNull(status).points] ?? "ů" }
+                        | odevzdáno za {status.points} bod{ "ů yyy"[status.points] ?? "ů" }
                         {/if}
                     {/if}
                 </p>
@@ -120,7 +118,7 @@
 
         <hr class="clearfloat" />
         {#if isLoggedIn()}
-            <Odevzdavatko id={nonNull(referenceId)} cviciste={!nonNull(task).isCurrent} />
+            <Odevzdavatko id={nonNull(referenceId)} cviciste={!task.isCurrent} />
         {:else}
             <p class="zs-warning">Pro odevzdávání je potřeba se <a href={loginUrl}>přihlásit</a>.</p>
         {/if}
@@ -128,7 +126,7 @@
         <hr class="clearfloat" />
 
         <div class="solution">
-            {#if nonNull(task).isCurrent}
+            {#if task.isCurrent}
                 Úloha je stále soutežní a tak k ní řešení přirozeně není veřejné :)
             {:else if !assignment.hasSolution}
                 K úloze není zveřejněné vzorové řešení, budeš ho muset vymyslet sám.
@@ -147,6 +145,7 @@
             {:else if wantsSolution}
                 <SolutionCaptcha on:done={() => showSolution = true} />
             {:else}
+            <!-- svelte-ignore a11y-invalid-attribute -->
             <a href="javascript:;"
                on:click|preventDefault|stopPropagation={maybeShowSolution}>
                 Zobrazit řešení úlohy

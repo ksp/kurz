@@ -28,11 +28,13 @@ jobs:
       run: yarn --cwd frontend tsc-check
     - name: yarn build
       run: yarn --cwd frontend build
-    - name: yarn jest
+    - name: Svelte Check
+      run: yarn --cwd frontend svelte-check --threshold warning
+    - name: jest (unit tests)
       run: yarn --cwd frontend jest --ci --reporters=default --reporters=jest-github-actions-reporter
     - name: dotnet build
       run: dotnet build server/Ksp.WebServer/
-    - name: Cypress run
+    - name: Cypress (UI tests)
       uses: cypress-io/github-action@v4
       with:
         install-command: yarn --frozen-lockfile --silent

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from "svelte";
-  import type { TaskStatus } from "./ksp-task-grabber";
+  import type { TaskStatus } from "./ksp-submit-api";
   import type { TaskDescriptor } from "./tasks";
 
   export let task: TaskDescriptor;
@@ -9,7 +9,6 @@
 
   let hovering: boolean = false;
   let text_element: SVGTextElement;
-  let mainGroup: SVGGElement;
 
   $: [cx, cy] = task.position ?? [0, 0];
 
@@ -107,7 +106,6 @@
 </style>
 
 <g
-  bind:this={mainGroup}
   on:mousedown
   on:mouseenter={enter}
   on:mouseleave={leave}

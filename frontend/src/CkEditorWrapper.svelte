@@ -8,7 +8,6 @@
     // setup editor
     let editor: any
     let editorTextarea: HTMLTextAreaElement | undefined
-    let _this: any
     onMount(() => {
         ClassicEditor.create(editorTextarea!)
             .then((e: any) => {

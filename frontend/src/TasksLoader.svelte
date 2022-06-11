@@ -1,6 +1,10 @@
 <script lang="ts">
     import type { TasksFile } from "./tasks";
 
+    interface $$Slots {
+        default: { data: TasksFile };
+    }
+
     export let promise: Promise<TasksFile>;
 
     let data: TasksFile | null = null;

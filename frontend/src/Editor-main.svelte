@@ -2,7 +2,7 @@
   import Editor from "./Editor.svelte";
   import Modal from "svelte-simple-modal";
   import { loadTasks } from "./tasks";
-  import type { TasksFile, TaskDescriptor } from "./tasks";
+  import type { TasksFile } from "./tasks";
   import TasksLoader from "./TasksLoader.svelte";
 
   const tasksPromise: Promise<TasksFile> = loadTasks();
