@@ -59,6 +59,7 @@ function plugins(editor=false, search=false) {
 			inlineSources: !halfProduction
 		}),
 		replace({
+			preventAssignment: true,
 			"allowEditor": editor,
 		}),
 
