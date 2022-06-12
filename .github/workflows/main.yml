@@ -39,6 +39,18 @@ jobs:
       with:
         install-command: yarn --frozen-lockfile --silent
         browser: firefox
-        # project: ./frontend
         working-directory: ./frontend
         start: yarn start
+
+  old-node-build:
+    runs-on: ubuntu-latest
+    name: Build on old Node.js
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 12
+    - name: yarn install
+      run: yarn --cwd frontend install --frozen-lockfile
+    - name: yarn build
+      run: yarn --cwd frontend build
