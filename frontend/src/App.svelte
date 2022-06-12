@@ -1,6 +1,6 @@
 <script lang="ts">
   import Graph from "./Graph.svelte";
-  import type { TasksFile, TaskDescriptor } from "./tasks";
+  import type { TasksFile } from "./tasks";
   import TasksLoader from "./TasksLoader.svelte";
   import TaskPanel from "./TaskPanel.svelte";
   import { loadAggregatedTasks } from "./aggregate-tasks";

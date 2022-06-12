@@ -3,6 +3,7 @@
   import GraphEdge from "./GraphEdge.svelte";
   import { createEventDispatcher, onMount, tick } from "svelte";
   import * as d3 from "d3";
+  import * as d3Select from 'd3-selection'
   import type { TasksFile, TaskDescriptor } from "./tasks";
   import { createEdges } from "./tasks";
   import { taskStatuses } from "./task-status-cache";
@@ -86,7 +87,6 @@
       ]);
   }
   function setupZoom() {
-    const transformLocalStorageKey = "taskGraph-transform"
     function zoomed(e: any) {
       let svg = d3.select(svgElement).select("g");
       currentZoomScale = e.transform.k
@@ -162,7 +162,7 @@
     if (e.button != 2) return;
 
     // setup drag start
-    const startPos = d3.pointer(e, innerSvgGroup);
+    const startPos = d3Select.pointer(e, innerSvgGroup);
 
     // prevent default
     e.preventDefault();
@@ -184,7 +184,7 @@
 
     // setup mouse move
     function mouseMove(e: MouseEvent) {
-      const np = d3.pointer(e, innerSvgGroup);
+      const np = d3Select.pointer(e, innerSvgGroup);
       selectionRectangle = [
         [Math.min(np[0], startPos[0]), Math.min(np[1], startPos[1])],
         [Math.max(np[0], startPos[0]), Math.max(np[1], startPos[1])],
@@ -203,7 +203,7 @@
       e.stopPropagation();
 
       // save selection
-      const np = d3.pointer(e, innerSvgGroup);
+      const np = d3Select.pointer(e, innerSvgGroup);
       selectionRectangle = [
         [Math.min(np[0], startPos[0]), Math.min(np[1], startPos[1])],
         [Math.max(np[0], startPos[0]), Math.max(np[1], startPos[1])],
@@ -227,12 +227,12 @@
     e.preventDefault();
     e.stopPropagation();
 
-    let startPos = d3.pointer(e, innerSvgGroup);
+    let startPos = d3Select.pointer(e, innerSvgGroup);
 
     function drag(e: MouseEvent) {
       if (!nodeDraggingEnabled) return;
 
-      const currPos = d3.pointer(e, innerSvgGroup);
+      const currPos = d3Select.pointer(e, innerSvgGroup);
       const [dx, dy] = [currPos[0] - startPos[0], currPos[1] - startPos[1]];
       for (const [t, _] of selection.entries()) {
         t.position = [

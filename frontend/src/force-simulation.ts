@@ -1,6 +1,7 @@
 import type { SimulationLinkDatum, SimulationNodeDatum } from "d3";
 import * as d3 from "d3";
-import { createEdges, TaskDescriptor, TasksFile } from "./tasks";
+import { createEdges } from "./tasks";
+import type { TaskDescriptor, TasksFile } from "./tasks";
 
 type TaskId = {
     id: string;

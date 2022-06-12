@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
 
   import Graph from "./Graph.svelte";
-  import { isEditableElement, nonNull, saveToLocalDisk } from "./helpers";
+  import { isEditableElement, saveToLocalDisk } from "./helpers";
   import type { TaskDescriptor, TasksFile } from "./tasks";
   import { loadTasks, resetTasks, saveTasks, getCategories, tasksToString } from "./tasks";
   import TaskDisplay from "./TaskDisplay.svelte";
@@ -477,7 +477,7 @@
     <div class="taskDetails">
       {#if currentTask != null}
         <h3>{currentTask.id}</h3>
-        <span>{nonNull(currentTask).comment}</span>
+        <span>{currentTask.comment}</span>
         <ul>
           {#each getCategories(tasks, currentTask.id) as cat}
             <li>{cat}</li>

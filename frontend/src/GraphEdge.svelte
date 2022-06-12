@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { TaskEdge } from "./graph";
+    import type { TaskEdge } from "./tasks";
 
     export let edge: TaskEdge;
     export let showLabelEdge: boolean = false;

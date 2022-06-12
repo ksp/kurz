@@ -1,8 +1,6 @@
 <script lang="ts">
     import type { TasksFile, TaskDescriptor } from "./tasks";
     import TaskDisplay from "./TaskDisplay.svelte";
-    import GraphNode from "./GraphNode.svelte";
-    import { taskStatuses } from "./task-status-cache";
 
     export let tasks: TasksFile;
     let selectedTask: TaskDescriptor | null = null;
@@ -125,7 +123,7 @@
     <hr>
 
     <div class="footer">
-        <a href="javascript:;" on:click|stopPropagation|preventDefault={close}>Zavřít</a>
+        <a href="/kurz" on:click|stopPropagation|preventDefault={close}>Zavřít</a>
         {#if nextTasks.length}
             <span class="splitter">|</span> Pokračování:
             {#each nextTasks as nextT}

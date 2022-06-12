@@ -2,8 +2,6 @@
     import { getCategories } from "./tasks";
     import type { TaskDescriptor, TasksFile } from "./tasks";
     import { getContext } from "svelte";
-    import { onMount } from "svelte";
-    import CkEditor from "./CkEditorWrapper.svelte";
     import CkEditorWrapper from "./CkEditorWrapper.svelte";
     import { sync as ckeditorSync } from './ckeditorSynchronizer'
 
@@ -175,7 +173,11 @@
         <label>Má řešení:
             <input type="checkbox"
                    checked={editData.task.htmlSolution != null}
-                   on:input={ev => editData.task.htmlSolution = ev.currentTarget.checked ? "FIXME: sem dopiš vzorové řešení" : undefined} />
+                   on:input={ev => {
+                      if (editData.task.type != 'custom-open-data')
+                        throw "Error"
+                      editData.task.htmlSolution = ev.currentTarget.checked ? "FIXME: sem dopiš vzorové řešení" : undefined}
+                   } />
         </label>
 
         {#if editData.task.htmlSolution != null}
