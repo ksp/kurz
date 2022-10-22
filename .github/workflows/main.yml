@@ -1,5 +1,9 @@
 name: Github Actions
-on: ["push"]
+on: 
+  push:
+    branches: ['**']
+  schedule:
+    - cron: '5 4 * * 6'
 env:
   DOTNET_NOLOGO: 1
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
