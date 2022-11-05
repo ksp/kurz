@@ -1,24 +1,34 @@
 import { fetchHtml, isLoggedIn } from "./ksp-task-grabber";
 
 let apitoken : string | null = null
+let apitoken_expiration : number | null = null
 
-async function getToken(): Promise<string | undefined> {
-    if (apitoken != null) {
-        return apitoken
+type ApiTokenResponse = {
+    token: string
+    validity_sec: number
+}
+
+async function getToken(): Promise<string> {
+    if (apitoken_expiration != null) {
+        console.assert(apitoken != null)
+        const now = performance.now() // monotonic time for measurements
+        const margin = 60*1000
+        if (now < apitoken_expiration - margin) {
+            return apitoken!
+        }
     }
-    let doc = await fetchHtml("/auth/apitoken.cgi?show=1")
-    const token = Array.from(doc.querySelectorAll("#content p")).map(x => /Aktuální token: (.*)/.exec(x.innerHTML.trim())).filter(x => x != null).map(x => x![1])[0]
-    if (token) {
-        return apitoken = token;
+
+    let tokenResponse = await fetch("/api/auth/x-get-token", { method: "POST" })
+
+    if (tokenResponse.status >= 400) {
+        const err = await tokenResponse.text()
+        throw new Error("User not logged in, failed to get API token: " + err)
     }
-    const form = doc.getElementById("apitoken") as HTMLFormElement
-    const op = (form.elements.namedItem("op") as HTMLInputElement).value
-    const submit = (form.elements.namedItem("submit") as HTMLInputElement).value
-    const csrfToken = (form.elements.namedItem("_token") as HTMLInputElement).value
-    const body = `op=${encodeURIComponent(op)}&submit=${encodeURIComponent(submit)}&_token=${encodeURIComponent(csrfToken)}`
-    console.log(`Creating new API token`)
-    await fetch("/auth/apitoken.cgi", { method: "POST", body, headers: [["Content-Type", "application/x-www-form-urlencoded"]], redirect: "manual" })
-    return await getToken()
+
+    let token = await tokenResponse.json() as ApiTokenResponse
+    apitoken = token.token
+    apitoken_expiration = performance.now() + token.validity_sec * 1000
+    return apitoken
 }
 
 
