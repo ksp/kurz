@@ -13,6 +13,7 @@ jobs:
 
   js-tests:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node18.12.0-chrome106-ff106
     # runs-on: ${{ matrix.os }}
     # timeout-minutes: 20
     # strategy:
@@ -42,7 +43,7 @@ jobs:
       uses: cypress-io/github-action@v4
       with:
         install-command: yarn --frozen-lockfile --silent
-        browser: firefox
+        browser: chrome  # for some weird reason, cypress does not detect FF in the container :(
         working-directory: ./frontend
         start: yarn start
 
