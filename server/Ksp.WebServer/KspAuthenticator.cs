@@ -43,7 +43,10 @@ namespace Ksp.WebServer
         {
             var cookies = new CookieContainer();
             cookies.Add(new Uri(kspProxyConfig.Host), new Cookie(kspProxyConfig.AuthCookie, Uri.EscapeDataString(authCookie)));
-            var c = new HttpClient(new HttpClientHandler { CookieContainer = cookies });
+            var c = new HttpClient(new HttpClientHandler {
+                CookieContainer = cookies,
+                ServerCertificateCustomValidationCallback = kspProxyConfig.GetSslValidationCallback()
+            });
             var rq = new HttpRequestMessage(HttpMethod.Get, $"{kspProxyConfig.Host}/{url}");
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xhtml+xml"));

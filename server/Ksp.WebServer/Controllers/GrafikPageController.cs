@@ -40,7 +40,9 @@ namespace Ksp.WebServer.Controllers
 
         async Task<string> FetchBlankPage()
         {
-            var c = new HttpClient();
+            var c = new HttpClient(new HttpClientHandler {
+                ServerCertificateCustomValidationCallback = kspProxyConfig.GetSslValidationCallback()
+            });
             var rq = new HttpRequestMessage(HttpMethod.Get, $"{kspProxyConfig.Host}/blank");
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html"));
             rq.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xhtml+xml"));

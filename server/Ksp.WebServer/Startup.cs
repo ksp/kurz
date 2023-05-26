@@ -38,10 +38,12 @@ namespace Ksp.WebServer
             services.AddControllers();
             services.AddHttpClient("RedirectClient")
                 .ConfigurePrimaryHttpMessageHandler(h => {
+                    var config = h.GetRequiredService<IOptions<KspProxyConfig>>();
                 return new HttpClientHandler {
                     AllowAutoRedirect = false,
                     UseCookies = false,
-                    AutomaticDecompression = DecompressionMethods.All
+                    AutomaticDecompression = DecompressionMethods.All,
+                    ServerCertificateCustomValidationCallback = config.Value.GetSslValidationCallback(),
                 };
             });
             services.AddProxies();
