@@ -2140,8 +2140,8 @@
             ],
             "title": "Hlavní kategorie",
             "position": [
-                1074.2300415039062,
-                85.00106811523438
+                943.3304443359375,
+                253.30059814453125
             ]
         },
         {
@@ -2151,8 +2151,8 @@
             "requires": [],
             "title": "Aktuální úlohy",
             "position": [
-                1184.920654296875,
-                -39.98646545410156
+                1054.0210571289062,
+                128.3130645751953
             ],
             "hidden": true
         },
@@ -2163,8 +2163,8 @@
             "requires": [],
             "title": "Začátečnická kategorie",
             "position": [
-                1335.2300415039062,
-                85.00106811523438
+                1204.3304443359375,
+                253.30059814453125
             ]
         },
         {
@@ -2452,8 +2452,8 @@
             "points": 10,
             "taskReference": "kurz-necisla",
             "position": [
-                503.11476135253906,
-                286.3414157629013
+                521.1385955810547,
+                346.8461765050888
             ]
         },
         {
@@ -2500,10 +2500,10 @@
             "requires": [],
             "title": "Úlohy z aktuálních sérií →",
             "position": [
-                224.95677757263184,
-                115.78860139846802
+                234.45677757263184,
+                152.78860139846802
             ],
-            "rotationAngle": 351
+            "rotationAngle": 358
         },
         {
             "id": "label-grafy",
@@ -2539,11 +2539,11 @@
             "comment": "...",
             "requires": [],
             "position": [
-                222.51829147338867,
-                236.87571382522583
+                216.00632858276367,
+                262.37095308303833
             ],
             "title": "Džungle těžkých úloh →",
-            "rotationAngle": 9
+            "rotationAngle": 14
         },
         {
             "id": "label-kucharky",
@@ -2704,8 +2704,8 @@
             "title": "Aktuální soutěžní úlohy",
             "htmlContent": "<p>Níže se objevují aktuální úlohy z obou kategorií, které v KSPčku máme. Vzhledem k soutěžnímu charakteru u úloh nenajdeš řešení, to vydáváme až později. Odevzdáním úlohy zde v kurzu úlohu odevzdáváš naprosto stejně, jako by jsi to dělal(a) z běžného webového rozhraní.</p><p>&nbsp;</p><p><strong>Poznámka</strong> - aktuálně se odevzdávání úloh trošku rozbíjí a může na Tebe vyskočit komplikovaná chybová hláška vysvětlující, co máš udělat.</p>",
             "position": [
-                1182.6581077575684,
-                27.298300743103027
+                1051.7585105895996,
+                195.5978307723999
             ]
         },
         {
