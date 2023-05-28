@@ -2449,7 +2449,7 @@
             ],
             "title": "Nečísla",
             "htmlAssignment": "<p>Vstupem bude číslo <i>N</i>, výstupem bude <i>N</i>-té nečíslo.</p><p>Jak vypadá nečíslo? Nejprve je nutno definovat <i>x</i>-čísla. Pro <i>x = 1</i> jde o klasická prvočísla. Tedy posloupnost 1-čísel je <code>2,3,5,7,11,13,17,19,…</code>.&nbsp;</p><p>Posloupnost <i>(x+1)</i>-čísel získáme tak, že pro každé <i>x</i>-číslo postupně najdeme <i>(x+1)</i>-té nejbližší volné číslo za ním. Volná čísla jsou ta, která ještě nejsou <i>(x+1)</i>-číslem, ani <i>k</i>-číslem pro libovolné <i>k</i> menší než <i>x+1</i>.</p><p>Posloupnost 2-čísel, neboli druhočísel, je tedy <code>6,8,10,12,15,16,20,22,25,32,34,39,44,…</code>; posloupnost 3-čísel, neboli třetičísel, je <code>18,21,26,27,30,33,35,36,40,45,…</code>; první čtvrtočíslo je <code>42</code>, a tak dále.</p><p>Tahle metoda některá nezáporná čísla vynechává, a to přesně jsou nečísla. Posloupnost nečísel začíná <code>0,1,4,9,14,24,28,38,…</code>. Nečísla indexujeme od nuly, tedy nulté nečíslo je nula, čtvrté nečíslo je 14…</p><p>Možná lépe pochopitelnou definici nečísel naleznete na <a href=\"http://necyklopedie.org/wiki/Nečíslo\">Necyklopedii</a>.</p><p>Vzorový vstup:\n</p><pre>6\n</pre><p>Příslušný výstup:\n</p><pre>28\n</pre>",
-            "points": 10,
+            "points": 20,
             "taskReference": "dzungle-necisla",
             "position": [
                 521.1385955810547,
