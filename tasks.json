@@ -2450,7 +2450,7 @@
             "title": "Nečísla",
             "htmlAssignment": "<p>Vstupem bude číslo <i>N</i>, výstupem bude <i>N</i>-té nečíslo.</p><p>Jak vypadá nečíslo? Nejprve je nutno definovat <i>x</i>-čísla. Pro <i>x = 1</i> jde o klasická prvočísla. Tedy posloupnost 1-čísel je <code>2,3,5,7,11,13,17,19,…</code>.&nbsp;</p><p>Posloupnost <i>(x+1)</i>-čísel získáme tak, že pro každé <i>x</i>-číslo postupně najdeme <i>(x+1)</i>-té nejbližší volné číslo za ním. Volná čísla jsou ta, která ještě nejsou <i>(x+1)</i>-číslem, ani <i>k</i>-číslem pro libovolné <i>k</i> menší než <i>x+1</i>.</p><p>Posloupnost 2-čísel, neboli druhočísel, je tedy <code>6,8,10,12,15,16,20,22,25,32,34,39,44,…</code>; posloupnost 3-čísel, neboli třetičísel, je <code>18,21,26,27,30,33,35,36,40,45,…</code>; první čtvrtočíslo je <code>42</code>, a tak dále.</p><p>Tahle metoda některá nezáporná čísla vynechává, a to přesně jsou nečísla. Posloupnost nečísel začíná <code>0,1,4,9,14,24,28,38,…</code>. Nečísla indexujeme od nuly, tedy nulté nečíslo je nula, čtvrté nečíslo je 14…</p><p>Možná lépe pochopitelnou definici nečísel naleznete na <a href=\"http://necyklopedie.org/wiki/Nečíslo\">Necyklopedii</a>.</p><p>Vzorový vstup:\n</p><pre>6\n</pre><p>Příslušný výstup:\n</p><pre>28\n</pre>",
             "points": 20,
-            "taskReference": "dzungle-necisla",
+            "taskReference": "G:dzungle-necisla",
             "position": [
                 521.1385955810547,
                 346.8461765050888
@@ -2732,7 +2732,7 @@
             "title": "Hello KSP",
             "htmlAssignment": "<p>Zadáním této úlohy je někam uložit a poté spustit následující program, jehož výstup nám pak v textovém souboru pošlete zpátky:\n\n</p><pre>import codecs\nimport contextvars\n\nhaf = \"byyrU foelr cfx\"\npst, *ahf = map(lambda s: \"\".join(reversed(s)), haf.split())\npst = f\"{pst} {ahf[pst.isascii()].upper()}!\"\nxcb: str = codecs.encode(f\"{pst}\", \"rot13\")\nprint(xcb)\n</pre>\n\n(Je v pořádku, pokud nevíte, co dělá, to je částečný účel. Slibujeme, že vám nezapálí ani nezašifruje počítač :)\n\n<p>Kdyby se vám zavíralo okno před tím, než stihnete přečíst výstup, tak si jej pusťte v terminálu (na Windows <code>cmd</code>, na Linuxu třeba <code>konsole</code>, <code>gnome-terminal</code>, <code>xterm</code>, <code>rxvt</code>, …) – jednoduše tak, že terminálu zadáte <code>python C:\\cesta\\k\\programu\\hello.py</code> (popř. <code>python /cesta/k/programu/hello.py</code>), kde <code>hello.py</code> je jméno vstupního souboru.\n\n</p><p>Poznámka: běžně mají úlohy následující formát: po přečtení zadání napíšete program, který úlohu řeší. V odevzdávacím systému si pak vyrobíte několik <em>vstupů</em>, kterým postupně nakrmíte váš program, a jeho <em>výstupy</em> nám zase nahrajete zpátky (a my vám řekneme, zda jsou správně). Tato úloha je kromě předem daného programu zvláštní tím, že vstup vůbec není potřeba – ostatně jsme si ještě neřekli, jak vstup programu předávat. Z technických důvodů vám ale odevzdávací systém nějaký vstup vygeneruje – můžete ho vesele ignorovat.\n\n</p><p>Účelem této úlohy je přesvědčit se, zda máte všechny potřebné nástroje a znalosti pro odevzdávání dalších úloh. V případě, že by vám něco nefungovalo, neváhejte nás kontaktovat na <a href=\"https://discord.gg/AvXdx2X\">Discordu KSP</a> nebo e-mailem na <a href=\"mailto:ksp@mff.cuni.cz\">ksp@mff.cuni.cz</a>.\n\n\t\t\t</p>",
             "points": 2,
-            "taskReference": "zkp-1-uvod",
+            "taskReference": "G:zkp-1-uvod",
             "position": [
                 268.1538848876953,
                 768.9769115447998
@@ -2762,7 +2762,7 @@
             "title": "Čtení vstupu",
             "htmlAssignment": "<p>Na vstupu dostanete zvlášť na každém řádku řetězec a postupně 4 čísla <i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>.</p>\n\n<p>Vaším úkolem je vypsat:</p>\n<ul>\n<li>Na první řádek <i>b</i> znaků z řetězce od indexu <i>a</i> včetně. Indexujeme od nuly.</li>\n<li>Na druhý řádek všechny znaky řetězce bez <i>c</i> znaků na začátku a <i>d</i> znaků na konci.</li>\n</ul>",
             "points": 5,
-            "taskReference": "zkp-2-vstup",
+            "taskReference": "G:zkp-2-vstup",
             "position": [
                 287.5387725830078,
                 858.3400348424911
@@ -2792,7 +2792,7 @@
             "title": "Podmínky a cykly",
             "htmlAssignment": "<p> Na vstupu dostanete <strong>na prvním řádku číslo <i>N</i></strong> a na dalších <i>N</i> řádcích vždy jedno číslo 2 ≤ <i>K<sub>i</sub></i> ≤ 10000.\n</p><p> Vaším úkolem je pro každé číslo <i>K<sub>i</sub></i> vypsat jeden řádek s řetězcem <code>PRVOCISLO</code>, pokud je číslo prvočíslo, a nebo <code>SLOZENE</code>, pokud není prvočíslo.\n\n</p><p>Vzorový vstup:\n</p><pre>5\n7\n15\n21\n3\n37\n</pre>\n<p>Příslušný výstup:\n</p><pre>PRVOCISLO\nSLOZENE\nSLOZENE\nPRVOCISLO\nPRVOCISLO\n</pre>\n\n<p>Tedy, 5 čísel na vstupu, z toho 7, 3 a 37 prvočísla a 15 a 21 složená.</p>",
             "points": 5,
-            "taskReference": "zkp-3-podminky",
+            "taskReference": "G:zkp-3-podminky",
             "position": [
                 314.95473861694336,
                 935.5432705879211
@@ -2822,7 +2822,7 @@
             "title": "Seznamy",
             "htmlAssignment": "Na vstupu dostanete 2 číselné neseřazené seznamy A, B. Vaším úkolem je spočítat počet dvojic stejných čísel (první je ze seznamu A, druhé z B). Čísla se v seznamech mohou opakovat..\n<br><br>\nNa prvním řádku dostanete počet prvků N v seznamu A, na následujících N řádcích je seznam A. Na následujícím řádku počet prvků M v seznamu B. A na posledních M řádcích prvky seznamu B.\nNa výstup vypište počet daných dvojic.\n<br><br>\n<i>Příklad:</i>\nSeznam A obsahuje čísla 5, 3, 1, 4, 8, 5, seznam B 8, 1, 6, 5, 5, 19, 1, 3. Výsledek je 8.",
             "points": 5,
-            "taskReference": "zkp-4-seznamy",
+            "taskReference": "G:zkp-4-seznamy",
             "position": [
                 377.74313163757324,
                 1006.949652671814
@@ -2852,7 +2852,7 @@
             "title": "Další datové typy",
             "htmlAssignment": "<p>Ve škole od nepaměti žijí studenti a profesoři. Stejně tak od nepaměti\nplatí, že kdykoliv se studenti sejdou, začnou si vyprávět veselé historky\no svých profesorech.\n\n</p><p>Pro každého studenta víme, kteří profesoři ho učí. Vaším úkolem je zjistit:\n\n</p><ul>\n<li>Existuje profesor, který učí všechny studenty?\n</li><li>Kteří 2 studenti mohou společně pomlouvat nejvíce profesorů? Řeči přitom vedou jen o profesorech, kteří učí aspoň jednoho z nich.\n</li></ul>\n\n<p>Na prvním řádku vstupu je číslo N (počet studentů). Na dalších řádcích je\nvždy popořadě napsáno jméno i-tého studenta, počet jeho profesorů K<sub>i</sub> a K<sub>i</sub>\nřádků se jmény profesorů (jména jsou navzájem různá).\n\n</p><p>Na první řádek vypište jméno libovolného profesora, který učí všechny\nstudenty, nebo řetězec NEEXISTUJE, pokud žádný takový není. Na druhý řádek\nvypište 2 jména oddělená mezerou, jména studentů, které dohromady učí\nnejvíce profesorů. Pokud takových dvojic existuje více, vypište libovolnou\nz nich.\n\n\t\t\t</p>",
             "points": 7,
-            "taskReference": "zkp-5-dalsi",
+            "taskReference": "G:zkp-5-dalsi",
             "position": [
                 507.7067070007324,
                 1098.6674432754517
@@ -2882,7 +2882,7 @@
             "title": "Funkce",
             "htmlAssignment": "<p>Na vstupu dostanete nějaké číslo v desítkovém zápisu (zapsané v desítkové soustavě). Nalezněte takové <i>Z</i> ≥ 2, aby zápis zadaného čísla v <a href=\"http://cs.wikipedia.org/wiki/Poziční_číselná_soustava\">číselné soustavě</a> o základu <i>Z</i> končil na největší možný počet nul. Je-li takových možných <i>Z</i> víc, odpovíte největším možným z nich.\n\n</p><p>Příklady: Na vstup <code>100000</code> odpovíte <code>10</code>; na vstup <code>54</code> odpovíte <code>3</code> (trojkový zápis 2000); na vstup <code>182707930597500</code> odpovíte <code>77</code>.\n\n\t\t\t</p>",
             "points": 8,
-            "taskReference": "zkp-6-funkce",
+            "taskReference": "G:zkp-6-funkce",
             "position": [
                 560.1033248901367,
                 1174.8378257751465
@@ -2912,7 +2912,7 @@
             "title": "Rekurze",
             "htmlAssignment": "<p>Na vstupu dostanete čísla A a B. Vaším úkolem je na výstup vypsat jejich největší společný dělitel a nejmenší společný násobek (každý na samostatný řádek).</p>",
             "points": 9,
-            "taskReference": "zkp-7-rekurze",
+            "taskReference": "G:zkp-7-rekurze",
             "position": [
                 612.8917317390442,
                 1242.545904636383
@@ -2942,7 +2942,7 @@
             "title": "Vstup a výstup",
             "htmlAssignment": "<p>Jako vstup dostanete jedno číslo <i>N</i>, na výstup vykreslete prvočíselnou\nspirálu délky <i>N</i>. Na místě prvočísla vypíšete <code>#</code>, jinde\nvypíšete tečku. Případné volné místo vyplňte mezerami. Uprostřed – na místě\njedničky vypíšete (velké X) <code>X</code>, dvojka bude vpravo od ní a trojka\nvpravo nahoře (výpis proti směru hodinových ručiček).</p>\n\n<p>Příklad pro <i>N</i>=13:\n</p><pre>   #\n#.#.\n.X##\n#...\n</pre>\n\n<p>Příklad pro <i>N</i>=98:\n</p><pre>  .#......\n....#.#...\n.#.....#.#\n#.#...#...\n...#.#.#..\n..#.X##.#.\n.#.#......\n#...#.....\n.#...#...#\n#.....#...\n</pre>",
             "points": 10,
-            "taskReference": "zkp-8-io",
+            "taskReference": "G:zkp-8-io",
             "position": [
                 630.2031745910645,
                 1333.5094537734985
