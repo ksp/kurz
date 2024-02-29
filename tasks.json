@@ -2185,15 +2185,45 @@
             "type": "custom-open-data",
             "comment": "...",
             "requires": [
-                "ulohy-v-kurzu"
+                "dzungle-uvod"
             ],
             "title": "Nečísla",
             "htmlAssignment": "<p>Vstupem bude číslo <i>N</i>, výstupem bude <i>N</i>-té nečíslo.</p><p>Jak vypadá nečíslo? Nejprve je nutno definovat <i>x</i>-čísla. Pro <i>x = 1</i> jde o klasická prvočísla. Tedy posloupnost 1-čísel je <code>2,3,5,7,11,13,17,19,…</code>.&nbsp;</p><p>Posloupnost <i>(x+1)</i>-čísel získáme tak, že pro každé <i>x</i>-číslo postupně najdeme <i>(x+1)</i>-té nejbližší volné číslo za ním. Volná čísla jsou ta, která ještě nejsou <i>(x+1)</i>-číslem, ani <i>k</i>-číslem pro libovolné <i>k</i> menší než <i>x+1</i>.</p><p>Posloupnost 2-čísel, neboli druhočísel, je tedy <code>6,8,10,12,15,16,20,22,25,32,34,39,44,…</code>; posloupnost 3-čísel, neboli třetičísel, je <code>18,21,26,27,30,33,35,36,40,45,…</code>; první čtvrtočíslo je <code>42</code>, a tak dále.</p><p>Tahle metoda některá nezáporná čísla vynechává, a to přesně jsou nečísla. Posloupnost nečísel začíná <code>0,1,4,9,14,24,28,38,…</code>. Nečísla indexujeme od nuly, tedy nulté nečíslo je nula, čtvrté nečíslo je 14…</p><p>Možná lépe pochopitelnou definici nečísel naleznete na <a href=\"http://necyklopedie.org/wiki/Nečíslo\">Necyklopedii</a>.</p><p>Vzorový vstup:\n</p><pre>6\n</pre><p>Příslušný výstup:\n</p><pre>28\n</pre>",
             "points": 20,
             "taskReference": "G:dzungle-necisla",
             "position": [
-                521.1385955810547,
-                346.8461765050888
+                361.9878387451172,
+                373.1773227453232
+            ]
+        },
+        {
+            "id": "dzungle-uvod",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "ulohy-v-kurzu"
+            ],
+            "title": "O džungli",
+            "htmlContent": "<p>Vítej v džungli. Zde najdeš úlohy, které jsou o něco těžší, než je zbytek Kurzu. Jde většinou o různé bonusové úlohy, které jsme nezadávali v rámci normálních sérií, ale i tak nám přišly dost zajímavé a zábavné.</p><p>Zkusíš se překonat a pokořit úlohy z džungle?</p><p><i>Můžeš se potom pochlubit svým úspěchem například na našem Discordu.</i></p>",
+            "position": [
+                474.763032913208,
+                299.0309867858887
+            ]
+        },
+        {
+            "id": "G:ksplang-pi",
+            "type": "custom-open-data",
+            "comment": "...",
+            "requires": [
+                "ksplang-uvod"
+            ],
+            "title": "ksplang: proklaté číslo π",
+            "htmlAssignment": "<p><i>Tato úloha se řeší v programovacím jazyku <a href=\"https://ksp.mff.cuni.cz/viz/ksplang\">ksplang</a>. Generované vstupy můžeš v odevzdávátku ignorovat, ksplangový program odevzdávej v textové podobě jakožto výstup k danému úkolu. Po odevzdání je náš interpreter ksplangu spustí na několika neveřejných testovacích vstupech.</i></p><p>V této úloze neznáte maximální velikost zásobníku <i>K</i>. Slibujeme akorát, že <i>K &ge; 2000</i>.</p><p>Na vstupu dostanete 20 čísel z rozsahu 0 až 10. Jako výstup vyrobte <i>K - 30</i> číslic čísla pí (počínaje 3 1 4 na dně zásobníku) a poté původních 20 čísel, co bylo na vstupu. Deset míst v zásobníku tedy zůstane volných.</p><p>Ještě jednou upozorňujeme, že neznáte maximální velikost zásobníku. V našem webovém interpreteru si pro testování můžete v nastavení zvolit libovolnou velikost. Pokud používáte náš program pro spouštění ksplangu, můžete maximální velikost zásobníku nastavit pomocí přepínače <code>-m</code>.</p><p>Vzorový vstup:</p><pre>0 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9</pre><p>Příslušný výstup kdyby maximální velikost zásobníku byla 40 (aby se to sem vešlo):</p><pre>3 1 4 1 5 9 2 6 5 3 0 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9</pre>",
+            "points": 20,
+            "taskReference": "G:ksplang-pi",
+            "position": [
+                591.9599723815918,
+                453.83079719543457
             ]
         },
         {
@@ -2219,6 +2249,37 @@
                 782.6888427734375
             ],
             "hidden": true
+        },
+        {
+            "id": "ksplang-reverse",
+            "type": "custom-open-data",
+            "comment": "...",
+            "requires": [
+                "ksplang-uvod"
+            ],
+            "title": "ksplang: otočení",
+            "htmlAssignment": "<p><i>Tato úloha se řeší v programovacím jazyku </i><a href=\"https://ksp.mff.cuni.cz/viz/ksplang\"><i>ksplang</i></a><i>. Generované vstupy můžeš v odevzdávátku ignorovat, ksplangový program odevzdávej v textové podobě jakožto výstup k danému úkolu. Po odevzdání je náš interpreter ksplangu spustí na několika neveřejných testovacích vstupech.</i></p><p>Otočte zásobník. Zásobník je neprázdný. Čísla mohou být libovolná. Zásobník má maximální velikost, ale je na něm alespoň 1000 čísel volného místa.&nbsp;</p><p><i>Nápověda: naše řešení má délku TODO</i></p><p>Vzorový vstup:</p><p>1 2 3 4 5</p><p>Vzorový výstup:</p><p>5 4 3 2 1</p>",
+            "points": 10,
+            "taskReference": "G:ksplang",
+            "position": [
+                485.16381549835205,
+                452.7560033798218
+            ],
+            "hidden": true
+        },
+        {
+            "id": "ksplang-uvod",
+            "type": "text",
+            "comment": "...",
+            "requires": [
+                "dzungle-uvod"
+            ],
+            "title": "O ksplangu",
+            "htmlContent": "<p>Programovací jazyk <a href=\"https://ksp.mff.cuni.cz/viz/ksplang/\">ksplang</a> byl kolektivně vytvořen řešiteli KSP v úloze <a href=\"https://ksp.mff.cuni.cz/viz/36-1-5\">36-1-5</a>, kde měli možnost navrhnout nezávisle na sobě jednotlivé instrukce. Detailní popis a interpreter našeho nejlepšího programovacího jazyka naleznete <a href=\"https://ksp.mff.cuni.cz/viz/ksplang/\">zde</a>.</p><p>Pokud jste neřešili ksplangové úlohy <a href=\"https://ksp.mff.cuni.cz/viz/36-2-4\">36-2-4</a>, <a href=\"https://ksp.mff.cuni.cz/viz/36-3-4\">36-3-4</a>, pak vám vřele doporučujeme je vyzkoušet, a neprozrazovat si jejich řešení. Je to něco trochu jiného než naše typické úlohy.</p><p>Tady naleznete bonusové úlohy, které jsme nezadávali ve standardní sérii.</p><h3>Lokální interpreter</h3><p>Naše implementace ksplangu je open-source, zdrojový kód je na <a href=\"https://github.com/ksp/ksplang\">GitHubu</a>. V sekci <a href=\"https://github.com/ksp/ksplang/releases\">releases</a> také naleznete program ksplang, který umožňuje spouštět ksplangový kód na vašem stroji.</p>",
+            "position": [
+                592.3862723112106,
+                371.58991718292236
+            ]
         },
         {
             "id": "kucharka-zakladni-algoritmus",
@@ -2539,11 +2600,11 @@
             "comment": "...",
             "requires": [],
             "position": [
-                216.00632858276367,
-                262.37095308303833
+                234.4802360534668,
+                248.3195767402649
             ],
-            "title": "Džungle těžkých úloh →",
-            "rotationAngle": 14
+            "title": "Džungle bonusových úloh →",
+            "rotationAngle": 11
         },
         {
             "id": "label-kucharky",
@@ -2795,7 +2856,7 @@
             "taskReference": "G:zkp-3-podminky",
             "position": [
                 314.95473861694336,
-                935.5432705879211
+                934.3978848457336
             ]
         },
         {
