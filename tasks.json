@@ -2181,12 +2181,28 @@
             "hidden": true
         },
         {
+            "id": "dzungle-necisla",
+            "type": "custom-open-data",
+            "comment": "...",
+            "requires": [
+                "ulohy-v-kurzu"
+            ],
+            "title": "Nečísla",
+            "htmlAssignment": "<p>Vstupem bude číslo <i>N</i>, výstupem bude <i>N</i>-té nečíslo.</p><p>Jak vypadá nečíslo? Nejprve je nutno definovat <i>x</i>-čísla. Pro <i>x = 1</i> jde o klasická prvočísla. Tedy posloupnost 1-čísel je <code>2,3,5,7,11,13,17,19,…</code>.&nbsp;</p><p>Posloupnost <i>(x+1)</i>-čísel získáme tak, že pro každé <i>x</i>-číslo postupně najdeme <i>(x+1)</i>-té nejbližší volné číslo za ním. Volná čísla jsou ta, která ještě nejsou <i>(x+1)</i>-číslem, ani <i>k</i>-číslem pro libovolné <i>k</i> menší než <i>x+1</i>.</p><p>Posloupnost 2-čísel, neboli druhočísel, je tedy <code>6,8,10,12,15,16,20,22,25,32,34,39,44,…</code>; posloupnost 3-čísel, neboli třetičísel, je <code>18,21,26,27,30,33,35,36,40,45,…</code>; první čtvrtočíslo je <code>42</code>, a tak dále.</p><p>Tahle metoda některá nezáporná čísla vynechává, a to přesně jsou nečísla. Posloupnost nečísel začíná <code>0,1,4,9,14,24,28,38,…</code>. Nečísla indexujeme od nuly, tedy nulté nečíslo je nula, čtvrté nečíslo je 14…</p><p>Možná lépe pochopitelnou definici nečísel naleznete na <a href=\"http://necyklopedie.org/wiki/Nečíslo\">Necyklopedii</a>.</p><p>Vzorový vstup:\n</p><pre>6\n</pre><p>Příslušný výstup:\n</p><pre>28\n</pre>",
+            "points": 20,
+            "taskReference": "G:dzungle-necisla",
+            "position": [
+                521.1385955810547,
+                346.8461765050888
+            ]
+        },
+        {
             "id": "jak-muzu-pomoct",
             "type": "text",
             "comment": "...",
             "requires": [],
             "title": "Chtěl(a) bych na kurzu něco změnit!",
-            "htmlContent": "<p>To vůbec není problém. Dokonce naopak, rádi uvítáme libovolné názory, nápady a úpravy. Zdrojové kódy webové aplikace <a href=\"https://github.com/ksp/kurz\">jsou veřejně přístupné na GitHubu</a> a jakkoukoliv pomoc uvítáme.</p><h3>Chci nahlásit chybu</h3><p>Kontaktuj nás libovolným možným způsobem. 😉 Discord, email, GitHub, Česká pošta,… Ať už zpráva dorazí jakkoliv, tak pokud si jí všimneme, budeme se snažit reagovat.</p><h3>Chci změnit obsah (napojení a umístění úloh, texty, …)</h3><p>Na úpravu obsahu jsme si napsali také webový editor. Můžeš si ho spustit buď lokálně u sebe nebo použít naše testovací prostředí.</p><h4>Naše testovací prostředí</h4><p>Můžeš se na stránce<strong> </strong><a href=\"https://ksp.vsq.cz/\"><strong>https://ksp.vsq.cz/</strong></a> najdeš veřejně přístupnou proxy, která upravuje data proudící mezi Tvým prohlížečem a stránkami KSPčka. Vkládá tam tak vždy nejnovější verzi webové aplikace. Editor najdeš na <a href=\"https://ksp.vsq.cz/editor.html\"><strong>https://ksp.vsq.cz/editor.html</strong></a>.</p><p>Pokud chceš data uložit, můžeš si stáhnout lokálně soubor <i>tasks.json</i> a poslat ho <a href=\"https://ksp.mff.cuni.cz/kontakty/organizatori/\">Vaškovi Šraierovi nebo Standovi Lukešovi</a>. Případně udělat Pull Request na GitHubu.</p><p>Pokud chceš, aby editor Tvé změny zachovával mezi reloady stránky, musíš se přihlásit do svého KSPího účtu. Záměrně ale varujeme, že proxy pak má teoretickou možnost zjistit Tvé přihlašovací údaje.</p><h4>Lokální spuštění</h4><p>Pro lokální spuštění najdeš vše potřebné v <a href=\"https://github.com/ksp/kurz/blob/master/README.md\">README.md na GitHubu</a>.</p><p>&nbsp;</p>",
+            "htmlContent": "<p>To vůbec není problém. Dokonce naopak, rádi uvítáme libovolné názory, nápady a úpravy. Zdrojové kódy webové aplikace <a href=\"https://github.com/ksp/kurz\">jsou veřejně přístupné na GitHubu</a> a jakkoukoliv pomoc uvítáme.</p><h3>Chci nahlásit chybu</h3><p>Kontaktuj nás libovolným možným způsobem. 😉 Discord, email, GitHub, Česká pošta,… Ať už zpráva dorazí jakkoliv, tak pokud si jí všimneme, budeme se snažit reagovat.</p><h3>Chci změnit obsah (napojení a umístění úloh, texty, …)</h3><p>Na úpravu obsahu jsme si napsali také webový editor. Můžeš si ho spustit buď lokálně u sebe. Libovolné změny souboru <i>tasks.json (</i>obsahuje všechna data kurzu) nám potom můžeš poslat na standardní kontaktní email KSP, nebo ideálně rovnou můžeš vytvořit Pull Request na GitHubu.</p><h4>Lokální spuštění</h4><p>Pro lokální spuštění najdeš vše potřebné v <a href=\"https://github.com/ksp/kurz/blob/master/README.md\">README.md na GitHubu</a>.</p><p>&nbsp;</p>",
             "position": [
                 7,
                 -105
@@ -2439,22 +2455,6 @@
                 "url": "/kucharky/zakladni-algoritmy/",
                 "name": "Základní algoritmické kuchařky"
             }
-        },
-        {
-            "id": "dzungle-necisla",
-            "type": "custom-open-data",
-            "comment": "...",
-            "requires": [
-                "ulohy-v-kurzu"
-            ],
-            "title": "Nečísla",
-            "htmlAssignment": "<p>Vstupem bude číslo <i>N</i>, výstupem bude <i>N</i>-té nečíslo.</p><p>Jak vypadá nečíslo? Nejprve je nutno definovat <i>x</i>-čísla. Pro <i>x = 1</i> jde o klasická prvočísla. Tedy posloupnost 1-čísel je <code>2,3,5,7,11,13,17,19,…</code>.&nbsp;</p><p>Posloupnost <i>(x+1)</i>-čísel získáme tak, že pro každé <i>x</i>-číslo postupně najdeme <i>(x+1)</i>-té nejbližší volné číslo za ním. Volná čísla jsou ta, která ještě nejsou <i>(x+1)</i>-číslem, ani <i>k</i>-číslem pro libovolné <i>k</i> menší než <i>x+1</i>.</p><p>Posloupnost 2-čísel, neboli druhočísel, je tedy <code>6,8,10,12,15,16,20,22,25,32,34,39,44,…</code>; posloupnost 3-čísel, neboli třetičísel, je <code>18,21,26,27,30,33,35,36,40,45,…</code>; první čtvrtočíslo je <code>42</code>, a tak dále.</p><p>Tahle metoda některá nezáporná čísla vynechává, a to přesně jsou nečísla. Posloupnost nečísel začíná <code>0,1,4,9,14,24,28,38,…</code>. Nečísla indexujeme od nuly, tedy nulté nečíslo je nula, čtvrté nečíslo je 14…</p><p>Možná lépe pochopitelnou definici nečísel naleznete na <a href=\"http://necyklopedie.org/wiki/Nečíslo\">Necyklopedii</a>.</p><p>Vzorový vstup:\n</p><pre>6\n</pre><p>Příslušný výstup:\n</p><pre>28\n</pre>",
-            "points": 20,
-            "taskReference": "G:dzungle-necisla",
-            "position": [
-                521.1385955810547,
-                346.8461765050888
-            ]
         },
         {
             "id": "label_matematicke",
